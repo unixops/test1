@@ -1,0 +1,361 @@
+h2 {
+	color:#0055aa;
+	margin-bottom: 5px; 
+}
+
+/* Display Trip Planner Plus logo image as H2 */
+.tp-logo, .tp-logo span { width:149px; height:22px; background-image: url('images/Trip_logo_mta.jpg'); background-repeat: no-repeat; background-position: -3px 0; }
+.tp-logo span { margin-bottom: -18px; }
+h2.tp-logo span { display:block; position:relative; z-index:1; }
+h2.tp-logo { overflow:hidden; }
+/* IE5 Mac Hack \*/ h1 { overflow: hidden; } /*/ h1 { text-indent: -100em; } /* End Hack */
+
+a:link {text-decoration: none; color:#0055aa;}
+a:visited {text-decoration: none; color:#555;}
+a:hover {text-decoration: underline}
+a:active {text-decoration: underline}
+
+/* List Styles */
+/* Horizontal list */
+.list_h
+{ 
+	background-image: url("images/arrow-gn.gif");
+	background-position: left -1px;
+	background-repeat: no-repeat;
+	display: inline;
+	padding-left: 10px;
+}
+/* Vertical List */
+.list_v
+{ 
+	background-image: url("images/arrow-gn.gif");
+	background-position: left -2px;
+	background-repeat: no-repeat;
+	padding-left: 10px;
+	list-style-type: none;
+}
+
+ul li.list_h a {font-weight:bold;}
+
+/* unordered list with green arrows */
+ul.arrow { margin-left:0; }
+
+ul.arrow li {
+	list-style-type:none;
+	margin:0;
+	padding-left:12px;
+	margin-bottom:6px;
+	background-image: url('images/arrow-gn.gif'); 
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+#contentbox ul.arrow li a {font-weight:bold;}
+
+/* Following list styles are used to draw the bottom icons */
+.list_f { 
+	background-image: url("images/arrow-gn.gif");
+	background-position: 50% left; 
+	background-repeat: no-repeat;
+	display: inline;
+	padding-left: 16px;
+	padding-right: 12px;	
+	font-weight: bold;
+	height: 30px;
+}
+.last_list_f { 
+	border: none;
+	padding-right: 0px;
+}
+.first_list_f { 
+	margin-left: 0px;
+}
+/* End bottom icons list styles */
+
+/* Page Structure Components*/
+#mainbox {
+  width: 960px;
+  margin:0 auto;
+  background-color: #fff;
+  position: relative;  /*Do NOT remove - this style is required to round corners in IE */
+  padding: 0;
+}
+
+#contentbox {
+	margin-top:0;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom:10px;
+	
+	padding: 0;
+}
+
+#copyright p { font-size: 85%; color: #333; margin-bottom: 2px; }
+
+.feature-box { margin-top:10px; padding:10px; height:186px; background: #fff; }
+.feature-box img.162center { padding-left:50px; }
+.feature-box img.center { padding:0 auto; }
+.feature-box h3 { margin: 0; margin-bottom: 5px;}
+.feature-box a { font-weight:bold; color: #0055aa; text-decoration:none; }
+
+/* End Page Structure components */
+
+/* Start primary page blocks */
+
+#waysToPay {
+	height: 183px;
+}
+
+#widgetDiv {
+    height: 424px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-top: 11px;
+    padding: 10px 0;
+    width: 229px;
+}
+
+#widgetDiv #subwayDiv, #widgetDiv #railDiv, #widgetDiv #busDiv, #widgetDiv #BTDiv {float:left; display:none; width:208px; height: 365px;  background-color:#fff;}
+#widgetDiv  table{ margin:0; padding:0; width:202px; height:356px; background-color:#fff; }
+#widgetDiv  table tr, #widgetDiv  table td { margin:0; padding:0; }
+
+#mytrip { 
+	margin-top:0;
+	padding-left:-5px;
+	height: 335px;
+	width:208px;
+}
+
+#mytrip table { margin-bottom: margin-top:5px; 0px; background-color:#fff; }
+#mytrip td { padding: 3px; }
+#mytrip td.rightAlign { text-align: right; }
+
+
+#news { 
+	margin-top:10px;
+	height:270px;
+	/*height:286px; /*changed for smaller Getting There box*/
+	padding: 10px; 
+	background: #fff;
+	overflow: hidden;
+}
+
+#maps, #maps-narrow, #option1-narrow, #option2-narrow {	
+	margin-top:10px; 
+	padding:7px; 
+	height:73px;
+	background: #fff;
+}
+
+#maps-narrow, #option1-narrow {
+	width: 89px;
+	margin-right:10px;
+	float:left;
+}
+
+#maps-narrow {
+	width: 89px;
+}
+
+#option1-narrow {
+	width: 96px;
+	padding-right:0;
+}
+
+#option2-narrow {	
+	width:99px;
+	float:right;
+}
+
+#capConstruction { float:left; }
+
+#innovation-new, #apps {
+	/*height: 78px;*/
+	height:114px; /*changed for smaller Getting There box*/
+	padding: 10px;
+	float: left;
+	width: 203px;
+	margin-bottom:10px;
+}
+
+#apps { margin-right:10px; }
+
+/*#innovation { 
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 78px; 
+	padding: 10px;
+	float: left;
+	width: 438px;
+}
+
+#innovation h3 { margin: 0; margin-bottom: 5px; }*/
+
+#self-serve, #contact-us {
+	/*height: 25px;*/
+	height: 35px; /*changed for smaller Getting There box*/
+	padding-left:10px;
+	padding-top:10px;
+	float:left;
+	width: 213px;
+}
+
+#self-serve { margin-right:10px; }
+
+/* Riding With Us Styles */
+#riding-links {
+	margin:0;
+	padding: 10px 10px 0 10px;
+	height:144px; /*changed for smaller Getting There box*/
+	/*height:190px;*/
+	background-color: #fff;
+}
+
+#riding-links #nestedCol1 { margin:0; padding:0; width: 215px; float: left;}
+#riding-links #nestedCol2 { margin:0; padding:0;	width: 215px; float: right; }
+
+#riding-links ul { margin:0; padding:0; float:left; width: 215px; }
+#riding-links li { margin:0; margin-bottom: 10px; padding: 4px 8px 8px; list-style-type:none; width:197px; float:left; font-weight: bold; }
+
+#riding-links #menuanchor1 { background: #fff url(/images/1.gif) 177px center no-repeat; border:1px solid #e4e4e4; }
+#riding-links #menuanchor1:hover { background: #f4f4f4 url(/images/1.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor2 { background: #fff url(/images/2.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor2:hover { background: #f4f4f4 url(/images/2.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor3 { background: #fff url(/images/3.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor3:hover { background: #f4f4f4 url(/images/3.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor4 { background: #fff url(/images/4.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor4:hover { background: #f4f4f4 url(/images/4.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor5 { background: #fff url(/images/5.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor5:hover { background: #f4f4f4 url(/images/5.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor6 { background: #fff url(/images/6.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor6:hover { background: #f4f4f4 url(/images/6.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor7 { background: #fff url(/images/7.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor7:hover { background: #f4f4f4 url(/images/7.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor8 { background: #fff url(/images/8.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor8:hover { background: #f4f4f4 url(/images/8.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+
+.popMenu ul { margin: 5px; margin-left: 8px; }
+.popMenu li { list-style-type: none; margin-bottom: 10px; font-family: Helvetica, Arial, Sans-serif; font-size: 13px; font-weight:bold; color:#000033; }
+.popMenu li ul li { font-weight: normal; color:#000033; }
+.popMenu li a, .popMenu li ul li a { text-decoration:none; color:#000033; }
+.popMenu li a:hover, .popMenu li ul li a:hover { color: #0055aa; }
+.popMenu li ul li { margin:0; padding:0; }
+
+/* End - Riding With Us Styles */
+
+/* End primary page blocks */
+
+#breadcrumbs { display: block; }
+
+#middlecolumn .slide-wrapper p { font-size:101%; line-height:1.2em; margin:0;}
+#fineprint {	text-align: right; float:right; padding-left: 30px; }
+#translation { background-color: #dfe2e3; padding: 5px 15px 5px 15px; border-top: 1px solid #6296c6; }
+#mainbox #contentbox a:link {	color:#0055aa; text-decoration:none; }
+#mainbox #contentbox img.left-align {	float:left;	padding-right: 8px; }
+
+/* Agency Refresh Styles */
+#agency-links {
+	padding: 10px;
+	background: #fff;
+	height:62px;
+}
+
+#agency-links ul { float: left; list-style-type: none; margin: 0; padding: 0;}
+#agency-links  li a{ color: #333; text-decoration: none; }
+
+/* Agency links are presented in two or three columns.*/
+#agency-links #twoCol li { float: left; width: 202px; padding: 5px; display: inline; margin-right: 10px; font-weight: bold; }
+#agency-links #twoCol li.last { margin-right: 0px; }
+#agency-links #threeCol li { float: left; width: 127px; padding: 5px; display: inline; margin-right: 10px; font-weight: bold; }
+#agency-links #threeCol li.last { margin-right: 0px; }
+
+#agency-links #twoCol #menuanchor1 { background: #fff url(/images/1.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #twoCol #menuanchor1:hover { background: #e4e4e4 url(/images/1.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
+#agency-links #twoCol #menuanchor2 { background: #fff url(/images/2.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #twoCol #menuanchor2:hover { background: #e4e4e4 url(/images/2.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
+
+#agency-links #threeCol #menuanchor1 { background: #fff url(/images/1.gif) 102px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #threeCol #menuanchor1:hover { background: #e4e4e4 url(/images/1.gif) 102px center no-repeat; border:1px solid #b4b4b4; }
+#agency-links #threeCol #menuanchor2 { background: #fff url(/images/2.gif) 102px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #threeCol #menuanchor2:hover { background: #e4e4e4 url(/images/2.gif) 102px center no-repeat; border:1px solid #b4b4b4; }
+#agency-links #threeCol #menuanchor3 { background: #fff url(/images/3.gif) 102px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #threeCol #menuanchor3:hover { background: #e4e4e4 url(/images/3.gif) 102px center no-repeat; border:1px solid #b4b4b4; }
+
+
+
+#agency-spnews {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #f4f4f4;
+	overflow: auto;
+	height: 230px;
+}
+
+#news-agency {
+	margin-top:10px;
+	height:275px;
+	padding: 10px;
+	background: #fff;
+	overflow: hidden;
+}
+
+/* START Styles for JFlow Slide News rotator */
+#jFlowSlide{ background:#fff; padding:0px; }
+#myController { margin:6px 5px 0 5px; padding-top:6px; color:#000; border-top: 1px solid #999; vertical-align:bottom; float: left; width: 430px;}
+#myController span.jFlowSelected { background:#FFF; margin-right:5px; border: 1px solid #ccc; }
+
+.slide-wrapper { padding: 5px; }
+.slide-wrapper img {padding-bottom:3px;}
+.slide-wrapper img.left {float:left; padding-right:10px;}
+.slide-wrapper img.right {float:right; padding-left:10px;}
+/*.slide-wrapper h1 { margin-top:0; text-align:left;font-size: 175%; color:#5a5a5b; padding-top: 0; }*/
+.slide-wrapper h3 { margin-top:0; margin-bottom:4px; text-align:left; font-size: 150%; color:#5a5a5b; padding-top: 0; }
+.slide-wrapper a { text-decoration:none; color:#0055aa;}
+.slide-wrapper p { text-decoration:none; color:#333;}
+.slide-thumbnail { float:left; border:0px solid #0000CC; }
+.slide-thumbnail img {width:522px;}
+.slide-details { width:370px; height:200px; float:left; margin-left:10px; border:0px solid #FF0000;}
+.slide-details span { font-size:24px; font-weight:bold;}
+.slide-details .description { margin-top:10px; font-size:13px; line-height:20px; }
+.next_box{ float:left; border:1px solid #CCC; margin-top:2px; padding:3px;}
+.jFlowControl, .jFlowPrev, .jFlowNext { border: 1px solid #ccc; float:left; background-color:#CCC; color:#000; cursor:pointer; padding:0 4px; font-weight:bold; margin-right:5px; }
+.jFlowPause { border: 1px solid #ccc; float:left; background-color:#ccc; cursor:pointer; padding:0; font-weight:bold; margin-left: 15px; }
+
+.shere_links{margin-top: 10px; float:right; width:280px; padding:0px; text-align:right; }
+.moreNews { width: 65px; float: left; }
+.facebook{width:16px;}
+.twitter{width:16px; margin-left:5px;}
+.youtube{width:40px; margin-left:5px;}
+.heading { font-size:13px; font-weight:bold;}
+.jFlowControl:hover, .jFlowPrev:hover, .jFlowNext:hover, .jFlowPause:hover  { background: #CCC; color:#0033FF; }
+.top_heading{ margin-left: 5px; float:left; width:100%; color:#0066CC; font-size:18px; font-weight:bold;}
+.jFlowSlideContainer{float:left; width:440px;}
+
+/*.leftDropDown {	float:left; background:url(../images/rwu_bttn_bg.jpg) no-repeat; width:200px; height:20px; cursor:pointer; margin-bottom:10px; font-weight:bold; color:#575757; padding:6px; margin-left:7px; }*/
+
+/* END Styles for JFlow Slide News rotator */
+
+.heading { float:left; margin:7px;font-size:12px; font-weight:bold; width:400px; color:#0066FF; }
+
+
+/* Agency div styles */
+#deals { 
+	height: 165px;
+	float: left;
+}
+#WaystoPay { height:175px; }
+
+/* for MTA CC homepage */
+#programs { margin:10px 0; padding:10px 9px; }
+#programs h2 { margin-bottom:0; }
+#programs h3 { margin-top:10px; }
+#programs-hilite { margin-left:20px; border-right-width:1px; border-right-color: #ccc; border-right-style:solid; }
+#programs-hilite-last { margin-left:10px; }
+
+
+/*.section{ float:left; width:950px; padding:5px;}
+.section{ float:left; padding:5px;}
+.section ul{margin:0px; padding:0px;}
+.section ul li{float:left; list-style:none;}
+.section ul li a{float:left;padding:6px 20px 9px; background: #333333; color:#FFFFFF;}
+.section ul li a:hover{text-decoration:none; background:#666666;}*/

@@ -1,0 +1,10 @@
+/* $Id: $ */
+
+.form-item label {
+    display: inline-block; !important
+    font-weight: bold;
+    width: 110px;
+}
+#edit-account .description {
+    margin-left: 110px;
+}
