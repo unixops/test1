@@ -524,5 +524,5 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
 # $conf['allow_authorize_operations'] = FALSE;
 #
 if (file_exists('/var/www/site-php')) {
-  require('/var/www/site-php/metrota/metrota-settings.inc');
+  require('/var/www/site-php/metrota2/metrota2-settings.inc');
 }
