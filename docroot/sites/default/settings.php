@@ -523,6 +523,11 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
  */
 # $conf['allow_authorize_operations'] = FALSE;
 #
+
+
+$conf['environment_indicator_text'] = 'MTA-NEW DEVELOPMENT';
+$conf['environment_indicator_color'] = 'blue';
+
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/metrota2/metrota2-settings.inc');
 }
