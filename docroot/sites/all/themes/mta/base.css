@@ -319,6 +319,18 @@ div.form-item  .form-item-submitted-mtaBridgesTunnelSatisfied
 	border-bottom: 1px solid #D0D0D0;
 	width:580px;
 	}
+	
+div.form-item .form-item-submitted-subwaytrips,
+div.form-item .form-item-submitted-lirr,
+div.form-item .form-item-submitted-nycbus,
+div.form-item .form-item-submitted-mnrr,
+div.form-item .form-item-submitted-expressbus,
+div.form-item .form-item-submitted-sirail
+ {
+	width:50px;
+	margin:0;
+	}
+	
 #edit-submitted-subwaytrips input,
 #edit-submitted-lirr input,
 #edit-submitted-nycbus input,
