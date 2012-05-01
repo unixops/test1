@@ -292,6 +292,13 @@ th {
 	border-bottom: 1px solid #D0D0D0;
 	width:580px;
 	}
+	
+div.form-item .form-item-submitted-subwaytrips {
+	display:inline-block;
+	width:50px;
+	margin:0;
+	}
+	
 #edit-submitted-subwaytrips input,
 #edit-submitted-lirr input,
 #edit-submitted-nycbus input,
