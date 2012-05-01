@@ -293,8 +293,13 @@ th {
 	width:580px;
 	}
 	
-div.form-item .form-item-submitted-subwaytrips {
-	display:inline-block;
+div.form-item .form-item-submitted-subwaytrips,
+div.form-item .form-item-submitted-lirr,
+div.form-item .form-item-submitted-nycbus,
+div.form-item .form-item-submitted-mnrr,
+div.form-item .form-item-submitted-expressbus,
+div.form-item .form-item-submitted-sirail
+ {
 	width:50px;
 	margin:0;
 	}
