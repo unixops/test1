@@ -290,7 +290,7 @@ th {
 	margin-bottom:5px;
 	padding-bottom:5px;
 	border-bottom: 1px solid #D0D0D0;
-	width:600px;
+	width:580px;
 	}
 #edit-submitted-subwaytrips input,
 #edit-submitted-lirr input,
@@ -300,7 +300,7 @@ th {
 #edit-submitted-sirail input
 {
 	display:inline-block;
-	width:50px;
+	width:46px;
 	}	
 #webform-component-subwaytrips.webform-container-inline label,
 #webform-component-lirr.webform-container-inline label,
@@ -327,7 +327,7 @@ th {
 	margin-bottom:5px;
 	padding-bottom:5px;
 	border-bottom: 1px solid #D0D0D0;
-	width:600px;
+	width:580px;
 	}
 #edit-submitted-subwaysatisfied input,
 #edit-submitted-lirrsatisfied input,
