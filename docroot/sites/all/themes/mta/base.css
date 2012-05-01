@@ -200,13 +200,13 @@ th {
 	
 	}
 #webform-component-Question9Header p {
-		margin-left:205px;
+		margin-left:194px;
 	
 }
 .question9header-item {
     display: inline-block;
     text-align: center;
-    width: 36px;
+    width: 37px;
     	}	
 
 
@@ -219,6 +219,33 @@ th {
 	
 	
 }
+div.form-item  .form-item-submitted-subwaytrips,
+div.form-item  .form-item-submitted-lirr,
+div.form-item  .form-item-submitted-nycBus,
+div.form-item  .form-item-submitted-mnrr,
+div.form-item  .form-item-submitted-expressBus,
+div.form-item  .form-item-submitted-siRail
+ {
+	display:inline-block;
+	width:50px; 
+	padding:0;
+	margin:0;
+}
+div.form-item  .form-item-submitted-subwaysatisfied,
+div.form-item  .form-item-submitted-lirrSatisfied,
+div.form-item  .form-item-submitted-mtaBusSatisfied,
+div.form-item  .form-item-submitted-mnrSatisfied,
+div.form-item  .form-item-submitted-expressBusSatisfied,
+div.form-item  .form-item-submitted-StatenIslandSatisfied,
+div.form-item  .form-item-submitted-mtaBridgesTunnelSatisfied
+ {
+	display:inline-block;
+	width:33px; 
+	padding:0;
+	margin:0;
+}
+
+
 #webform-component-subwaylines--subwayline123,
 #webform-component-subwaylines--subwayline456,
 #webform-component-subwaylines--subwayline7,
@@ -302,6 +329,16 @@ th {
 	display:inline-block;
 	width:50px;
 	}	
+#edit-submitted-subwaytrips,
+#edit-submitted-lirr,
+#edit-submitted-nycbus,
+#edit-submitted-mnrr,
+#edit-submitted-expressbus,
+#edit-submitted-sirail
+{
+/*	display:inline-block;
+	width:380px;*/
+	}		
 #webform-component-subwaytrips.webform-container-inline label,
 #webform-component-lirr.webform-container-inline label,
 #webform-component-nycBus.webform-container-inline label,
