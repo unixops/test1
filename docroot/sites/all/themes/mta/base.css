@@ -197,6 +197,7 @@ th {
 	width:580px;
 	border-bottom: 1px solid #D0D0D0;
 	margin-bottom: 0;
+	margin-top:5px;
 	
 	}
 #webform-component-Question9Header p {
@@ -207,6 +208,21 @@ th {
     display: inline-block;
     text-align: center;
     width: 37px;
+    	}	
+#webform-component-Question9TopHeader {
+	width:594px;
+	margin-bottom: 0;
+	
+	}
+#webform-component-Question9TopHeader p {
+		margin-left:184px;
+	
+}
+.question9topheader-item {
+    display: inline-block;
+	padding-right: 14px;
+    text-align: center;
+    width: 86px;
     	}	
 
 
