@@ -194,20 +194,20 @@ th {
     width: 54px;
     	}	
 #webform-component-Question9Header {
-	width:640px;
+	width:594px;
 	border-bottom: 1px solid #D0D0D0;
 	margin-bottom: 0;
 	margin-top:0px;
 	
 	}
 #webform-component-Question9Header p {
-		margin-left:194px;
+		margin-left:199px;
 	
 }
 .question9header-item {
     display: inline-block;
     text-align: center;
-    width: 43px;
+    width: 39px;
     	}	
 #webform-component-Question9TopHeader {
 	width:620px;
@@ -215,60 +215,44 @@ th {
 	
 	}
 #webform-component-Question9TopHeader p {
-		margin-left:194px;
+		margin-left:199px;
 	
 }
-.question9topheader-item {
+.question9topheader-item-vd{
     display: inline-block;
 	padding: 0px;
     text-align: center;
-    width: 86px;
+	width: 78px;
+	border-left: 1px solid #D0D0D0;
+    
     	}	
 
-		
-.question9header-item-VD {
-padding-right:  3px;
-padding-right:  10px;
-}
+.question9topheader-item-d{
+    display: inline-block;
+	padding: 0px;
+    text-align: center;
+    width: 117px;
+	border-left: 1px solid #D0D0D0;
+ 
+	}	
+.question9topheader-item-s{
+    display: inline-block;
+	padding: 0px;
+    text-align: center;
+	width: 117px;
+	border-left: 1px solid #D0D0D0;
+     
+ }	
+.question9topheader-item-vs{
+    display: inline-block;
+	padding: 0px;
+    text-align: center;
+	width: 78px;
+	border-left: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;    
+	}	
 
-.question9header-item-D {
-
-padding-left:  16px;
-margin-left:2px
-}
-
-.question9header-item-5 {
-	display: inline-block;
-	text-align: center;
-	padding-right: 0px;
-	width:28px;
-}
-
-.question9header-item-7 {
-	display: inline-block;
-	text-align: center;
-	width:26px;
-	margin-left: 23px;
-	}
 	
-.question9header-item-8 {
-	display: inline-block;
-	text-align: center;
-	width:23px;
-	margin-left: 10px;
-}	
-
-.question9header-item-9 {
-	display: inline-block;
-	text-align: center;
-	width: 52px;
-}
-.question9header-item-10 {
-	display: inline-block;
-	text-align: center;
-	width:23px;
-	 padding-right: 10px;
-}	
 	
 	
 
@@ -289,7 +273,7 @@ div.form-item  .form-item-submitted-mnrr,
 div.form-item  .form-item-submitted-expressBus,
 div.form-item  .form-item-submitted-siRail
  {
-	display:inline-block;
+	display:inline;
 	width:50px; 
 	padding:0;
 	margin:0;
@@ -302,10 +286,11 @@ div.form-item  .form-item-submitted-expressBusSatisfied,
 div.form-item  .form-item-submitted-StatenIslandSatisfied,
 div.form-item  .form-item-submitted-mtaBridgesTunnelSatisfied
  {
-	display:inline-block;
+	display:inline;
 	width:33px; 
 	padding:0;
 	margin:0;
+	margin-right:0px;
 }
 
 
@@ -401,7 +386,7 @@ div.form-item .form-item-submitted-sirail
 #edit-submitted-expressbus input,
 #edit-submitted-sirail input
 {
-	display:inline-block;
+	display:inline;
 	width:50px;
 	}	
 #edit-submitted-subwaytrips,
@@ -439,7 +424,7 @@ div.form-item .form-item-submitted-sirail
 	margin-bottom:5px;
 	padding-bottom:5px;
 	border-bottom: 1px solid #D0D0D0;
-	width:580px;
+	width:594px;
 	}
 #edit-submitted-subwaysatisfied input,
 #edit-submitted-lirrsatisfied input,
@@ -451,7 +436,7 @@ div.form-item .form-item-submitted-sirail
 
 {
 	display:inline-block;
-	width:32px;
+	width:35px;
 	}	
 #webform-component-subwaysatisfied.webform-container-inline label,
 #webform-component-lirrSatisfied.webform-container-inline label,
@@ -461,8 +446,9 @@ div.form-item .form-item-submitted-sirail
 #webform-component-mtaBridgesTunnelSatisfied.webform-container-inline label,     
 #webform-component-StatenIslandSatisfied.webform-container-inline label 
 {
+	width : 200px;
 	display:inline-block;
-	width:180px;
+	margin-right:0;
 	}	
 	
 caption {
