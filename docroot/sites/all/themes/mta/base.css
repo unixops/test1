@@ -192,6 +192,8 @@ th {
     display: inline-block;
     text-align: center;
     width: 54px;
+	margin: 0;
+    padding: 0;
     	}	
 #webform-component-Question9Header {
 	width:594px;
