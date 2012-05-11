@@ -16,7 +16,6 @@ html {
 	padding:0;
 	height:90px;
 }
-
 #block-menu-menu-topbar-links a{
 	display:inline-block;
 
@@ -75,16 +74,16 @@ html {
   behavior: url("border-radius.htc"); 
 	}
 /* some basic page layout stuff to overide "grid.css" */
-.small-main {width:430px;}
-.mid-main {width:660px;}
+.small-main {width:410px;}
+.mid-main {width:630px;}
 .full-main {width:900px;}
 
 #main-message {
 	margin-left: 10px;
 }
 #sidebar_first {
-	margin:0;
-	margin-left:11px;
+	margin:-8px 0 0 11px;
+
 	float:left;
 	width:240px;
 	}
@@ -94,8 +93,8 @@ html {
 }
 #sidebar_second {
 	float:right;
-	margin-top:11px;
-	width:220px;
+	margin-top:0px;
+	width:240px;
 	}	
 ul li.leaf {
     list-style-image: url("images/arrow-gn.gif");
@@ -234,4 +233,8 @@ padding-top: 1em;
 /* End */
 
 #breadcrumbs { margin: 20px 0px 0px 20px;}
-#google_translate_element {height: 44px;}
+#google_translate_element {
+	height: 44px;
+	margin-top:-5px;
+	margin-left:10px;
+	}

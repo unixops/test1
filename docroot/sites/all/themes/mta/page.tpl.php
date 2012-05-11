@@ -1,4 +1,9 @@
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
 
+<!--[if lt IE 9]>
+			<style>.roundCorners, #block-google-appliance-ga-related-searches {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(<?php print base_path();?>sites/all/themes/mta/border-radius.htc);}</style>
+		<![endif]-->
+		
 <div id="page-wrapper">
 	<div id="page">
 		<div id="mainbox">
@@ -11,7 +16,7 @@
 			endif; ?>
 			<div id="topbar">
 				<div id="branding">
-					<a href="http://mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
+					<a href=""><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
 				</div>
 				<div id="middle-header">
 				<?php print render($page['header_middle']); ?>
@@ -33,6 +38,7 @@
 							<div class="container">
 								<div class="span-90">									
 									<?php print $messages; ?>
+									<?php print render($page['page_title']);?>
 							<!-- 	<div class="span-23 pull-1 append-1"> -->	
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first">
@@ -89,20 +95,12 @@
 			</div>
 		</div>
 	</div>
-<div class="container clear">
-				<div style="text-align: left;" class="span-15">
-					<div id="translate">
-						<div id="google_translate_element">
-							<div class="span-15" id="temp_GT">
-								<ul style="margin: 0;">
-									<li class="list_f last_list_f first_list_f"><span style="color: #0055AA; font-weight: bold; margin-right: 5px;">Google Translate</span><img src="<?php print base_path();?>sites/all/themes/mta/images/google_logo.png" style="vertical-align: baseline;"></li>
-								</ul>
-							</div>
-						</div><!-- close google_translate_element -->
-					</div><!-- close translate -->
-				</div><!-- close span-14 last -->
-
-			</div>
-</div>
-					  
-	
+<div id="google_translate_element"></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+  }, 'google_translate_element');
+}
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
