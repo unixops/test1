@@ -8,7 +8,7 @@ stylesheets[all][] = grid.css
 stylesheets[all][] = homepage.css
 stylesheets[all][] = formalize.css
 stylesheets[all][] = topbar.css
-
+stylesheets[all][] = webform.css
 
 
 
@@ -19,6 +19,7 @@ regions[navbar] = Navigation
 regions[highlighted] = Highlighted
 regions[help] = Help
 regions[content] = Content
+regions[page_title] = Page Title
 regions[postscript] = Postscript
 regions[sidebar_first] = Sidebar first
 regions[sidebar_second] = Sidebar second
