@@ -96,6 +96,7 @@ html.js input.webform-calendar {
 	
 	}
 #webform-component-Question9TopHeader p {
+		margin-bottom: 0;
 		margin-left:199px;
 	
 }
