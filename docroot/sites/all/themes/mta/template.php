@@ -1,4 +1,8 @@
 <?php
+function mta_js_alter(&$js) {
+    unset($js['misc/tableheader.js']);
+}
+
 
 function mta_preprocess_html(&$vars) {
   // Add body classes
