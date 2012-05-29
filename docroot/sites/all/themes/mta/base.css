@@ -204,10 +204,11 @@ h1#page-title  {
 	
 	 }
 .region-footer {
-	float:right;
+	text-align:right;
+	padding-bottom:5px;
 	margin-right:10px;
 	margin-top:-10px;
-}
+}	
 
 /* Use a .box to create a padded box inside a column.  */
 .box {
