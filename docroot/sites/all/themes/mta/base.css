@@ -185,12 +185,13 @@ Requires /css/border-radius.htc file
 	background: #fff;
 }
 #pageTitleArea {
-border-bottom: 1px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
+    height: 24px;
     margin-bottom: 10px;
+    margin-left: 10px;
     padding-bottom: 3px;
     padding-top: 3px;
-    width: 920px;
-	height:25px;
+    width: 915px;
 }
 h1#page-title  {
 	margin: 0;
