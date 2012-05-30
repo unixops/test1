@@ -91,11 +91,22 @@ html {
 	width:938px;
 	margin:0;
 }
+.span-ad {
+	width:760px;
+	margin:0;
+	float:left;
+}
 #sidebar_second {
 	float:right;
 	margin-top:0px;
 	width:240px;
-	}	
+	}
+#sidebar_second_ad {
+	float:left;
+    margin-left: 10px;
+    margin-right: 0;
+    margin-top: 0;
+	}			
 ul li.leaf {
     list-style-image: url("images/arrow-gn.gif");
     list-style-type: square;
