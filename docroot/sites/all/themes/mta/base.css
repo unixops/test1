@@ -194,7 +194,7 @@ Requires /css/border-radius.htc file
     width: 915px;
 }
 #pageTitleAreaAd {
-    border-bottom: 1px solid #D0D0D0;
+	border-bottom: 1px solid #B4B4B4;
     height: 24px;
     margin-bottom: 10px;
     margin-left: 10px;
@@ -206,6 +206,9 @@ h1#page-title  {
 	margin: 0;
 	 display:inline;
 	 float:left;
+    color: #0055AA;
+    font-size: 153.9%;
+    padding-bottom: 4px
 	 	}
 .region-page-title	{
 	float:right;
@@ -295,9 +298,11 @@ h1#page-title  {
 	}
 #foot-div {
 	width:777px;
+	padding-top:10px;
+
 	}
 .block-google-adsense {
-	margin:3px;
+	margin:6px;
 }
 
 .node-page-with-ad .content {
