@@ -75,7 +75,7 @@ html.js input.webform-calendar {
     padding: 0;
     	}	
 #webform-component-Question9Header {
-	width:594px;
+	width:605px;
 	border-bottom: 1px solid #D0D0D0;
 	margin-bottom: 0;
 	margin-top:0px;
@@ -83,13 +83,13 @@ html.js input.webform-calendar {
 	
 	}
 #webform-component-Question9Header p {
-		margin-left:199px;
+		margin-left:200px;
 	
 }
 .question9header-item {
     display: inline-block;
     text-align: center;
-    width: 39px;
+    width: 40px;
     	}	
 #webform-component-Question9TopHeader {
 	width:620px;
@@ -98,14 +98,14 @@ html.js input.webform-calendar {
 	}
 #webform-component-Question9TopHeader p {
 		margin-bottom: 0;
-		margin-left:199px;
+		margin-left:200px;
 	
 }
 .question9topheader-item-vd{
     display: inline-block;
 	padding: 0px;
     text-align: center;
-	width: 78px;
+	width: 79px;
 	border-left: 1px solid #D0D0D0;
     
     	}	
@@ -114,7 +114,7 @@ html.js input.webform-calendar {
     display: inline-block;
 	padding: 0px;
     text-align: center;
-    width: 117px;
+    width: 119px;
 	border-left: 1px solid #D0D0D0;
  
 	}	
@@ -122,7 +122,7 @@ html.js input.webform-calendar {
     display: inline-block;
 	padding: 0px;
     text-align: center;
-	width: 117px;
+	width: 119px;
 	border-left: 1px solid #D0D0D0;
      
  }	
@@ -130,7 +130,7 @@ html.js input.webform-calendar {
     display: inline-block;
 	padding: 0px;
     text-align: center;
-	width: 78px;
+	width: 83px;
 	border-left: 1px solid #D0D0D0;
     border-right: 1px solid #D0D0D0;    
 	}	
@@ -164,11 +164,14 @@ div.form-item  .form-item-submitted-expressBusSatisfied,
 div.form-item  .form-item-submitted-StatenIslandSatisfied,
 div.form-item  .form-item-submitted-mtaBridgesTunnelSatisfied
  {
-	display:inline;
-	width:33px; 
+
+	float:left;
+	width:39px; 
 	padding:0;
 	margin:0;
 	margin-right:0px;
+	height:28px;
+	border-left: 1px solid #D0D0D0;
 }
 
 
@@ -298,11 +301,12 @@ div.form-item .form-item-submitted-sirail
 #webform-component-mtaBridgesTunnelSatisfied.form-item 
 
 {
-	margin-top:5px;
-	margin-bottom:5px;
-	padding-bottom:5px;
-	border-bottom: 1px solid #D0D0D0;
-	width:594px;
+    border-bottom: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;
+    height: 28px;
+    margin-bottom: 0;
+    margin-top: 0;
+	width:604px;
 	}
 #edit-submitted-subwaysatisfied input,
 #edit-submitted-lirrsatisfied input,
@@ -313,9 +317,11 @@ div.form-item .form-item-submitted-sirail
 #edit-submitted-statenislandsatisfied input
 
 {
-	display:inline-block;
-	width:35px;
-	}	
+	float:left;
+	height:28px;
+	width:45px;
+	}
+
 #webform-component-subwaysatisfied.webform-container-inline label,
 #webform-component-lirrSatisfied.webform-container-inline label,
 #webform-component-mtaBusSatisfied.webform-container-inline label,
@@ -324,8 +330,13 @@ div.form-item .form-item-submitted-sirail
 #webform-component-mtaBridgesTunnelSatisfied.webform-container-inline label,     
 #webform-component-StatenIslandSatisfied.webform-container-inline label 
 {
-	width : 200px;
-	display:inline-block;
-	margin-right:0;
+    float: left;
+    height: 18px;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 200px;
 	}	
 	
