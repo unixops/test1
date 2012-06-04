@@ -185,8 +185,8 @@ Requires /css/border-radius.htc file
 	background: #fff;
 }
 #pageTitleArea {
+	display: inline-block;
     border-bottom: 1px solid #D0D0D0;
-    height: 24px;
     margin-bottom: 10px;
     margin-left: 10px;
     padding-bottom: 3px;
@@ -194,8 +194,8 @@ Requires /css/border-radius.htc file
     width: 915px;
 }
 #pageTitleAreaAd {
+	display: inline-block;
 	border-bottom: 1px solid #B4B4B4;
-    height: 24px;
     margin-bottom: 10px;
     margin-left: 10px;
     padding-bottom: 3px;
@@ -204,16 +204,24 @@ Requires /css/border-radius.htc file
 }
 h1#page-title  {
 	margin: 0;
-	 display:inline;
+	 display:inline-block;
 	 float:left;
     color: #0055AA;
     font-size: 153.9%;
-    padding-bottom: 4px
+    width:750px;
 	 	}
+h1#page-title-ad  {
+	margin: 0;
+	 display:inline-block;
+	 float:left;
+    color: #0055AA;
+    font-size: 153.9%;
+
+    width:565px;
+	 	}	 	
 .region-page-title	{
 	float:right;
-	display:inline-block;
-	width:190px;
+	width:160px;
 	
 	 }
 .region-footer {
