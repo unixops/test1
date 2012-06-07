@@ -69,10 +69,18 @@ function webform_autocomplete_access($node, $cid) {
  * Validation callback for webform component.
  */
 function webform_autocomplete_validate_restricted($element, &$form_state) {
-  $options = explode("\n", $element['#webform_component']['extra']['items']);
+	// we take $element['#webform_component']['extra']['items'] on the admin side
+	// and turn it into array instead of exploding into an array for each user.
+	// we store this array into $element['#webform_component']['extra']['items-array'];
+
+  // Old method ->> $options = explode("\n", $element['#webform_component']['extra']['items']);
+
+  $options = $element['#webform_component']['extra']['items-array'];
+  $element['#value'] = trim($element['#value']); // clean up spaces, CRs, etc.
   if (!in_array($element['#value'], $options)) {
     form_error($element, t('Invalid choice for @field.', array('@field' => $element['#title'])));
   }
+
 }
 
 /**

@@ -127,12 +127,22 @@ function _webform_edit_autocomplete($component) {
  */
 function _webform_autocomplete_admin_validate($form, &$form_state) {
   $extra = $form_state['values']['extra'];
+
+  
   if ($extra['autocomplete_restrict'] && !$extra['items']) {
     form_error($form['validation']['autocomplete_restrict'], t('You have chosen to restrict submissions to listed options, but have not entered any options.'));
   }
   if ($extra['autocomplete_restrict'] && $extra['autocomplete_existing']) {
     form_error($form['validation']['autocomplete_restrict'], t('You cannot choose both "Restrict to listed values" and "Autocomplete from existing submissions."'));
   }
+
+  // process $extra['items'] into an array for speed and to eliminate \n and CRLF inconsistancies
+    $options = explode("\n", $extra['items']);
+	$myoptions='';
+  	foreach ($options as $myval) {
+		$myoptions[] = trim($myval);
+	}
+	$form_state['values']['extra']['items-array']=$myoptions;
 }
 
 /**
