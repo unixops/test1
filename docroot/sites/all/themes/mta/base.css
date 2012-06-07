@@ -223,9 +223,10 @@ h1#page-title-ad  {
 	
 	 }
 .region-footer {
-	text-align:center;
+	text-align:left;
 	padding-bottom:5px;
 	margin-top:-10px;
+	margin-left:13px;
 }	
 
 /* Use a .box to create a padded box inside a column.  */
