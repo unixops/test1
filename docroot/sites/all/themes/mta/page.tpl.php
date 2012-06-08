@@ -10,7 +10,7 @@
 
 			<div id="topbar">
 				<div id="branding">
-					<a href="<?php print $base_path ?>"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
+					<a href="www.mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
 				</div>
 				<div id="middle-header">
 				<?php print render($page['header_middle']); ?>
