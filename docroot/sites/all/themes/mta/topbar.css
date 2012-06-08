@@ -16,6 +16,9 @@ html {
 	padding:0;
 	height:90px;
 }
+#block-menu-menu-topbar-links {
+	float:right;
+	}
 #block-menu-menu-topbar-links a{
 	display:inline-block;
 
@@ -26,7 +29,8 @@ html {
 	}
 #block-menu-menu-topbar-links a:hover{
 	color: #000000;
-	}	
+	}
+		
 #block-menu-menu-topbar-links ul{
 	margin-left:10px;
 	}	
@@ -114,7 +118,7 @@ ul li.leaf {
 }
 #topbar #branding { margin:0; padding:0;	float:left;}
 
-#topbar #search { margin:4px 15px 0 0; float:right;  padding: 0; width:270px;}
+#topbar #search { margin:4px 15px 0 0; float:right;  padding: 0;}
 #topbar #search ul#topbar-links { margin:10px 0 6px 4px; list-style-type:none; float:right; padding: 0;}
 #topbar #search ul#topbar-links li a { font-size:88%; text-decoration:none; color:#000099; }
 #topbar #search ul#topbar-links li a:visited { color: #000099; }
