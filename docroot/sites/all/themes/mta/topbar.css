@@ -134,10 +134,12 @@ ul li.leaf {
 	}
 
 #topbar #middle-header {
-	display:inline-block;
+	/* shut this region off for now 
+	display:inline-block;   */
+	display:none;
 	padding-top:15px;
 	float:left;
-	width:560px;
+	width:559px;
 	height:60px;
 }
 .region-header-middle {
