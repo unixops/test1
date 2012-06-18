@@ -17,7 +17,7 @@ html {
 	height:90px;
 }
 #block-menu-menu-topbar-links {
-	float:right;
+/*	float:right; */
 	}
 #block-menu-menu-topbar-links a{
 	display:inline-block;
