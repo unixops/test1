@@ -27,7 +27,7 @@ function google_translate_block_info() {
       if(user_access('access content')){
       $block['content']	= 
       
-      "<div id='google_translate_element'></div><script>function googleTranslateElementInit() {
+      "<div id='google_translate_element'></div><script type="text/css">function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
