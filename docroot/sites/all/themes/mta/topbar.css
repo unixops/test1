@@ -16,6 +16,9 @@ html {
 	padding:0;
 	height:90px;
 }
+#block-menu-menu-topbar-links {
+/*	float:right; */
+	}
 #block-menu-menu-topbar-links a{
 	display:inline-block;
 
@@ -26,7 +29,8 @@ html {
 	}
 #block-menu-menu-topbar-links a:hover{
 	color: #000000;
-	}	
+	}
+		
 #block-menu-menu-topbar-links ul{
 	margin-left:10px;
 	}	
@@ -91,11 +95,22 @@ html {
 	width:938px;
 	margin:0;
 }
+.span-ad {
+	width:754px;
+	margin:0;
+	float:left;
+}
 #sidebar_second {
 	float:right;
 	margin-top:0px;
 	width:240px;
-	}	
+	}
+#sidebar_second_ad {
+	float:left;
+    margin-left: 10px;
+    margin-right: 0;
+    margin-top: 0;
+	}			
 ul li.leaf {
     list-style-image: url("images/arrow-gn.gif");
     list-style-type: square;
@@ -103,7 +118,7 @@ ul li.leaf {
 }
 #topbar #branding { margin:0; padding:0;	float:left;}
 
-#topbar #search { margin:4px 15px 0 0; float:right;  padding: 0; width:270px;}
+#topbar #search { margin:4px 15px 0 0; float:right;  padding: 0;}
 #topbar #search ul#topbar-links { margin:10px 0 6px 4px; list-style-type:none; float:right; padding: 0;}
 #topbar #search ul#topbar-links li a { font-size:88%; text-decoration:none; color:#000099; }
 #topbar #search ul#topbar-links li a:visited { color: #000099; }
@@ -122,7 +137,7 @@ ul li.leaf {
 	display:inline-block;
 	padding-top:15px;
 	float:left;
-	width:560px;
+	width:550px;
 	height:60px;
 }
 .region-header-middle {

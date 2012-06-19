@@ -346,6 +346,8 @@ ini_set('session.cookie_lifetime', 2000000);
 # $conf['theme_default'] = 'garland';
 # $conf['anonymous'] = 'Visitor';
 
+	$conf['https'] = TRUE;
+
 /**
  * A custom theme can be set for the offline page. This applies when the site
  * is explicitly set to maintenance mode through the administration page or when

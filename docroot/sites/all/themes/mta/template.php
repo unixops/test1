@@ -22,6 +22,13 @@ function mta_preprocess_html(&$vars) {
 }
 
 function mta_preprocess_page(&$vars) {
+	
+  if (isset($vars['node']->type)) {
+  	if ($vars['node']->type == "page_with_ad") {
+    $vars['theme_hook_suggestions'][] = 'page__ad';
+  	}   
+  }
+  
   // Suckerfish menus
   $vars['main_sf_menu'] = FALSE;
   if (theme_get_setting('toggle_main_menu') && !empty($vars['main_menu'])) {
