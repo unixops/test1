@@ -144,6 +144,8 @@ html.js input.webform-calendar {
 	
 	
 }
+
+
 div.form-item  .form-item-submitted-subwaytrips,
 div.form-item  .form-item-submitted-lirr,
 div.form-item  .form-item-submitted-nycBus,
@@ -278,15 +280,28 @@ div.form-item .form-item-submitted-sirail
 	width:380px;*/
 	}		
 #webform-component-subwaytrips.webform-container-inline label,
-#webform-component-lirr.webform-container-inline label,
-#webform-component-nycBus.webform-container-inline label,
-#webform-component-mnrr.webform-container-inline label,
-#webform-component-expressBus.webform-container-inline label,     
-#webform-component-siRail.webform-container-inline label 
+#webform-component-lirr.webform-container-inline  label,
+#webform-component-nycBus.webform-container-inline  label,
+#webform-component-mnrr.webform-container-inline  label,
+#webform-component-expressBus.webform-container-inline  label,     
+#webform-component-siRail.webform-container-inline  label 
 {
 	display:inline-block;
 	width:180px;
 	}
+	
+#webform-component-subwaytrips.webform-container-inline label.option,
+#webform-component-lirr.webform-container-inline  label.option,
+#webform-component-nycBus.webform-container-inline  label.option,
+#webform-component-mnrr.webform-container-inline  label.option,
+#webform-component-expressBus.webform-container-inline  label.option,     
+#webform-component-siRail.webform-container-inline  label.option 
+{
+	display:none;
+	width:180px;
+	}
+	
+	
 /* Begin CSS section for satisfaction 
 */	
 #webform-component-subwaysatisfied.form-item,
@@ -328,4 +343,18 @@ div.form-item .form-item-submitted-sirail
 	display:inline-block;
 	margin-right:0;
 	}	
+	
+#webform-component-subwaysatisfied.webform-container-inline label.option,
+#webform-component-lirrSatisfied.webform-container-inline label.option,
+#webform-component-mtaBusSatisfied.webform-container-inline label.option,
+#webform-component-mnrSatisfied.webform-container-inline label.option,
+#webform-component-expressBusSatisfied.webform-container-inline label.option,  
+#webform-component-mtaBridgesTunnelSatisfied.webform-container-inline label.option,     
+#webform-component-StatenIslandSatisfied.webform-container-inline label.option 
+{
+	
+	display:none;
+	}	
+	
+	
 	
