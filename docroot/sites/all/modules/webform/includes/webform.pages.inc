@@ -139,6 +139,10 @@ function webform_configure_form($form, &$form_state, $node) {
     '#type' => 'select',
     '#options' => array(
       '-1' => t('ever'),
+  	  '60' => t('every minute'),
+  	  '300' => t('every 5 minutes'),
+      '600' => t('every 10 minutes'),
+      '1800' => t('every 30 minutes'),
       '3600' => t('every hour'),
       '86400' => t('every day'),
       '604800' => t('every week'),

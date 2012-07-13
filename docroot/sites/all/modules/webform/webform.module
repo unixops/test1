@@ -3,7 +3,7 @@
 /**
  * This module provides a simple way to create forms and questionnaires.
  *
- * The initial development of this module was sponsered by ÅF Industri AB, Open
+ * The initial development of this module was sponsered by Ã…F Industri AB, Open
  * Source City and Karlstad University Library. Continued development sponsored
  * by Lullabot.
  *
@@ -1608,10 +1608,13 @@ function theme_webform_view_messages($variables) {
       $message = t('You have submitted this form the maximum number of times (@count).', array('@count' => $node->webform['submit_limit']));
     }
     elseif ($node->webform['submit_interval'] == -1 && $node->webform['submit_limit'] == 1) {
-      $message = t('You have already submitted this form.');
+      // $message = t('You have already submitted this form.');
+      $message = t('Please re-submit this form later.');
     }
     else {
-      $message = t('You may not submit another entry at this time.');
+     // $message = t('You may not submit another entry at this time.');
+            $message = t('Please re-submit this form later.');
+      
     }
     $type = 'error';
   }
@@ -1621,6 +1624,7 @@ function theme_webform_view_messages($variables) {
     }
     else {
       $message = t('You may not submit another entry at this time.');
+     	
     }
   }
 
@@ -3232,7 +3236,7 @@ function _webform_safe_name($name) {
   }
   else {
     $new = str_replace(
-      array(' ', '-', '/', '€', 'ƒ', 'Š', 'Ž', 'š', 'ž', 'Ÿ', '¢', '¥', 'µ', 'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ñ', 'Ò', 'Ó', 'Ô', 'Õ', 'Ö', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'à', 'á', 'â', 'ã', 'ä', 'å', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ñ', 'ò', 'ó', 'ô', 'õ', 'ö', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'ÿ', 'Œ',  'œ',  'Æ',  'Ð',  'Þ',  'ß',  'æ',  'ð',  'þ'),
+      array(' ', '-', '/', 'â‚¬', 'Æ’', 'Å ', 'Å½', 'Å¡', 'Å¾', 'Å¸', 'Â¢', 'Â¥', 'Âµ', 'Ã€', 'Ã�', 'Ã‚', 'Ãƒ', 'Ã„', 'Ã…', 'Ã‡', 'Ãˆ', 'Ã‰', 'ÃŠ', 'Ã‹', 'ÃŒ', 'Ã�', 'ÃŽ', 'Ã�', 'Ã‘', 'Ã’', 'Ã“', 'Ã”', 'Ã•', 'Ã–', 'Ã˜', 'Ã™', 'Ãš', 'Ã›', 'Ãœ', 'Ã�', 'Ã ', 'Ã¡', 'Ã¢', 'Ã£', 'Ã¤', 'Ã¥', 'Ã§', 'Ã¨', 'Ã©', 'Ãª', 'Ã«', 'Ã¬', 'Ã­', 'Ã®', 'Ã¯', 'Ã±', 'Ã²', 'Ã³', 'Ã´', 'Ãµ', 'Ã¶', 'Ã¸', 'Ã¹', 'Ãº', 'Ã»', 'Ã¼', 'Ã½', 'Ã¿', 'Å’',  'Å“',  'Ã†',  'Ã�',  'Ãž',  'ÃŸ',  'Ã¦',  'Ã°',  'Ã¾'),
       array('_', '_', '_', 'E', 'f', 'S', 'Z', 's', 'z', 'Y', 'c', 'Y', 'u', 'A', 'A', 'A', 'A', 'A', 'A', 'C', 'E', 'E', 'E', 'E', 'I', 'I', 'I', 'I', 'N', 'O', 'O', 'O', 'O', 'O', 'O', 'U', 'U', 'U', 'U', 'Y', 'a', 'a', 'a', 'a', 'a', 'a', 'c', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'n', 'o', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u', 'y', 'y', 'OE', 'oe', 'AE', 'DH', 'TH', 'ss', 'ae', 'dh', 'th'),
       $new);
   }
