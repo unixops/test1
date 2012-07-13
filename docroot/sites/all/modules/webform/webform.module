@@ -1609,11 +1609,11 @@ function theme_webform_view_messages($variables) {
     }
     elseif ($node->webform['submit_interval'] == -1 && $node->webform['submit_limit'] == 1) {
       // $message = t('You have already submitted this form.');
-      $message = t('Please re-submit this form later.');
+      $message = t('Please resubmit this form later.');
     }
     else {
      // $message = t('You may not submit another entry at this time.');
-            $message = t('Please re-submit this form later.');
+            $message = t('Please resubmit this form later.');
       
     }
     $type = 'error';
