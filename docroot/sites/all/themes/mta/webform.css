@@ -270,6 +270,7 @@ div.form-item .form-item-submitted-sirail
 #edit-submitted-sirail input
 {
 	display:inline;
+	padding:0;
 	width:50px;
 	}	
 #edit-submitted-subwaytrips,
