@@ -4,23 +4,6 @@ function mta_js_alter(&$js) {
 }
 
 
-function mta_preprocess_html(&$vars) {
-  // Add body classes
-  $vars['classes_array'][] = theme_get_setting('logo') ? 'with-site-logo' : 'no-site-logo';
-  $vars['classes_array'][] = (theme_get_setting('toggle_name') && filter_xss_admin(variable_get('site_name', 'Drupal'))) ? 'with-site-name' : 'no-site-name';
-  $vars['classes_array'][] = (theme_get_setting('toggle_slogan') && filter_xss_admin(variable_get('site_slogan', ''))) ? 'with-site-slogan' : 'no-site-slogan';
-  
-  // Add css for colour schemes
-  $colour = theme_get_setting('colour');
-  $path = drupal_get_path('theme', 'arras') . '/arras-' . $colour . '.css';
-  if (file_exists($path)) {
-    drupal_add_css($path, array('group' => CSS_THEME));
-  }
-
-  // Add conditional CSS
-  drupal_add_css(path_to_theme() . '/ie6.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 6', '!IE' => FALSE), 'preprocess' => FALSE));
-}
-
 function mta_preprocess_page(&$vars) {
 	
   if (isset($vars['node']->type)) {
