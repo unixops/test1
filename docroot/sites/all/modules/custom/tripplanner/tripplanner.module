@@ -1,0 +1,120 @@
+<?php
+/**
+* @file
+* A block .
+*/
+?>
+
+<?php
+
+function tripplanner_menu()
+{
+
+	$menu['tripplanner_form'] = array
+	(
+		'title' => 'TripPlanner',
+		'description' => 'Practicing theming forms in Drupal 7',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('tripplanner_form'),
+		'access callback' => TRUE,
+	);
+	$menu['tripplaner_from/autocomplete'] = array(
+    'page callback' => '_tripplaner_from_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+	return $menu;
+}
+/**
+* Implements hook_block_info().
+*/
+function tripplanner_block_info() {
+  $blocks['tripplanner'] = array(
+    'info' => t('Tripplanner'), //The name that will appear in the block list.
+    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+ function tripplanner_block_view($delta = '') {
+  switch($delta){
+    case 'tripplanner':
+      $block['subject'] = '';
+      if(user_access('access content')){
+   $block['content']=drupal_get_form('tripplanner_form');
+      }
+  
+  return $block;
+  }
+ }
+function tripplanner_form($form, &$form_state) {
+  $form = array();
+
+  $form['from'] = array(
+    '#title' => t('From'),
+    '#type' => 'textfield',
+  	'#size' => 30,
+    '#autocomplete_path' => 'tripplaner_from/autocomplete',
+    );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  );
+  // Get the path to the module
+$path = drupal_get_path('module', 'tripplanner');
+// Attach the CSS and JS to the form
+$form['#attached'] = array
+(
+//	'css' => array
+//	(
+//		'type' => 'file',
+//		'data' => $path . '/form_theme.css',
+//	),
+	'js' => array
+	(
+		'type' => 'file',
+		'data' => $path . '/tripplanner.js',
+	),
+);
+  return $form;
+}
+
+function _tripplaner_from_autocomplete($string) {
+  $matches = array();
+ $matches[0] = 'a';
+ $matches[1] = 'b';
+  $matches[2] = 'c';
+ 
+  // return for JS
+  drupal_json_output($matches);
+}
+function tripplanner_form_theme()
+{
+	return array
+	(
+		'tripplanner_form' => array
+		(
+			'render element' => 'form'
+		),
+	);
+}
+
+
+
+function theme_tripplanner_form($form) {
+  $output = '<div class="feature-box roundCorners" id="mytrip">
+
+<h2 class="tp-logo"><span></span></h2>';
+
+  $output .= drupal_render($form['from']);
+  $output .= drupal_render($form['submit']);
+  $output .= drupal_render_children($form);
+  
+  $output .= '</div>';
+  
+  return $output;
+}
