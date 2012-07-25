@@ -6,18 +6,12 @@
 ?>
 
 <?php
-
+/**
+ * Implements hook_menu().  Register the tripplanner autocomplete callback function
+ */
 function tripplanner_menu()
 {
 
-	$menu['tripplanner_form'] = array
-	(
-		'title' => 'TripPlanner',
-		'description' => 'Practicing theming forms in Drupal 7',
-		'page callback' => 'drupal_get_form',
-		'page arguments' => array('tripplanner_form'),
-		'access callback' => TRUE,
-	);
 	$menu['tripplaner_from/autocomplete'] = array(
     'page callback' => '_tripplaner_from_autocomplete',
     'access arguments' => array('access content'),
@@ -50,7 +44,10 @@ function tripplanner_block_info() {
   return $block;
   }
  }
-function tripplanner_form($form, &$form_state) {
+/**
+ * Implements hook_form().  Register a new form
+ */
+ function tripplanner_form($form, &$form_state) {
   $form = array();
 
   $form['from'] = array(
@@ -83,8 +80,14 @@ $form['#attached'] = array
   return $form;
 }
 
+/**
+ * Implements the autocomplete callback().  Register a theme function
+ */
 function _tripplaner_from_autocomplete($string) {
-  $matches = array();
+	// here is where we look for and return the auto complete choices based on the users input
+
+// just some fake code to see if the hook is working	
+	$matches = array();
  $matches[0] = 'a';
  $matches[1] = 'b';
   $matches[2] = 'c';
@@ -92,29 +95,42 @@ function _tripplaner_from_autocomplete($string) {
   // return for JS
   drupal_json_output($matches);
 }
-function tripplanner_form_theme()
+/**
+ * Implements hook_theme().  Register a theme function
+ */
+
+function tripplanner_theme()
 {
 	return array
 	(
 		'tripplanner_form' => array
 		(
-			'render element' => 'form'
+			'render element' => 'form' // we just pass the whole form
 		),
 	);
 }
 
+/**
+ * Implements theme_hook(). Perform a theme function
+ */
 
-
-function theme_tripplanner_form($form) {
+function theme_tripplanner_form($vars) {
+	
+	$form=$vars['form']; // our form is passed in $vars
+	
+	// Here we add the markup for the overall trip planner block
   $output = '<div class="feature-box roundCorners" id="mytrip">
 
 <h2 class="tp-logo"><span></span></h2>';
-
+ // now we use drupal_render to turn the form elements into HTML and add it the output buffer
   $output .= drupal_render($form['from']);
   $output .= drupal_render($form['submit']);
+ 
+  // Finially, we need to render the Drupal "magic fields" using a different function 
   $output .= drupal_render_children($form);
   
+  //Close the markup
   $output .= '</div>';
-  
+  // return the finsihed HTML
   return $output;
 }
