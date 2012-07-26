@@ -4,9 +4,9 @@ core = 7.x
 package = "Node export"
 configure = admin/config/content/node_export
 files[]=views/views_handler_field_node_link_export.inc
-; Information added by drupal.org packaging script on 2012-04-13
-version = "7.x-3.0-rc2"
+; Information added by drupal.org packaging script on 2012-05-24
+version = "7.x-3.0-rc3"
 core = "7.x"
 project = "node_export"
-datestamp = "1334281012"
+datestamp = "1337819169"
 

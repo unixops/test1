@@ -12,7 +12,7 @@
  *
  * @see template_preprocess_google_appliance_search_form()
  */
-// dsm($variables);
+//dsm($variables);
 ?>
 <div class="container-inline">
   <?php print $search_form_complete; ?>
