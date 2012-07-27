@@ -25,7 +25,8 @@
 			// which is the Drupal JavaScript equivalent
 			// of the Drupal PHP t() function, and allows
 			// for translating of text in a JavaScript document
-			defaults["#edit-from"] = Drupal.t("Full Address, Landmark or Station Name");
+			defaults["#edit-txtorigininput"] = Drupal.t("Full Address, Landmark or Station Name");
+			defaults["#edit-txtdestinationinput"] = Drupal.t("Full Address, Landmark or Station Name");
 			// Next we loop through each of the elements of the array
 			var element;
 			for(element in defaults)
@@ -52,6 +53,7 @@
 						if($(this).val() === defaults[key]) {
 							$(this).css("color", "black").val("");
 						}
+						
 					}).blur(function()
 					{
 						// This is entered on blur, when the element

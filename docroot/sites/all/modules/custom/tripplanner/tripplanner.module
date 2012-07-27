@@ -6,14 +6,52 @@
 ?>
 
 <?php
+global $loc_array;
 /**
  * Implements hook_menu().  Register the tripplanner autocomplete callback function
  */
+function tripplanner_init(){
+	global $loc_array;
+	$tp_start = microtime();
+	$loc_array = variable_get('tp_array','');
+	if ($loc_array == ''){
+		$path = drupal_get_path('module', 'tripplanner');
+		//the file landmarks.js has all the location information needed for the TripPlanner suggestions);
+		$array = split("\n", file_get_contents($path."/landmarks.js"));
+		
+		// the 7th element has the big string we need to parse
+		// the big string we want starts with a " so get it by doing another split
+		
+			$bigstring=split('"',$array[6]);
+		
+		// each location is a series of 5 elements seperated by ':::'	
+			
+			$loc_strings=split(':::',$bigstring[1]);
+		// we put each element into it's own array so we can use them later
+			foreach ($loc_strings as $loc_string){
+				$loc_split = array();
+				$loc_split = split('\$',$loc_string);
+				$loc_array['lat'][]=$loc_split[0];
+				$loc_array['lon'][]=$loc_split[1];
+				$loc_array['text'][]=$loc_split[2];
+				$loc_array['type'][]=$loc_split[3];
+				$loc_array['sub'][]=$loc_split[4];
+			}
+			dsm('doing update');
+			variable_set('tp_array',$loc_array);
+	}
+	dsm(microtime()-$tp_start);
+}
 function tripplanner_menu()
 {
 
 	$menu['tripplaner_from/autocomplete'] = array(
     'page callback' => '_tripplaner_from_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK
+  );
+  	$menu['tripplaner_to/autocomplete'] = array(
+    'page callback' => '_tripplaner_to_autocomplete',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK
   );
@@ -50,13 +88,20 @@ function tripplanner_block_info() {
  function tripplanner_form($form, &$form_state) {
   $form = array();
 
-  $form['from'] = array(
+  $form['txtorigininput'] = array(
     '#title' => t('From'),
     '#type' => 'textfield',
-  	'#size' => 30,
+
+//    	'#size' => '100%',
     '#autocomplete_path' => 'tripplaner_from/autocomplete',
     );
+  $form['txtdestinationinput'] = array(
+    '#title' => t('To'),
+    '#type' => 'textfield',
 
+//    	'#size' => '100%',
+    '#autocomplete_path' => 'tripplaner_to/autocomplete',
+    );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => 'Submit',
@@ -66,35 +111,81 @@ $path = drupal_get_path('module', 'tripplanner');
 // Attach the CSS and JS to the form
 $form['#attached'] = array
 (
-//	'css' => array
-//	(
-//		'type' => 'file',
-//		'data' => $path . '/form_theme.css',
-//	),
-	'js' => array
+	'css' => array
 	(
 		'type' => 'file',
-		'data' => $path . '/tripplanner.js',
+		'data' => $path . '/tripplanner.css',
+	),
+	'js' => array
+	(
+		array ('type' => 'file',
+				'data' => $path . '/tripplanner.js',
+		),
+
+//		array ('type' => 'file',
+//		'data' => $path . '/tripplanner.ext.js',
+//		),
+
+	//	array ('type' => 'file',
+	//	'data' => $path . '/landmarks.js',
+	//	),
 	),
 );
   return $form;
 }
 
 /**
- * Implements the autocomplete callback().  Register a theme function
+ * Implements the autocomplete callback().  
  */
 function _tripplaner_from_autocomplete($string) {
 	// here is where we look for and return the auto complete choices based on the users input
+    global $loc_array;
+  if ($string) {
+    $results = array();
 
-// just some fake code to see if the hook is working	
-	$matches = array();
- $matches[0] = 'a';
- $matches[1] = 'b';
-  $matches[2] = 'c';
- 
-  // return for JS
-  drupal_json_output($matches);
-}
+    $count = 0;
+    // Search from prepulated options
+      foreach ($loc_array['text'] as $val) {
+        if (stripos($val, $string) !== FALSE) {
+          $results[$val] = $val;
+          // Limit to 20 results
+          if (++$count >= 20) {
+            break;
+          }
+        }
+      }
+    }
+    // Search from existing submissions
+    // Only fire the query if we have fewer than 20 results already
+    // Sort php and sql results together
+    drupal_json_output($results);
+  }
+  /**
+ * Implements the autocomplete callback().  
+ */
+function _tripplaner_to_autocomplete($string) {
+	// here is where we look for and return the auto complete choices based on the users input
+    global $loc_array;
+  if ($string) {
+    $results = array();
+
+    $count = 0;
+    // Search from prepulated options
+      foreach ($loc_array['text'] as $val) {
+        if (stripos($val, $string) !== FALSE) {
+          $results[$val] = $val;
+          // Limit to 20 results
+          if (++$count >= 20) {
+            break;
+          }
+        }
+      }
+    }
+    // Search from existing submissions
+    // Only fire the query if we have fewer than 20 results already
+    // Sort php and sql results together
+    drupal_json_output($results);
+  }  
 /**
  * Implements hook_theme().  Register a theme function
  */
@@ -123,7 +214,9 @@ function theme_tripplanner_form($vars) {
 
 <h2 class="tp-logo"><span></span></h2>';
  // now we use drupal_render to turn the form elements into HTML and add it the output buffer
-  $output .= drupal_render($form['from']);
+  $output .= drupal_render($form['txtorigininput']);
+  $output .= drupal_render($form['txtdestinationinput']);
+  
   $output .= drupal_render($form['submit']);
  
   // Finially, we need to render the Drupal "magic fields" using a different function 
