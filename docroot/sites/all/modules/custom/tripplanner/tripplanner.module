@@ -12,7 +12,8 @@ global $loc_array;
  */
 function tripplanner_init(){
 	global $loc_array;
-	$tp_start = microtime();
+	$tp_start = microtime(true);
+	$loc_array=array();
 	$loc_array = variable_get('tp_array','');
 	if ($loc_array == ''){
 		$path = drupal_get_path('module', 'tripplanner');
@@ -40,7 +41,7 @@ function tripplanner_init(){
 			dsm('doing update');
 			variable_set('tp_array',$loc_array);
 	}
-	dsm(microtime()-$tp_start);
+	dsm(number_format((microtime(true)-$tp_start)*1000,2).' mS');
 }
 function tripplanner_menu()
 {
