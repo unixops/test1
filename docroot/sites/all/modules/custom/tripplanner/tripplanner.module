@@ -41,7 +41,7 @@ function tripplanner_init(){
 			dsm('doing update');
 			variable_set('tp_array',$loc_array);
 	}
-	dsm(number_format((microtime(true)-$tp_start)*1000,2).' mS');
+	dsm(number_format((microtime(true)-$tp_start)*1000,3).' mS');
 }
 function tripplanner_menu()
 {
