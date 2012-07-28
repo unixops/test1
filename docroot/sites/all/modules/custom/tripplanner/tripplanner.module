@@ -6,16 +6,15 @@
 ?>
 
 <?php
-global $loc_array;
 /**
- * Implements hook_menu().  Register the tripplanner autocomplete callback function
+ * Implements hook_init().  setup the tripplanner autocomplete callback data
  */
 function tripplanner_init(){
 	global $loc_array;
 	$tp_start = microtime(true);
 	$loc_array=array();
 	$loc_array = variable_get('tp_array','');
-	if ($loc_array == ''){
+	if (empty($loc_array)){
 		$path = drupal_get_path('module', 'tripplanner');
 		//the file landmarks.js has all the location information needed for the TripPlanner suggestions);
 		$array = split("\n", file_get_contents($path."/landmarks.js"));
@@ -38,10 +37,11 @@ function tripplanner_init(){
 				$loc_array['type'][]=$loc_split[3];
 				$loc_array['sub'][]=$loc_split[4];
 			}
-			dsm('doing update');
+			//dsm('doing update');
+		// we save the array as a Drupal variable for next time through
 			variable_set('tp_array',$loc_array);
 	}
-	dsm(number_format((microtime(true)-$tp_start)*1000,3).' mS');
+	//dsm(number_format((microtime(true)-$tp_start)*1000,3).' mS');
 }
 function tripplanner_menu()
 {
@@ -139,13 +139,15 @@ $form['#attached'] = array
  * Implements the autocomplete callback().  
  */
 function _tripplaner_from_autocomplete($string) {
+		$tp_start = microtime(true);
+	
 	// here is where we look for and return the auto complete choices based on the users input
     global $loc_array;
   if ($string) {
     $results = array();
 
     $count = 0;
-    // Search from prepulated options
+    // Search landmark array for matches
       foreach ($loc_array['text'] as $val) {
         if (stripos($val, $string) !== FALSE) {
           $results[$val] = $val;
@@ -159,12 +161,16 @@ function _tripplaner_from_autocomplete($string) {
     // Search from existing submissions
     // Only fire the query if we have fewer than 20 results already
     // Sort php and sql results together
+    dsm('autocomplete "From" callback time '.number_format((microtime(true)-$tp_start)*1000,3).' mS');
+    
     drupal_json_output($results);
   }
   /**
  * Implements the autocomplete callback().  
  */
 function _tripplaner_to_autocomplete($string) {
+		$tp_start = microtime(true);
+	
 	// here is where we look for and return the auto complete choices based on the users input
     global $loc_array;
   if ($string) {
@@ -185,6 +191,8 @@ function _tripplaner_to_autocomplete($string) {
     // Search from existing submissions
     // Only fire the query if we have fewer than 20 results already
     // Sort php and sql results together
+    dsm('autocomplete "To" callback time '.number_format((microtime(true)-$tp_start)*1000,3).' mS');
+    
     drupal_json_output($results);
   }  
 /**

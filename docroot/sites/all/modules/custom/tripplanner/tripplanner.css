@@ -7,3 +7,8 @@
 	padding-bottom:2px;
 	width:100%;
 	}
+.form-item-txtorigininput #autocomplete, 
+.form-item-txtdestinationinput #autocomplete {
+		
+	font-size:10px;
+	}
