@@ -1,7 +1,8 @@
 /* $Id: $ */
 #edit-txtorigininput,
 #edit-txtdestinationinput {
-	font-size:10px;
+	background:none;
+	font-size:11px;
 	padding:0px;
 	padding-top:2px;
 	padding-bottom:2px;
@@ -9,6 +10,12 @@
 	}
 .form-item-txtorigininput #autocomplete, 
 .form-item-txtdestinationinput #autocomplete {
-		
-	font-size:10px;
+	padding:3px;
+	width:230px !important;
+	background-color:#fff;	
+	font-size:11px;
 	}
+.form-item-txtorigininput #autocomplete li,
+.form-item-txtdestinationinput #autocomplete li {
+	padding:1px;
+}
