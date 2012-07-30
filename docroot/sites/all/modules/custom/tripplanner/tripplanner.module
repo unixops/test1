@@ -107,6 +107,18 @@ function tripplanner_block_info() {
 //    	'#size' => '100%',
     '#autocomplete_path' => 'tripplaner_to/autocomplete',
     );
+  // Access log settings:
+  $options = array('1' => t('Depart at'), '0' => t('Arrive by'));
+
+  $form['tp_arrv_dep'] = array(
+    '#type' => 'radios',
+    '#title' => 'Choose:',
+    '#required' => TRUE,
+  
+    '#default_value' =>  1,
+    '#options' => $options,
+  );
+    
    $form['tp_date'] = array(
   '#type' => 'date_popup',
   '#title' => t('Trip Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp;&nbsp; Time'),
@@ -114,7 +126,14 @@ function tripplanner_block_info() {
   '#maxlength' => 7,
   '#required' => TRUE,
   '#date_format' => 'n/j/y g:i' // With this format you'll get a date popup box AND a time widget. Obviously you can change this to whatever you need.
-); 
+);
+
+  $form['tp_bus'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Bus'),
+    '#default_value' => true,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => 'Submit',
@@ -240,7 +259,8 @@ function theme_tripplanner_form($vars) {
   $output .= drupal_render($form['txtorigininput']);
   $output .= drupal_render($form['txtdestinationinput']);
   $output .= drupal_render($form['tp_date']);
-  
+  $output .= drupal_render($form['tp_arrv_dep']);
+
   $output .= drupal_render($form['submit']);
  
   // Finially, we need to render the Drupal "magic fields" using a different function 

@@ -27,13 +27,29 @@ label[for=edit-tp-date-datepicker-popup-0],
 label[for=edit-tp-date-timeEntry-popup-1] {
 	display:none;
 	}
+	
+label[for=edit-tp-arrv-dep-1],
+label[for=edit-tp-arrv-dep-0] {
+	float:left;
+	padding-right:2px;
+	}	
+	
+#edit-tp-arrv-dep > .form-item-tp-arrv-dep	{
+	float:left;
+	}
+#edit-tp-arrv-dep-1 {
+	margin-right:10px;
+}	
+	
 #edit-tp-date-timeEntry-popup-1{
 	margin-right:0;
 	font-size:12px;
+	height: 19px;
 	width:70px;
 }
 #edit-tp-date-datepicker-popup-0 {
 	font-size:12px;
+	height: 19px;
 	width:70px
 	}
 .form-item .form-item-tp-date-time {
@@ -44,8 +60,18 @@ label[for=edit-tp-date-timeEntry-popup-1] {
 	margin-right:0;
 }
 .form-item.form-type-date-popup.form-item-tp-date {
-	margin-right:0;
+	margin:0;
 	}
+.form-item.form-type-radio.form-item-tp-arrv-dep {
+	margin-top:1px;
+	}	
+.form-item.form-type-radios.form-item-tp-arrv-dep	{
+	margin:0;
+}
 #edit-tp-date .description {
 	display:none;
+	}
+label[for=edit-tp-arrv-dep]	 {
+	float:left;
+	margin-right:5px;
 	}
