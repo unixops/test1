@@ -19,3 +19,33 @@
 .form-item-txtdestinationinput #autocomplete li {
 	padding:1px;
 }
+.container-inline-date .date-padding {
+    display:inline-block;
+    padding: 2px;
+}
+label[for=edit-tp-date-datepicker-popup-0],
+label[for=edit-tp-date-timeEntry-popup-1] {
+	display:none;
+	}
+#edit-tp-date-timeEntry-popup-1{
+	margin-right:0;
+	font-size:12px;
+	width:70px;
+}
+#edit-tp-date-datepicker-popup-0 {
+	font-size:12px;
+	width:70px
+	}
+.form-item .form-item-tp-date-time {
+	margin-right:0;
+	padding-left:59px;
+}
+.form-item .form-item-tp-date {
+	margin-right:0;
+}
+.form-item.form-type-date-popup.form-item-tp-date {
+	margin-right:0;
+	}
+#edit-tp-date .description {
+	display:none;
+	}

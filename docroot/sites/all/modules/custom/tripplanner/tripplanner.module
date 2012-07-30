@@ -92,6 +92,8 @@ function tripplanner_block_info() {
   $form['txtorigininput'] = array(
     '#title' => t('From'),
     '#type' => 'textfield',
+    '#required' => TRUE,
+  
 
 //    	'#size' => '100%',
     '#autocomplete_path' => 'tripplaner_from/autocomplete',
@@ -99,15 +101,17 @@ function tripplanner_block_info() {
   $form['txtdestinationinput'] = array(
     '#title' => t('To'),
     '#type' => 'textfield',
+    '#required' => TRUE,
+  
 
 //    	'#size' => '100%',
     '#autocomplete_path' => 'tripplaner_to/autocomplete',
     );
    $form['tp_date'] = array(
   '#type' => 'date_popup',
-  '#title' => t('Trip Date'),
-  '#size' => 10,
-  '#maxlength' => 128,
+  '#title' => t('Trip Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp;&nbsp; Time'),
+  '#size' => 7,
+  '#maxlength' => 7,
   '#required' => TRUE,
   '#date_format' => 'n/j/y g:i' // With this format you'll get a date popup box AND a time widget. Obviously you can change this to whatever you need.
 ); 
