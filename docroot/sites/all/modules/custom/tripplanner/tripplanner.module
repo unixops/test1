@@ -11,7 +11,7 @@
  */
 function tripplanner_init(){
 	global $loc_array;
-	$tp_start = microtime(true);
+	//$tp_start = microtime(true);
 	$loc_array=array();
 	$loc_array = variable_get('tp_array','');
 	if (empty($loc_array)){
@@ -103,6 +103,14 @@ function tripplanner_block_info() {
 //    	'#size' => '100%',
     '#autocomplete_path' => 'tripplaner_to/autocomplete',
     );
+   $form['tp_date'] = array(
+  '#type' => 'date_popup',
+  '#title' => t('Trip Date'),
+  '#size' => 10,
+  '#maxlength' => 128,
+  '#required' => TRUE,
+  '#date_format' => 'n/j/y g:i' // With this format you'll get a date popup box AND a time widget. Obviously you can change this to whatever you need.
+); 
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => 'Submit',
@@ -127,9 +135,6 @@ $form['#attached'] = array
 //		'data' => $path . '/tripplanner.ext.js',
 //		),
 
-	//	array ('type' => 'file',
-	//	'data' => $path . '/landmarks.js',
-	//	),
 	),
 );
   return $form;
@@ -142,14 +147,17 @@ function _tripplaner_from_autocomplete($string) {
 		$tp_start = microtime(true);
 	
 	// here is where we look for and return the auto complete choices based on the users input
-    global $loc_array;
+	//$loc_array = variable_get('tp_array','');
+		
+		global $loc_array;
   if ($string) {
     $results = array();
 
     $count = 0;
     // Search landmark array for matches
       foreach ($loc_array['text'] as $val) {
-        if (stripos($val, $string) !== FALSE) {
+      	$pos_match = stripos($val, $string);
+        if ($pos_match === 0) {
           $results[$val] = $val;
           // Limit to 20 results
           if (++$count >= 20) {
@@ -172,7 +180,9 @@ function _tripplaner_to_autocomplete($string) {
 		$tp_start = microtime(true);
 	
 	// here is where we look for and return the auto complete choices based on the users input
-    global $loc_array;
+	//$loc_array = variable_get('tp_array','');
+		
+	   global $loc_array;
   if ($string) {
     $results = array();
 
@@ -225,6 +235,7 @@ function theme_tripplanner_form($vars) {
  // now we use drupal_render to turn the form elements into HTML and add it the output buffer
   $output .= drupal_render($form['txtorigininput']);
   $output .= drupal_render($form['txtdestinationinput']);
+  $output .= drupal_render($form['tp_date']);
   
   $output .= drupal_render($form['submit']);
  
