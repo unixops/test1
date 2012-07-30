@@ -127,16 +127,45 @@ function tripplanner_block_info() {
   '#required' => TRUE,
   '#date_format' => 'n/j/y g:i' // With this format you'll get a date popup box AND a time widget. Obviously you can change this to whatever you need.
 );
-
-  $form['tp_bus'] = array(
+  $form['tp_use'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Using:'),
+  );
+  $form['tp_use']['tp_bus'] = array(
     '#type' => 'checkbox',
     '#title' => t('Bus'),
     '#default_value' => true,
   );
+  $form['tp_use']['tp_subway'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Subway'),
+    '#default_value' => true,
+  );
+    $form['tp_use']['tp_rail'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Rail'),
+    '#default_value' => true,
+  );
+    $form['tp_use']['tp_expressbus'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Express Bus'),
+    '#default_value' => false,
+  );
 
+   $form['tp_accessable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Accessible Trip?'),
+    '#default_value' => false,
+  ); 
   $form['submit'] = array(
+  	'#prefix'=>'<div id="tp_submit">',
     '#type' => 'submit',
     '#value' => 'Submit',
+    '#suffix'=>'</div>',
+  
+  );
+  $form['tp_links'] = array(
+  '#markup'=>'<div id="tp_links"><p style="margin:10px 0 0 6px;"><span class="list_h"><a style="color:#555;" href="#" onclick="SmartTripClick('."ADVANCEOPTION','' ,'' )".'">Advanced</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">Help</a></span> <span class="list_h"><a style="color:#555;" href="http://511ny.org/tripplanner/default.aspx?area=1">511NY</a></span></p><p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">Get Widget</a></span></p></div>',
   );
   // Get the path to the module
 $path = drupal_get_path('module', 'tripplanner');
@@ -260,7 +289,8 @@ function theme_tripplanner_form($vars) {
   $output .= drupal_render($form['txtdestinationinput']);
   $output .= drupal_render($form['tp_date']);
   $output .= drupal_render($form['tp_arrv_dep']);
-
+  $output .= drupal_render($form['tp_use']);
+  $output .= drupal_render($form['tp_accessable']);  
   $output .= drupal_render($form['submit']);
  
   // Finially, we need to render the Drupal "magic fields" using a different function 

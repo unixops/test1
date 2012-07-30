@@ -29,7 +29,8 @@ label[for=edit-tp-date-timeEntry-popup-1] {
 	}
 	
 label[for=edit-tp-arrv-dep-1],
-label[for=edit-tp-arrv-dep-0] {
+label[for=edit-tp-arrv-dep-0],
+label[for=edit-tp-accessable] {
 	float:left;
 	padding-right:2px;
 	}	
@@ -74,4 +75,41 @@ label[for=edit-tp-arrv-dep-0] {
 label[for=edit-tp-arrv-dep]	 {
 	float:left;
 	margin-right:5px;
+	}
+#edit-tp-use {
+	margin-top:15px;
+	}
+#edit-tp-use .fieldset-wrapper {
+	float:left;
+	width: 166px;
+}	
+#edit-tp-use,
+#edit-tp-use legend,
+#edit-tp-use legend span{
+	float:left;	
+	
+	font-weight:700;
+	}
+.form-item.form-type-checkbox.form-item-tp-bus,
+.form-item.form-type-checkbox.form-item-tp-subway,
+.form-item.form-type-checkbox.form-item-tp-rail,
+.form-item.form-type-checkbox.form-item-tp-expressbus
+{
+	float:left;
+	margin: 0 0 0 16px;
+}
+.form-item.form-type-checkbox.form-item-tp-accessable {
+	float:left;
+	margin: 13px 12px 10px;
+	}
+#tp_submit {
+	float:left;
+	margin-bottom:20px;
+	margin-top: 10px;
+	}
+#tp_links {
+	clear:both;
+    font-size: 12px;
+    margin-left: 10px;
+}
 	}
