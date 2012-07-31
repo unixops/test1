@@ -526,7 +526,10 @@ $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><titl
 # $conf['allow_authorize_operations'] = FALSE;
 #
 
-
+// conditional memory limit for webform-results
+if (isset($_GET["q"]) && strpos($_GET["q"], "node/3600/webform-results/download") === 0) {
+ini_set("memory_limit", "256M");
+}
 $conf['environment_indicator_text'] = 'MTA-NEW DEVELOPMENT';
 $conf['environment_indicator_color'] = 'blue';
 
