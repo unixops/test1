@@ -217,22 +217,22 @@ ul.arrow li {
 #riding-links ul { margin:0; padding:0; float:left; width: 215px; }
 #riding-links li { margin:0; margin-bottom: 10px; padding: 4px 8px 8px; list-style-type:none; width:197px; float:left; font-weight: bold; }
 
-#riding-links #menuanchor1 { background: #fff url(/images/1.gif) 177px center no-repeat; border:1px solid #e4e4e4; }
-#riding-links #menuanchor1:hover { background: #f4f4f4 url(/images/1.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor2 { background: #fff url(/images/2.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor2:hover { background: #f4f4f4 url(/images/2.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor3 { background: #fff url(/images/3.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor3:hover { background: #f4f4f4 url(/images/3.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor4 { background: #fff url(/images/4.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor4:hover { background: #f4f4f4 url(/images/4.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor5 { background: #fff url(/images/5.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor5:hover { background: #f4f4f4 url(/images/5.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor6 { background: #fff url(/images/6.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor6:hover { background: #f4f4f4 url(/images/6.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor7 { background: #fff url(/images/7.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor7:hover { background: #f4f4f4 url(/images/7.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
-#riding-links #menuanchor8 { background: #fff url(/images/8.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
-#riding-links #menuanchor8:hover { background: #f4f4f4 url(/images/8.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor1 { background: #fff url(images/1.gif) 177px center no-repeat; border:1px solid #e4e4e4; }
+#riding-links #menuanchor1:hover { background: #f4f4f4 url(images/1.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor2 { background: #fff url(images/2.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor2:hover { background: #f4f4f4 url(images/2.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor3 { background: #fff url(images/3.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor3:hover { background: #f4f4f4 url(images/3.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor4 { background: #fff url(images/4.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor4:hover { background: #f4f4f4 url(images/4.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor5 { background: #fff url(images/5.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor5:hover { background: #f4f4f4 url(images/5.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor6 { background: #fff url(images/6.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor6:hover { background: #f4f4f4 url(images/6.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor7 { background: #fff url(images/7.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor7:hover { background: #f4f4f4 url(images/7.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
+#riding-links #menuanchor8 { background: #fff url(images/8.gif) 177px center no-repeat; border:1px solid #e4e4e4 ; }
+#riding-links #menuanchor8:hover { background: #f4f4f4 url(images/8.gif) 177px center no-repeat; border:1px solid #b4b4b4; cursor: pointer; }
 
 .popMenu ul { margin: 5px; margin-left: 8px; }
 .popMenu li { list-style-type: none; margin-bottom: 10px; font-family: Helvetica, Arial, Sans-serif; font-size: 13px; font-weight:bold; color:#000033; }

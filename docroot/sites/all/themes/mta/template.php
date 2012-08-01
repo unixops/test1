@@ -8,8 +8,12 @@ function mta_preprocess_page(&$vars) {
 	
   if (isset($vars['node']->type)) {
   	if ($vars['node']->type == "page_with_ad") {
-    $vars['theme_hook_suggestions'][] = 'page__ad';
-  	}   
+    	$vars['theme_hook_suggestions'][] = 'page__ad';
+  	} else {
+  	if ($vars['node']->type == "home_page") {
+    	$vars['theme_hook_suggestions'][] = 'page__home';
+  		}
+  	}  
   }
   
   // Suckerfish menus

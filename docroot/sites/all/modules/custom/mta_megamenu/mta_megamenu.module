@@ -1,0 +1,27 @@
+<?php
+
+function mta_megamenu_block_info() {
+  $blocks['mta_megamenu'] = array(
+    'info' => t('mta_megamenu'), //The name that will appear in the block list.
+    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+ function mta_megamenu_block_view($delta = '') {
+  switch($delta){
+    case 'mta_megamenu':
+      $block['subject'] = '';
+      if(user_access('access content')){
+      		$path = drupal_get_path('module', 'mta_megamenu');
+      		drupal_add_js($path."/jkmegamenu.js");
+      
+   			$block['content']=file_get_contents($path."/mta_megamenu.html");
+      }
+  
+  return $block;
+  }
+ }

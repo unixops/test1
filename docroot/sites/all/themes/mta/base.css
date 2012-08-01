@@ -177,6 +177,7 @@ body{font:13px/1.231 helvetica,arial,clean,sans-serif;*font-size:small;*font:x-s
 Creates rounded corners around divs.
 Requires /css/border-radius.htc file
 */
+.block-statusblock,
 .roundCorners {
     border: 1px solid #b4b4b4;
     -moz-border-radius: 5px;
