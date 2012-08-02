@@ -1,0 +1,169 @@
+body{font:13px/1.231 helvetica,arial,clean,sans-serif;font-size:small;font:x-small;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+table{font-size:inherit;font:100%;}
+
+.statusDateTime {
+	font-size: 85%;
+	color: #2f2f56;
+}
+
+.statusheading {
+color:#0055aa;
+margin-bottom:5px;
+font-size:123.1%;
+margin:0;
+font-weight:bold;
+}
+
+.subwayCategory {
+	font-size: 93%;
+	font-weight: bold;
+}
+#statusblock-tabs ul {
+	list-style-type: none; 
+	margin: 0 0 5px 0; 
+	padding: 0; 
+	clear: both; 
+
+}
+#statusblock-tabs {
+	border: 1px solid #CCCCCC;
+	clear:both;
+	height:21px;
+/*	width: 229px; */
+	margin-left:-1px;
+	padding: 0;	
+	}
+.subway_Delays, .bus_Delays, .rail_Delays, .BT_Delays {
+	 color: #990033;  
+}
+
+.subway_GoodService, .bus_GoodService, .rail_GoodService, .BT_GoodService {
+	color: #006600;
+}
+
+.subway_PlannedWork, .bus_PlannedWork, .rail_PlannedWork, .BT_PlannedWork {
+	color: #996600; 
+}
+
+.subway_ServiceChange, .bus_ServiceChange, .rail_ServiceChange, .BT_ServiceChange {
+	color: #996600;
+}
+#block-statusblock-mta-service-status {
+	margin-bottom:10px;
+	margin-top:10px;
+	padding:4px;
+	height:445px;
+/*	width: 229px */
+	}
+#bottom-status-box-links {
+    left: 26px;
+    position: absolute;
+    top: 574px;
+    width: 230px;
+}
+	
+#bottom-status-box-links ul{
+	padding:0;
+	margin:0;
+	}	
+.subway_Suspended, .bus_Suspended, .rail_Suspended, .BT_Suspended {
+     color: #3C139F; 
+}
+
+
+
+.busLineItem {
+	font-size: 93%;
+	font-weight:bold;
+	color: #333;
+}
+
+.busCategory {
+	font-size: 93%;
+	font-weight: bold;
+}
+
+.RailRoadCompany {
+	font-size: 93%;
+	font-weight: bold;
+	color: #000099;
+        float: left;
+        margin: 4px 0 3px;
+}
+
+.railLineItem {
+	font-size: 85%;
+	font-weight: bold;
+	color: #333;
+}
+
+.railCategory {
+	font-size: 85%;
+	font-weight:bold;
+}
+
+
+.BTLineItem {
+	font-size: 93%;
+	font-weight: bold;
+	color: #333;
+}
+
+.BTCategory {
+	font-size: 93%;
+	font-weight:bold;
+}
+
+tr td img {
+	margin-left: 3px;
+}
+
+.weekEndCell
+{
+	border-left:solid silver 1px;
+	border-bottom:solid silver 1px;
+	text-align:center;
+	padding:0px;
+	padding-top:3px;
+	width:67px;
+}
+
+.weekendHeader
+{
+	background-color:#FFCC00;
+	text-align:center;
+	border-left:solid silver 0px;
+	border-bottom:solid silver 1px;
+	border-top:solid silver 0px;
+}
+
+.list_h
+{ 
+	background-image: url("images/arrow-gn.gif");
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: inline;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.gw { font-weight: bold; color: #555; font-size: 85%; text-decoration: none; }
+
+
+.t { display: inline; float: left; border-right: 1px solid #ccc; }
+.tlast { border-right: none;}
+.tdiv { padding: 4px; float: left; cursor:pointer; font-family:Arial; font-size:11px; font-weight:bold; text-align:center; }
+
+.selectedStatusTab { background-color: #00bb11; color:#FFFFFF }
+.notselectedStatusTab { background-color: #fff; color: rgb(85, 85, 85) }
+
+.railStation { width: 85px; float: right; margin: 0; }
+
+.completeOutage { color: #990033; font-weight: bold; width: 220px; text-align: center; float: left; }
+
+.TitleDelay {color: blue;font-size: 14px;font-weight: bold;}
+.DateStyle {color: blue;font-size: 12px;}
+.TitlePlannedWork {color: blue;font-size: 14px;font-weight: bold;}

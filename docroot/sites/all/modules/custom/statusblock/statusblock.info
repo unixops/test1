@@ -1,0 +1,9 @@
+name = "MTA Service Status Block"
+description = "MTA Service Status Block."
+core = 7.x
+package = Our MTA modules
+files[] = statusblock.module
+files[] = ServiceStatus.inc 
+stylesheets[all][] = status_style.css
+scripts[] = statusblock.js
+scripts[] = jquery.cookie.js

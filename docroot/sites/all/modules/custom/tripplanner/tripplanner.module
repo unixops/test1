@@ -113,7 +113,6 @@ function tripplanner_block_info() {
   $form['tp_arrv_dep'] = array(
     '#type' => 'radios',
     '#title' => 'Choose:',
-    '#required' => TRUE,
   
     '#default_value' =>  1,
     '#options' => $options,
@@ -165,7 +164,7 @@ function tripplanner_block_info() {
   
   );
   $form['tp_links'] = array(
-  '#markup'=>'<div id="tp_links"><p style="margin:10px 0 0 6px;"><span class="list_h"><a style="color:#555;" href="#" onclick="SmartTripClick('."ADVANCEOPTION','' ,'' )".'">Advanced</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">Help</a></span> <span class="list_h"><a style="color:#555;" href="http://511ny.org/tripplanner/default.aspx?area=1">511NY</a></span></p><p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">Get Widget</a></span></p></div>',
+  '#markup'=>'<div id="tp_links"><p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="#" onclick="SmartTripClick('."ADVANCEOPTION','' ,'' )".'">Advanced</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">Help</a></span> <span class="list_h"><a style="color:#555;" href="http://511ny.org/tripplanner/default.aspx?area=1">511NY</a></span></p><p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color:#555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">Get Widget</a></span></p></div>',
   );
   // Get the path to the module
 $path = drupal_get_path('module', 'tripplanner');
