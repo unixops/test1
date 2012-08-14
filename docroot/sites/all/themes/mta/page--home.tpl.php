@@ -45,7 +45,15 @@
 
 									
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-									<?php print render($page['content']); ?>        
+									<?php print render($page['content']); ?>
+									<?php print render($page['content_bottom']); ?>
+			<div id="contentbl" class="bl">
+									<?php print render($page['content_bottom_left']); ?>
+									</div>
+			<div id ="contentbr" class="br">						
+									<?php print render($page['content_bottom_right']); ?>
+									</div>
+									 						         
 								</div><!-- close span-43 -->
 
 							
@@ -74,5 +82,6 @@
 			</div>
 
 	</div>
-		<?php print render($page['footer']);?>	
-</div>
+		<?php print render($page['footer']);?>
+		
+		</div>
