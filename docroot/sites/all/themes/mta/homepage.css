@@ -358,3 +358,69 @@ ul.arrow li {
 .section ul li{float:left; list-style:none;}
 .section ul li a{float:left;padding:6px 20px 9px; background: #333333; color:#FFFFFF;}
 .section ul li a:hover{text-decoration:none; background:#666666;}*/
+
+/* content bottom left andd right added by DA 8/14/12 */
+
+#contentbl {
+	margin-top:20px;
+	margin-left: -5px;
+    width: 220px;
+	float: left;
+	border-left:1px solid #B4B4B4;
+    }
+
+#contentbr {
+	margin-top:20px;
+	margin-left: 5px;
+	margin-right: -6px;
+	width: 220px;
+	float: right;
+	border-left: 1px solid #B4B4B4;
+	border-right: 1px solid #B4B4B4;
+	}
+
+/* Box Classes DA 8/14/12 */
+
+#boxes-box-mta_bus_time {
+	margin-top: 5px;
+	width: 230px;
+	padding: 2px, 7px, 1px, 7px;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+	}
+
+#boxes-box-special_service {
+	margin-top: 30px;
+	padding: 7px;
+	}
+	
+#boxes-box-customer_self_service {
+	margin-top: 10px;
+	padding: 7px;
+	}
+	
+#boxes-box-mta_capitol {
+	padding: 7px;
+	}
+	
+#boxes-box-tourism {
+	margin-top: 10px;
+	padding: 7px;
+	}
+	
+#boxes-box-app_center {
+	margin-top: 25px;
+	padding: 7px;
+	}
+	
+#boxes-box-gc_centennial {
+	margin-top: 30px;
+	padding: 7px;
+	}
+	
+#boxes-box-advertise_on_metrocard {
+	margin-top: 15px;
+	padding: 7px;
+	}
+	
+
