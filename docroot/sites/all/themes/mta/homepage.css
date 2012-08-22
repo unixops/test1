@@ -360,7 +360,6 @@ ul.arrow li {
 .section ul li a:hover{text-decoration:none; background:#666666;}*/
 
 /* content bottom left andd right added by DA 8/14/12 */
-
 #contentbl {
 	margin-top:20px;
 	margin-left: -5px;
@@ -380,6 +379,13 @@ ul.arrow li {
 	}
 
 /* Box Classes DA 8/14/12 */
+#boxes-box-news_placeholder {
+	margin:6px 12px 0px 0px;
+	height: 299px;	
+	width: 460px;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+	}
 
 #boxes-box-mta_bus_time {
 	margin-top: 5px;
@@ -423,4 +429,103 @@ ul.arrow li {
 	padding: 7px;
 	}
 	
+/* News Rotator Views Block 8/15/12 */
 
+#block-views-news-rotator-block-1 {
+	margin-top:10px;
+	width: 460px;
+	height: 296px;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+	}
+	
+.view-news-rotator {
+	padding: 5px;
+	height: 286px;
+	}
+	
+.views_slideshow_main {
+	height:215px;
+	}
+	
+.news-rot-image{			
+	display:inline-block;
+	float:left;
+	margin-right:10px;
+	}
+	
+.new-rot-title {
+	font-size:20px;
+	font-weight:bold;
+	margin-top:-4px;
+	padding:0;
+	margin-bottom: 5px;
+	}
+	
+.news-rot-teaser {
+	float:right;
+	font-size:12px;
+	width: 200px;
+	}
+	
+.views-slideshow-controls-bottom {
+	height: 50px;
+	width: 450px;
+	}
+	
+#widget_pager_bottom_news_rotator-block_1 {
+	margin-top: 20px;
+	border-bottom: 1px solid #ccc;
+	}
+	
+#vscc_controls_news_rotator-block_1 {
+	margin-top: 10px;
+	margin-right: 75px;
+	height: 28px;
+	width: 150px;
+	border: 1px solid #ccc;
+	}
+	
+.views-content-counter a {
+	margin: 15px 5px;
+	background-color:#CCC;
+	float: left;
+	height: 15px;
+	width: 10px;
+	border: 1px solid #ccc;
+	padding: 3px;
+	color: #000000;
+	}
+
+.views-content-counter a:hover {
+	background-position: -25px 0px;
+	text-decoration: bold;
+	}
+
+.active .views-content-counter a{
+	background-position: -25px 0px;
+	background-color: #ffffff
+	}
+	
+#vscc_controls_pause_news_rotator-block_1 {
+	margin-top:5px;
+	float: right;
+	padding-right: 3px;
+	}
+	
+#vscc_controls_previous_news_rotator-block_1,
+#vscc_controls_next_news_rotator-block_1 {
+	display:none;
+	}
+
+#news_rotator_more {
+	margin-top: -30px;
+	margin-left: 250px;
+	width: 75px;
+	}
+	
+#news_rotator_archive {
+	margin-top: -25px;
+	margin-left: 350px;
+	width: 75px;
+}
