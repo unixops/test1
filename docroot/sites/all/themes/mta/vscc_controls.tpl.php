@@ -14,7 +14,6 @@
 </div>
 
 <div id="news_rotator_more">
-	<?php print $news_rotator_more; ?>
 	<div>
 		<input type="button" value="more news"
 			onclick="location.href='http://mta.info/news'">
@@ -22,7 +21,6 @@
 </div>
 
 <div id="news_rotator_archive">
-	<?php print $news_rotator_archive; ?>
 	<div>
 		<input type="button" value="archives"
 			onclick="location.href='http://mta.info/news/archive.html'">
