@@ -160,7 +160,7 @@ function home_page_boxes_default_box() {
   $box->description = 'MTA Bus Time';
   $box->options = array(
     'body' => array(
-      'value' => '<p style="text-align: center;"><img alt="" src="/sites/default/files/images/Bus_Time_anim.gif" style="width: 223px; height: 47px;" /></p>
+      'value' => '<p style="text-align: center;"><img alt="" src="http://mta.info/siteimages/Bus_Time_anim.gif" style="width: 223px; height: 47px;" /></p>
 <ul class="arrow" style="margin-top:0;">
 	<li style="margin-bottom: 0px;"><a href="http://bustime.mta.info">Go to Bus Time</a></li>
 	<li><a href="http://mta.info/nyct/BusTime_B61.htm">New! Now on the B61</a></li>
@@ -195,29 +195,6 @@ function home_page_boxes_default_box() {
     'additional_classes' => '',
   );
   $export['mta_capitol'] = $box;
-
-  $box = new stdClass();
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'news_placeholder';
-  $box->plugin_key = 'simple';
-  $box->title = '<none>';
-  $box->description = 'MTA News';
-  $box->options = array(
-    'body' => array(
-      'value' => '<h2>&nbsp;</h2>
-<h2>MTA News<br />
-	<img alt="" src="http://mta.info/news/images/sas_blast.jpg" style="width: 210px; height: 117px; float: left;" /></h2>
-<h1 style="font-size:150%; margin-top:-4px; margin-bottom:6px; margin-left:220px; line-height:1.2em;"><a href="http://mta.info/news/stories/?story=775" style="color: #5A5A5B; text-decoration: none;">Henry Hudson Bridge Navigation Lights Shine</a></h1>
-<p><a href="http://mta.info/news/stories/?story=775" style="color: #5A5A5B; text-decoration: none;">The red and green &quot;Star Wars&quot; looking lights emanating from beneath the Henry Hudson Bridge may seem like an attempt to reach out to other-worldly beings but they...</a><br />
-	&nbsp;</p>
-<p>&nbsp;</p>
-<p><a href="http://mta.info/news/stories/?story=775" style="color: #5A5A5B; text-decoration: none;"><strong><em>Place Holder for a dynamic Views Block to feed news</em></strong></a></p>',
-      'format' => 'full_html',
-    ),
-    'additional_classes' => '',
-  );
-  $export['news_placeholder'] = $box;
 
   $box = new stdClass();
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */

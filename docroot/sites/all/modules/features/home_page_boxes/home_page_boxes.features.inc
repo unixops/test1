@@ -17,3 +17,10 @@ function home_page_boxes_ctools_plugin_api() {
     return array("version" => "3");
   }
 }
+
+/**
+ * Implements hook_views_api().
+ */
+function home_page_boxes_views_api() {
+  return array("version" => "3.0");
+}
