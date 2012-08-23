@@ -441,11 +441,12 @@ ul.arrow li {
 	
 .view-news-rotator {
 	padding: 5px;
-	height: 286px;
+	height: 200px;
 	}
 	
 .views_slideshow_main {
-	height:215px;
+	height:245px;
+	border-bottom: 1px solid #ccc;
 	}
 	
 .news-rot-image{			
@@ -468,34 +469,45 @@ ul.arrow li {
 	width: 200px;
 	}
 	
-.views-slideshow-controls-bottom {
-	height: 50px;
-	width: 450px;
-	}
+
 	
 #widget_pager_bottom_news_rotator-block_1 {
-	margin-top: 20px;
-	border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
+    height: 24px;
+    width: 150px;
+}
+
+/** Space to provide for news story growth - above pager and control */	
+#widget_pager_bottom_news_rotator-block_1 {
+	    float: left;
+	    margin-top:4px;
 	}
-	
+
+/** Holds Pager NUmbers and Pause Control */	
 #vscc_controls_news_rotator-block_1 {
-	margin-top: 10px;
-	margin-right: 75px;
-	height: 28px;
-	width: 150px;
-	border: 1px solid #ccc;
-	}
+	float: left;
 	
+	}
+
+/** Pager Number Container. Holds all numbers */	
 .views-content-counter a {
-	margin: 15px 5px;
+	margin: 3px 6px;
 	background-color:#CCC;
 	float: left;
-	height: 15px;
+	height: 12px;
 	width: 10px;
 	border: 1px solid #ccc;
-	padding: 3px;
+	padding-right: 2px;
+	padding-left: 3px;
+	padding-top:1px;
+	padding-bottom:4px;
 	color: #000000;
 	}
+.views-content-counter {
+ float: left;
+ height: 17px;
+}
+
 
 .views-content-counter a:hover {
 	background-position: -25px 0px;
@@ -506,11 +518,19 @@ ul.arrow li {
 	background-position: -25px 0px;
 	background-color: #ffffff
 	}
-	
+
+
+
+.views-slideshow-controls-bottom {
+	float:left;
+	width:450px;
+	margin-top:6px;
+}
+
 #vscc_controls_pause_news_rotator-block_1 {
-	margin-top:5px;
-	float: right;
-	padding-right: 3px;
+    float: left;
+    margin-left: -16px;
+    margin-top:7px
 	}
 	
 #vscc_controls_previous_news_rotator-block_1,
@@ -519,13 +539,13 @@ ul.arrow li {
 	}
 
 #news_rotator_more {
-	margin-top: -30px;
-	margin-left: 250px;
-	width: 75px;
+	float:right;
+	margin-top:5px;
+	margin-right:20px;
 	}
 	
 #news_rotator_archive {
-	margin-top: -25px;
-	margin-left: 350px;
-	width: 75px;
+	float:right;
+	margin-top:5px;
+	margin-right:20px;
 }
