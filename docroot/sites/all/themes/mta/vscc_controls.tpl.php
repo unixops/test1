@@ -13,16 +13,14 @@
   <?php print $rendered_control_next; ?>
 </div>
 
+<div id="news_rotator_archive">
+	<input type="button" value="archives"
+			onclick="location.href='http://mta.info/news/archive.html'">
+	</div>
+	
 <div id="news_rotator_more">
-	<div>
 		<input type="button" value="more news"
 			onclick="location.href='http://mta.info/news'">
 	</div>
-</div>
+	
 
-<div id="news_rotator_archive">
-	<div>
-		<input type="button" value="archives"
-			onclick="location.href='http://mta.info/news/archive.html'">
-	</div>
-</div>

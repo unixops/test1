@@ -299,41 +299,6 @@ ul.arrow li {
 	overflow: hidden;
 }
 
-/* START Styles for JFlow Slide News rotator */
-#jFlowSlide{ background:#fff; padding:0px; }
-#myController { margin:6px 5px 0 5px; padding-top:6px; color:#000; border-top: 1px solid #999; vertical-align:bottom; float: left; width: 430px;}
-#myController span.jFlowSelected { background:#FFF; margin-right:5px; border: 1px solid #ccc; }
-
-.slide-wrapper { padding: 5px; }
-.slide-wrapper img {padding-bottom:3px;}
-.slide-wrapper img.left {float:left; padding-right:10px;}
-.slide-wrapper img.right {float:right; padding-left:10px;}
-/*.slide-wrapper h1 { margin-top:0; text-align:left;font-size: 175%; color:#5a5a5b; padding-top: 0; }*/
-.slide-wrapper h3 { margin-top:0; margin-bottom:4px; text-align:left; font-size: 150%; color:#5a5a5b; padding-top: 0; }
-.slide-wrapper a { text-decoration:none; color:#0055aa;}
-.slide-wrapper p { text-decoration:none; color:#333;}
-.slide-thumbnail { float:left; border:0px solid #0000CC; }
-.slide-thumbnail img {width:522px;}
-.slide-details { width:370px; height:200px; float:left; margin-left:10px; border:0px solid #FF0000;}
-.slide-details span { font-size:24px; font-weight:bold;}
-.slide-details .description { margin-top:10px; font-size:13px; line-height:20px; }
-.next_box{ float:left; border:1px solid #CCC; margin-top:2px; padding:3px;}
-.jFlowControl, .jFlowPrev, .jFlowNext { border: 1px solid #ccc; float:left; background-color:#CCC; color:#000; cursor:pointer; padding:0 4px; font-weight:bold; margin-right:5px; }
-.jFlowPause { border: 1px solid #ccc; float:left; background-color:#ccc; cursor:pointer; padding:0; font-weight:bold; margin-left: 15px; }
-
-.shere_links{margin-top: 10px; float:right; width:280px; padding:0px; text-align:right; }
-.moreNews { width: 65px; float: left; }
-.facebook{width:16px;}
-.twitter{width:16px; margin-left:5px;}
-.youtube{width:40px; margin-left:5px;}
-.heading { font-size:13px; font-weight:bold;}
-.jFlowControl:hover, .jFlowPrev:hover, .jFlowNext:hover, .jFlowPause:hover  { background: #CCC; color:#0033FF; }
-.top_heading{ margin-left: 5px; float:left; width:100%; color:#0066CC; font-size:18px; font-weight:bold;}
-.jFlowSlideContainer{float:left; width:440px;}
-
-/*.leftDropDown {	float:left; background:url(../images/rwu_bttn_bg.jpg) no-repeat; width:200px; height:20px; cursor:pointer; margin-bottom:10px; font-weight:bold; color:#575757; padding:6px; margin-left:7px; }*/
-
-/* END Styles for JFlow Slide News rotator */
 
 .heading { float:left; margin:7px;font-size:12px; font-weight:bold; width:400px; color:#0066FF; }
 
@@ -494,7 +459,7 @@ ul.arrow li {
 	margin: 3px 6px;
 	background-color:#CCC;
 	float: left;
-	height: 12px;
+	height:12px;
 	width: 10px;
 	border: 1px solid #ccc;
 	padding-right: 2px;
@@ -524,7 +489,7 @@ ul.arrow li {
 .views-slideshow-controls-bottom {
 	float:left;
 	width:450px;
-	margin-top:6px;
+	margin-top:10px;
 }
 
 #vscc_controls_pause_news_rotator-block_1 {
