@@ -52,7 +52,7 @@ function oncontentready(classID) {
 	}
 
 	this.style.background = 'transparent';
-	this.style.borderColor = 'transparent';
+	this.style.borderColor = 'solid';
 
 	// Find which element provides position:relative for the target element (default to BODY)
 	var el = this;

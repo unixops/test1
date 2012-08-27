@@ -324,7 +324,7 @@ ul.arrow li {
 .section ul li a{float:left;padding:6px 20px 9px; background: #333333; color:#FFFFFF;}
 .section ul li a:hover{text-decoration:none; background:#666666;}*/
 
-/* content bottom left andd right added by DA 8/14/12 */
+/* content bottom left and right added by DA 8/14/12 */
 #contentbl {
 	margin-top:20px;
 	margin-left: -5px;
@@ -411,13 +411,14 @@ ul.arrow li {
 	
 .views_slideshow_main {
 	height:245px;
+	overflow:hidden;
 	border-bottom: 1px solid #ccc;
 	}
 	
 .news-rot-image{			
-	display:inline-block;
 	float:left;
 	margin-right:10px;
+	height: 220px;
 	}
 	
 .new-rot-title {
@@ -425,14 +426,17 @@ ul.arrow li {
 	font-weight:bold;
 	padding:0;
 	margin-bottom: 5px;
+	overflow: hidden;
 	}
 	
 .news-rot-teaser {
-	float:right;
+	float: left;
 	font-size:12px;
 	width: 200px;
+	padding-right:3px;
+	overflow: hidden;
 	}
-	
+
 
 	
 #widget_pager_bottom_news_rotator-block_1 {
