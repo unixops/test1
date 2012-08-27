@@ -200,38 +200,36 @@ function home_page_boxes_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_headline']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_headline']['field_api_classes'] = 0;
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '250';
-  $handler->display->display_options['fields']['body']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['more_link'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'Read Full Story';
-  $handler->display->display_options['fields']['body']['alter']['more_link_path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['body']['alter']['trim'] = 1;
-  $handler->display->display_options['fields']['body']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['body']['element_class'] = 'news-rot-teaser';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['body']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['body']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['body']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
+  /* Field: Content: Article Summary */
+  $handler->display->display_options['fields']['field_article_summary']['id'] = 'field_article_summary';
+  $handler->display->display_options['fields']['field_article_summary']['table'] = 'field_data_field_article_summary';
+  $handler->display->display_options['fields']['field_article_summary']['field'] = 'field_article_summary';
+  $handler->display->display_options['fields']['field_article_summary']['label'] = '';
+  $handler->display->display_options['fields']['field_article_summary']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['text'] = '[field_article_summary] ... <br /> <a href ="/node/[nid]"> Read Full Story</a>';
+  $handler->display->display_options['fields']['field_article_summary']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_article_summary']['element_class'] = 'news-rot-teaser';
+  $handler->display->display_options['fields']['field_article_summary']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_article_summary']['element_default_classes'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_article_summary']['settings'] = array(
     'trim_length' => '400',
   );
-  $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
+  $handler->display->display_options['fields']['field_article_summary']['field_api_classes'] = 0;
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -271,11 +269,11 @@ function home_page_boxes_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'article' => 'article',
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'news_article' => 'news_article',
   );
 
   /* Display: Block */

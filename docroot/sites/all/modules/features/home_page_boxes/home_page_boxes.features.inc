@@ -30,10 +30,10 @@ function home_page_boxes_views_api() {
  */
 function home_page_boxes_node_info() {
   $items = array(
-    'article' => array(
-      'name' => t('Article'),
+    'news_article' => array(
+      'name' => t('News Article'),
       'base' => 'node_content',
-      'description' => t('Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'),
+      'description' => t('Create News Article Copy'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
