@@ -1,115 +1,158 @@
 /* $Id: $ */
 #edit-txtorigininput,
 #edit-txtdestinationinput {
-	background:none;
-	font-size:11px;
-	padding:0px;
-	padding-top:2px;
-	padding-bottom:2px;
-	width:100%;
-	}
+  background:none;
+  font-size:11px;
+  padding:0px;
+  padding-top:2px;
+  padding-bottom:2px;
+  width:205px;
+  }
 .form-item-txtorigininput #autocomplete, 
 .form-item-txtdestinationinput #autocomplete {
-	padding:3px;
-	width:230px !important;
-	background-color:#fff;	
-	font-size:11px;
-	}
+  padding:3px;
+  width:225px !important;
+  background-color:#fff;  
+  font-size:11px;
+  }
 .form-item-txtorigininput #autocomplete li,
 .form-item-txtdestinationinput #autocomplete li {
-	padding:1px;
+  padding:1px;
 }
 .container-inline-date .date-padding {
     display:inline-block;
-    padding: 2px;
+    padding: 0px;
 }
-label[for=edit-tp-date-datepicker-popup-0],
-label[for=edit-tp-date-timeEntry-popup-1] {
-	display:none;
-	}
-	
-label[for=edit-tp-arrv-dep-1],
-label[for=edit-tp-arrv-dep-0],
-label[for=edit-tp-accessable] {
-	float:left;
-	padding-right:2px;
-	}	
-	
-#edit-tp-arrv-dep > .form-item-tp-arrv-dep	{
-	float:left;
-	}
+
+.form-item-tp-date-date label,
+.form-item-tp-date-time label {
+  display:none;
+  } 
+.form-item-tp-arrv-dep label,
+
+.form-item-tp-accessable label{
+
+  padding-right:0px;
+  } 
+  
+#edit-tp-arrv-dep > .form-item-tp-arrv-dep  {
+  float:left;
+  margin-right:0px;
+  }
+#edit-tp-arrv-dep{
+  height:20px;
+  } 
+#edit-tp-arrv-dep-0,
 #edit-tp-arrv-dep-1 {
-	margin-right:10px;
-}	
-	
+    float: left;
+    margin-left: 3px;
+    margin-right: 1px;
+    padding:0;
+}
+#edit-tp-arrv-dep-0 {
+      margin-left: 12px;
+  }
+.form-item-tp-arrv-dep > label   {
+  float:left;
+  }
+
+#edit-tp-arrv-dep .form-item-tp-arrv-dep > label {
+  margin-right:0;
+  }   
 #edit-tp-date-timeEntry-popup-1{
-	margin-right:0;
-	font-size:12px;
-	height: 19px;
-	width:70px;
+  margin-right:0;
+  font-size:12px;
+  /*height: 19px;*/
+  width:70px;
+  padding:1px;
 }
 #edit-tp-date-datepicker-popup-0 {
-	font-size:12px;
-	height: 19px;
-	width:70px
-	}
+  font-size:12px;
+  /*height: 19px;*/
+  width:70px;
+  padding:1px;
+  }
 .form-item .form-item-tp-date-time {
-	margin-right:0;
-	padding-left:59px;
+  margin-right:0;
+  padding-left:55px;
 }
 .form-item .form-item-tp-date {
-	margin-right:0;
+  margin-right:0;
 }
 .form-item.form-type-date-popup.form-item-tp-date {
-	margin:0;
-	}
+  margin:0;
+  }
 .form-item.form-type-radio.form-item-tp-arrv-dep {
-	margin-top:1px;
-	}	
-.form-item.form-type-radios.form-item-tp-arrv-dep	{
-	margin:0;
+  margin-top:1px;
+  } 
+.form-item.form-type-radios.form-item-tp-arrv-dep > label{
+  margin-right:3px;
+  float:left;
+  /* display:none; */
 }
 #edit-tp-date .description {
-	display:none;
-	}
-label[for=edit-tp-arrv-dep]	 {
-	float:left;
-	margin-right:5px;
-	}
+  display:none;
+  }
+
 #edit-tp-use {
-	margin-top:15px;
-	}
+  margin-top:15px;
+  }
 #edit-tp-use .fieldset-wrapper {
-	float:left;
-	width: 166px;
-}	
-#edit-tp-use,
+  width: 166px;
+} 
 #edit-tp-use legend,
 #edit-tp-use legend span{
-	float:left;	
-	
-	font-weight:700;
-	}
+  clear:both;
+  float:left; 
+  
+  font-weight:700;
+  margin:0;
+  }
+#use-group {
+  margin:0;
+  width:166px;
+    float:left
+
+  
+  } 
+  
+.form-item-tp-use-bus,
+.form-item-tp-use-subway,
+.form-item-tp-use-rail,
+.form-item-tp-use-expressbus
+{
+   float:left;
+   margin: 0;
+   margin: 0 0 5px 10px;
+}
 .form-item.form-type-checkbox.form-item-tp-bus,
 .form-item.form-type-checkbox.form-item-tp-subway,
 .form-item.form-type-checkbox.form-item-tp-rail,
 .form-item.form-type-checkbox.form-item-tp-expressbus
 {
-	float:left;
-	margin: 0 0 0 16px;
+  float:left;
+  margin: 0;
 }
+.form-item.form-type-checkbox.form-item-tp-subway,
+.form-item.form-type-checkbox.form-item-tp-expressbus {
+  margin: 0 0 0 10px;
+    
+  }
 .form-item.form-type-checkbox.form-item-tp-accessable {
-	float:left;
-	margin: 13px 12px 10px;
-	}
+  float:left;
+  margin: 13px 12px 10px;
+  }
 #tp_submit {
-	float:left;
-	margin-bottom:20px;
-	margin-top: 10px;
-	}
+  float:left;
+  margin-bottom:15px;
+  margin-top: 10px;
+  }
 #tp_links {
-	clear:both;
+  clear:both;
     font-size: 12px;
     margin-left: 10px;
 }
-	}
+#use-label {
+  float:left;
+  font-weight:700;
+  }
