@@ -10,7 +10,7 @@
  * Disabling and uninstalling Overlay and Toolbar modules replacing them
  * with admin_menu and admin_menu_toolbar modules, and enable them.
  */
-function upmta_update_7000() {
+function upmta_update_7001() {
   module_disable(array('overlay'));
   module_disable(array('toolbar'));
   if(drupal_uninstall_modules(array('overlay', 'toolbar'))){
