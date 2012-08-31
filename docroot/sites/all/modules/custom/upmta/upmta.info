@@ -1,7 +1,0 @@
-name = MTA Update Module
-project = upmta
-description = The module for update hooks for the MTA
-package = "MTA"
-core = 7.x
-files[] = upmta.install
-files[] = upmta.module

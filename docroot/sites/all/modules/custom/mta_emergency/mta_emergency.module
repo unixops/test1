@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the mta emergency feature.
- */
-
-include_once 'mta_emergency.features.inc';
