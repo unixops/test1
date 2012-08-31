@@ -26,3 +26,4 @@ function mta_core_update_7001() {
   //}
   cache_clear_all();
 }
+
