@@ -10,7 +10,7 @@
  * Disabling and uninstalling Overlay and Toolbar modules replacing them
  * with admin_menu and admin_menu_toolbar modules, and enable them.
  */
-function upmta_update_7001() {
+function mta_core_update_7001() {
   module_disable(array('overlay'));
   module_disable(array('toolbar'));
   if(drupal_uninstall_modules(array('overlay', 'toolbar'))){
@@ -26,32 +26,3 @@ function upmta_update_7001() {
   //}
   cache_clear_all();
 }
-
-/**
- * Enable the Workbench and workbench moderation modules as well as
- * setting the appropriate permissions for mta news articles
- */
-function upmta_update_7002() {
-  module_enable(array('workbench', 'workbench_moderation'));
-  $query = db_select('role')
-  ->condition('name', db_like('content provider') . '%', 'LIKE')
-  ->execute()
-  ->fetchAssoc();
-  $content_provider = $query->rid;
-  drupal_set_message(t('content_provider role id = ' . $content_provider ), 'status');
-  $query = db_select('role')
-  ->condition('name', db_like('master content provider'), 'LIKE')
-  ->execute()
-  ->fetchAssoc();
-  $master_content_provider = $query->rid;
-  drupal_set_message(t('master content_provider role id = ' . $master_content_provider ), 'status');
-}
-
-/*
- $result = db_select('node', 'n')
-    ->fields('n')
-    ->condition('nid', $node->nid,'=')
-    ->condition('status', 0,'>')
-    ->condition('uid', array(1,5,7),'IN')
-    ->execute()
-    ->fetchAssoc();master content provider*/
