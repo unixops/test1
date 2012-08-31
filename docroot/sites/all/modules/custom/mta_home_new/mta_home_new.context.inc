@@ -30,13 +30,13 @@ function mta_home_new_context_default_contexts() {
           'module' => 'mta_megamenu',
           'delta' => 'mta_megamenu',
           'region' => 'content',
-          'weight' => '-35',
+          'weight' => '-10',
         ),
         'views-news_rotator-block_1' => array(
           'module' => 'views',
           'delta' => 'news_rotator-block_1',
           'region' => 'content',
-          'weight' => '-34',
+          'weight' => '-9',
         ),
         'boxes-ways_to_save' => array(
           'module' => 'boxes',

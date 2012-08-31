@@ -121,8 +121,8 @@ ul.arrow li {
 
 #mytrip { 
 	margin-top:0;
-	padding-left:-5px;
-	height: 440px;
+	padding:4px;
+	height: 424px;
 	width:208px;
 }
 
@@ -330,7 +330,7 @@ ul.arrow li {
 #block-views-news-rotator-block-1 {
 	margin-top:10px;
 	width: 460px;
-	height: 296px;
+	height: 266px;
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
 	}
@@ -341,9 +341,9 @@ ul.arrow li {
 	}
 	
 .views_slideshow_main {
-	height:245px;
+	height:210px;
 	overflow:hidden;
-	border-bottom: 1px solid #ccc;
+	margin-bottom:10px;
 	}
 	
 .news-rot-image{			
@@ -419,7 +419,8 @@ ul.arrow li {
 .views-slideshow-controls-bottom {
 	float:left;
 	width:450px;
-	margin-top:10px;
+	padding-top:10px;
+	border-top: 1px solid #CCCCCC;
 	}
 
 #vscc_controls_pause_news_rotator-block_1 {

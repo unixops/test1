@@ -37,7 +37,7 @@ font-weight:bold;
 	padding: 0;	
 	}
 #status-whole-block {
-	height:387px;
+	height:366px;
 	}	
 .subway_Delays, .bus_Delays, .rail_Delays, .BT_Delays {
 	 color: #990033;  
@@ -58,7 +58,8 @@ font-weight:bold;
 	margin-bottom:10px;
 	margin-top:10px;
 	padding:4px;
-	height:453px;
+	height:424px;
+	font-size: 95%;
 /*	width: 229px */
 	}
 #bottom-status-box-links {
