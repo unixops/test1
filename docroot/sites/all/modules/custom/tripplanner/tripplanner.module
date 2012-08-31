@@ -282,8 +282,22 @@ function theme_tripplanner_form($vars) {
   
   // Here we add the markup for the overall trip planner block
   $output = '<div class="feature-box roundCorners" id="mytrip">
-
-<h2 class="tp-logo"><span></span></h2>';
+  		<h2 class="tp-logo"><span></span></h2>
+  		<table cellpadding="0" cellspacing="0" style="width: 100%;   margin-bottom: 0;" >
+                            <tr>
+                                <td id="divCP" onclick="ShowTpForm('."'CP'".')" style="background-color: #00C521; color: White;
+                                    border: solid 1px gray; cursor: pointer;">
+                                    Custom Planner
+                                </td>
+                                <td id="divSIA" onclick="ShowTpForm('."'SIA'".')" style="cursor: pointer; border-bottom: solid 1px gray;
+                                    border-top: solid 1px gray;">
+                                    Service in the Area
+                                </td>
+                                <td id="divSCH" onclick="ShowTpForm('."'SCH'".')" style="cursor: pointer; border: solid 1px gray;">
+                                    Schedules
+                                </td>
+                            </tr>
+                        </table>';
  // now we use drupal_render to turn the form elements into HTML and add it the output buffer
   $output .= drupal_render($form['txtorigininput']);
   $output .= drupal_render($form['txtdestinationinput']);

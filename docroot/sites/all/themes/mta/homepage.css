@@ -122,7 +122,7 @@ ul.arrow li {
 #mytrip { 
 	margin-top:0;
 	padding-left:-5px;
-	height: 335px;
+	height: 440px;
 	width:208px;
 }
 
@@ -324,76 +324,7 @@ ul.arrow li {
 .section ul li a{float:left;padding:6px 20px 9px; background: #333333; color:#FFFFFF;}
 .section ul li a:hover{text-decoration:none; background:#666666;}*/
 
-/* content bottom left and right added by DA 8/14/12 */
-#contentbl {
-	margin-top:20px;
-	margin-left: -5px;
-    width: 220px;
-	float: left;
-	border-left:1px solid #B4B4B4;
-    }
 
-#contentbr {
-	margin-top:20px;
-	margin-left: 5px;
-	margin-right: -6px;
-	width: 220px;
-	float: right;
-	border-left: 1px solid #B4B4B4;
-	border-right: 1px solid #B4B4B4;
-	}
-
-/* Box Classes DA 8/14/12 */
-#boxes-box-news_placeholder {
-	margin:6px 12px 0px 0px;
-	height: 299px;	
-	width: 460px;
-	border: 1px solid #B4B4B4;
-    border-radius: 5px 5px 5px 5px;
-	}
-
-#boxes-box-mta_bus_time {
-	margin-top: 5px;
-	width: 230px;
-	padding: 2px, 7px, 1px, 7px;
-	border: 1px solid #B4B4B4;
-    border-radius: 5px 5px 5px 5px;
-	}
-
-#boxes-box-special_service {
-	margin-top: 30px;
-	padding: 7px;
-	}
-	
-#boxes-box-customer_self_service {
-	margin-top: 10px;
-	padding: 7px;
-	}
-	
-#boxes-box-mta_capitol {
-	padding: 7px;
-	}
-	
-#boxes-box-tourism {
-	margin-top: 10px;
-	padding: 7px;
-	}
-	
-#boxes-box-app_center {
-	margin-top: 25px;
-	padding: 7px;
-	}
-	
-#boxes-box-gc_centennial {
-	margin-top: 30px;
-	padding: 7px;
-	}
-	
-#boxes-box-advertise_on_metrocard {
-	margin-top: 15px;
-	padding: 7px;
-	}
-	
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1 {
@@ -418,7 +349,7 @@ ul.arrow li {
 .news-rot-image{			
 	float:left;
 	margin-right:10px;
-	height: 220px;
+	height: 205px;
 	}
 	
 .new-rot-title {
@@ -437,7 +368,6 @@ ul.arrow li {
 	overflow: hidden;
 	}
 
-
 	
 #widget_pager_bottom_news_rotator-block_1 {
     border: 1px solid #ccc;
@@ -454,7 +384,6 @@ ul.arrow li {
 /** Holds Pager NUmbers and Pause Control */	
 #vscc_controls_news_rotator-block_1 {
 	float: left;
-	
 	}
 
 /** Pager Number Container. Holds all numbers */	
@@ -471,11 +400,11 @@ ul.arrow li {
 	padding-bottom:4px;
 	color: #000000;
 	}
+
 .views-content-counter {
  float: left;
  height: 17px;
-}
-
+	}
 
 .views-content-counter a:hover {
 	background-position: -25px 0px;
@@ -487,13 +416,11 @@ ul.arrow li {
 	background-color: #ffffff
 	}
 
-
-
 .views-slideshow-controls-bottom {
 	float:left;
 	width:450px;
 	margin-top:10px;
-}
+	}
 
 #vscc_controls_pause_news_rotator-block_1 {
     float: left;
@@ -517,3 +444,122 @@ ul.arrow li {
 	margin-top:5px;
 	margin-right:20px;
 }
+
+/** Region Content Bottom */
+
+#content_bottom {
+	margin-left: -4px;
+	margin-bottom: 0px;
+	width: 469px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	}
+	
+/** Content Bottom Left and Right */
+
+#block-boxes-ways-to-save {
+	margin-top: 10px;
+	margin-left: 20px;
+	height: 160px;	
+	width: 420px;
+	padding-left: 7px;
+	border-bottom: 1px solid #ccc;
+	}
+
+#contentbl {
+	margin-top: -50px;
+	margin-left: -4px;
+    width: 220px;
+	float: left;
+	}
+
+#contentbr {
+	margin-top: -50px;
+	margin-left: 5px;
+	margin-right: -7px;
+	width: 220px;
+	float: right;
+	}
+
+#block-boxes-fast-track {
+ 	margin-top: 10px;
+	margin-left: 20px;
+    width: 200px;
+ 	}
+ 	
+#boxes-box-hear_from_you {
+	margin-top: 10px;
+	width: 200px;
+	height: 111px;
+	padding-left: 5px;
+	border-left: 1px solid #ccc;
+	}
+	
+/** Postcript Region */
+#postscript {
+	margin-top: 120px;
+	margin-left: -4px;
+	margin-right: -10px;
+	width: 469px;
+	}
+
+#boxes-box-capitol_program {
+	margin-top: 10px;
+	margin-left: 20px;
+	width: 420px;
+	padding-left: 7px;
+	border-top: 1px solid #ccc;
+ 	}
+	
+ #boxes-box-mta_bus_time {
+	margin-top: 10px;
+	margin-left: 5px;
+	width: 150px;
+	padding:7px;
+	border-bottom: 1px solid #ccc;
+	}
+
+#boxes-box-special_service {
+	margin-top: 30px;
+	padding: 7px;
+	border-Bottom: 1px solid #B4B4B4;
+	}
+	
+#boxes-box-customer_self_service {
+	margin-top: 10px;
+	margin-left: 5px;
+	width:150px;
+	padding: 7px;
+	border-bottom: 1px solid #ccc;
+	}
+	
+#boxes-box-mta_capitol {
+	padding: 7px;
+	}
+	
+
+	
+#boxes-box-tourism {
+	margin-top: 10px;
+	padding: 7px;
+	border-bottom: 1px solid #ccc;
+	}
+	
+#boxes-box-app_center {
+	margin-top: 25px;
+	padding: 7px;
+	}
+	
+#boxes-box-gc_centennial {
+	margin-top: 30px;
+	padding: 7px;
+	}
+	
+#boxes-box-advertise_on_metrocard {
+	margin-top: 30px;
+	padding: 7px;
+	border-bottom: 1px solid #ccc;
+	}
+	
+
+		

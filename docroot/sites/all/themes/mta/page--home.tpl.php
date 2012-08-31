@@ -44,14 +44,19 @@
 									
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 									<?php print render($page['content']); ?>
+										<div id="content_bottom" class="content_bottom">
 									<?php print render($page['content_bottom']); ?>
-			<div id="contentbl" class="bl">
+											
+										<div id="contentbl" class="bl">
 									<?php print render($page['content_bottom_left']); ?>
-									</div>
-			<div id ="contentbr" class="br">						
+											</div>	
+										<div id ="contentbr" class="br">
 									<?php print render($page['content_bottom_right']); ?>
-									</div>
-									 						         
+											</div>
+										<div id="postscript" class="postscript">
+									 <?php print render($page['postscript']); ?>
+									 		</div></div>
+														
 								</div><!-- close span-43 -->
 
 							
