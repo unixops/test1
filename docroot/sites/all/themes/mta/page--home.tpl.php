@@ -27,11 +27,17 @@
 							<div class="container">
 								<div class="span-94">									
 									<?php print $messages; ?>
-											
+									
+						
+      		    																
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first" class="span-23">
 											<?php print render($page['sidebar_first']); ?>
-											</div>
+																					
+											<?php print render($page['sidebar_first_lower']); ?>	
+											<div id="sidebar_first_lower" class="sidebar_first_lower">
+												</div>
+													</div>																										
 										<?php endif; ?>
 
 								
@@ -47,9 +53,9 @@
 									
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 									<?php print render($page['content']); ?>
+																					
 										<div id="content_bottom" class="content_bottom">
 									<?php print render($page['content_bottom']); ?>
-											
 										<div id="contentbl" class="bl">
 									<?php print render($page['content_bottom_left']); ?>
 											</div>	
@@ -58,6 +64,12 @@
 											</div>
 										<div id="postscript" class="postscript">
 									 <?php print render($page['postscript']); ?>
+									 <div id="postscript_left" class="pl">
+									<?php print render($page['postscript_left']); ?>
+											</div>	
+										<div id ="postscript_right" class="pr">
+									<?php print render($page['postscript_right']); ?>
+											</div>
 									 		</div></div>
 														
 								</div><!-- close span-43 -->
@@ -66,7 +78,13 @@
 									<?php if ($page['sidebar_second']): ?>
 										<div id="sidebar_second" class="column sidebar"><div class="section">
 										<?php print render($page['sidebar_second']); ?>
-										</div></div> <!-- /.section, /#sidebar_second -->
+										</div> <!-- /.section, /#sidebar_second -->
+									
+									<?php print render($page['sidebar_second_lower']); ?>
+									<div id="sidebar_second_lower" class="column sidebar><div class="section">
+										</div>
+											</div>
+												</div>
 									<?php endif; ?>
 
 										<?php if ($page['help']): ?>
