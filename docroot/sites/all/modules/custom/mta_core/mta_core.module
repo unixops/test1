@@ -1,1 +1,9 @@
 <?php
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function mta_core_ctools_plugin_directory($owner, $plugin) {
+  if ($owner == 'feeds_tamper') {
+    return 'plugins';
+  }
+}
