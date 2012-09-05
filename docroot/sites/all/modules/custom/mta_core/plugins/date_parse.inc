@@ -33,10 +33,11 @@ function mta_core_date_parse_validate(&$settings) {
 }
 
 function mta_core_date_parse_callback($result, $item_key, $element_key, &$field, $settings) {
-  if($field) {
-    $date = DateTime::createFromFormat('ymd', $field);
+  $format = 'ymd H:i:s';
+  if(!empty($field)) {
+    $date = DateTime::createFromFormat($format, $field . ' 11:00:00');
   } else {
-    $date = DateTime::createFromFormat('ymd', '100201');
+    $date = DateTime::createFromFormat($format, '100201 11:00:00');
   }
-  $field = $date->format('Y-m-d');
+  $field = $date->format('Y-m-d H:i:s');
 }

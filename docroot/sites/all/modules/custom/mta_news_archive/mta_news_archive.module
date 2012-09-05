@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MTA News Archive feature.
+ */
+
+include_once 'mta_news_archive.features.inc';
