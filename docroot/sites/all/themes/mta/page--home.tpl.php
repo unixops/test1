@@ -34,8 +34,8 @@
 										<div id="sidebar_first" class="span-23">
 											<?php print render($page['sidebar_first']); ?>
 																					
-											<?php print render($page['sidebar_first_lower']); ?>	
-											<div id="sidebar_first_lower" class="sidebar_first_lower">
+									<?php print render($page['sidebar_first_lower']); ?>	
+									<div id="sidebar_first_lower" class="sidebar_first_lower">
 												</div>
 													</div>																										
 										<?php endif; ?>
@@ -84,7 +84,7 @@
 									<div id="sidebar_second_lower" class="column sidebar><div class="section">
 										</div>
 											</div>
-												</div>
+												
 									<?php endif; ?>
 
 										<?php if ($page['help']): ?>
