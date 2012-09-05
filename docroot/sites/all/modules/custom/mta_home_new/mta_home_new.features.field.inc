@@ -67,7 +67,7 @@ function mta_home_new_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_article_body',
       'label' => 'Article Body',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -142,7 +142,7 @@ function mta_home_new_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_article_summary',
       'label' => 'Article Summary',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -200,7 +200,14 @@ function mta_home_new_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 9,
+          'weight' => '9',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -259,11 +266,7 @@ function mta_home_new_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'news_article',
-      'default_value' => array(
-        0 => array(
-          'value' => 'MTA News',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -369,7 +372,7 @@ function mta_home_new_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_headline',
       'label' => 'Headline',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -436,7 +439,7 @@ function mta_home_new_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'large',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '2',
@@ -520,7 +523,14 @@ function mta_home_new_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 6,
+          'weight' => '6',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -589,7 +599,14 @@ function mta_home_new_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 8,
+          'weight' => '8',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',

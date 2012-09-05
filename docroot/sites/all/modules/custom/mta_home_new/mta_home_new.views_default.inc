@@ -31,7 +31,7 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
@@ -51,7 +51,8 @@ function mta_home_new_views_default_views() {
     'field_head_title' => 0,
     'field_image' => 0,
     'field_headline' => 0,
-    'body' => 0,
+    'field_article_summary' => 0,
+    'field_image_caption' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -66,7 +67,8 @@ function mta_home_new_views_default_views() {
     'field_head_title' => 0,
     'field_image' => 0,
     'field_headline' => 0,
-    'body' => 0,
+    'field_article_summary' => 0,
+    'field_image_caption' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_hover'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['enable'] = 1;
@@ -84,6 +86,7 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['action_advanced'] = 1;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_cycle']['fixed_height'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
@@ -105,6 +108,7 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['fields']['field_head_title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_head_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_head_title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_head_title']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_head_title']['type'] = 'text_plain';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
@@ -115,9 +119,10 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_class'] = 'news-rot-image';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
+    'image_style' => '',
     'image_link' => 'content',
   );
   /* Field: Content: Headline */
@@ -142,6 +147,17 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['fields']['field_article_summary']['element_class'] = 'news-rot-teaser';
   $handler->display->display_options['fields']['field_article_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_summary']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_article_summary']['hide_empty'] = TRUE;
+  /* Field: Content: Image Caption */
+  $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
+  $handler->display->display_options['fields']['field_image_caption']['label'] = '';
+  $handler->display->display_options['fields']['field_image_caption']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_image_caption']['alter']['text'] = '<div class= "news-rot-image-caption"><div class= "news-rot-image-caption-text">[field_image_caption]</div></div>';
+  $handler->display->display_options['fields']['field_image_caption']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_caption']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_image_caption']['hide_empty'] = TRUE;
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -175,55 +191,6 @@ function mta_home_new_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-
-  /* Display: Block 2 */
-  $handler = $view->new_display('block', 'Block 2', 'block_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'News Image Rotator';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
-  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
-  $handler->display->display_options['fields']['field_image']['label'] = '';
-  $handler->display->display_options['fields']['field_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_image']['element_class'] = 'news-rot-image';
-  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  /* Field: Content: Headline */
-  $handler->display->display_options['fields']['field_headline']['id'] = 'field_headline';
-  $handler->display->display_options['fields']['field_headline']['table'] = 'field_data_field_headline';
-  $handler->display->display_options['fields']['field_headline']['field'] = 'field_headline';
-  $handler->display->display_options['fields']['field_headline']['label'] = '';
-  $handler->display->display_options['fields']['field_headline']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_headline']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_headline']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_headline']['element_class'] = 'new-rot-title';
-  $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_headline']['element_default_classes'] = FALSE;
-  /* Field: Global: View result counter */
-  $handler->display->display_options['fields']['counter']['id'] = 'counter';
-  $handler->display->display_options['fields']['counter']['table'] = 'views';
-  $handler->display->display_options['fields']['counter']['field'] = 'counter';
-  $handler->display->display_options['fields']['counter']['label'] = '';
-  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['counter']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['counter']['alter']['path'] = '#slider';
-  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
   $export['news_rotator'] = $view;
 
   return $export;
