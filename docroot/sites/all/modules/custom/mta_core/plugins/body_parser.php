@@ -16,18 +16,18 @@ $plugin = array(
 
 function mta_core_body_parse_form($importer, $element_key, $settings) {
   $form = array();
-  $form['body_format'] = array(
+  $form['body_parts'] = array(
       '#type' => 'textfield',
       '#title' => t('Body Processing'),
-      '#default_value' => isset($settings['body_format']) ? $settings['body_format'] : '',
+      '#default_value' => isset($settings['body_parts']) ? $settings['body_parts'] : '',
       '#description' => t("We look for file links and upload their contents to the server and re-write the link to its new home"),
   );
   return $form;
 }
 
 function mta_core_body_parse_validate(&$settings) {
-  if (empty($settings['body_format'])) {
-    form_set_error('settings][body_format', t('Body must not be empty.'));
+  if (empty($settings['body_parts'])) {
+    form_set_error('settings][body_parts', t('Body must not be empty.'));
   }
 }
 
@@ -35,9 +35,9 @@ function mta_core_body_parse_callback($result, $item_key, $element_key, &$field,
   if($field) {
     // enter parse code here
     dsm($field);
-    
+
   } else {
 
   }
-  
+
 }
