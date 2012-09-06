@@ -333,7 +333,7 @@ ul.arrow li {
 	height: 266px;
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
-	}
+    }
 	
 .view-news-rotator {
 	padding: 12px;
@@ -365,6 +365,9 @@ ul.arrow li {
 	margin-top: 167px;
 	width:436px;
 	position: absolute;
+	right:10px;
+  	bottom:10px;
+  	z-index:999;
 	background-image: url('images/text_bg.png');
 	}
 	
