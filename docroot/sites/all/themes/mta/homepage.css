@@ -362,11 +362,10 @@ ul.arrow li {
 	font-size:20px;
 	font-weight:bold;
 	color: #ffffff;
-	margin-top: 167px;
 	width:436px;
 	position: absolute;
 	right:10px;
-  	bottom:6px;
+  	bottom: -5px;
   	z-index:999;
   	background-image: url('images/text_bg.png');
 	}
