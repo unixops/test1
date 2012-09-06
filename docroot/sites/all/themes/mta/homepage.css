@@ -366,9 +366,9 @@ ul.arrow li {
 	width:436px;
 	position: absolute;
 	right:10px;
-  	bottom:10px;
+  	bottom:6px;
   	z-index:999;
-	background-image: url('images/text_bg.png');
+  	background-image: url('images/text_bg.png');
 	}
 	
 .news-rot-image-caption-text {
