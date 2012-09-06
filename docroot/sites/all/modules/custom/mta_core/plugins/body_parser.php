@@ -14,7 +14,7 @@ $plugin = array(
   'category' => 'Text',
 );
 
-function mta_core_body_parse_form($importer, $element_key, $settings) {
+function mta_core_body_parser_form($importer, $element_key, $settings) {
   $form = array();
   $form['body_parts'] = array(
       '#type' => 'textfield',
@@ -25,13 +25,13 @@ function mta_core_body_parse_form($importer, $element_key, $settings) {
   return $form;
 }
 
-function mta_core_body_parse_validate(&$settings) {
+function mta_core_body_parser_validate(&$settings) {
   if (empty($settings['body_parts'])) {
     form_set_error('settings][body_parts', t('Body must not be empty.'));
   }
 }
 
-function mta_core_body_parse_callback($result, $item_key, $element_key, &$field, $settings) {
+function mta_core_body_parser_callback($result, $item_key, $element_key, &$field, $settings) {
   if($field) {
     // enter parse code here
     dsm($field);
