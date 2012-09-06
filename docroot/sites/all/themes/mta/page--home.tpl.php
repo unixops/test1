@@ -26,7 +26,7 @@
 			<div id="contentbox" class="clearfix">
 							<div class="container">
 								<div class="span-94">									
-									<?php print $messages; ?>
+									<div id="messages"> <?php print $messages; ?> </div>
 									
 						
       		    																

@@ -361,7 +361,7 @@ ul.arrow li {
 	font-size:20px;
 	font-weight:bold;
 	color: #ffffff;
-	margin-top: 175px;
+	margin-top: 167px;
 	position:absolute;
 	width:436px;
 	background-image: url('images/text_bg.png');
@@ -473,9 +473,11 @@ ul.arrow li {
 	margin-right:20px;
 }
 
+
 /** Region Content Bottom */
 
 #content_bottom {
+	margin-top: 5px;
 	margin-left: -4px;
 	margin-bottom: 0px;
 	width: 469px;
@@ -495,20 +497,18 @@ ul.arrow li {
 	}
 
 #contentbl {
-	margin-top: -50px;
 	margin-left: -4px;
     width: 220px;
 	float: left;
 	}
 
 #contentbr {
-	margin-top: -50px;
 	margin-left: 5px;
 	margin-right: -7px;
 	width: 220px;
 	float: right;
 	}
-
+	
 #block-boxes-fast-track {
  	margin-top: 10px;
 	margin-left: 20px;
@@ -524,12 +524,27 @@ ul.arrow li {
 	}
 	
 /** Postcript Region */
+
+
+/**
 #postscript {
 	margin-top: 120px;
 	margin-left: -4px;
 	margin-right: -10px;
 	width: 469px;
 	}
+	
+
+#postscript_left {
+	float: left;
+	width: 220px;
+	}
+
+#postscript_right {
+	float: right;
+	width: 220px;
+	}
+*/
 
 #boxes-box-capitol_program {
 	margin-top: 10px;
