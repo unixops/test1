@@ -90,8 +90,8 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
+  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 1;
+  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -123,6 +123,21 @@ function mta_home_new_views_default_views() {
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
     'image_style' => '',
+    'image_link' => 'content',
+  );
+  /* Field: Content: Wide Image */
+  $handler->display->display_options['fields']['field_wide_image']['id'] = 'field_wide_image';
+  $handler->display->display_options['fields']['field_wide_image']['table'] = 'field_data_field_wide_image';
+  $handler->display->display_options['fields']['field_wide_image']['field'] = 'field_wide_image';
+  $handler->display->display_options['fields']['field_wide_image']['label'] = '';
+  $handler->display->display_options['fields']['field_wide_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_wide_image']['element_class'] = 'news-rot-image-large';
+  $handler->display->display_options['fields']['field_wide_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_wide_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_wide_image']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_wide_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_wide_image']['settings'] = array(
+    'image_style' => 'wide_rotator',
     'image_link' => 'content',
   );
   /* Field: Content: Headline */
