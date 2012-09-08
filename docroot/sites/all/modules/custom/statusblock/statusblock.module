@@ -114,7 +114,7 @@ function theme_subwayTab($variables)
     $arrSubway = $variables['content'];
     
     $rendered = '<div id="subwayDiv" style="float: left; margin-top: 1px;">
-        <ul style="float: right; padding:0; margin:0">
+        <ul style="float: right; padding:0; margin:6px 0 5px ">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
             <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li></ul>';
     
@@ -209,7 +209,7 @@ function theme_busTab($variables) {
 function theme_bntTab($variables) {
     $arrBnt = $variables['bnt'];
     
-    $rendered = '<div id="bntDiv" style="float: left; display: none; margin-top: 12px;">
+    $rendered = '<div id="bntDiv" style="float: left; display: none; margin-top: 9px;">
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/bandt/traffic/advisory.html\'">Future Date</li></ul>';
  // don't end it here   $rendered .='</div>';
