@@ -31,7 +31,7 @@ font-weight:bold;
 #statusblock-tabs {
 	border: 1px solid #CCCCCC;
 	clear:both;
-	height:21px;
+	height:22px;
 	width: 220px; 
 	margin-left:-1px;
 	padding: 0;	
@@ -58,13 +58,13 @@ font-weight:bold;
 	margin-top:10px;
 	padding-top:10px;
 	padding-bottom:10px;
+	padding-left:4px;
 	height:424px;
-	font-size: 95%;
 /*	width: 229px */
 	}
 #bottom-status-box-links {
 	margin-left:13px;
-    width: 230px;
+	width:200px
 }
 	
 #bottom-status-box-links ul{
@@ -93,7 +93,8 @@ font-weight:bold;
 	font-weight: bold;
 	color: #000099;
         float: left;
-        margin: 4px 0 3px;
+        margin-top: 7px;
+        margin-bottom:2px;
 }
 
 .railLineItem {
