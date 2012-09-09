@@ -56,11 +56,9 @@ html {
 	height:auto;
 }
 #breadcrumb {
-    padding:0;
-    margin-top: 1px;
-    margin-left: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
     margin-bottom 0;
-    height:18px;
 }
 .breadcrumb {
 	padding:0;
@@ -83,10 +81,14 @@ html {
 	margin-left: 10px;
 }
 #sidebar_first {
-	margin:-10px 0 0 0px;
+	margin:0;
 
 	float:left;
 	}
+#contentbox {
+	margin-top:10px;
+	}
+
 .span-90 {
 	width:938px;
 	margin:0;
