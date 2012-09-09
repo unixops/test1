@@ -1,0 +1,219 @@
+diff --git a/revision_scheduler.module b/revision_scheduler.module
+index b6bc970..207112c 100644
+--- a/revision_scheduler.module
++++ b/revision_scheduler.module
+@@ -497,7 +497,213 @@ function revision_scheduler_entity_load_by_revision($entity_type, $entity_id, $r
+  * Implements hook_field_attach_form().
+  */
+ function revision_scheduler_field_attach_form($entity_type, $entity, &$form, &$form_state, $langcode) {
+-  //$operations = revision_scheduler_entity_revision_operation_get_options($entity_type, $entity);
++  $info = entity_get_info($entity_type);
++  if ($info['entity keys']['revision'] && user_access('schedule revisions')) {
++    $operations = array_merge(array('' => t('None')), revision_scheduler_entity_revision_operation_get_options($entity_type, $entity));
++    $container = &$form;
++
++    // Try to put the field in the Publish Options or Revision Information fieldset, for the case when
++    // the entity_type is 'node'.
++    if (isset($form['options']) && $form['options']['#type'] == 'fieldset' && $form['options']['#access']) {
++      $container = &$form['options'];
++    }
++    elseif (isset($form['revision_information']) && $form['revision_information']['#type'] == 'fieldset' && $form['revision_information']['#access']) {
++      $container = &$form['revision_information'];
++    }
++
++    $container['revision_scheduler_operation'] = array(
++      '#type' => 'select',
++      '#options' => $operations,
++      '#title' => t('Operation'),
++      '#description' => t('Please select an operation that should be scheduled.')
++    );
++    $container['revision_scheduler_datetime'] = array(
++      '#type' => 'textfield',
++      '#title' => t('Scheduled date'),
++      '#default_value' => format_date(REQUEST_TIME+3600, 'custom', 'm/d/Y - H:i'),
++    );
++
++    if (module_exists('date_popup')) {
++      $container['revision_scheduler_datetime']['#type'] = 'date_popup';
++      $container['revision_scheduler_datetime']['#date_format'] = 'm/d/Y - H:i';
++      $container['revision_scheduler_datetime']['#date_year_range'] = '0:+5';
++      $container['revision_scheduler_datetime']['#date_increment'] = 1;
++    }
++    // Add some validation and submit handlers.
++    if (isset($form['actions']) && $form['actions']['submit']['#type'] == 'submit') {
++      $form['actions']['submit']['#submit'][] = 'revision_scheduler_field_form_submit';
++    }
++    else {
++      $form['#submit'][] = 'revision_scheduler_field_form_submit';
++    }
++    $form['#validate'][] = 'revision_scheduler_field_form_validate';
++  }
++}
++
++/**
++ * Additional validation handler for the scheduler field.
++ */
++function revision_scheduler_field_form_validate($form, &$form_state) {
++  // If the operation is not empty, check also to see if the date is not empty
++  // and valid.
++  if (!empty ($form_state['values']['revision_scheduler_operation'])) {
++    if (empty($form_state['values']['revision_scheduler_datetime'])) {
++      form_set_error('revision_scheduler_datetime', t('If you select an operation to be scheduled, you must also select a date and a time.'));
++    }
++    elseif (is_string($form_state['values']['revision_scheduler_datetime'])) {
++      $date = strtotime($form_state['values']['revision_scheduler_datetime']);
++      if ($date === FALSE) {
++        form_set_error('revision_scheduler_datetime', t('Invalid date.'));
++      }
++    }
++  }
++}
++
++/**
++ * Additional submit handler for the scheduler field.
++ *
++ * It will actually create a new scheduled operation.
++ */
++function revision_scheduler_field_form_submit($form, &$form_state) {
++  // Proceed only if there is a scheduled operation selected.
++  if (!empty ($form_state['values']['revision_scheduler_operation'])) {
++    // If we have a valid entity type, reload the entity so that we have the
++    // newest revision id.
++    if (isset ($form['#entity_type'])) {
++      $entity_info = entity_get_info($form['#entity_type']);
++      $entity_id = NULL;
++      if ($entity_info && isset($entity_info['entity keys']['id'])) {
++        $entity_id = $form_state['values'][$entity_info['entity keys']['id']];
++        if ($entity_id) {
++          // If we are here, we have a valid entity type and a valid entity id,
++          // so load it first.
++          $entity = revision_scheduler_entity_load_by_revision($form['#entity_type'], $entity_id);
++          // Construct the scheduler object and save it.
++          $operation = new stdClass();
++          $operation->id = NULL;
++          $operation->entity_type = $form['#entity_type'];
++          $operation->entity_id = $entity_id;
++          $operation->revision_id = $entity->{$entity_info['entity keys']['revision']};
++          $operation->operation = $form_state['values']['revision_scheduler_operation'];
++          if (is_string($form_state['values']['revision_scheduler_datetime'])){
++            $operation->time_scheduled = strtotime($form_state['values']['revision_scheduler_datetime']);
++          } else {
++            $operation->time_scheduled = strtotime($form_state['values']['revision_scheduler_datetime']['date'] . ' ' . $form_state['values']['revision_scheduler_datetime']['time']);
++          }
++          $operation->time_queued = 0;
++          $operation->time_executed = 0;
++          revision_scheduler_operation_save($operation);
++          drupal_set_message('The scheduled revision operation has been saved.');
++        }
++      }
++    }
++  }
++}
++
++/**
++ * Implements hook_form_FORM_ID_alter().
++ */
++function revision_scheduler_form_workbench_moderation_moderate_form_alter(&$form, &$form_state, $form_id) {
++  // Show the scheduled operations on the moderation form, but only on the
++  // revisions list page. On the "View draft" page the messages will be printed
++  // inside the workbench messages block.
++  // @todo: Find a better way to check that the user is on the moderation page.
++  if (isset($form['node']) && arg(2) == 'moderation' && user_access('schedule revisions')) {
++    $operations = revision_scheduler_entity_revision_operation_get_options('node', $form['node']['#value']);
++    $revision_schedule = revision_scheduler_get_revision_schedule($form['node']['#value']);
++    $valid_operations = array();
++    foreach ($revision_schedule as $key => $schedule) {
++      if (!isset($form['schedule_information'])) {
++        $form['schedule_information'] = array(
++          '#type' => 'fieldset',
++          '#title' => t('Scheduled operations'),
++        );
++      }
++      $token_value = implode('-', array('run', $schedule->id, $schedule->operation, $schedule->time_scheduled));
++      $actions = array(
++        l(t('Run now'), 'revision-scheduler/' . $schedule->id . '/run', array('query' => array('token' => drupal_get_token($token_value)) + drupal_get_destination())),
++        l(t('Cancel'), 'revision-scheduler/' . $schedule->id . '/delete', array('query' => drupal_get_destination()))
++      );
++      // Append the schedule information to the form.
++      $form['schedule_information']['schedule_information_'.$key] = array(
++        '#type' => 'item',
++        '#markup' => t('Scheduled operation: @operation on @date !actions',
++                array('@operation' => $operations[$schedule->operation],
++                      '@date' => format_date($schedule->time_scheduled),
++                      '!actions' => implode(' | ', $actions))),
++      );
++    }
++  }
++}
++
++/*
++ * Returns all the scheduled operations (that are not run yet) for node revision
++ */
++function revision_scheduler_get_revision_schedule($node_revision) {
++  if (isset($node_revision->nid) && isset($node_revision->vid)) {
++    $operations = db_select('revision_scheduler', 'rs')
++                ->fields('rs', array('id', 'operation', 'time_scheduled'))
++                ->condition('rs.entity_type', 'node')
++                ->condition('rs.entity_id', $node_revision->nid)
++                ->condition('rs.revision_id', $node_revision->vid)
++                ->condition('rs.time_executed', 0)
++                ->condition('rs.time_queued', 0)
++                ->orderBy('rs.time_scheduled', 'ASC');
++    return $operations->execute();
++  }
++
++  return array();
++}
++
++/*
++ * Implements hook_form_BASE_FORM_ID_alter().
++ */
++function revision_scheduler_form_node_form_alter(&$form, &$form_state, $form_id) {
++  revision_scheduler_add_messages($form['#node']);
++}
++
++/**
++ * Implements hook_node_view().
++ *
++ * Adds the revision schedule messages for this node.
++ */
++function revision_scheduler_node_view($node, $view_mode = 'full') {
++  // Show moderation state messages if we're on a node page.
++  if (node_is_page($node) && $view_mode == 'full' && empty($node->in_preview)) {
++    revision_scheduler_add_messages($node);
++  }
++}
++
++/**
++ * Returns an array with scheduled operation messages formatted for workbench display.
++ *
++ * @param object $node_revision
++ *  The node revision object.
++ */
++function revision_scheduler_add_messages($node_revision) {
++  if (user_access('schedule revisions')) {
++    // Add schedule information to the node edit form.
++    $revision_schedule = revision_scheduler_get_revision_schedule($node_revision);
++    $operations = revision_scheduler_entity_revision_operation_get_options('node', $node_revision);
++    $messages = array();
++    foreach ($revision_schedule as $key => $schedule) {
++      $token_value = implode('-', array('run', $schedule->id, $schedule->operation, $schedule->time_scheduled));
++      $actions = array(
++        l(t('Run now'), 'revision-scheduler/' . $schedule->id . '/run', array('query' => array('token' => drupal_get_token($token_value)) + drupal_get_destination())),
++        l(t('Cancel'), 'revision-scheduler/' . $schedule->id . '/delete', array('query' => drupal_get_destination()))
++      );
++      $messages[] = array(
++        'label' => t('Scheduled operation'),
++        'message' => t('@operation on @date !actions',
++                      array('@operation' => $operations[$schedule->operation],
++                            '@date' => format_date($schedule->time_scheduled),
++                            '!actions' => implode(' | ', $actions)))
++      );
++    }
++    if ($messages) {
++      module_invoke('workbench_moderation', 'set_message', $messages);
++    }
++  }
+ }
+ 
+ /**
