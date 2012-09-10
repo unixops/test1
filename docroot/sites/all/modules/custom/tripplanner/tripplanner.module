@@ -285,19 +285,21 @@ function theme_tripplanner_form($vars) {
   		<h2 class="tp-logo"><span></span></h2>
   		<table cellpadding="0" cellspacing="0" style="width: 100%;   margin-bottom: 0;" >
                             <tr>
-                                <td id="divCP" onclick="ShowTpForm('."'CP'".')" style="background-color: #00C521; color: White;
+                                <td id="CustomTab" style="background-color: #00C521; color: White;
                                     border: solid 1px gray; cursor: pointer;">
                                     Custom Planner
                                 </td>
-                                <td id="divSIA" onclick="ShowTpForm('."'SIA'".')" style="cursor: pointer; border-bottom: solid 1px gray;
+                                <td id="NearByTab" style="cursor: pointer; border-bottom: solid 1px gray;
                                     border-top: solid 1px gray;">
                                     Service in the Area
                                 </td>
-                                <td id="divSCH" onclick="ShowTpForm('."'SCH'".')" style="cursor: pointer; border: solid 1px gray;">
+                                <td id="MenuTab" style="cursor: pointer; border: solid 1px gray;">
                                     Schedules
                                 </td>
                             </tr>
                         </table>';
+ // now we want to add the divs for the tabs 
+  $output.='<div id="customDiv">';
  // now we use drupal_render to turn the form elements into HTML and add it the output buffer
   $output .= drupal_render($form['txtorigininput']);
   $output .= drupal_render($form['txtdestinationinput']);
@@ -314,6 +316,18 @@ function theme_tripplanner_form($vars) {
  
   // Finially, we need to render the Drupal "magic fields" using a different function 
   $output .= drupal_render_children($form);
+  //Close the custom tab
+  $output .= '</div>';
+// print the near by content
+  $output.='<div id="nearbyDiv">';
+     $output .= 'Near By';
+   //Close the nearby tab
+  $output .= '</div>';
+// print the menu content
+  $output.='<div id="menuDiv">';
+   //Close the menuby tab
+  $output .= 'Menu';
+  $output .= '</div>'; 
   
   //Close the markup
   $output .= '</div>';
