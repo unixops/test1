@@ -11,7 +11,7 @@ h2.tp-logo { overflow:hidden; }
 /* IE5 Mac Hack \*/ h1 { overflow: hidden; } /*/ h1 { text-indent: -100em; } /* End Hack */
 
 a:link {text-decoration: none; color:#0055aa;}
-a:visited {text-decoration: none; color:#555;}
+a:visited {text-decoration: none; color:#0055aa;}
 a:hover {text-decoration: underline}
 a:active {text-decoration: underline}
 
