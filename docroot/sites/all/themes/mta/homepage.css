@@ -532,17 +532,16 @@ ul.arrow li {
 /** Postcript Region */
 
 
-/**
+
 #postscript {
-	margin-top: 120px;
-	margin-left: -4px;
-	margin-right: -10px;
+	margin-top: 140px;
 	width: 469px;
 	}
 	
 
 #postscript_left {
 	float: left;
+	margin-left: 5px;
 	width: 220px;
 	}
 
@@ -550,7 +549,7 @@ ul.arrow li {
 	float: right;
 	width: 220px;
 	}
-*/
+
 
 #boxes-box-capitol_program {
 	margin-top: 225px;
@@ -605,11 +604,31 @@ ul.arrow li {
 	padding: 7px;
 	}
 	
+	
 #boxes-box-advertise_on_metrocard {
 	margin-top: 30px;
 	padding: 7px;
 	border-bottom: 1px solid #ccc;
 	}
 	
+/** LIRR Home Page Blocks */
 
+#block-lirr-megamenu-lirr-megamenu {
+	width: 460px;
+	
+	}
+
+
+
+
+#boxes-box-lirr_special_service {
+	margin-top:10px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    }
+    
+ 
 		

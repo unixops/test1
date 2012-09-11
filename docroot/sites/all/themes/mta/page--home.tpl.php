@@ -56,7 +56,7 @@
 																					
 										<div id="content_bottom" class="content_bottom">
 									<?php print render($page['content_bottom']); ?>
-										<div id="contentbl" class="bl">
+											<div id="contentbl" class="bl">
 									<?php print render($page['content_bottom_left']); ?>
 											</div>	
 										<div id ="contentbr" class="br">
@@ -64,13 +64,15 @@
 											</div>
 										<div id="postscript" class="postscript">
 									 <?php print render($page['postscript']); ?>
+									 		</div>
 									 <div id="postscript_left" class="pl">
 									<?php print render($page['postscript_left']); ?>
-											</div>	
-										<div id ="postscript_right" class="pr">
+											</div>
+										<div id ="postscript_right" class="pr">			
 									<?php print render($page['postscript_right']); ?>
 											</div>
-									 		</div></div>
+											</div>	
+									 		
 														
 								</div><!-- close span-43 -->
 
