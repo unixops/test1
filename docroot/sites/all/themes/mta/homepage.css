@@ -532,12 +532,10 @@ ul.arrow li {
 /** Postcript Region */
 
 
-
 #postscript {
 	margin-top: 140px;
 	width: 469px;
 	}
-	
 
 #postscript_left {
 	float: left;
@@ -585,8 +583,6 @@ ul.arrow li {
 	padding: 7px;
 	}
 	
-
-	
 #boxes-box-tourism {
 	margin-top: 10px;
 	padding: 7px;
@@ -604,7 +600,6 @@ ul.arrow li {
 	padding: 7px;
 	}
 	
-	
 #boxes-box-advertise_on_metrocard {
 	margin-top: 30px;
 	padding: 7px;
@@ -615,11 +610,7 @@ ul.arrow li {
 
 #block-lirr-megamenu-lirr-megamenu {
 	width: 460px;
-	
 	}
-
-
-
 
 #boxes-box-lirr_special_service {
 	margin-top:10px;
