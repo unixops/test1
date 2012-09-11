@@ -608,8 +608,8 @@ ul.arrow li {
 	
 /** LIRR Home Page Blocks */
 
-#block-lirr-megamenu-lirr-megamenu {
-	width: 460px;
+#block-mta-megamenu-lirr-megamenu {
+	height: 85px;
 	}
 
 #boxes-box-lirr_special_service {
@@ -620,6 +620,8 @@ ul.arrow li {
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }
+    
+   
     
  
 		
