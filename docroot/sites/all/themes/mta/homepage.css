@@ -282,7 +282,6 @@ ul.arrow li {
 #agency-links #threeCol #menuanchor3:hover { background: #e4e4e4 url(/images/3.gif) 102px center no-repeat; border:1px solid #b4b4b4; }
 
 
-
 #agency-spnews {
 	margin-top: 10px;
 	padding: 10px;
@@ -299,9 +298,7 @@ ul.arrow li {
 	overflow: hidden;
 }
 
-
 .heading { float:left; margin:7px;font-size:12px; font-weight:bold; width:400px; color:#0066FF; }
-
 
 /* Agency div styles */
 #deals { 
