@@ -269,10 +269,10 @@ ul.arrow li {
 #agency-links #threeCol li { float: left; width: 127px; padding: 5px; display: inline; margin-right: 10px; font-weight: bold; }
 #agency-links #threeCol li.last { margin-right: 0px; }
 
-#agency-links #twoCol #menuanchor1 { background: #fff url(/images/1.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
-#agency-links #twoCol #menuanchor1:hover { background: #e4e4e4 url(/images/1.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
-#agency-links #twoCol #menuanchor2 { background: #fff url(/images/2.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
-#agency-links #twoCol #menuanchor2:hover { background: #e4e4e4 url(/images/2.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
+#agency-links #twoCol #menuanchor1 { background: #fff url(images/1.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #twoCol #menuanchor1:hover { background: #e4e4e4 url(images/1.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
+#agency-links #twoCol #menuanchor2 { background: #fff url(images/2.gif) 178px center no-repeat; border:1px solid #e4e4e4; }
+#agency-links #twoCol #menuanchor2:hover { background: #e4e4e4 url(images/2.gif) 178px center no-repeat; border:1px solid #b4b4b4; }
 
 #agency-links #threeCol #menuanchor1 { background: #fff url(/images/1.gif) 102px center no-repeat; border:1px solid #e4e4e4; }
 #agency-links #threeCol #menuanchor1:hover { background: #e4e4e4 url(/images/1.gif) 102px center no-repeat; border:1px solid #b4b4b4; }
