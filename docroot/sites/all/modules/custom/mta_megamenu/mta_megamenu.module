@@ -49,8 +49,9 @@ function mta_megamenu_block_info() {
 			//jkmegamenu.definemenu("menuanchor8", "menueight", "click", "right");
    			
 		</script>';
-      }
-      return $block;
+      	}
+  	      	break;
+  
   
  		case 'lirr_megamenu':
  			$block['subject'] = '';
@@ -63,17 +64,12 @@ function mta_megamenu_block_info() {
  				$block['content'].='<script type="text/javascript">
 			jkmegamenu.definemenu("menuanchor1", "menuone", "click", "left");
 			jkmegamenu.definemenu("menuanchor2", "menutwo", "click", "left");
-			jkmegamenu.definemenu("menuanchor3", "menuthree", "click", "left");
-			jkmegamenu.definemenu("menuanchor4", "menufour", "click", "left");
-			jkmegamenu.definemenu("menuanchor5", "menufive", "click", "right");
-			jkmegamenu.definemenu("menuanchor6", "menusix", "click", "right");
-			//jkmegamenu.definemenu("menuanchor7", "menuseven", "click", "right");
-			//jkmegamenu.definemenu("menuanchor8", "menueight", "click", "right");
- 
+			 
 		</script>';
- 			}
-  			return $block;
  			
+      }
+      break;
+ 	
  			case 'nyct_megamenu':
  			$block['subject'] = '';
  			if(user_access('access content')){
@@ -138,11 +134,11 @@ function mta_megamenu_block_info() {
  			
 		</script>';
  			}
- 			return $block;
+ 			break;
  		
- 	}
- }
- 
+   }
+  return $block;
+}
 
  
  
