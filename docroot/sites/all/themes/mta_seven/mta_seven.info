@@ -1,0 +1,18 @@
+
+;----------// Theme Information
+  name        = mta_seven
+  description = mta_seven is a sub-theme of Seven which is used as the Admin theme
+  core        = 7.x
+  engine      = phptemplate
+  screenshot  = screenshot.png
+  base theme  = seven
+
+stylesheets[screen][] = reset.css
+stylesheets[screen][] = style.css
+stylesheets[all][]   = style.css
+regions[content] = Content
+regions[help] = Help
+regions[page_top] = Page top
+regions[page_bottom] = Page bottom
+regions[sidebar_first] = First sidebar
+regions_hidden[] = sidebar_first
