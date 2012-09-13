@@ -388,7 +388,9 @@ ul.arrow li {
 	}
 	
 	
-	.emergency-rot-title {
+	.emergency-rot-title,
+	.emergency-rot-title a.link,
+	.emergency-rot-title a.visited {
 	 font-size:20px;
   font-weight:bold;
   color:red;
