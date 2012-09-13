@@ -658,7 +658,8 @@ ul.arrow li {
     border-radius: 5px 5px 5px 5px;
     }  
   /* here is field themes for new system */
-  .form-item-field-news-rotator-style-und {
+  .form-item-field-news-rotator-style-und
+ {
   float:left;
   margin:10px;
   }
