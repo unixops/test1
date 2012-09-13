@@ -387,6 +387,15 @@ ul.arrow li {
 	overflow: hidden;
 	}
 	
+	
+	.emergency-rot-title {
+	 font-size:20px;
+  font-weight:bold;
+  color:red;
+  padding:0;
+  margin-bottom: 5px;
+  overflow: hidden;
+	}
 .news-rot-teaser {
 	float: left;
 	font-size:12px;
