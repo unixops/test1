@@ -325,7 +325,7 @@ ul.arrow li {
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1,
-#rotator-preview {
+#block-views-news-rotator-preview-block-1 {
 	padding: 10px;
 	margin-top:10px;
 	width: 438px;
@@ -365,9 +365,8 @@ ul.arrow li {
 .news-rot-image-caption {
 	width:438px;
 	position: absolute;
-  	top: 193px;
-  	height:28px;
-  	padding:0;
+  	bottom: 5px;
+  	padding-bottom:3px;
   	z-index:999;
   	background-image: url('images/text_bg.png');
 	}
