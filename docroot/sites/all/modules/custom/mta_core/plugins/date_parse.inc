@@ -11,7 +11,7 @@ $plugin = array(
   'validate' => 'mta_core_date_parse_validate',
   'name' => 'Date Parse',
   'multi' => 'skip',
-  'category' => 'Text',
+  'category' => 'MTA',
 );
 
 function mta_core_date_parse_form($importer, $element_key, $settings) {
