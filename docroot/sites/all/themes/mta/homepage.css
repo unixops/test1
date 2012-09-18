@@ -365,7 +365,7 @@ ul.arrow li {
 .news-rot-image-caption {
 	width:438px;
 	position: absolute;
-  	bottom: 5px;
+  	bottom: 0;
   	padding-bottom:3px;
   	z-index:999;
   	background-image: url('images/text_bg.png');
