@@ -5,6 +5,7 @@ core = 7.x
 
 stylesheets[all][] = base.css
 stylesheets[all][] = grid.css
+stylesheets[all][] = mtaviews.css
 stylesheets[all][] = homepage.css
 stylesheets[all][] = formalize.css
 stylesheets[all][] = topbar.css
