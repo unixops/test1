@@ -34,9 +34,8 @@
 							</div>											
 
 
-									<a id="main-content"></a>
+									<div id="main-ad-content">
 
-									
 									<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 									<?php print render($page['content']); ?>        
@@ -55,7 +54,7 @@
 										</div></div> <!-- /.section, /#highlighted-->
 									<?php endif; ?>
 						
-
+                 </div>
 
 								<!-- close span-21 last -->
 						</div><!-- close container for grid -->
