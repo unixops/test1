@@ -15,12 +15,12 @@
 
 <div id="news_rotator_archive">
 	<input type="button" value="archives"
-			onclick="location.href='http://mta.info/news/archive.html'">
+			onclick="location.href='../news_archives'">
 	</div>
 	
 <div id="news_rotator_more">
 		<input type="button" value="more news"
-			onclick="location.href='http://mta.info/news'">
+			onclick="location.href='../more_news'">
 	</div>
 	
 

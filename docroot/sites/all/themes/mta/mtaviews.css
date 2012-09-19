@@ -77,15 +77,6 @@
 	overflow: hidden;
 	}
 	
-.new-rot-title-archive {
-	font-size:14px;
-	font-weight:bold;
-	padding:0;
-	margin-bottom: 5px;
-	overflow: hidden;
-	}
-	
-	
 	.emergency-rot-title,
 	.emergency-rot-title a:link,
 	.emergency-rot-title a:visited {
@@ -96,6 +87,7 @@
   margin-bottom: 5px;
   overflow: hidden;
 	}
+
 .news-rot-teaser {
 	float: left;
 	font-size:12px;
@@ -103,7 +95,7 @@
 	padding-right:3px;
 	overflow: hidden;
 	}
-
+	
 #widget_pager_bottom_news_rotator-block_1 {
     height: 24px;
     margin-top: -1px;
@@ -176,6 +168,7 @@
 	display:none;
 	}
 
+/*Rotator Link Buttons | See vscc_controls tpl for url links */
 #news_rotator_more {
 	float:right;
 	margin-right:20px;
@@ -185,3 +178,32 @@
 	float:right;
 	margin-right:20px;
 }
+
+/* More News Views Styles */
+
+
+/* News Archive Views Styles*/
+.archive-post-date {
+    border-bottom: medium none;
+    color: gray;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-bottom: 2px;
+	}
+	
+.new-rot-title-archive {
+	font-size:14px;
+	font-weight:bold;
+	padding:0;
+	overflow: hidden;
+	}
+		
+.news-rot-teaser-archive {
+	font-size:12px;
+	width: 650px;
+	padding-right:3px;
+	overflow: hidden;
+	}
+
+	
