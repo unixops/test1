@@ -27,3 +27,10 @@ function mta_core_update_7001() {
   cache_clear_all();
 }
 
+/**
+ * Enabling Date, Date tools, and Date views modules
+ */
+function mta_core_update_7002() {
+  module_enable(array('date', 'date_tools', 'date_views'));
+  cache_clear_all();
+}

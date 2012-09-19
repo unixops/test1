@@ -36,11 +36,10 @@ function eotf_feeds_importer_default() {
           'xpathparser:5' => 'Locations',
           'xpathparser:6' => 'Duration',
           'xpathparser:7' => 'ProjectDescription',
-          'xpathparser:8' => 'SolicationMonth',
-          'xpathparser:9' => 'SolicationYear',
-          'xpathparser:10' => 'TypeofContract',
-          'xpathparser:11' => 'DollarRange',
-          'xpathparser:12' => 'Task1|Task2|Task3|Task4|Task5|Task6|Task7|Task8|Task9|Task10|Task11|Task12|Task13|Task14',
+          'xpathparser:8' => 'SolicationMonth|SolicationYear',
+          'xpathparser:9' => 'TypeofContract',
+          'xpathparser:10' => 'DollarRange',
+          'xpathparser:11' => 'Task1|Task2|Task3|Task4|Task5|Task6|Task7|Task8|Task9|Task10|Task11|Task12|Task13|Task14',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -55,7 +54,6 @@ function eotf_feeds_importer_default() {
           'xpathparser:9' => 0,
           'xpathparser:10' => 0,
           'xpathparser:11' => 0,
-          'xpathparser:12' => 0,
         ),
         'context' => 'eyeonfutnew',
         'exp' => array(
@@ -76,7 +74,6 @@ function eotf_feeds_importer_default() {
             'xpathparser:9' => 0,
             'xpathparser:10' => 0,
             'xpathparser:11' => 0,
-            'xpathparser:12' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -92,7 +89,7 @@ function eotf_feeds_importer_default() {
           0 => array(
             'source' => 'xpathparser:0',
             'target' => 'title',
-            'unique' => 0,
+            'unique' => 1,
           ),
           1 => array(
             'source' => 'xpathparser:1',
@@ -131,26 +128,21 @@ function eotf_feeds_importer_default() {
           ),
           8 => array(
             'source' => 'xpathparser:8',
-            'target' => 'field_solication_month',
+            'target' => 'field_solicationmonth:start',
             'unique' => FALSE,
           ),
           9 => array(
             'source' => 'xpathparser:9',
-            'target' => 'field_solication_year',
+            'target' => 'field_contract_type',
             'unique' => FALSE,
           ),
           10 => array(
             'source' => 'xpathparser:10',
-            'target' => 'field_contract_type',
+            'target' => 'field_dollar_range',
             'unique' => FALSE,
           ),
           11 => array(
             'source' => 'xpathparser:11',
-            'target' => 'field_dollar_range',
-            'unique' => FALSE,
-          ),
-          12 => array(
-            'source' => 'xpathparser:12',
             'target' => 'field_tasks',
             'unique' => FALSE,
           ),

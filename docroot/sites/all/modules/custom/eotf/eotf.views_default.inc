@@ -69,22 +69,21 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_project_desc']['id'] = 'field_project_desc';
   $handler->display->display_options['fields']['field_project_desc']['table'] = 'field_data_field_project_desc';
   $handler->display->display_options['fields']['field_project_desc']['field'] = 'field_project_desc';
-  /* Field: Content: SolicationMonth */
-  $handler->display->display_options['fields']['field_solication_month']['id'] = 'field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['table'] = 'field_data_field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['field'] = 'field_solication_month';
-  /* Field: Content: SolicationYear */
-  $handler->display->display_options['fields']['field_solication_year']['id'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['table'] = 'field_data_field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['field'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Field: Content: TypeofContract */
   $handler->display->display_options['fields']['field_contract_type']['id'] = 'field_contract_type';
   $handler->display->display_options['fields']['field_contract_type']['table'] = 'field_data_field_contract_type';
   $handler->display->display_options['fields']['field_contract_type']['field'] = 'field_contract_type';
+  /* Field: Content: SolicationMonth */
+  $handler->display->display_options['fields']['field_solicationmonth']['id'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['field'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['settings'] = array(
+    'format_type' => 'mta_month',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: DollarRange */
   $handler->display->display_options['fields']['field_dollar_range']['id'] = 'field_dollar_range';
   $handler->display->display_options['fields']['field_dollar_range']['table'] = 'field_data_field_dollar_range';
@@ -95,11 +94,10 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_tasks']['field'] = 'field_tasks';
   $handler->display->display_options['fields']['field_tasks']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_tasks']['multi_type'] = 'ul';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: SolicationMonth (field_solicationmonth) */
+  $handler->display->display_options['sorts']['field_solicationmonth_value']['id'] = 'field_solicationmonth_value';
+  $handler->display->display_options['sorts']['field_solicationmonth_value']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['sorts']['field_solicationmonth_value']['field'] = 'field_solicationmonth_value';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -191,25 +189,19 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_contract_type']['field'] = 'field_contract_type';
   $handler->display->display_options['fields']['field_contract_type']['label'] = 'Type of Contract';
   $handler->display->display_options['fields']['field_contract_type']['element_label_colon'] = FALSE;
-  /* Field: Content: SolicationYear */
-  $handler->display->display_options['fields']['field_solication_year']['id'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['table'] = 'field_data_field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['field'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['label'] = '';
-  $handler->display->display_options['fields']['field_solication_year']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_solication_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_solication_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
-  );
   /* Field: Content: SolicationMonth */
-  $handler->display->display_options['fields']['field_solication_month']['id'] = 'field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['table'] = 'field_data_field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['field'] = 'field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['label'] = 'Solication Month';
-  $handler->display->display_options['fields']['field_solication_month']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_solication_month']['alter']['text'] = '[field_solication_month] [field_solication_year]';
-  $handler->display->display_options['fields']['field_solication_month']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth']['id'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['field'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['label'] = 'Solication Month';
+  $handler->display->display_options['fields']['field_solicationmonth']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth']['settings'] = array(
+    'format_type' => 'mta_month',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: ReferenceNumber */
   $handler->display->display_options['fields']['field_ref_number']['id'] = 'field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['table'] = 'field_data_field_ref_number';
@@ -242,6 +234,18 @@ function eotf_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_text_agency',
+      'rendered' => 0,
+      'rendered_strip' => 0,
+    ),
+    1 => array(
+      'field' => 'field_solicationmonth',
+      'rendered' => 0,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -254,6 +258,20 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_text_agency']['label'] = '';
   $handler->display->display_options['fields']['field_text_agency']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_text_agency']['element_label_colon'] = FALSE;
+  /* Field: Content: SolicationMonth */
+  $handler->display->display_options['fields']['field_solicationmonth']['id'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['field'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth']['label'] = '';
+  $handler->display->display_options['fields']['field_solicationmonth']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_solicationmonth']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth']['settings'] = array(
+    'format_type' => 'mta_month',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: ReferenceNumber */
   $handler->display->display_options['fields']['field_ref_number']['id'] = 'field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['table'] = 'field_data_field_ref_number';
@@ -298,24 +316,7 @@ function eotf_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Field: Content: SolicationMonth */
-  $handler->display->display_options['fields']['field_solication_month']['id'] = 'field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['table'] = 'field_data_field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['field'] = 'field_solication_month';
-  $handler->display->display_options['fields']['field_solication_month']['label'] = '';
-  $handler->display->display_options['fields']['field_solication_month']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_solication_month']['element_label_colon'] = FALSE;
-  /* Field: Content: SolicationYear */
-  $handler->display->display_options['fields']['field_solication_year']['id'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['table'] = 'field_data_field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['field'] = 'field_solication_year';
-  $handler->display->display_options['fields']['field_solication_year']['label'] = '';
-  $handler->display->display_options['fields']['field_solication_year']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_solication_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_solication_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
-  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'mta/capital/eotf-descrip';
   $export['eotf'] = $view;
 

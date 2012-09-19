@@ -42,16 +42,16 @@ function eotf_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'eotf-xpathparser_12-strip_tags';
+  $feeds_tamper->id = 'eotf-xpathparser_11-strip_tags';
   $feeds_tamper->importer = 'eotf';
-  $feeds_tamper->source = 'xpathparser:12';
+  $feeds_tamper->source = 'xpathparser:11';
   $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Strip tags';
-  $export['eotf-xpathparser_12-strip_tags'] = $feeds_tamper;
+  $export['eotf-xpathparser_11-strip_tags'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -88,18 +88,28 @@ function eotf_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'eotf-xpathparser_9-format_a_number';
+  $feeds_tamper->id = 'eotf-xpathparser_8-month_parse';
   $feeds_tamper->importer = 'eotf';
-  $feeds_tamper->source = 'xpathparser:9';
-  $feeds_tamper->plugin_id = 'number_format';
+  $feeds_tamper->source = 'xpathparser:8';
+  $feeds_tamper->plugin_id = 'month_parse';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Month Parse';
+  $export['eotf-xpathparser_8-month_parse'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'eotf-xpathparser_8-strip_tags';
+  $feeds_tamper->importer = 'eotf';
+  $feeds_tamper->source = 'xpathparser:8';
+  $feeds_tamper->plugin_id = 'strip_tags';
   $feeds_tamper->settings = array(
-    'decimals' => 0,
-    'dec_point' => '.',
-    'thousands_sep' => '',
+    'allowed_tags' => '',
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Format a number';
-  $export['eotf-xpathparser_9-format_a_number'] = $feeds_tamper;
+  $feeds_tamper->weight = 3;
+  $feeds_tamper->description = 'Strip tags';
+  $export['eotf-xpathparser_8-strip_tags'] = $feeds_tamper;
 
   return $export;
 }
