@@ -80,6 +80,11 @@ html {
 #main-message {
 	margin-left: 10px;
 }
+#main-ad-content {
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	}
 #sidebar_first {
 	margin:0;
 
@@ -95,7 +100,7 @@ html {
 }
 .span-ad {
 	width:754px;
-	margin:0;
+	margin-top:10px;
 	float:left;
 }
 #sidebar_second {
@@ -109,7 +114,7 @@ html {
 	float:left;
     margin-left: 10px;
     margin-right: 0;
-    margin-top: 0;
+    margin-top: 10px;
 	}			
 ul li.leaf {
     list-style-image: url("images/arrow-gn.gif");

@@ -7,7 +7,21 @@ function mta_js_alter(&$js) {
 function mta_preprocess_page(&$vars) {
 	
   if (isset($vars['node']->type)) {
-  	if ($vars['node']->type == "page_with_ad") {
+	   if($vars['node']->type == 'news_article'){
+	      $vars['title'] ='default';
+	      
+	    if (!empty($vars['node']->field_image_caption['und'][0]['value'])) {
+	      $vars['title'] = $vars['node']->field_image_caption['und'][0]['value'];
+	    }elseif (!empty($vars['node']->field_headline['und'][0]['value'])) {
+	      $vars['title'] = $vars['node']->field_headline['und'][0]['value'];
+	    }elseif (!empty($vars['node']->field_emergency_headline['und'][0]['value'])) {
+	      $vars['title'] = $vars['node']->field_emergency_headline['und'][0]['value'];
+	    }
+    
+  }
+  	
+  	
+  	if ($vars['node']->type == "page_with_ad" || $vars['node']->type == "news_article") {
     	$vars['theme_hook_suggestions'][] = 'page__ad';
   	} else {
   	if ($vars['node']->type == "home_page") {
@@ -92,6 +106,7 @@ function mta_preprocess_block(&$vars) {
 }
 
 function mta_preprocess_node(&$vars) {
+
   $vars['title_attributes_array']['class'] = 'node-title';
 
   if ($vars['teaser']) {
