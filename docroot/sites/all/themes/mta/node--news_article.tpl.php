@@ -21,7 +21,7 @@
 <div id="rotator-preview">
 <?php 
    
-    print views_embed_view('news_rotator_preview', 'default', $node->nid); // with single argument
+    print views_embed_view('news_rotator_preview', 'block_1', $node->nid); // with single argument
 
 ?>
 
