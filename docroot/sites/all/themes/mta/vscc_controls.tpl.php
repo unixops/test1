@@ -20,7 +20,7 @@
 	
 <div id="news_rotator_more">
 		<input type="button" value="more news"
-			onclick="location.href='../more_news'">
+			onclick="location.href='../mta_news'">
 	</div>
 	
 

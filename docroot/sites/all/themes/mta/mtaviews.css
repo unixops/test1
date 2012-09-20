@@ -170,6 +170,20 @@
 /* More News Views Styles */
 
 
+.new-rot-title-more {
+	font-size:14px;
+	font-weight:bold;
+	padding:0;
+	overflow: hidden;
+	}
+		
+.news-rot-teaser-more {
+	font-size:12px;
+	padding-right:3px;
+	overflow: hidden;
+	}
+
+
 /* News Archive Views Styles*/
 .archive-post-date {
     border-bottom: medium none;
@@ -189,7 +203,6 @@
 		
 .news-rot-teaser-archive {
 	font-size:12px;
-	width: 650px;
 	padding-right:3px;
 	overflow: hidden;
 	}
