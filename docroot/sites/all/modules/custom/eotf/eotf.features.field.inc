@@ -136,7 +136,7 @@ function eotf_field_default_fields() {
           'size' => '20',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -205,7 +205,7 @@ function eotf_field_default_fields() {
           'size' => '10',
         ),
         'type' => 'text_textfield',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -228,8 +228,8 @@ function eotf_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'FALSE',
-          1 => 'TRUE',
+          0 => 'NO',
+          1 => 'YES',
         ),
         'allowed_values_function' => '',
       ),
@@ -551,133 +551,85 @@ function eotf_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-eotf-field_solication_month'.
-  $fields['node-eotf-field_solication_month'] = array(
+  // Exported field: 'node-eotf-field_solicationmonth'.
+  $fields['node-eotf-field_solicationmonth'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_solication_month',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
+      'field_name' => 'field_solicationmonth',
+      'foreign keys' => array(),
+      'indexes' => array(),
       'locked' => '0',
-      'module' => 'text',
+      'module' => 'date',
       'settings' => array(
-        'max_length' => '255',
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 0,
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'datetime',
     ),
     'field_instance' => array(
       'bundle' => 'eotf',
-      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'inline',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '7',
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 12,
         ),
         'teaser' => array(
-          'label' => 'inline',
+          'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_solication_month',
+      'field_name' => 'field_solicationmonth',
       'label' => 'SolicationMonth',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
-        'text_processing' => '0',
+        'default_value' => 'now',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'text',
+        'module' => 'date',
         'settings' => array(
-          'size' => '6',
+          'increment' => 15,
+          'input_format' => 'm/d/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
         ),
-        'type' => 'text_textfield',
+        'type' => 'date_text',
         'weight' => '9',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-eotf-field_solication_year'.
-  $fields['node-eotf-field_solication_year'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_solication_year',
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'number',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'number_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'eotf',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'inline',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => '8',
-        ),
-        'teaser' => array(
-          'label' => 'inline',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '8',
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_solication_year',
-      'label' => 'SolicationYear',
-      'required' => 1,
-      'settings' => array(
-        'max' => '',
-        'min' => '2000',
-        'prefix' => '',
-        'suffix' => '',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'number',
-        'settings' => array(),
-        'type' => 'number',
-        'weight' => '10',
       ),
     ),
   );
@@ -830,7 +782,6 @@ function eotf_field_default_fields() {
   t('ProjectDescription');
   t('ReferenceNumber');
   t('SolicationMonth');
-  t('SolicationYear');
   t('Tasks');
   t('TypeofContract');
 

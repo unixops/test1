@@ -19,10 +19,10 @@ function mta_core_ctools_plugin_directory($owner, $plugin) {
 function mta_core_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
   if ($source->id == "eotf") {
     foreach($result->items as $item=>&$field){
-      //dsm($field["xpathparser:12"]);
-      for($i = 0; $i <= count($field); $i++){
-        if(empty($field["xpathparser:12"][$i])) {
-          unset($field["xpathparser:12"][$i]);
+      $xsize = count($field["xpathparser:11"]);
+      for($i = 0; $i <= $xsize; $i++){
+        if(empty($field["xpathparser:11"][$i])) {
+          unset($field["xpathparser:11"][$i]);
         }
       }//*/
     }

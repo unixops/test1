@@ -15,21 +15,24 @@
     </div>
   <?php endif; ?>
 
+  <?php print render($content['links']); ?>
+<?php 
+global $user;
+$check = array_intersect(array('master content provider', 'content provider', 'administrator'), array_values($user->roles));
+?>
+<?php if (!empty($check)):?>
   <p>&nbsp;</p>
 <p>Here is a preview of this News Article's rotator slide.
 </p>
 <div id="rotator-preview">
-<?php 
-   
-    print views_embed_view('news_rotator_preview', 'default', $node->nid); // with single argument
 
+<?php    // is admin
+    print views_embed_view('news_rotator_preview', 'block_1', $node->nid); // with single argument
 ?>
-
-
 </div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-
+<?php endif;?>
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -39,7 +42,6 @@
     ?>
   </div>
 
-  <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
 

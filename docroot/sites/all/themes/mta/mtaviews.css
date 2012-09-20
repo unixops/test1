@@ -3,7 +3,8 @@
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1,
-#block-views-news-rotator-preview-block-1 {
+.view-news-rotator-preview
+{
 	padding: 10px;
 	margin-top:10px;
 	width: 438px;
@@ -14,8 +15,8 @@
     }
 	
 
-.view-news-rotator,
-.view-news-rotator-preview {
+.view-news-rotator
+{
 	height: 220px;
 	}
 	
@@ -39,8 +40,17 @@
 	height: 220px;
 	overflow:hidden;
 	}
-	
-.news-rot-image-caption {
+
+.news-rot-image-caption-preview {
+  width:438px;
+  position: absolute;
+    bottom: 0;
+    padding-bottom:3px;
+    z-index:999;
+    background-image: url('images/text_bg.png'); }
+
+.news-rot-image-caption
+{
 	width:438px;
 	position: absolute;
   	bottom: 0;
@@ -48,7 +58,11 @@
   	z-index:999;
   	background-image: url('images/text_bg.png');
 	}
+#views_slideshow_cycle_div_news_rotator_preview-block_1_0 {
+	position:absolute;
+	width:438px;
 	
+	}
 .news-rot-image-caption-text {
 	font-size:20px;
 	font-weight:bold;
