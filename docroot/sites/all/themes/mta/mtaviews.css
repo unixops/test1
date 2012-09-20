@@ -204,12 +204,28 @@
 	
 	}
 	
-/* MTA More News and Links Box */
-
-.boxes-boxes-more-news-links {
+/* MTA More News and Links Blocks/Boxes */
+/*left Sidebar*/
+#block-boxes-more-news-links {
+	padding: 5px;
+	width: 175px;
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
-}
+	}
+
+#boxes-box-more_news_video {
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding: 5px;
+    width: 175px;
+	}
+
+/* More News View Block */
+#block-views-mta-news-block {
+	margin-left: -30px;
+	}
 
 
 /* News Archive Views Styles*/
