@@ -87,6 +87,7 @@ html {
 	}
 #sidebar_first {
 	margin:0;
+	width:230px;
 
 	float:left;
 	}
@@ -102,6 +103,15 @@ html {
 	width:754px;
 	margin-top:10px;
 	float:left;
+}
+.span-side-ad {
+    float: left;
+    margin-left: 10px;
+    width: 480px;
+    }
+.span-noside-ad {
+	width:auto;
+	margin:0;
 }
 #sidebar_second {
     float: right;

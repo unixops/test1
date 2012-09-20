@@ -23,7 +23,9 @@
 								<?php if ($breadcrumb){print $breadcrumb;}?>
 			</div>
 							<div class="container">
-								<div class="span-ad roundCorners">									
+
+
+							<div class="span-ad roundCorners">									
 									<?php print $messages; ?>
 			 				 <div id="pageTitleAreaAd">
 									<?php print render($title_prefix); ?>
@@ -36,9 +38,23 @@
 
 									<div id="main-ad-content">
 
+									
 									<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+									<?php if ($page['sidebar_first']): ?>
+										<div id="sidebar_first">
+											<?php print render($page['sidebar_first']); ?>
+											</div>
+											<div class="span-side-ad">
+										<?php endif; ?>
+										<?php if (empty($page['sidebar_first'])): ?>
+											<div class="span-no-side-ad">
+										<?php endif;?>
+										
+									
 									<?php print render($page['content']); ?>        
+								
+									</div>
 								<!-- close span-43 -->
 
 
