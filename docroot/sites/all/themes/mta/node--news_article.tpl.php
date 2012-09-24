@@ -33,6 +33,13 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <?php endif;?>
+
+<?php print views_embed_view('mta_news', 'page_1', $node->nid);
+
+?>
+
+
+
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
