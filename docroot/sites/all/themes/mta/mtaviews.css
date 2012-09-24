@@ -1,5 +1,18 @@
 /* MTA Views CSS */
 
+/* MTA News Article Node Views */
+
+.news-article-summary {
+	font-weight: bold;
+	
+}
+
+.news-article-node-body {
+	margin-top: 10px;
+	padding: 10px;
+	text-align:justify;
+}
+
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1,
