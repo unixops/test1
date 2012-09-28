@@ -103,7 +103,7 @@ function eotf_feeds_importer_default() {
           ),
           3 => array(
             'source' => 'xpathparser:3',
-            'target' => 'field_text_agency',
+            'target' => 'field_ref_agency',
             'unique' => FALSE,
           ),
           4 => array(

@@ -62,6 +62,20 @@ function eotf_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_mta_month';
+  $strongarm->value = 'M';
+  $export['date_format_mta_month'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_mta_submission';
+  $strongarm->value = 'M Y';
+  $export['date_format_mta_submission'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__eotf';
   $strongarm->value = array(
     'view_modes' => array(
@@ -85,6 +99,9 @@ function eotf_strongarm() {
       'form' => array(
         'title' => array(
           'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),

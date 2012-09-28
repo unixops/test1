@@ -30,6 +30,11 @@ function eotf_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Agency (field_ref_agency) */
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['id'] = 'field_ref_agency_tid';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['table'] = 'field_data_field_ref_agency';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['field'] = 'field_ref_agency_tid';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -37,10 +42,6 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Contract Description';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Agency */
-  $handler->display->display_options['fields']['field_text_agency']['id'] = 'field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['table'] = 'field_data_field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['field'] = 'field_text_agency';
   /* Field: Content: Fully Funded */
   $handler->display->display_options['fields']['field_fully_funded']['id'] = 'field_fully_funded';
   $handler->display->display_options['fields']['field_fully_funded']['table'] = 'field_data_field_fully_funded';
@@ -113,19 +114,19 @@ function eotf_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_text_agency',
+      'field' => 'field_agency_fullname',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
   );
   $handler->display->display_options['style_options']['columns'] = array(
     'field_contract_type' => 'field_contract_type',
-    'field_solication_year' => 'field_solication_year',
-    'field_solication_month' => 'field_solication_month',
+    'field_solicationmonth' => 'field_solicationmonth',
     'field_ref_number' => 'field_ref_number',
     'title' => 'title',
-    'field_text_agency' => 'field_text_agency',
+    'field_ref_agency' => 'field_ref_agency',
     'field_dollar_range' => 'field_dollar_range',
+    'field_agency_fullname' => 'field_agency_fullname',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -136,14 +137,7 @@ function eotf_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_solication_year' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_solication_month' => array(
+    'field_solicationmonth' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -164,7 +158,7 @@ function eotf_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_text_agency' => array(
+    'field_ref_agency' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -178,10 +172,23 @@ function eotf_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_agency_fullname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Agency (field_ref_agency) */
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['id'] = 'field_ref_agency_tid';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['table'] = 'field_data_field_ref_agency';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['field'] = 'field_ref_agency_tid';
+  $handler->display->display_options['relationships']['field_ref_agency_tid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: TypeofContract */
   $handler->display->display_options['fields']['field_contract_type']['id'] = 'field_contract_type';
@@ -196,6 +203,20 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_solicationmonth']['label'] = 'Solication Month';
   $handler->display->display_options['fields']['field_solicationmonth']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_solicationmonth']['settings'] = array(
+    'format_type' => 'mta_submission',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: SolicationMonth */
+  $handler->display->display_options['fields']['field_solicationmonth_1']['id'] = 'field_solicationmonth_1';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['field'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['label'] = '';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['settings'] = array(
     'format_type' => 'mta_month',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -207,6 +228,8 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_ref_number']['table'] = 'field_data_field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['field'] = 'field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['label'] = 'Reference Number';
+  $handler->display->display_options['fields']['field_ref_number']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_ref_number']['alter']['path'] = 'mta/capital/eotf-descrip#[field_ref_number][field_solicationmonth_1]';
   $handler->display->display_options['fields']['field_ref_number']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -216,17 +239,27 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Agency */
-  $handler->display->display_options['fields']['field_text_agency']['id'] = 'field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['table'] = 'field_data_field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['field'] = 'field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_agency']['id'] = 'field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['table'] = 'field_data_field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['field'] = 'field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_agency']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: DollarRange */
   $handler->display->display_options['fields']['field_dollar_range']['id'] = 'field_dollar_range';
   $handler->display->display_options['fields']['field_dollar_range']['table'] = 'field_data_field_dollar_range';
   $handler->display->display_options['fields']['field_dollar_range']['field'] = 'field_dollar_range';
   $handler->display->display_options['fields']['field_dollar_range']['label'] = 'Range';
   $handler->display->display_options['fields']['field_dollar_range']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: FullName */
+  $handler->display->display_options['fields']['field_agency_fullname']['id'] = 'field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['table'] = 'field_data_field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['field'] = 'field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['relationship'] = 'field_ref_agency_tid';
+  $handler->display->display_options['fields']['field_agency_fullname']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_fullname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_fullname']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'mta/capital/eotf-allagency_new';
 
   /* Display: Page */
@@ -236,7 +269,7 @@ function eotf_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_text_agency',
+      'field' => 'field_agency_fullname',
       'rendered' => 0,
       'rendered_strip' => 0,
     ),
@@ -252,12 +285,13 @@ function eotf_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Agency */
-  $handler->display->display_options['fields']['field_text_agency']['id'] = 'field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['table'] = 'field_data_field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['field'] = 'field_text_agency';
-  $handler->display->display_options['fields']['field_text_agency']['label'] = '';
-  $handler->display->display_options['fields']['field_text_agency']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_text_agency']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_agency']['id'] = 'field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['table'] = 'field_data_field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['field'] = 'field_ref_agency';
+  $handler->display->display_options['fields']['field_ref_agency']['label'] = '';
+  $handler->display->display_options['fields']['field_ref_agency']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_ref_agency']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_agency']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: SolicationMonth */
   $handler->display->display_options['fields']['field_solicationmonth']['id'] = 'field_solicationmonth';
   $handler->display->display_options['fields']['field_solicationmonth']['table'] = 'field_data_field_solicationmonth';
@@ -266,6 +300,22 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_solicationmonth']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_solicationmonth']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_solicationmonth']['settings'] = array(
+    'format_type' => 'mta_submission',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: SolicationMonth */
+  $handler->display->display_options['fields']['field_solicationmonth_1']['id'] = 'field_solicationmonth_1';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['table'] = 'field_data_field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['field'] = 'field_solicationmonth';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['label'] = '';
+  $handler->display->display_options['fields']['field_solicationmonth_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_solicationmonth_1']['settings'] = array(
     'format_type' => 'mta_month',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -277,7 +327,10 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_ref_number']['table'] = 'field_data_field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['field'] = 'field_ref_number';
   $handler->display->display_options['fields']['field_ref_number']['label'] = '';
+  $handler->display->display_options['fields']['field_ref_number']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_ref_number']['alter']['text'] = '<a name=\'[field_ref_number][field_solicationmonth_1]\'></a>[field_ref_number]';
   $handler->display->display_options['fields']['field_ref_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_number']['type'] = 'text_plain';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -286,6 +339,7 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: DollarRange */
   $handler->display->display_options['fields']['field_dollar_range']['id'] = 'field_dollar_range';
   $handler->display->display_options['fields']['field_dollar_range']['table'] = 'field_data_field_dollar_range';
@@ -316,6 +370,14 @@ function eotf_views_default_views() {
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
+  /* Field: Taxonomy term: FullName */
+  $handler->display->display_options['fields']['field_agency_fullname']['id'] = 'field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['table'] = 'field_data_field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['field'] = 'field_agency_fullname';
+  $handler->display->display_options['fields']['field_agency_fullname']['relationship'] = 'field_ref_agency_tid';
+  $handler->display->display_options['fields']['field_agency_fullname']['label'] = '';
+  $handler->display->display_options['fields']['field_agency_fullname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_agency_fullname']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'mta/capital/eotf-descrip';
   $export['eotf'] = $view;
