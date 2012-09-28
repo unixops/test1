@@ -23,8 +23,7 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
   
-  
-  <?php if (!empty($header)) : ?>
+   <?php if (!empty($header)) : ?>
     <thead>
       <tr>
         <?php foreach ($header as $field => $label): ?>
@@ -47,4 +46,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-</div>
+
