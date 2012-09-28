@@ -23,7 +23,7 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
   
-  <div id = "eotf-view-display-id-page_1">
+  
   <?php if (!empty($header)) : ?>
     <thead>
       <tr>
