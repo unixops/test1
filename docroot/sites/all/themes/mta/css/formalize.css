@@ -3,7 +3,7 @@
 
 html,
 body {
-	background-image: url('images/grey_bg.jpg');
+	background-image: url('../images/grey_bg.jpg');
 	background-repeat: repeat-x;
 	padding:0;
 	margin:0px;

@@ -60,7 +60,7 @@
     bottom: 0;
     padding-bottom:3px;
     z-index:999;
-    background-image: url('images/text_bg.png'); }
+    background-image: url('../images/text_bg.png'); }
 
 .news-rot-image-caption
 {
@@ -69,7 +69,7 @@
   	bottom: 0;
   	padding-bottom:3px;
   	z-index:999;
-  	background-image: url('images/text_bg.png');
+  	background-image: url('../images/text_bg.png');
 	}
 #views_slideshow_cycle_div_news_rotator_preview-block_1_0 {
 	position:absolute;
@@ -263,3 +263,22 @@
 	}
 
 	
+/* Views Press Release Styles */
+
+.view-press-release table {
+      width:100%;
+      background-color: #333;
+      
+      padding: 6px;
+	}
+	
+/* Views EOTF Styles */
+
+#eotf-view-list-page_1 {
+	font-size:34px;
+	font-weight:bold;	
+	}
+
+
+
+eotf-view-tablepage_1

@@ -71,10 +71,9 @@
 										<div id ="postscript_right" class="pr">			
 									<?php print render($page['postscript_right']); ?>
 											</div>
-											</div>	
-									 		
-														
-								</div><!-- close span-43 -->
+												</div>	
+									 				</div>			
+								<!-- close span-43 -->
 
 							
 									<?php if ($page['sidebar_second']): ?>

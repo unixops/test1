@@ -3,13 +3,13 @@ name = mta
 description = A Drupal-ised port of mta theme.
 core = 7.x
 
-stylesheets[all][] = base.css
-stylesheets[all][] = grid.css
-stylesheets[all][] = mtaviews.css
-stylesheets[all][] = homepage.css
-stylesheets[all][] = formalize.css
-stylesheets[all][] = topbar.css
-stylesheets[all][] = webform.css
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/grid.css
+stylesheets[all][] = css/mtaviews.css
+stylesheets[all][] = css/homepage.css
+stylesheets[all][] = css/formalize.css
+stylesheets[all][] = css/topbar.css
+stylesheets[all][] = css/webform.css
 
 
 
