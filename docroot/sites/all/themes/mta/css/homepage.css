@@ -129,7 +129,7 @@ ul.arrow li {
 #mytrip table { margin-bottom: margin-top:5px; 0px; background-color:#fff; }
 #mytrip td { padding: 3px; }
 #mytrip td.rightAlign { text-align: right; }
-
+#mytrip label {display:inline; font-weight:normal;}
 
 #news { 
 	margin-top:10px;

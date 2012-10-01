@@ -2,6 +2,4 @@ name = tripplanner
 description = Uses the block hook and form API to create the Tripplanner block.
 package = Our MTA modules
 core = 7.x
-scripts[] = tripplanner_tabs.js
-scripts[] = jquery.cookie.js
-
+scripts[]=tripPlanner/jquery.datepick.js
