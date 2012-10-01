@@ -30,13 +30,13 @@ function tripplanner_block_info() {
       $block['subject'] = '';
       if(user_access('access content')){
       	$path = drupal_get_path('module', 'tripplanner');
-    	drupal_add_js("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
+    	//drupal_add_js("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
       	drupal_add_js($path."/tripPlanner/jquery.datepick.js");
       	drupal_add_js($path."/tripPlanner/initTP.js");
       	$block['content'] =file_get_contents($path."/tripPlanner/mytrip.php");
       	$block['content'].=file_get_contents($path."/tripPlanner/SmartTrip.js");
       }
-  
+
   return $block;
   }
  }
