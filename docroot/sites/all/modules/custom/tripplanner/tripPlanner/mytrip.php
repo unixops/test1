@@ -14,18 +14,18 @@
 		border: solid 1px black;
 	}
 	#tp-footer .list_h {
-		padding-top:2px; 
+		padding-top:2px;
 		font-size:85%;
 	}
     </style>
 
-    <!-- My Trip end 1-->    
+    <!-- My Trip end 1-->
 <img src="/sites/all/themes/mta/images/loading.gif" id="tpimageForWait"
                             style="visibility:hidden; position:absolute; left: 780px; top: 190px;" />
 
 
                    <!--My Trip start 2-->
-                      
+
                         <img src="/sites/all/themes/mta/images/loading.gif" id="tpimageForWait" style="visibility: hidden;
                             position: absolute; left: 780px; top: 190px;" />
                         <table cellpadding="0" cellspacing="0" style="width: 100%;   margin-bottom: 0;" >
@@ -78,7 +78,7 @@
                                 </tr>
                             </table>
                         </div>
-                      
+
                         <form name="tpForm" id="tpForm">
 						<label id="divP2PHeadline" style="font-weight:bold; margin-top: 15px; display:none">Subway &amp; Bus Schedules</label>
                          <div style="margin-bottom: 10px; margin-top: 5px;">
@@ -218,7 +218,7 @@
                                     </select>
                                 </div>
                             </fieldset>
-							
+
                            <div id="divWalkDist" style="display: none; margin-top: 15px; ">
                                 <label>
                                     Walking distance</label>
@@ -257,7 +257,7 @@
                         </div>
                         <input type="hidden" id="currentmodule" name="currentmodule" value="tripplanner" />
                          </form>
-				 
+
                             <p style="margin: 10px 0 0 6px;">
                                 <span id="SpanAdv" class="list_h" style="display: inline"><a style="color: #555; cursor:pointer;"  onclick="SmartTripClick('ADVANCEOPTION','' ,'' )">
                                     Advanced</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">
@@ -265,12 +265,11 @@
                                             511NY</a></span></p>
 							<p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">
                                         Get Widget</a></span></p>
-                        </div>
-                       
-                        
+
+
                         <form name="tpSubmit" action="http://Tripplanner.mta.info/mytrip/handler/customplannerHandler.ashx?cid=mtahome"
                         method="get" target="_top" style="display: none">
                         <input type="hidden" name="jsonpacket" value="" />
                         </form>
                         <!--My Trip end-->
- </div>                
+ </div>
