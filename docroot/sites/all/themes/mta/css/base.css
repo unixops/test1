@@ -34,12 +34,15 @@ hgroup, nav, section {
   vertical-align: baseline;
 }
 
+/* commented out infering table styles 10/1/12 
+
 table, caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
 }
+*/
 
 /* This helps to make newer HTML5 elements behave like DIVs in older browers */ 
 article, aside, dialog, figure, footer, header,
@@ -53,17 +56,20 @@ body {
   background: #fff; 
 }
 
-/* Tables still need 'cellspacing="0"' in the markup. */
+/* commented out infering table styles 10/1/12 
+ Tables still need 'cellspacing="0"' in the markup. 
 table { 
 	border-collapse: separate; 
 	border-spacing: 0; 
 }
-/* float:none prevents the span-x classes from breaking table-cell display */
+ float:none prevents the span-x classes from breaking table-cell display 
 caption, th, td { 
 	text-align: left; 
 	font-weight: normal; 
 	float:none !important; 
 }
+
+*/
 
 /* Remove possible quote marks (") from <q>, <blockquote>. */
 blockquote:before, blockquote:after, q:before, q:after { content: ''; }
@@ -143,21 +149,27 @@ dl dd {
 	/*providing spacing for definition terms*/
 	margin-left:1em;
 }
+
+/* commented out infering table styles 10/1/12 */
+/*
 th {
-	/*distinguishing table headers from data cells*/
+	distinguishing table headers from data cells
 	font-weight:bold;
 	text-align:center;
 }
+
 caption {
-	/*coordinated margin to match cell's padding*/
+	coordinated margin to match cell's padding
 	margin-bottom:.5em;
-	/*centered so it doesn't blend in to other content*/
+	centered so it doesn't blend in to other content
 	text-align:center;
 }
 p,fieldset,table,pre {
-	/*so things don't run into each other*/
+	so things don't run into each other
 	margin-bottom:1em;
 }
+
+*/
 /* setting a consistent width, 160px; 
    control of type=file still not possible 
 input[type=text],input[type=password],textarea{width:12.25em;*width:11.9em;}
@@ -170,8 +182,11 @@ http://developer.yahoo.net/yui/license.txt
 version: 3.0.0
 build: 1549
 */
-body{font:13px/1.231 helvetica,arial,clean,sans-serif;*font-size:small;*font:x-small; color:#333;}select,input,button,textarea{font:99% helvetica,arial,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+body{font:13px/1.231 helvetica,arial,clean,sans-serif;*font-size:small;*font:x-small; color:#333;}select,input,button,textarea{font:99% helvetica,arial,clean,sans-serif;}
 
+/*
+table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+*/
 /*
 
 Creates rounded corners around divs.
@@ -258,6 +273,8 @@ h1#page-title-ad  {
   display: none;
 }
 /*end hack*/
+
+
 .views-field-name,
 .views-field-title	{
 	display: inline;
