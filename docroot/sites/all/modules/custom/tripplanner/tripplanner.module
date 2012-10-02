@@ -31,7 +31,11 @@ function tripplanner_block_info() {
       if(user_access('access content')){
       	$path = drupal_get_path('module', 'tripplanner');
     	//drupal_add_js("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
-      	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui/jquery.datepick.js");
+      	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui//minified/jquery.ui.core.min.js");
+      	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui/minified/jquery.ui.datepicker.min.js");
+      	drupal_add_css(drupal_get_path('module', 'jquery_update') . "/replace/ui/themes/base/jquery.ui.core.css");
+      	drupal_add_css(drupal_get_path('module', 'jquery_update') . "/replace/ui/themes/base/jquery.ui.theme.css");
+      	drupal_add_css(drupal_get_path('module', 'jquery_update') . "/replace/ui/themes/base/jquery.ui.datepicker.css");
       	drupal_add_js($path."/tripPlanner/initTP.js");
       	$block['content'] =file_get_contents($path."/tripPlanner/mytrip.php");
       	$block['content'].=file_get_contents($path."/tripPlanner/SmartTrip.js");

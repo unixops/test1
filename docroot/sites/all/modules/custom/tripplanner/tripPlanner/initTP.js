@@ -7,7 +7,9 @@ $(document).ready(function(){
 	});
 	
 	/* For date control in Trip Planner */
-	$("#fdate").datepick({ showDefault: true });
+	$("#fdate").datepicker();
+	$("#fdate").datepicker("setDate", new Date());
+
 	$("#f511link").hover(
 		function() {
 			$("#f511tip").css('display', 'block');
