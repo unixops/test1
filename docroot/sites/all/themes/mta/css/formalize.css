@@ -31,13 +31,14 @@ li {
 	display: list-item;
 }
 
+/* commented out infering table styles 10/1/12
 td,
 caption {
 	font-weight: normal;
 	vertical-align: top;
 	text-align: left;
 }
-
+ */
 
 /* `Widths
 ----------------------------------------------------------------------------------------------------*/
