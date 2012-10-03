@@ -274,12 +274,17 @@
 /* Views EOTF Styles */
 
 /* EotF table body */
-.view-eotf table, caption, tbody, tfoot, tr, td {
+.view-eotf table, tbody, tfoot, tr, td {
     font-size: 100%;
     margin-bottom: 100;
     padding: 3px 5px 5px 5px;
     vertical-align: center;
     }
+    
+/*EotF Caption displays Agency Title */
+.view-eotf caption {
+	
+}
 
 /* EotF table header row */
 .view-eotf thead {
