@@ -183,6 +183,36 @@ function eotf_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<center><img src="/sites/default/files/mtaimgs/eyeonfuture2.jpg"></center><br>
+
+    ';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div align="center"><h2 style="text-align:center; color:#7a2626;">Forecast of Contracts to be Advertised and Proposals to be Solicited</h2></<div>
+<div align="left">	  
+	 <p></p><ul class="arrow">
+	<li><a href="eotf">Letter from the Chairman</a> </li>
+	<li><a href="eotf_intro">Information About Contracts</a></li>	
+    <li><strong>Forecast of Contracts and Proposals</strong></li>
+    <li><strong><a href="eotf-descrip">Brief Descriptions of Work to be Advertised</a></strong>
+		<ul class="arrow">
+			<li><a href="eotf-allagency_new.htm#nyct">MTA New York City Transit</a> </li>
+			<li><a href="eotf-allagency_new.htm#lirr">MTA Long Island Rail Road</a></li>
+			<li><a href="eotf-allagency_new.htm#mnr">MTA Metro-North Railroad</a> </li>
+			<li><a href="eotf-allagency_new.htm#bt">MTA Bridges &amp; Tunnels</a></li>
+			<li><a href="eotf-allagency_new.htm#mtacc">MTA Capital Construction</a></li>
+			<li><a href="eotf-allagency_new.htm#mtabus">MTA Bus Company</a></li>
+		</ul>
+	</li>    
+	</ul><p></p></div>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Agency (field_ref_agency) */
   $handler->display->display_options['relationships']['field_ref_agency_tid']['id'] = 'field_ref_agency_tid';
@@ -230,7 +260,9 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['field_ref_number']['label'] = 'Reference Number';
   $handler->display->display_options['fields']['field_ref_number']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_ref_number']['alter']['path'] = 'mta/capital/eotf-descrip#[field_ref_number][field_solicationmonth_1]';
+  $handler->display->display_options['fields']['field_ref_number']['element_class'] = 'ref_number';
   $handler->display->display_options['fields']['field_ref_number']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_ref_number']['element_default_classes'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -238,7 +270,10 @@ function eotf_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Contract Description';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_label_class'] = 'contract_description';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Agency */
   $handler->display->display_options['fields']['field_ref_agency']['id'] = 'field_ref_agency';
@@ -283,6 +318,35 @@ function eotf_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<center><img src="/sites/default/files/mtaimgs/eyeonfuture2.jpg"></center><br>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div align="center">
+  <h2 style="text-align:center; color:#7a2626; font-size: 123.1%;">Brief Descriptions of Work to be Advertised</h2></div>
+<div align="left">
+	<ul class="arrow">
+	<li><a href="eotf">Letter from the Chairman</a> </li>
+	<li><a href="eotf_intro">Information About Contracts</a></li>	
+    <li><a href="eotf-allagency_new">Forecast of Contracts and Proposals</a></li>
+    <li><strong>Brief Descriptions of Work to be Advertised</strong>
+		<ul class="arrow">
+			<li><a href="eotf-descrip.htm#nyct">MTA New York City Transit</a> </li>
+			<li><a href="eotf-descrip.htm#lirr">MTA Long Island Rail Road</a></li>
+			<li><a href="eotf-descrip.htm#mnr">MTA Metro-North Railroad</a> </li>
+			<li><a href="eotf-descrip.htm#bt">MTA Bridges &amp; Tunnels</a></li>
+			<li><a href="eotf-descrip.htm#mtacc">MTA Capital Construction</a></li>
+			<li><a href="eotf-descrip.htm#mtabus">MTA Bus Company</a></li>
+		</ul>
+	</li>    
+	</ul>	  </div>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Agency */
   $handler->display->display_options['fields']['field_ref_agency']['id'] = 'field_ref_agency';
