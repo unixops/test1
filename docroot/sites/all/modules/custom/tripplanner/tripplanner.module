@@ -16,7 +16,7 @@
 function tripplanner_block_info() {
   $blocks['tripplanner'] = array(
     'info' => t('Tripplanner'), //The name that will appear in the block list.
-    'cache' => DRUPAL_NO_CACHE, //Default
+    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
   );
   return $blocks;
 }
