@@ -1,5 +1,7 @@
 <?php
-
+function mta_megamenu_init(){
+	
+}
 function mta_megamenu_block_info() {
   $blocks['mta_megamenu'] = array(
     'info' => t('mta_megamenu'), //The name that will appear in the block list.
@@ -35,8 +37,8 @@ function mta_megamenu_block_info() {
       if(user_access('access content')){
       		$path = drupal_get_path('module', 'mta_megamenu');
       		drupal_add_js($path."/jkmegamenu.js");
-      		drupal_add_css($path."/mta_megamenu.css");
-      
+			drupal_add_css($path."/mta_megamenu.css");
+      	      
    			$block['content']=file_get_contents($path."/mta_megamenu.html");
    			$block['content'].='<script type="text/javascript">
 			jkmegamenu.definemenu("menuanchor1", "menuone", "click", "left");
