@@ -1,7 +1,5 @@
 <?php
-function mta_megamenu_init(){
-	
-}
+
 function mta_megamenu_block_info() {
   $blocks['mta_megamenu'] = array(
     'info' => t('mta_megamenu'), //The name that will appear in the block list.
