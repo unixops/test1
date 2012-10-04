@@ -3,24 +3,19 @@
 function mta_megamenu_block_info() {
   $blocks['mta_megamenu'] = array(
     'info' => t('mta_megamenu'), //The name that will appear in the block list.
-    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
-  );
+    'cache' => DRUPAL_NO_CACHE,  );
   $blocks['lirr_megamenu'] = array(
   		'info' => t('lirr_megamenu'), //The name that will appear in the block list.
-  		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
-  );
+    'cache' => DRUPAL_NO_CACHE,  );
   $blocks['nyct_megamenu'] = array(
   		'info' => t('nyct_megamenu'), //The name that will appear in the block list.
-  		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
-  );
+    'cache' => DRUPAL_NO_CACHE,  );
   $blocks['mnr_megamenu'] = array(
   		'info' => t('mnr_megamenu'), //The name that will appear in the block list.
-  		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
-  );
+    'cache' => DRUPAL_NO_CACHE,  );
   $blocks['bandt_megamenu'] = array(
   		'info' => t('bandt_megamenu'), //The name that will appear in the block list.
-  		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
-  );
+    'cache' => DRUPAL_NO_CACHE,  );
   
   return $blocks;
 }
