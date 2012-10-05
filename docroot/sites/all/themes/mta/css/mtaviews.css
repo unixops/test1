@@ -283,8 +283,10 @@
     
 /*EotF Caption displays Agency Title */
 .view-eotf caption {
-	
+	text-align: center;
+	font-size: 18px;
 }
+
 
 /* EotF table header row */
 .view-eotf thead {
@@ -294,6 +296,7 @@
     padding: 3px 5px 3px 10px;
     text-transform: uppercase;
     }
+    
    
 /*Eotf Contract Description label */      
 .contract_description {
@@ -303,7 +306,7 @@
 
 /* EotF Reference Number field */
 .ref_number {
-	padding-left: 40px;
+	padding-left: 10px;
 }
 	
 	
