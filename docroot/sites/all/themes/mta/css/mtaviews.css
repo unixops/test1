@@ -288,7 +288,6 @@
 	font-weight: bold;
 }
 
-
 /* EotF table header row */
 .view-eotf thead {
 	color: #ffffff;
@@ -298,7 +297,7 @@
     text-transform: uppercase;
     }
     
-   
+  
 /*Eotf Contract Description label */      
 .contract_description {
 	text-align: center;
@@ -308,6 +307,15 @@
 /* EotF Reference Number field */
 .ref_number {
 	padding-left: 10px;
+}
+
+/** Eotf brief description Views */
+
+.agency_full_name {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	
 }
 	
 	
