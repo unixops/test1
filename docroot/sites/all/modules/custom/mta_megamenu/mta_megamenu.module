@@ -3,7 +3,7 @@
 function mta_megamenu_block_info() {
   $blocks['mta_megamenu'] = array(
     'info' => t('mta_megamenu'), //The name that will appear in the block list.
-    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    'cache' => DRUPAL_NO_CACHE, //Default
   );
   $blocks['lirr_megamenu'] = array(
   		'info' => t('lirr_megamenu'), //The name that will appear in the block list.

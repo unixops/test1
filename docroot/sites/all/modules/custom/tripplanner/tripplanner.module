@@ -16,7 +16,7 @@
 function tripplanner_block_info() {
   $blocks['tripplanner'] = array(
     'info' => t('Tripplanner'), //The name that will appear in the block list.
-    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    'cache' => DRUPAL_NO_CACHE, //Default
   );
   return $blocks;
 }
@@ -31,7 +31,7 @@ function tripplanner_block_info() {
       if(user_access('access content')){
       	$path = drupal_get_path('module', 'tripplanner');
     	//drupal_add_js("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js");
-      	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui//minified/jquery.ui.core.min.js");
+      	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui/minified/jquery.ui.core.min.js");
       	drupal_add_js(drupal_get_path('module', 'jquery_update') . "/replace/ui/ui/minified/jquery.ui.datepicker.min.js");
       	drupal_add_css(drupal_get_path('module', 'jquery_update') . "/replace/ui/themes/base/jquery.ui.core.css");
       	drupal_add_css(drupal_get_path('module', 'jquery_update') . "/replace/ui/themes/base/jquery.ui.theme.css");
