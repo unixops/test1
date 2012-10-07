@@ -15,7 +15,7 @@ class ServiceStatusDataHandler {
     function __construct() {
         $cache = cache_get("ss_shortCache");
     
-    	if ($cache && $cache->expire > REQUEST_TIME)
+    	if ($cache->expire > REQUEST_TIME)
             $this->arrStatusData = $cache->data;
     	else {
             // Fetch fresh Service Status Data.
@@ -25,6 +25,7 @@ class ServiceStatusDataHandler {
             if($this->arrXMLObject) {
                 $dt = explode(" ", $this->arrXMLObject->children[1]->content);
 
+               // dsm ($dt[2]);
                 $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
                 $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
                 
@@ -130,7 +131,7 @@ class ServiceStatusDataHandler {
 
             default:
                 $statusOut[0] = "GoodService";
-                $statusOut[1] = "NA";
+                $statusOut[1] = "-";
                 break;
         }
 
@@ -151,6 +152,11 @@ class ServiceStatusDataHandler {
                 $statusOut[0] = "rail_PlannedWork";
                 $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/' . $service.'/'.$index.'">Planned Detour</a>';
                 break;
+            
+            case 'SERVICE CHANGE':
+                $statusOut[0] = "rail_ServiceChange";
+                $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Service Change</a>';
+                break;
 
             case 'DELAYS':
                 $statusOut[0] = "rail_Delays";
@@ -159,7 +165,7 @@ class ServiceStatusDataHandler {
 
             default:
                 $statusOut[0] = "rail_GoodService";
-                $statusOut[1] = "NA";
+                $statusOut[1] = "-";
                 break;
         }
 
@@ -194,7 +200,7 @@ class ServiceStatusDataHandler {
 
         default:
             $statusOut[0] = "bus_GoodService";
-            $statusOut[1] = "NA";
+            $statusOut[1] = "-";
             break;
         }
 

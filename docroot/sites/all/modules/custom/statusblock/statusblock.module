@@ -97,7 +97,7 @@ function statusblock_block_view($delta ='')
 
             $bntHTML = theme('bntTab', array('bnt' => $ssd->getServiceStatusData(BNT)));
                
-            $block['content'] = '<div id="status-whole-block" class="span-22">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
+            $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
         break;
     }
     
@@ -114,15 +114,15 @@ function theme_subwayTab($variables)
     $arrSubway = $variables['content'];
     
     $rendered = '<div id="subwayDiv" style="float: left; margin-top: 1px;">
-        <ul style="float: right; padding:0; margin:6px 0 5px ">
+        <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
             <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li></ul>';
     
     if (is_array($arrSubway)) {
         for($num=0; $num < count($arrSubway); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 3px 0;">
-                <span class="span-11"><img src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/'.$arrSubway[$num]['name'].'.gif" alt="'.$arrSubway[$num]['name'].' Subway Line Icons" height="23" width="81"/></span>
-                <span style="margin-top: 4px;" class="subwayCategory subway_'.$arrSubway[$num]['status'][0].'">'.$arrSubway[$num]['status'][1].'</span>
+            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_'.$arrSubway[$num]['name'].'" alt="'.$arrSubway[$num]['name'].' Subway Line Icons"/></div>
+                <div style="margin-top: 4px;" class="subwayCategory subway_'.$arrSubway[$num]['status'][0].'">'.$arrSubway[$num]['status'][1].'</div>
             </div>';
     } else
         $rendered .= '<div class="completeOutage" style="margin: 150px 0 0 0;">' . $arrSubway . '</div>';
@@ -145,33 +145,38 @@ function theme_railTab($variables)
     // HTML for LIRR
     $rendered = '<div id="railDiv" style="float: left; display: none;">
         <span class="RailRoadCompany">Long Island Rail Road</span>
-        <ul style="float: right; padding:0; margin:5px 0 0">
+        <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/lirr/News/PlannedService.htm\'">Future Date</li></ul>';
     
-    if (is_array($arrLirr)) {
+    // <span class="span-12 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrLirr[$num]['name'].'</span>
+    //$rendered .= '<span class="span-11 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrMnr[$mnum]['name'].'</span>';
+
+    if (is_array($arrLirr)) {  
         for($num=0; $num < count($arrLirr); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding-bottom:1px;">
-                <span class="span-12 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrLirr[$num]['name'].'</span>
-                <span class="railStation railCategory '. $arrLirr[$num]['status'][0] .'">'.$arrLirr[$num]['status'][1].'</span>
+            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
+                <div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
+                <div class="span-11 railLineItem">'. $arrLirr[$num]['name'].'</div>
+                <div class="railStation railCategory '. $arrLirr[$num]['status'][0] .'">'.$arrLirr[$num]['status'][1].'</div>
             </div>';
     } else
         $rendered .= '<div class="completeOutage" style="margin: 40px 0 150px 0;">' . $arrLirr . '</div>';
     
     // HTML for MNR
-    $rendered .= '<div style="float: left; width: 100%; margin: 1px 0 0 0;"><span class="RailRoadCompany">Metro-North Railroad</span>
-        <ul style="float: right; padding:0; margin:5px 0 0">
+    $rendered .= '<div style="float: left; width: 100%;"><span class="RailRoadCompany">Metro-North Railroad</span>
+        <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/mnr/html/serviceupdates.htm\'">Future Date</li></ul></div>';
     
     if (is_array($arrMnr)) {
         for($mnum=0; $mnum < count($arrMnr); $mnum++, $num++) {  
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding-bottom:1px;">';
+            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">';
 
             if ($mnum == 2 || $mnum == 4 || $mnum == 5 || $mnum == 6)
-                $rendered .= '<span style="margin-left: 20px;" class="span-10 railLineItem">'.$arrMnr[$mnum]['name'].'</span>';
+                $rendered .= '<div style="margin-left: 20px;" class="span-10 railLineItem">'.$arrMnr[$mnum]['name'].'</div>';
             else
-                $rendered .= '<span class="span-11 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrMnr[$mnum]['name'].'</span>';
-
-            $rendered .= '<span class="railStation railCategory '. $arrMnr[$mnum]['status'][0] .'">'.$arrMnr[$mnum]['status'][1].'</span></div>';
+                $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
+                    <div class="span-11 railLineItem">'. $arrMnr[$mnum]['name'].'</div>';
+            
+            $rendered .= '<div class="railStation railCategory '. $arrMnr[$mnum]['status'][0] .'">'.$arrMnr[$mnum]['status'][1].'</div></div>';
         }
     } else
         $rendered .= '<div class="completeOutage" style="margin: 40px 0 40px 0;">' . $arrMnr . '</div>';
@@ -209,7 +214,7 @@ function theme_busTab($variables) {
 function theme_bntTab($variables) {
     $arrBnt = $variables['bnt'];
     
-    $rendered = '<div id="bntDiv" style="float: left; display: none; margin-top: 9px;">
+    $rendered = '<div id="bntDiv" style="float: left; display: none; margin-top: 12px;">
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/bandt/traffic/advisory.html\'">Future Date</li></ul>';
  // don't end it here   $rendered .='</div>';
