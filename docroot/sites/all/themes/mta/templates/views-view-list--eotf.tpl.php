@@ -9,16 +9,21 @@
  * @ingroup views_templates
  */
 ?>
+
+<div id="eotf">
 <?php print $wrapper_prefix; ?>
   <?php if (!empty($title)) : ?>
     <h3><?php print $title; ?></h3>
-  <?php endif; ?>
-  <div id="eotf">
-  
+      <?php endif; ?>
+ 
+
   <?php print $list_type_prefix; ?>
     <?php foreach ($rows as $id => $row): ?>
-      <li class="<?php print $classes_array[$id]; ?>"><?php print $row; ?></li>
+      <class="<?php print $classes_array[$id]; ?>"><?php print $row; ?>
     <?php endforeach; ?>
   <?php print $list_type_suffix; ?>
 <?php print $wrapper_suffix; ?>
 </div>
+
+
+     

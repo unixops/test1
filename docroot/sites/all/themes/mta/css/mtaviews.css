@@ -285,7 +285,10 @@
 .view-eotf caption {
 	text-align: center;
 	font-size: 18px;
+	color: #7a2626;
 	font-weight: bold;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 /* EotF table header row */
@@ -311,16 +314,42 @@
 
 /** Eotf brief description Views */
 
-.agency_full_name {
+.view-eotf page_1 agency_full_name {
 	text-align: center;
 	font-size: 18px;
 	font-weight: bold;
+	}
+
+#eotf h3 {
+	text-align: center;
+	color: #7a2626;
+	font-size: 16px;
+	font-weight: bold;
+	}
+
+.brief-month {
+	text-align: center;
+	color: #7a2626;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid #B4B4B4;
+	padding-bottom: 15px;
 	
-}
-	
-	
+	}
 
+.ref-number, .briefdesc-title, .dollar  {
+	font-size: 14px;
+	font-weight: bold;
+	}
 
+.brief-content {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	}
 
-
-
+ .duration {
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #B4B4B4;
+	}
