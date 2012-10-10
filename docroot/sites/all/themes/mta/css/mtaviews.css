@@ -273,6 +273,19 @@
 	
 /* Views EOTF Styles */
 
+/* Hide the node titles on Forecast and Brief Header Attachments */
+#node-3751 .node-title {
+	display: none;
+}
+
+#node-3752 .node-title {
+	display: none;
+}
+
+
+
+
+
 /* EotF table body */
 .view-eotf table, tbody, tfoot, tr, td {
     font-size: 100%;
