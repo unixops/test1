@@ -28,10 +28,7 @@
 									<?php print $messages; ?>
 			 				 <div id="pageTitleArea">
 									<?php print render($title_prefix); ?>
-					 <!--replaced with title hide below
-					  if ($title): ?><h1 class="title" id="page-title"> print $title; ?></h1> -->
-					  <?php if (substr(rtrim($title),-4,4) !="hide"): ?><h1 class="title"><?php print $title ?></h1>
-						<?php endif; ?>
+									<?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
 									<?php print render($title_suffix); ?>
 									<?php print render($page['page_title']);?>
 									
