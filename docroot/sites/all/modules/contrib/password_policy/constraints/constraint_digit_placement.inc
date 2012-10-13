@@ -30,7 +30,7 @@ function password_policy_constraint_digit_placement_error($constraint) {
 /**
  * Password validation.
  */
-function password_policy_constraint_digit_placement_validate($password, $constraint, $uid) {
+function password_policy_constraint_digit_placement_validate($password, $constraint, $account) {
   $chars = drupal_strlen($password);
   $num = 0;
   for ($i = 0; $i < $chars; ++$i) {
@@ -47,7 +47,7 @@ function password_policy_constraint_digit_placement_validate($password, $constra
 /**
  * Javascript portion.
  */
-function password_policy_constraint_digit_placement_js($constraint, $uid) {
+function password_policy_constraint_digit_placement_js($constraint, $account) {
   return <<<JSS
   function substr_count(haystack, needle) {
     var pos = 0, cnt = 0;

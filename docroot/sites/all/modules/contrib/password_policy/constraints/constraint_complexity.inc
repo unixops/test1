@@ -24,7 +24,7 @@ function password_policy_constraint_complexity_error($constraint) {
 /**
  * Password validation.
  */
-function password_policy_constraint_complexity_validate($password, $constraint, $uid) {
+function password_policy_constraint_complexity_validate($password, $constraint, $account) {
   $chars = drupal_strlen($password);
   $num = 0;
   $upper = 0;
@@ -53,7 +53,7 @@ function password_policy_constraint_complexity_validate($password, $constraint, 
 /**
  * Javascript portion.
  */
-function password_policy_constraint_complexity_js($constraint, $uid) {
+function password_policy_constraint_complexity_js($constraint, $account) {
   $s = '';
   $s .= "  var i=0;\n";
   $s .= "  var num=0;\n";

@@ -24,7 +24,7 @@ function password_policy_constraint_digit_error($constraint) {
 /**
  * Password validation.
  */
-function password_policy_constraint_digit_validate($password, $constraint, $uid) {
+function password_policy_constraint_digit_validate($password, $constraint, $account) {
   $chars = drupal_strlen($password);
   $num = 0;
   for ($i = 0; $i < $chars; ++$i) {
@@ -38,7 +38,7 @@ function password_policy_constraint_digit_validate($password, $constraint, $uid)
 /**
  * Javascript portion.
  */
-function password_policy_constraint_digit_js($constraint, $uid) {
+function password_policy_constraint_digit_js($constraint, $account) {
   $s = '';
   $s .= "  var i=0;\n";
   $s .= "  var num=0;\n";
