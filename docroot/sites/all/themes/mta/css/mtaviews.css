@@ -48,7 +48,20 @@
 	height: 220px;
 	overflow:hidden;
 	}
-	
+.news-rot-portrait{
+	background: none repeat scroll 0 0 #555555;
+    height: 220px;
+    overflow: hidden;
+    text-align: center;
+    width: 438px;
+	}
+.news-rot-portrait-preview{
+	background: none repeat scroll 0 0 #555555;
+    height: 220px;
+    overflow: hidden;
+    text-align: center;
+    width: 438px;
+	}		
 .news-rot-image-large{			
 	height: 220px;
 	overflow:hidden;
