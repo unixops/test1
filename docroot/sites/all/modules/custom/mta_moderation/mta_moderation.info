@@ -1,0 +1,4 @@
+name = mta_moderation
+description = Uses the hook form to modify the scheduler form.
+package = Our MTA modules
+core = 7.x
