@@ -1,20 +1,22 @@
 <?php 
 
 function mta_moderation_form_news_article_node_form_alter(&$form, &$form_state, $form_id) {
-	dsm($form_id);
-	dsm($form);
+//	dsm($form_id);
+//	dsm($form);
 //	dsm($form['options']['revision_scheduler_operation']['#options']);
 //	dsm($form_state);
  global $user;
 	if (in_array('master content provider', $user->roles) || in_array('content provider', $user->roles)) {
+		
 	
-	$form['revision_information']['revision_scheduler_operation']['#options']=array(0=>'None','workbench_moderation_published'=>'Moderate to Published');
-	$form['revision_information']['revision_scheduler_operation']['#title']='Schedule Operation';
+	$form['revision_information']['revision_scheduler_operation']['#options']=array(0=>'None','workbench_moderation_published'=>'Schedule Publishing');
+	$form['revision_information']['revision_scheduler_operation']['#title']='Scheduled Publishing';
+	$form['revision_information']['revision_scheduler_operation']['#description']='If you want this content to be published at a particular time and date select Schedule Publishing';
 	
 	}
 	
 }
 
 function mta_moderation_form_workbench_moderation_moderate_form_alter(&$form, &$form_state, $form_id) {
-	dsm('made it');
+	//dsm('made it');
 }
