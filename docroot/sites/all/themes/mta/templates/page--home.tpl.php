@@ -23,9 +23,7 @@
 				</div>
 			 </div>
 			<div id="navbar"><?php print render($page['navbar']);?></div>
-			<div id="breadcrumb"> <!-- we leave the div and keep spacing -->
-								<?php if ($breadcrumb){print $breadcrumb;}?>
-			</div>
+			
 			<div id="contentbox" class="clearfix">
 							<div class="container">
 								<div class="span-94">									
