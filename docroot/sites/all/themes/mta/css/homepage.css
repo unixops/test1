@@ -451,3 +451,41 @@ ul.arrow li {
 	height: 85px;
 	}
 	
+/** Agency Special Services Boxes from home page.css */
+
+
+#boxes-box-lirr_special_service {
+	margin-top:10px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    }
+ 
+#boxes-box-nyct_special_service {
+	margin-top:10px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    } 
+    
+  #boxes-box-bandt_special_service {
+  	margin-top:10px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    } 
+    
+ #boxes-box-mnr_special_service {
+  	margin-top:10px;
+	height: 150px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    }  
