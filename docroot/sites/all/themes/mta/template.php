@@ -26,9 +26,10 @@ function mta_preprocess_page(&$vars) {
   	} else {
   	if ($vars['node']->type == "home_page") {
     	$vars['theme_hook_suggestions'][] = 'page__home';
-  		}
+  		} 
   	}  
   }
+ 
   
   // Suckerfish menus
   $vars['main_sf_menu'] = FALSE;

@@ -21,6 +21,11 @@ function mta_megamenu_block_info() {
   		'info' => t('bandt_megamenu'), //The name that will appear in the block list.
   		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
   );
+  $blocks['sir_megamenu'] = array(
+  		'info' => t('sir_megamenu'), //The name that will appear in the block list.
+  		'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+  );
+  
   
   return $blocks;
 }
@@ -116,6 +121,22 @@ function mta_megamenu_block_info() {
 		</script>';
  			}
  				break;
+ 				
+ 			case 'sir_megamenu':
+ 				$block['subject'] = '';
+ 				if(user_access('access content')){
+ 					$path = drupal_get_path('module', 'mta_megamenu');
+ 					drupal_add_js($path."/jkmegamenu.js");
+ 					drupal_add_css($path."/mta_megamenu.css");
+ 				
+ 					$block['content']=file_get_contents($path."/sir_megamenu.html");
+ 					$block['content'].='<script type="text/javascript">
+			jkmegamenu.definemenu("menuanchor1", "menuone", "click", "left");
+			jkmegamenu.definemenu("menuanchor2", "menutwo", "click", "left");
+			 
+		</script>';
+ 			}
+ 					break;
  		
    }
   return $block;
