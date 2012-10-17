@@ -56,10 +56,10 @@ html.js input.webform-calendar {
 	margin-left:193px;
 	}
 #webform-component-Question2Header {
-	width:580px;
+	width:380px;
 	border-bottom: 1px solid #D0D0D0;
 	margin-bottom: 0;
-	margin-left: 190px;
+	padding-left: 190px;
 	
 	}
 	
