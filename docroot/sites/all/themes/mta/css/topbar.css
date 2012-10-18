@@ -88,7 +88,6 @@ html {
 #sidebar_first {
 	margin:0;
 	width:230px;
-
 	float:left;
 	}
 #contentbox {
@@ -115,10 +114,8 @@ html {
 }
 #sidebar_second {
     float: right;
-    margin-top: 0;
-    padding-bottom: 10px;
-/*    padding-right: 10px; */
-    width: 220px;
+    margin: 0;
+    width: 230px;
 }
 #sidebar_second_ad {
 	float:left;
