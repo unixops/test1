@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the mta_home_new feature.
- */
-
-include_once 'mta_home_new.features.inc';
