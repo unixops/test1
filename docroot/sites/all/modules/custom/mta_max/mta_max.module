@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * from http://drupal.org/node/1459650
+ * @param unknown_type $form
+ * @param unknown_type $form_state
+ * @param unknown_type $form_id
+ */
+function mta_max_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'webform_client_form_3605') {
+    //dsm($form);
+    // add a maximum length with maxlength module
+    if (module_exists('maxlength')) {
+      $result = db_query("SELECT data FROM {webform_validation_rule} WHERE rulename = 'public_hearing_comment_max_length'");
+      $max_length = $result->fetchColumn(0);
+      drupal_add_js(drupal_get_path('module', 'maxlength') .'maxlength.js');
+
+      $value = $form['submitted']['ph_comments_comments']['#default_value'];
+      $field = 'ph-comments-comments';
+      $id = 'submitted-ph-comments-comments';
+      $type = 'webform_client_form_3605';
+
+      $max_length_properties = array($value, $field, $id, $type);
+      $form['submitted']['ph_comments_comments']['#max_length_properties'] = $max_length_properties;
+//*/
+      $form['submitted']['ph_comments_comments']['#pre_render'] = array('maxlength_pre_render');
+      $form['submitted']['ph_comments_comments']['#maxlength'] = $max_length;
+      $form['submitted']['ph_comments_comments']['#maxlength_js'] = TRUE;
+    }
+  }
+}

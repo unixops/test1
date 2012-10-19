@@ -1,0 +1,16 @@
+<?php
+
+function mta_max_enable() {
+  $max_length = 1000;
+  db_insert('webform_validation_rule')
+  ->fields(array(
+  'ruleid' => NULL,
+  'rulename' => 'public_hearing_comment_max_length',
+  'nid' => '3605',
+  'validator' => 'max_length',
+  'data' => $max_length,
+  'error_message' => NULL
+  ))
+  ->execute();
+
+}

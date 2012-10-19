@@ -1,0 +1,11 @@
+name = MTA Maxlength
+project = "mta_max"
+description = "Provides Max Length feature to MTA's webforms."
+core = 7.x
+package = "Our MTA modules"
+version = 7.x-1.x-dev
+dependencies[] = webform
+dependencies[] = webform_validation
+dependencies[] = maxlength
+files[] = mta_max.install
+files[] = mta_max.module
