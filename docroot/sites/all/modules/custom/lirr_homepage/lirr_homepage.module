@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the LIRR Homepage feature.
+ */
+
+include_once 'lirr_homepage.features.inc';

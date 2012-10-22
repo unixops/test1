@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the MNR Homepage feature.
+ */
+
+include_once 'mnr_homepage.features.inc';

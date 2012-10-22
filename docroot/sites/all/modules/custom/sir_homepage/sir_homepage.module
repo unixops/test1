@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SIR Homepage feature.
+ */
+
+include_once 'sir_homepage.features.inc';
