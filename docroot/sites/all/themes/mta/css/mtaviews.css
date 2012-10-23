@@ -125,7 +125,8 @@
 	overflow: hidden;
 	}
 	
-#widget_pager_bottom_news_rotator-block_1 {
+#widget_pager_bottom_news_rotator-block_1,
+#widget_pager_bottom_news_rotator-block_2 {
     height: 24px;
     margin-top: -1px;
     margin-left: 12px;
@@ -134,13 +135,15 @@
     }
 
 /** Space to provide for news story growth - above pager and control */	
-#widget_pager_bottom_news_rotator-block_1 {
+#widget_pager_bottom_news_rotator-block_1,
+#widget_pager_bottom_news_rotator-block_2 {
 	    float: left;
 	    border: 1px solid #ccc;
 	}
 
 /** Holds Pager NUmbers and Pause Control */	
-#vscc_controls_news_rotator-block_1 {
+#vscc_controls_news_rotator-block_1,
+#vscc_controls_news_rotator-block_2 {
 	float: left;
 	}
 
@@ -186,14 +189,17 @@
 	float:left;
 	}	
 
-#vscc_controls_pause_news_rotator-block_1 {
+#vscc_controls_pause_news_rotator-block_1,
+#vscc_controls_pause_news_rotator-block_2 {
     float: left;
     margin-left: -16px;
     margin-top: 2px;
     }
 
 #vscc_controls_previous_news_rotator-block_1,
-#vscc_controls_next_news_rotator-block_1 {
+#vscc_controls_previous_news_rotator-block_2,
+#vscc_controls_next_news_rotator-block_1,
+#vscc_controls_next_news_rotator-block_2 {
 	display:none;
 	}
 
