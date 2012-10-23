@@ -38,9 +38,9 @@ function mnr_homepage_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'views-news_rotator-block_1' => array(
+        'views-news_rotator-block_4' => array(
           'module' => 'views',
-          'delta' => 'news_rotator-block_1',
+          'delta' => 'news_rotator-block_4',
           'region' => 'content',
           'weight' => '-8',
         ),
