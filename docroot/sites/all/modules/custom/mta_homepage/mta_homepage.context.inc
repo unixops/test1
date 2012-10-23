@@ -50,15 +50,15 @@ function mta_homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'boxes-footer' => array(
-          'module' => 'boxes',
-          'delta' => 'footer',
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'boxes-copyright' => array(
-          'module' => 'boxes',
-          'delta' => 'copyright',
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
           'region' => 'footer',
           'weight' => '-9',
         ),
@@ -71,7 +71,7 @@ function mta_homepage_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
