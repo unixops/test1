@@ -16,6 +16,7 @@
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1,
+#block-views-news-rotator-block-2,
 .view-news-rotator-preview
 {
 	padding: 10px;
@@ -26,7 +27,7 @@
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }
-	
+    
 
 .view-news-rotator
 {
