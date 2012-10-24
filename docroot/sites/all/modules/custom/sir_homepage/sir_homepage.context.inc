@@ -30,19 +30,19 @@ function sir_homepage_context_default_contexts() {
           'module' => 'mta_megamenu',
           'delta' => 'sir_megamenu',
           'region' => 'content',
-          'weight' => '-47',
+          'weight' => '-10',
         ),
         'service_notice-service_notice_sir' => array(
           'module' => 'service_notice',
           'delta' => 'service_notice_sir',
           'region' => 'content',
-          'weight' => '-46',
+          'weight' => '-9',
         ),
-        'views-news_rotator-block_1' => array(
+        'views-news_rotator-block_6' => array(
           'module' => 'views',
-          'delta' => 'news_rotator-block_1',
+          'delta' => 'news_rotator-block_6',
           'region' => 'content',
-          'weight' => '-45',
+          'weight' => '-8',
         ),
         'statusblock-mta-service-status' => array(
           'module' => 'statusblock',
@@ -56,15 +56,15 @@ function sir_homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'boxes-footer' => array(
-          'module' => 'boxes',
-          'delta' => 'footer',
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'boxes-copyright' => array(
-          'module' => 'boxes',
-          'delta' => 'copyright',
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
           'region' => 'footer',
           'weight' => '-9',
         ),

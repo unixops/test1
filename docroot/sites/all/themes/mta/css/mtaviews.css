@@ -16,6 +16,11 @@
 /* News Rotator Views Block 8/15/12 */
 
 #block-views-news-rotator-block-1,
+#block-views-news-rotator-block-2,
+#block-views-news-rotator-block-3,
+#block-views-news-rotator-block-4,
+#block-views-news-rotator-block-5,
+#block-views-news-rotator-block-6,
 .view-news-rotator-preview
 {
 	padding: 10px;
@@ -26,7 +31,7 @@
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }
-	
+    
 
 .view-news-rotator
 {
@@ -124,7 +129,12 @@
 	overflow: hidden;
 	}
 	
-#widget_pager_bottom_news_rotator-block_1 {
+#widget_pager_bottom_news_rotator-block_1,
+#widget_pager_bottom_news_rotator-block_2,
+#widget_pager_bottom_news_rotator-block_3,
+#widget_pager_bottom_news_rotator-block_4,
+#widget_pager_bottom_news_rotator-block_5,
+#widget_pager_bottom_news_rotator-block_6 {
     height: 24px;
     margin-top: -1px;
     margin-left: 12px;
@@ -133,13 +143,23 @@
     }
 
 /** Space to provide for news story growth - above pager and control */	
-#widget_pager_bottom_news_rotator-block_1 {
+#widget_pager_bottom_news_rotator-block_1,
+#widget_pager_bottom_news_rotator-block_2,
+#widget_pager_bottom_news_rotator-block_3,
+#widget_pager_bottom_news_rotator-block_4,
+#widget_pager_bottom_news_rotator-block_5,
+#widget_pager_bottom_news_rotator-block_6 {
 	    float: left;
 	    border: 1px solid #ccc;
 	}
 
 /** Holds Pager NUmbers and Pause Control */	
-#vscc_controls_news_rotator-block_1 {
+#vscc_controls_news_rotator-block_1,
+#vscc_controls_news_rotator-block_2,
+#vscc_controls_news_rotator-block_3,
+#vscc_controls_news_rotator-block_4,
+#vscc_controls_news_rotator-block_5,
+#vscc_controls_news_rotator-block_6 {
 	float: left;
 	}
 
@@ -185,14 +205,29 @@
 	float:left;
 	}	
 
-#vscc_controls_pause_news_rotator-block_1 {
+#vscc_controls_pause_news_rotator-block_1,
+#vscc_controls_pause_news_rotator-block_2,
+#vscc_controls_pause_news_rotator-block_3,
+#vscc_controls_pause_news_rotator-block_4,
+#vscc_controls_pause_news_rotator-block_5,
+#vscc_controls_pause_news_rotator-block_6 {
     float: left;
     margin-left: -16px;
     margin-top: 2px;
     }
 
 #vscc_controls_previous_news_rotator-block_1,
-#vscc_controls_next_news_rotator-block_1 {
+#vscc_controls_previous_news_rotator-block_2,
+#vscc_controls_previous_news_rotator-block_3,
+#vscc_controls_previous_news_rotator-block_4,
+#vscc_controls_previous_news_rotator-block_5,
+#vscc_controls_previous_news_rotator-block_6,
+#vscc_controls_next_news_rotator-block_1,
+#vscc_controls_next_news_rotator-block_2,
+#vscc_controls_next_news_rotator-block_3,
+#vscc_controls_next_news_rotator-block_4,
+#vscc_controls_next_news_rotator-block_5,
+#vscc_controls_next_news_rotator-block_6 {
 	display:none;
 	}
 

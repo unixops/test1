@@ -38,9 +38,9 @@ function lirr_homepage_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'views-news_rotator-block_1' => array(
+        'views-news_rotator-block_2' => array(
           'module' => 'views',
-          'delta' => 'news_rotator-block_1',
+          'delta' => 'news_rotator-block_2',
           'region' => 'content',
           'weight' => '-8',
         ),
@@ -56,15 +56,15 @@ function lirr_homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-42',
         ),
-        'boxes-footer' => array(
-          'module' => 'boxes',
-          'delta' => 'footer',
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'boxes-copyright' => array(
-          'module' => 'boxes',
-          'delta' => 'copyright',
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
           'region' => 'footer',
           'weight' => '-9',
         ),
