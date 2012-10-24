@@ -223,6 +223,11 @@ ul.arrow li {
 
 #riding-links ul { margin:0; padding:0; float:left; width: 215px; }
 #riding-links li { margin:0; margin-bottom: 10px; padding: 4px 8px 5px; list-style-type:none; width:197px; float:left; font-weight: bold; }
+#riding-links li.text{ 
+width:147px;
+}
+
+
 #riding-links #menuanchor1,
 #riding-links #menuanchor2,
 #riding-links #menuanchor3,
@@ -529,12 +534,11 @@ ul.arrow li {
 .social { left:685px; background:url('../images/footer_sprite_new.png') right no-repeat; -75px 0; width:157px;  }
 
 .anchor1,.anchor2,.anchor3,.anchor4,.anchor5,.anchor6,.anchor7,.anchor8 {
-display: inline-block;
     float: right;
     height: 17px;
     margin-bottom: 0;
     margin-right: 2px;
-    margin-top: 1px;
+    margin-top: 1px; 
     width: 26px;
 }
 .anchor1 {
@@ -561,4 +565,11 @@ display: inline-block;
 .anchor8 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -81px -18px;
 }
-	
+	.mega-text {
+	width:147px;
+	float:left;
+	}
+	 .mega-text-short {
+  width:95px;
+  float:left;
+  }
