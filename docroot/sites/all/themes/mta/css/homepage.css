@@ -493,3 +493,27 @@ ul.arrow li {
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }  
+    
+#footer-navlist {position:relative; margin:10px auto; height:19px;}
+
+#footer-navlist li {margin:0; padding:0 6px 0 0; list-style:none; position:absolute; top:0; }
+
+#footer-navlist li {height:19px; display:block; background-color: transparent;}
+
+#footer-navlist li a {height:19px; display:block; font-weight:bold; background-color: #fff;}
+
+ 
+
+.employment { left:0px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') no-repeat 80px 0; width:98px;  }
+
+.shop { left:129px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') no-repeat 60px 0; width:100px;  }
+
+.museum { left:258px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') no-repeat 55px 0; width:125px;  }
+
+.pim { left:402px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') no-repeat 35px 0; width:125px; }
+
+.aft { left:549px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') no-repeat 0 0; width:116px; }
+
+.social { left:685px; background:url('/sites/all/themes/mta/images/footer_sprite_new.png') right no-repeat; -75px 0; width:157px;  }
+
+     
