@@ -19,7 +19,7 @@ function mta_more_news_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'node/3658' => 'node/3658',
+        'mta-news' => 'mta-news',
       ),
     ),
   );
