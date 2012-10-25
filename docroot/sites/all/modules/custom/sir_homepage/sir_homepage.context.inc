@@ -38,9 +38,9 @@ function sir_homepage_context_default_contexts() {
           'region' => 'content',
           'weight' => '-9',
         ),
-        'views-news_rotator-block_6' => array(
+        'views-news_rotator-block_7' => array(
           'module' => 'views',
-          'delta' => 'news_rotator-block_6',
+          'delta' => 'news_rotator-block_7',
           'region' => 'content',
           'weight' => '-8',
         ),
