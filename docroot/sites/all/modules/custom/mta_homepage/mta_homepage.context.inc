@@ -38,16 +38,46 @@ function mta_homepage_context_default_contexts() {
           'region' => 'content',
           'weight' => '-43',
         ),
+        'block-10' => array(
+          'module' => 'block',
+          'delta' => '10',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'block-9' => array(
+          'module' => 'block',
+          'delta' => '9',
+          'region' => 'content_bottom',
+          'weight' => '-10',
+        ),
+        'block-11' => array(
+          'module' => 'block',
+          'delta' => '11',
+          'region' => 'postscript',
+          'weight' => '-10',
+        ),
         'statusblock-mta-service-status' => array(
           'module' => 'statusblock',
           'delta' => 'mta-service-status',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
+        'block-12' => array(
+          'module' => 'block',
+          'delta' => '12',
+          'region' => 'sidebar_first_lower',
+          'weight' => '-10',
+        ),
         'tripplanner-tripplanner' => array(
           'module' => 'tripplanner',
           'delta' => 'tripplanner',
           'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'block-13' => array(
+          'module' => 'block',
+          'delta' => '13',
+          'region' => 'sidebar_second_lower',
           'weight' => '-10',
         ),
         'block-8' => array(
