@@ -75,8 +75,8 @@
 	}
 	
 .news-rot-image-caption-preview {
-  width:438px;
-  position: absolute;
+    width:438px;
+    position: absolute;
     bottom: 0;
     padding-bottom:3px;
     z-index:999;
@@ -236,7 +236,7 @@
 #news_rotator_archive {
 	float:right;
 	margin-right:20px;
-}
+	}
 
 /* More News Views Styles */
 .new-rot-title-more {
