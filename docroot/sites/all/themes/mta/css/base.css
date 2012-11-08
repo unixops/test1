@@ -329,7 +329,6 @@ h1#page-title-ad  {
 }
 
 
-
 .node-page-with-ad .content {
 	padding-left:10px;
 	padding-right:10px;
@@ -337,3 +336,52 @@ h1#page-title-ad  {
 #Google-skyscraper-ad {
 	border:1px none;
 }
+
+
+
+/* Field Slideshow Styles */
+
+#field-slideshow-1-wrapper {
+	height: 200px;
+	}
+
+.field-slideshow-caption-text {
+	width:438px;
+	position: absolute;
+  	bottom: 0;
+  	padding-bottom:3px;
+  	z-index:999;
+  	background-image: url('../images/text_bg.png');
+  	font-size:20px;
+	font-weight:bold;
+	color: #ffffff;
+	margin-top: 2px;
+	margin-left: 20px;
+	}
+	
+
+.field-slideshow-pager {
+  	width: 100px;
+  	position: absolute;
+  	padding-top:3px;
+  	z-index:999;
+  	margin-top: 3px;
+	background-color: #ffffff;
+	}
+
+.field-slideshow-pager a{
+  display:inline-block;
+  width:16px;
+  height:16px;
+  background: url(../images/active.png) no-repeat 0 -16px;
+  text-indent: -999%;
+}
+
+.field-slideshow-pager a.activeSlide{
+	margin-top: 5px;
+	height: 10px;
+  background-position: 0 0 ;
+  background: url(../images/active.png) no-repeat 0 -16px;
+}
+
+/**background:url(../images/banner_button.png) top left no-repeat;*/
