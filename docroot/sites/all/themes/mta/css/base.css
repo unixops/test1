@@ -361,27 +361,28 @@ h1#page-title-ad  {
 	
 
 .field-slideshow-pager {
-  	width: 100px;
+  	width: 200px;
+  	height: 20px;
   	position: absolute;
-  	padding-top:3px;
+  	padding:5px;
   	z-index:999;
-  	margin-top: 3px;
-	background-color: #ffffff;
+  	margin-top: -40px;
+  	margin-bottom: 5px;
+  	margin-left: 650px;
 	}
 
-.field-slideshow-pager a{
-  display:inline-block;
-  width:16px;
-  height:16px;
-  background: url(../images/active.png) no-repeat 0 -16px;
-  text-indent: -999%;
-}
+.field-slideshow-pager a {
+  	display:inline-block;
+  	width:16px;
+  	height:16px;
+  	padding: 5px;
+  	background:url(../images/banner_button.png) top left no-repeat;
+  	text-indent: -999%;
+	}
 
 .field-slideshow-pager a.activeSlide{
-	margin-top: 5px;
-	height: 10px;
-  background-position: 0 0 ;
-  background: url(../images/active.png) no-repeat 0 -16px;
-}
-
-/**background:url(../images/banner_button.png) top left no-repeat;*/
+	width:16px;
+  	height:16px;
+	padding: 5px;
+    background:url(../images/active.png) top left no-repeat !important;
+	}
