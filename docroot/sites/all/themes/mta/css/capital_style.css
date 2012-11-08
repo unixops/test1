@@ -47,10 +47,12 @@ a:active {
 	color: #0055aa;
 }
 
+/**
 #myslides a {
 	border: none;
 	padding: 0px;
 }
+
 
 img{
 	float:left;
@@ -88,6 +90,7 @@ ul.arrow li ul.arrow li a.hilite {color:#333;}
 	margin-top:5px;
 }
 
+/*
 .caption {
 	margin: 0; 
 	font-size: 16px;
@@ -212,6 +215,8 @@ ul.arrow li ul.arrow li a.hilite {color:#333;}
 	margin-top:1px;
 	padding:0px !important;
 }
+
+*/
 
 
 /* Footer CSS */
