@@ -143,7 +143,7 @@ ol li {
 }
 ul li {
 	/*giving UL's LIs generated disc markers*/
-	list-style: disc outside none;
+	list-style: disc inside none;
 }
 dl dd {
 	/*providing spacing for definition terms*/
@@ -361,7 +361,7 @@ h1#page-title-ad  {
 
 .field-slideshow-pager {
   	width: 200px;
-  	height: 22px;
+  	height: 16px;
   	position: absolute;
   	z-index:999;
   	margin-top: -28px;
@@ -383,4 +383,4 @@ h1#page-title-ad  {
   	height:16px;
 	padding: 5px;
     background:url(../images/active.png) top left no-repeat !important;
-	}
+    }
