@@ -33,7 +33,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <?php endif;?>
-<?php dsm($node);?>
+
 <?php if ($node->field_news_story_style['und'][0]['value']==0):?>
 <?php print views_embed_view('mta_news', 'page_1', $node->nid);?>
 <?php elseif ($node->field_news_story_style['und'][0]['value']==1):?>
