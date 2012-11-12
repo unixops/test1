@@ -5,13 +5,15 @@
 .news-article-summary {
 	font-weight: bold;
 	}
-
+ 
+/* Don't do this for node */
+/*
 .news-article-node-body {
 	margin-top: 10px;
 	padding: 10px;
 	text-align:justify;
 	}
-
+*/
 /* News Rotator Views Block 8/15/12 */
 #block-views-news-rotator-block-1,
 #block-views-news-rotator-block-2,
@@ -398,3 +400,26 @@
 	padding-bottom: 15px;
 	border-bottom: 1px solid #B4B4B4;
 	}
+.first-picture-multi {
+	float:left; 
+	margin-left:20px;
+	width:220px;
+	}
+.views-field-field-mta-image-1 {
+	float:left;
+	}	
+
+.more-pictures-multi img,
+.first-picture-multi img{
+	margin-bottom:5px;
+	margin-top:10px;
+	}
+.more-images-multi {
+	margin-left: 20px;
+	margin-bottom: 23px;
+	float:left;
+	width:220px;
+	}
+.single-image-portrait img {
+	margin-bottom:5px;
+	}				

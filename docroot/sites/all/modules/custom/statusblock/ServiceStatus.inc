@@ -14,47 +14,51 @@ class ServiceStatusDataHandler {
     
     function __construct() {
         $cache = cache_get("ss_shortCache");
-    
-    	if ($cache->expire > REQUEST_TIME)
-            $this->arrStatusData = $cache->data;
-    	else {
-            // Fetch fresh Service Status Data.
-            //$this->arrXMLObject = $this->xml_to_object(file_get_contents("http://mta.info/status/serviceStatus.txt"));
-            $this->arrXMLObject = $this->xml_to_object(file_get_contents("http://advisory.mtanyct.info/ServiceWS/service.aspx"));
+	    	if ($cache && $cache->expire > REQUEST_TIME)
+	            $this->arrStatusData = $cache->data;
+	    	else {
+	            // Fetch fresh Service Status Data.
+	            	
+	            
+	            //$this->arrXMLObject = $this->xml_to_object(file_get_contents("http://mta.info/status/serviceStatus.txt"));
 
-            if($this->arrXMLObject) {
-                $dt = explode(" ", $this->arrXMLObject->children[1]->content);
-
-               // dsm ($dt[2]);
-                $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
-                $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
-                
-                $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
-                $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
-                $this->arrStatusData[MNR]       = $this->extractData(MNR);
-                $this->arrStatusData[BUS]       = $this->extractData(BUS);
-                $this->arrStatusData[BNT]       = $this->extractData(BNT);                
-
-                $this->msgERROR = NULL;
-
-                cache_set("ss_shortCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time', 120));
-                cache_set("ss_longCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time_backup', 900));
-                cache_clear_all();
-            } else {
-                $cache = cache_get("ss_longCache");
-                if ($cache->expire > REQUEST_TIME) {
-                    //dsm ("getting from long term");
-                    $this->arrStatusData = $cache->data;
-                } else {
-                    /* We have exhausted both caches and still have an issue with 
-                    * retrieving fresh Service Status information.
-                    */
-                    $this->msgERROR = "Service Status is not available.";
-                }
-            }
-    	}
-    }
-    
+	            // first check if file exsist on server
+	    		if (isDomainAvailible("http://advisory.mtanyct.info/ServiceWS/service.aspx")){
+	            	$this->arrXMLObject = $this->xml_to_object(file_get_contents("http://advisory.mtanyct.info/ServiceWS/service.aspx"));
+	            }
+		            if($this->arrXMLObject) {
+		                $dt = explode(" ", $this->arrXMLObject->children[1]->content);
+		
+		               // dsm ($dt[2]);
+		                $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
+		                $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
+		                
+		                $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
+		                $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
+		                $this->arrStatusData[MNR]       = $this->extractData(MNR);
+		                $this->arrStatusData[BUS]       = $this->extractData(BUS);
+		                $this->arrStatusData[BNT]       = $this->extractData(BNT);                
+		
+		                $this->msgERROR = NULL;
+		
+		                cache_set("ss_shortCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time', 120));
+		                cache_set("ss_longCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time_backup', 900));
+		                cache_clear_all();
+		        
+	            } else {
+	                $cache = cache_get("ss_longCache");
+	                if ($cache && $cache->expire > REQUEST_TIME) {
+	                    //dsm ("getting from long term");
+	                    $this->arrStatusData = $cache->data;
+	                } else {
+	                    /* We have exhausted both caches and still have an issue with 
+	                    * retrieving fresh Service Status information.
+	                    */
+	                    $this->msgERROR = "Service Status is not available.";
+	                }
+	            }
+	    	}
+	    }
     function getStatusTimeStamp() {
         return $this->arrStatusData[0];
     }
@@ -255,5 +259,28 @@ class XmlElement {
     var $content;
     var $children;
 }
+function isDomainAvailible($domain)
+       {
+               //check, if a valid url is provided
+               if(!filter_var($domain, FILTER_VALIDATE_URL))
+               {
+                       return false;
+               }
 
+               //initialize curl
+               $curlInit = curl_init($domain);
+               curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
+               curl_setopt($curlInit,CURLOPT_HEADER,true);
+               curl_setopt($curlInit,CURLOPT_NOBODY,true);
+               curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
+
+               //get answer
+               $response = curl_exec($curlInit);
+
+               curl_close($curlInit);
+
+               if ($response) return true;
+
+               return false;
+       }
 ?>
