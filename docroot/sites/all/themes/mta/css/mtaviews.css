@@ -5,13 +5,15 @@
 .news-article-summary {
 	font-weight: bold;
 	}
-
+ 
+/* Don't do this for node */
+/*
 .news-article-node-body {
 	margin-top: 10px;
 	padding: 10px;
 	text-align:justify;
 	}
-
+*/
 /* News Rotator Views Block 8/15/12 */
 #block-views-news-rotator-block-1,
 #block-views-news-rotator-block-2,
@@ -412,9 +414,12 @@
 	margin-bottom:5px;
 	margin-top:10px;
 	}
-	.more-images-multi {
+.more-images-multi {
 	margin-left: 20px;
 	margin-bottom: 23px;
 	float:left;
 	width:220px;
-	}			
+	}
+.single-image-portrait img {
+	margin-bottom:5px;
+	}				
