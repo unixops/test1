@@ -71,7 +71,7 @@ function news_system_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '<none>',
+    'title' => '',
     'cache' => -1,
   );
 
@@ -174,7 +174,7 @@ function news_system_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '<none>',
+    'title' => '',
     'cache' => -1,
   );
 

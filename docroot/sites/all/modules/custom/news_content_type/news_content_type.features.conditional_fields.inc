@@ -14,7 +14,7 @@ function news_content_type_conditional_fields_default_fields() {
     'entity' => 'node',
     'bundle' => 'news_article',
     'dependent' => 'field_article_body',
-    'dependee' => 'field_news_rotator_style',
+    'dependee' => 'field_news_story_style',
     'options' => array(
       'state' => 'visible',
       'condition' => 'value',
@@ -22,8 +22,8 @@ function news_content_type_conditional_fields_default_fields() {
       'effect' => 'show',
       'effect_options' => array(),
       'element_view' => array(
-        1 => 0,
-        2 => 0,
+        1 => '1',
+        2 => '2',
         5 => 0,
         3 => 0,
         4 => 0,
@@ -131,7 +131,7 @@ function news_content_type_conditional_fields_default_fields() {
       'value_form' => NULL,
       'values' => array(
         0 => '0',
-        1 => '3',
+        1 => '1',
       ),
       'value' => array(),
     ),
@@ -259,6 +259,262 @@ function news_content_type_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '1',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_emergency_headline',
+    'dependee' => 'field_news_rotator_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '2',
+      'value' => array(
+        0 => array(
+          'value' => '2',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_emergency_summary',
+    'dependee' => 'field_news_rotator_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '2',
+      'value' => array(
+        0 => array(
+          'value' => '2',
         ),
       ),
       'values' => array(),
@@ -652,135 +908,6 @@ function news_content_type_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'news_article',
-    'dependent' => 'field_tags',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '3',
-      'value_form' => NULL,
-      'values' => array(
-        0 => '0',
-        1 => '1',
-        2 => '2',
-        3 => '3',
-      ),
-      'value' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
     'dependent' => 'field_image_caption',
     'dependee' => 'field_news_rotator_style',
     'options' => array(
@@ -897,645 +1024,6 @@ function news_content_type_conditional_fields_default_fields() {
       'selector' => '',
       'values_set' => '3',
       'value_form' => '0',
-      'values' => array(
-        0 => '0',
-        1 => '3',
-      ),
-      'value' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
-    'dependent' => 'field_page_link',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '3',
-      'value_form' => NULL,
-      'values' => array(
-        0 => '0',
-        1 => '1',
-        2 => '3',
-      ),
-      'value' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
-    'dependent' => 'field_wide_image',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '0',
-      'value' => array(
-        0 => array(
-          'value' => '0',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
-    'dependent' => 'field_emergency_headline',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '2',
-      'value' => array(
-        0 => array(
-          'value' => '2',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
-    'dependent' => 'field_emergency_summary',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '1',
-      'value_form' => '2',
-      'value' => array(
-        0 => array(
-          'value' => '2',
-        ),
-      ),
-      'values' => array(),
-    ),
-  );
-
-  $items[] = array(
-    'entity' => 'node',
-    'bundle' => 'news_article',
-    'dependent' => 'field_news_page_headline',
-    'dependee' => 'field_news_rotator_style',
-    'options' => array(
-      'state' => 'visible',
-      'condition' => 'value',
-      'grouping' => 'AND',
-      'effect' => 'show',
-      'effect_options' => array(),
-      'element_view' => array(
-        1 => '1',
-        2 => '2',
-        5 => 0,
-        3 => 0,
-        4 => 0,
-      ),
-      'element_view_per_role' => 0,
-      'element_view_roles' => array(
-        1 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          2 => '2',
-          5 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'element_edit' => array(
-        1 => '1',
-        3 => 0,
-      ),
-      'element_edit_per_role' => 0,
-      'element_edit_roles' => array(
-        1 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        2 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        3 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        4 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        5 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        6 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        7 => array(
-          1 => '1',
-          3 => 0,
-        ),
-        8 => array(
-          1 => '1',
-          3 => 0,
-        ),
-      ),
-      'selector' => '',
-      'values_set' => '3',
-      'value_form' => NULL,
       'values' => array(
         0 => '0',
         1 => '3',
@@ -1675,6 +1163,261 @@ function news_content_type_conditional_fields_default_fields() {
   $items[] = array(
     'entity' => 'node',
     'bundle' => 'news_article',
+    'dependent' => 'field_news_page_headline',
+    'dependee' => 'field_news_story_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '3',
+      'value_form' => NULL,
+      'values' => array(
+        0 => '0',
+        1 => '1',
+      ),
+      'value' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_page_link',
+    'dependee' => 'field_news_rotator_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '3',
+      'value_form' => NULL,
+      'values' => array(
+        0 => '0',
+        1 => '1',
+        2 => '3',
+      ),
+      'value' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
     'dependent' => 'field_portrait',
     'dependee' => 'field_news_rotator_style',
     'options' => array(
@@ -1794,6 +1537,389 @@ function news_content_type_conditional_fields_default_fields() {
       'value' => array(
         0 => array(
           'value' => '3',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_tags',
+    'dependee' => 'field_news_story_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '3',
+      'value_form' => NULL,
+      'values' => array(
+        0 => '0',
+        1 => '1',
+      ),
+      'value' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_wide_image',
+    'dependee' => 'field_news_rotator_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '0',
+      'value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'values' => array(),
+    ),
+  );
+
+  $items[] = array(
+    'entity' => 'node',
+    'bundle' => 'news_article',
+    'dependent' => 'field_mta_image',
+    'dependee' => 'field_news_story_style',
+    'options' => array(
+      'state' => 'visible',
+      'condition' => 'value',
+      'grouping' => 'AND',
+      'effect' => 'show',
+      'effect_options' => array(),
+      'element_view' => array(
+        1 => '1',
+        2 => '2',
+        5 => 0,
+        3 => 0,
+        4 => 0,
+      ),
+      'element_view_per_role' => 0,
+      'element_view_roles' => array(
+        1 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          2 => '2',
+          5 => 0,
+          3 => 0,
+          4 => 0,
+        ),
+      ),
+      'element_edit' => array(
+        1 => '1',
+        3 => 0,
+      ),
+      'element_edit_per_role' => 0,
+      'element_edit_roles' => array(
+        1 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        2 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        3 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        4 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        5 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        6 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        7 => array(
+          1 => '1',
+          3 => 0,
+        ),
+        8 => array(
+          1 => '1',
+          3 => 0,
+        ),
+      ),
+      'selector' => '',
+      'values_set' => '1',
+      'value_form' => '1',
+      'value' => array(
+        0 => array(
+          'value' => '1',
         ),
       ),
       'values' => array(),
