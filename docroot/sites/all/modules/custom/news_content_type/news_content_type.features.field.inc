@@ -988,8 +988,8 @@ function news_content_type_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'Single Image<rr /><br /><img src="/sites/all/themes/mta/images/Wide-picture-small.png"/>',
-          1 => 'Multiple Images<br /><img src="/sites/all/themes/mta/images/Portrait.png"/>',
+          0 => 'Single Image<rr /><br /><img src="/sites/all/themes/mta/images/single-story.png"/>',
+          1 => 'Multiple Images<br /><img src="/sites/all/themes/mta/images/mult-story.png"/>',
         ),
         'allowed_values_function' => '',
       ),
