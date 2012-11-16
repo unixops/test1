@@ -2,7 +2,6 @@
   <?php if ($teaser) print render($content['field_image']); ?>
 
   <?php print render($title_prefix);
-  dsm($node);
   ?>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -32,7 +31,6 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 	?>
 	</div>
 	<p>&nbsp;</p>
-	<?php print($node->field_news_rotator_style['und'][0]['value']);?>
 	<p>&nbsp;</p>
 	
 	<div class="view-news-rotator-preview">
@@ -58,8 +56,9 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
   }elseif ($node->field_news_rotator_style['und'][0]['value']==1){
   	print '<div><h2>'.$node->field_head_title['und'][0]['value'].'</h2></div>';
      print '<div class="news-rot-image">'.theme('image_style', array('style_name' => 'medium', 'path' => $node->field_image['und'][0]['uri'])).'</div>';
-    print '<div class="new-rot-title">'.$node->field_headline['und'][0]['value'].'</div>';
-     
+    print '<div class="new-rot-title" style="width:200px; color:#0055AA;">'.$node->field_headline['und'][0]['value'].'</div>';
+    print '<div class="news-rot-teaser" style="width:200px;">'.$node->field_article_summary['und'][0]['value'].'</div>';
+    
   }elseif ($node->field_news_rotator_style['und'][0]['value']==2){
      print '<div class="emergency-rot-title">'.$node->field_emergency_headline['und'][0]['value'].'</div>';
      print '<div>'.$node->field_emergency_summary['und'][0]['value'].'</div>';
