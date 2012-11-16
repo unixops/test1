@@ -360,14 +360,13 @@ h1#page-title-ad  {
 	
 
 .field-slideshow-pager {
-  	width: 200px;
-  	height: 16px;
+  	width: 146px;
   	position: absolute;
   	z-index:999;
   	margin-top: -28px;
-  	margin-bottom: 5px;
-  	margin-left: 650px;
-	}
+  	margin-left: 550px;
+  	padding-left: 200px;
+  	}
 
 .field-slideshow-pager a {
   	display:inline-block;

@@ -14,7 +14,7 @@ function news_system_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_news_article';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-workflow';
   $export['additional_settings__active_tab_news_article'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -74,8 +74,8 @@ function news_system_strongarm() {
       'filenum' => '1',
       'directories' => array(
         0 => array(
-          'name' => 'mtaimgs',
-          'subnav' => 1,
+          'name' => 'sites/default/files',
+          'subnav' => 0,
           'browse' => 1,
           'upload' => 1,
           'thumb' => 1,
@@ -102,7 +102,7 @@ function news_system_strongarm() {
   $strongarm->value = array(
     4 => array(
       'weight' => '0',
-      'public_pid' => '1',
+      'public_pid' => '2',
     ),
     3 => array(
       'weight' => '0',

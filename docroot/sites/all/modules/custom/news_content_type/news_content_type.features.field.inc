@@ -78,7 +78,7 @@ function news_content_type_field_default_fields() {
           'rows' => '50',
         ),
         'type' => 'text_textarea',
-        'weight' => '13',
+        'weight' => '17',
       ),
     ),
   );
@@ -462,7 +462,7 @@ function news_content_type_field_default_fields() {
   $fields['node-news_article-field_image'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
@@ -719,6 +719,110 @@ function news_content_type_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-news_article-field_mta_image'.
+  $fields['node-news_article-field_mta_image'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_mta_image',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'news_article',
+      'deleted' => '0',
+      'description' => 'Upload multiple images for the News Story',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => 16,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_mta_image',
+      'label' => 'Multiple Image',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 1,
+        'default_image' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'manualcrop_crop_info' => 1,
+          'manualcrop_default_crop_area' => 1,
+          'manualcrop_enable' => 1,
+          'manualcrop_inline_crop' => 0,
+          'manualcrop_instant_crop' => 0,
+          'manualcrop_instant_preview' => 1,
+          'manualcrop_require_cropping' => array(
+            'portrait' => 0,
+            'small_rotator' => 0,
+            'wide_rotator' => 0,
+          ),
+          'manualcrop_styles_list' => array(
+            'portrait' => 'portrait',
+            'small_rotator' => 'small_rotator',
+            'wide_rotator' => 'wide_rotator',
+          ),
+          'manualcrop_styles_mode' => 'exclude',
+          'manualcrop_thumblist' => 0,
+          'preview_image_style' => 'thumbnail',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'image_image',
+        'weight' => '18',
+      ),
+    ),
+  );
+
   // Exported field: 'node-news_article-field_news_page_headline'.
   $fields['node-news_article-field_news_page_headline'] = array(
     'field_config' => array(
@@ -790,7 +894,7 @@ function news_content_type_field_default_fields() {
           'size' => '150',
         ),
         'type' => 'text_textfield',
-        'weight' => '12',
+        'weight' => '16',
       ),
     ),
   );
@@ -862,6 +966,75 @@ function news_content_type_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-news_article-field_news_story_style'.
+  $fields['node-news_article-field_news_story_style'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_news_story_style',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Single Image<rr /><br /><img src="/sites/all/themes/mta/images/single-story.png"/>',
+          1 => 'Multiple Images<br /><img src="/sites/all/themes/mta/images/mult-story.png"/>',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'news_article',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Select which article style you need.  Single or Multiple Images',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 17,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_news_story_style',
+      'label' => 'News Story Style',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '15',
       ),
     ),
   );
@@ -1121,7 +1294,7 @@ function news_content_type_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '14',
+        'weight' => '19',
       ),
     ),
   );
@@ -1251,13 +1424,17 @@ function news_content_type_field_default_fields() {
   t('Input beginning paragraph of news article.');
   t('Leave blank to link to the full story or enter a url for other destinations');
   t('More text');
+  t('Multiple Image');
   t('News Page Headline');
   t('News Rotator Style');
+  t('News Story Style');
   t('Page Link');
   t('Portrait');
   t('Rotator Headline');
+  t('Select which article style you need.  Single or Multiple Images');
   t('Tags');
   t('This is the text for Read Full Story or Go To Youtube, or other link from the Article Summary');
+  t('Upload multiple images for the News Story');
   t('Upload narrow images for news rotator');
   t('Upload wide images for news rotator');
   t('Use to overlay an Article Headline on the Image');

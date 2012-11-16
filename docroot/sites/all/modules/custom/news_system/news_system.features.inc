@@ -29,7 +29,7 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: b_t_news_rotator
   $nodequeues['b_t_news_rotator'] = array(
-    'qid' => '4',
+    'qid' => '1',
     'name' => 'b_t_news_rotator',
     'title' => 'B & T News Rotator',
     'subqueue_title' => '',
@@ -53,7 +53,7 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: lirr_news_rotator
   $nodequeues['lirr_news_rotator'] = array(
-    'qid' => '2',
+    'qid' => '6',
     'name' => 'lirr_news_rotator',
     'title' => 'LIRR News Rotator',
     'subqueue_title' => '',
@@ -77,7 +77,7 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: mnr_news_article
   $nodequeues['mnr_news_article'] = array(
-    'qid' => '3',
+    'qid' => '11',
     'name' => 'mnr_news_article',
     'title' => 'MNR News Article',
     'subqueue_title' => '',
@@ -101,7 +101,7 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: news_rotator
   $nodequeues['news_rotator'] = array(
-    'qid' => '1',
+    'qid' => '16',
     'name' => 'news_rotator',
     'title' => 'MTA News Rotator',
     'subqueue_title' => '',
@@ -125,7 +125,7 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: nyct_news_rotator
   $nodequeues['nyct_news_rotator'] = array(
-    'qid' => '5',
+    'qid' => '21',
     'name' => 'nyct_news_rotator',
     'title' => 'NYCT News Rotator',
     'subqueue_title' => '',
