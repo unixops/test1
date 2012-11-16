@@ -102,6 +102,7 @@ html {
 	width:754px;
 	margin-top:10px;
 	float:left;
+	overflow:hidden;
 }
 .span-side-ad {
     float: left;
