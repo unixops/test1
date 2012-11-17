@@ -27,11 +27,9 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 	<div id="rotator-preview">
 	
 	<?php    // is admin
-	     print views_embed_view('news_rotator_preview', 'block_1', $node->nid); // with single argument
+	   //  print views_embed_view('news_rotator_preview', 'block_1', $node->nid); // with single argument
 	?>
 	</div>
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
 	
 	<div class="view-news-rotator-preview">
 	<div class="views_slideshow_main">
@@ -78,8 +76,18 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 <?php if ($node->field_news_story_style['und'][0]['value']==0):?>
 
 	<div class = "news-rot-image-more single-image">
-	<?php print theme('image_style', array('style_name' => 'medium', 'path' => $node->field_wide_image['und'][0]['uri']));?>
-	<?php print '<div style="width:220px; margin-top:0;">'.$node->field_wide_image['und'][0]['title'].'</div>';?>
+<?php if ($node->field_news_rotator_style['und'][0]['value']==0){
+			print theme('image_style', array('style_name' => 'medium', 'path' => $node->field_wide_image['und'][0]['uri']));
+			print '<div style="width:220px; margin-top:0;">'.$node->field_wide_image['und'][0]['title'].'</div>';
+		}elseif ($node->field_news_rotator_style['und'][0]['value']==3) {
+		    print theme('image_style', array('style_name' => 'medium', 'path' => $node->field_portrait['und'][0]['uri']));
+		  	print '<div style="width:220px; margin-top:0;">'.$node->field_portrait['und'][0]['title'].'</div>';
+		}elseif ($node->field_news_rotator_style['und'][0]['value']==1) {
+			print theme('image_style', array('style_name' => 'medium', 'path' => $node->field_image['und'][0]['uri']));
+			print '<div style="width:220px; margin-top:0;">'.$node->field_image['und'][0]['title'].'</div>';
+		}
+				
+			?>
 	</div>
 	
 	<?php //print views_embed_view('mta_news', 'page_1', $node->nid);?>
