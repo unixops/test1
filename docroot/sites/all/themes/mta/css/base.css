@@ -352,7 +352,7 @@ h1#page-title-ad  {
   	padding-bottom:3px;
   	z-index:999;
   	background-image: url('../images/text_bg.png');
-  	font-size:20px;
+  	font-size:18px;
 	font-weight:bold;
 	color: #ffffff;
 	margin-top: 2px;
@@ -363,7 +363,7 @@ h1#page-title-ad  {
   	width: 146px;
   	position: absolute;
   	z-index:999;
-  	margin-top: -28px;
+  	margin-top: -26px;
   	margin-left: 550px;
   	padding-left: 200px;
   	}
@@ -383,3 +383,12 @@ h1#page-title-ad  {
 	padding: 5px;
     background:url(../images/active.png) top left no-repeat !important;
     }
+    
+#node_image_caption {
+   	background-image: url("../images/text_bg.png");
+    color: white;
+    font-size: 14px;
+    margin-left: 250px;
+    margin-right: 10px;
+    padding: 1px 0 1px 2px;
+}
