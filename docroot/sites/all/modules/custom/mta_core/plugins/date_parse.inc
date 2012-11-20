@@ -35,9 +35,11 @@ function mta_core_date_parse_validate(&$settings) {
 function mta_core_date_parse_callback($result, $item_key, $element_key, &$field, $settings) {
   $format = 'ymd H:i:s';
   if(!empty($field)) {
-    $date = DateTime::createFromFormat($format, $field . ' 11:00:00');
+    $tmp_date = str_split($field, 2);
+    $date_tmp = $tmp_date[1] . '/' . $tmp_date[2] . '/20' . $tmp_date[0];
+    $date = new DateTime($date_tmp . ' 11:00:00');
   } else {
-    $date = DateTime::createFromFormat($format, '100201 11:00:00');
+    $date = new DateTime('02/01/2010 11:00:00');
   }
   $field = $date->format('Y-m-d H:i:s');
 }
