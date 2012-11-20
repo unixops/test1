@@ -107,7 +107,7 @@ function mta_news_archive_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '0',
+        'update_existing' => '1',
         'input_format' => 'full_html',
       ),
     ),
