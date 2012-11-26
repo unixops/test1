@@ -8,7 +8,6 @@
 $plugin = array(
   'form' => 'mta_core_month_parse_form',
   'callback' => 'mta_core_month_parse_callback',
-  'validate' => 'mta_core_month_parse_validate',
   'name' => 'Month Parse',
   'multi' => 'skip',
   'category' => 'MTA',
@@ -24,7 +23,7 @@ function mta_core_month_parse_form($importer, $element_key, $settings) {
 
 function mta_core_month_parse_callback($result, $item_key, $element_key, &$field, $settings) {
   $format = 'MY';
-  $date = DateTime::createFromFormat($format, $field);//$field);
+  $date = DateTime::createFromFormat($format, $field);
   dsm($field);
   $field = $date->format('m/Y');
 }
