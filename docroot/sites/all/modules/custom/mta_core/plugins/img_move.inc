@@ -31,7 +31,6 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
   file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
   $src_start = strpos($field, 'src="');
   $local_path .= '/archive/imgs';
-  print($dir);
   while($src_start){
     $src_start += 5;
     $src_end = strpos($field, '"', $src_start);
@@ -49,7 +48,7 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
     $cresult = curl_exec($ch);
     curl_close($ch);
     fclose($img_file);
-    $dest = $dir . '/' . $src_img_file['basename'];
+    $dest = $local_path . '/' . $src_img_file['basename'];
     $field = str_replace($src, $dest, $field);
     $src_start = strpos($field, 'src="', $src_end);
   }
