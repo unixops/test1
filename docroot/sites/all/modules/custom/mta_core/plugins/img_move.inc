@@ -31,7 +31,7 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
   file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
   $src_start = strpos($field, 'src="');
   $local_path .= '/archive/imgs';
-  dsm($local_path);
+  print($local_path);
   while($src_start){
     $src_start += 5;
     $src_end = strpos($field, '"', $src_start);
