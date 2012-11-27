@@ -23,14 +23,11 @@ function mta_core_img_move_form($importer, $element_key, $settings) {
 }
 
 function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $settings) {
-  $local_path = '/' . variable_get('file_public_path', conf_path());
+  $local_path = '/' . variable_get('file_public_path', conf_path()) . '/archive/imgs/';
   $droot = DRUPAL_ROOT;
-  $dir = $droot . $local_path . '/archive';
-  file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
-  $dir = $dir . '/imgs';
+  $dir = file_default_scheme() . '://' . 'archive/imgs';
   file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
   $src_start = strpos($field, 'src="');
-  $local_path .= '/archive/imgs';
   while($src_start){
     $src_start += 5;
     $src_end = strpos($field, '"', $src_start);
