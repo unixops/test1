@@ -23,11 +23,13 @@ function mta_core_img_move_form($importer, $element_key, $settings) {
 }
 
 function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $settings) {
+  //the files part of the following path has to be deleted to work on local instances
   $local_path = '/' . variable_get('file_public_path', conf_path()) . '/files/archive/imgs/';
   $droot = DRUPAL_ROOT;
   $dir = file_default_scheme() . '://' . 'archive/imgs';
   file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
-  $src_start = strpos($field, 'src="');
+  $img_start = strpos($field, '<img');
+  $src_start = strpos($field, 'src="', $img_start);
   while($src_start){
     $src_start += 5;
     $src_end = strpos($field, '"', $src_start);
@@ -47,7 +49,8 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
     fclose($img_file);
     $dest = $local_path . $src_img_file['basename'];
     $field = str_replace($src, $dest, $field);
-    $src_start = strpos($field, 'src="', $src_end);
+    $img_start = strpos($field, '<img', $src_end);
+    $img_start ? $src_start = strpos($field, 'src="', $img_start) : $src_start = FALSE;
   }
 
 }
