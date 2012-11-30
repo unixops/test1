@@ -1,0 +1,4 @@
+name = MTA form adjust
+description = Uses form API to disable various form fields.
+package = Our MTA modules
+core = 7.x
