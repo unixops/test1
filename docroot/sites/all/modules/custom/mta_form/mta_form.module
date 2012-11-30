@@ -76,7 +76,7 @@ function mta_form_admin_menu_output_alter(&$content) {
 	
   // Hide "Tasks" and "Index" links.
   foreach ($content['menu'] as $key => $menu) {
-    if (in_array($menu['#href'], array('admin/tasks', 'admin/index','admin/help'))) {
+    if (in_array($menu['#href'], array('admin/tasks', 'admin/index','admin/help','add/node'))) {
       unset($content['menu'][$key]);
     }
    
