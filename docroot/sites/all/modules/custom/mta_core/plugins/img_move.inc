@@ -48,6 +48,9 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
     curl_close($ch);
     fclose($img_file);
     $dest = $local_path . $src_img_file['basename'];
+    if(filesize($dest) == 0){
+      unlink($dest);
+    }
     $field = str_replace($src, $dest, $field);
     $img_start = strpos($field, '<img', $src_end);
     $img_start ? $src_start = strpos($field, 'src="', $img_start) : $src_start = FALSE;
