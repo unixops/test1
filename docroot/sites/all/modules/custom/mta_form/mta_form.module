@@ -1,0 +1,85 @@
+<?php 
+
+/*
+ * Implements hook_form_alter.
+ */
+
+
+function mta_form_wysiwyg_editor_settings_alter(&$settings, $context) {
+  if($context['profile']->editor == 'ckeditor') {
+  	
+    $settings['scayt_autoStartup'] = TRUE;
+  }
+}
+
+
+function mta_form_form_alter(&$form, $form_state, $form_id)  {
+ // check if user has role "master content provider"
+ global $user;
+ if (in_array('master content provider', $user->roles) || in_array('content provider', $user->roles)) {
+	  switch ($form_id)  {
+	  	case 'agency_emergency_notice_node_form':
+        $form['author']['#access'] = FALSE;
+        $form['revision_information']['#access'] = FALSE;
+        $form['options']['#collapsed'] = FALSE; 
+        $form['options']['promote']['#access'] = FALSE;
+        $form['options']['sticky']['#access'] = FALSE;
+        $form['additional_settings']['#type'] = 'fieldset';
+        break;
+
+	  	case 'main_emergency_notice_node_form':
+        $form['author']['#access'] = FALSE;
+        $form['revision_information']['#access'] = FALSE;
+        $form['options']['#collapsed'] = FALSE; 
+        $form['options']['promote']['#access'] = FALSE;
+        $form['options']['sticky']['#access'] = FALSE;
+        $form['additional_settings']['#type'] = 'fieldset';
+        break;
+		  	
+		  case 'menu_edit_item':
+		  	$form['expanded']['#access'] = FALSE;
+		  	$form['parent']['#access'] = FALSE;
+		  	$form['weight']['#access'] = FALSE;
+	  	  break;
+	  
+	 	  case 'block_admin_configure':
+	 		  $form['regions']['#access'] = FALSE;
+		  	$form['visibility_title']['#access'] = FALSE;
+		  	$form['visibility']['#access'] = FALSE;
+	 	break;
+	  }
+  }
+}
+
+
+function mta_form_field_widget_image_image_form_alter(&$element, &$form_state, $context) {
+  foreach (element_children($element) as $delta){
+    $element[$delta]['#process'][] = 'mta_form_imagefield_widget_process';
+  }
+}
+/**
+ * Element #process callback function.
+ */
+function mta_form_imagefield_widget_process($element, &$form_state, $form) {
+  if (isset($element) && isset($element['title'])) {
+    $element['title']['#title'] = t('Caption');
+    $element['title']['#description'] = t('The caption is displayed below the image.');
+  }
+  return $element;
+}
+/**
+ * Implements hook_admin_menu_output_alter().
+ */
+function mta_form_admin_menu_output_alter(&$content) {
+ global $user;
+ if (in_array('master content provider', $user->roles) || in_array('content provider', $user->roles)) {
+	
+  // Hide "Tasks" and "Index" links.
+  foreach ($content['menu'] as $key => $menu) {
+    if (in_array($menu['#href'], array('admin/tasks', 'admin/index','admin/help','node/add','node/add/eotf','admin/content','admin/structure'))) {
+      unset($content['menu'][$key]);
+    }
+   
+  }
+ }
+}
