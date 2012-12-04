@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Nodequeue scheduler install file
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function nodequeue_scheduler_schema() {
+  return array(
+    'nodequeue_scheduler' => array(
+      'description' => 'The main table to hold the nodequeue scheduler data.',
+      'fields' => array(
+        'nid' => array(
+          'description' => 'The foreign key to node.nid',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'qid' => array(
+          'description' => 'The nodequeue queue id',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'publish_on' => array(
+          'description' => 'The UNIX UTC timestamp when to publish to nodequeue',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+      ),
+    ),
+  );
+}
