@@ -715,6 +715,16 @@ function revision_scheduler_add_messages($node_revision) {
  * Implements hook_entity_revision_operation_info() on behalf of node.module.
  */
 function node_entity_revision_operation_info() {
+  $operations['node']['unpublish'] = array(
+    'label' => t('Unpublish'),
+    'access callback' => TRUE,
+    'callback' => 'node_node_revision_operation_set_status',
+  );
+  $operations['node']['publish'] = array(
+    'label' => t('Publish'),
+    'access callback' => TRUE,
+    'callback' => 'node_node_revision_operation_set_status',
+  );
   $operations['node']['revert'] = array(
     'label' => t('Revert'),
     'access arguments' => array('revert revisions'),
@@ -748,6 +758,53 @@ function node_node_revision_operation_delete($node) {
 }
 
 /**
+* Node revision operation callback: unpublish revision.
+*/
+function node_node_revision_operation_set_status($node, $operation) {
+  if ($operation->operation == 'publish') {
+    $node->status = 1;
+    $node->log = t('Scheduled publish.');
+    node_save($node);
+    if (module_exists('workbench_moderation')) {
+      workbench_moderation_moderate($node, 'published');
+    }
+  }
+  else if ($operation->operation == 'unpublish') {  
+    $node->log = t('Scheduled unpublish.');  
+    if (module_exists('workbench_moderation')) {
+        
+        $form = array();
+        $form['node']['#value']=$node;
+        $formstate = array();
+        $formstate['values']['state'] = 'draft';    
+        if (!function_exists('workbench_moderation_node_unpublish_form_submit')){
+            module_load_include('inc', 'workbench_moderation', 'workbench_moderation.node');
+        }
+        workbench_moderation_node_unpublish_form_submit($form ,$formstate);
+        
+        return;
+    }  
+    $node->status = 0;
+    node_save($node);
+  }
+  
+}
+
+/**
+ * Implements hook_entity_revision_operation_access().
+ */
+function node_entity_revision_operation_access($operation, $entity_type, $entity, $account) {
+  if (!empty($entity) && $entity_type == 'node') {
+    if (function_exists('workbench_moderation_node_type_moderated') && workbench_moderation_node_type_moderated($entity->type)) {
+     return TRUE;
+    }
+    if (!node_access('update', $entity, $account)) {
+      return FALSE;
+    }
+  }
+}
+
+/**
  * @} End of "name revision_scheduler_node".
  */
 
@@ -760,6 +817,8 @@ function node_node_revision_operation_delete($node) {
  * Implements hook_entity_revision_operation_info().
  */
 function workbench_moderation_entity_revision_operation_info() {
+ // return ; //We dont need scheduled moderation workflow states here. This might be confusing. Only scheduled publish/depublish/delete/revert
+    
   $info = array();
   $states = workbench_moderation_state_labels();
   foreach ($states as $state => $label) {
