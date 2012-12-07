@@ -85,9 +85,9 @@ function service_notice_block_info() {
 }
 function service_notice_file_get_contents($file_path){
 	$file_content = file_get_contents($file_path);
+	// find and replace relative paths with absolutes
 	$file_content = str_replace('src="/','src="http://mta.info/',$file_content);
-	
-	
+  $file_content = str_replace('href="/','href="http://mta.info/',$file_content);
 	return $file_content;
 }
  
