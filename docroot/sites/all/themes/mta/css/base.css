@@ -396,8 +396,7 @@ h1#page-title-ad  {
 
 /* Field Gallery styles */
 
-.field-name-field-gallery-image {
-	width: 300px;
-	align: right;
-
+.field-name-field-gallery-image .field-item {
+width: 250px;
+padding: 5px;
 }
