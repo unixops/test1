@@ -397,12 +397,20 @@ h1#page-title-ad  {
 /* Field Gallery styles */
 
 
-.field-name-field-gallery-image .field-item {
-width: 230px;
+.field-name-field-gallery-image {
+width: 200px;
 padding: 5px;
 float: left;
 }
 
-.field-name-field-gallery-image .field-item odd {
+.field-name-field-gallery-image .field-item.odd {
 	width: 80px;
+	padding: 5px;
+	float: left;
+}
+
+.field-name-field-gallery-image .field-item.even {
+	width: 80px;
+	padding: 5px;
+	float: right;
 }
