@@ -418,3 +418,9 @@ h1#page-title-ad  {
 	float: right;
 	margin-right: 3px;
 	}
+	
+.field-name-field-gallery-text {
+	width:450px;
+	text-align: justify;
+	
+}
