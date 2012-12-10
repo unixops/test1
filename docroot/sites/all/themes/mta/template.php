@@ -31,8 +31,10 @@ function mta_preprocess_page(&$vars) {
   }
   
  // adds the colorbox image gallery
-  $vars['gallery'] = '';
-		if (isset($vars['node']->field_gallery_image[$vars['node']->language][0])) {
+ 
+   
+  $vars['node']= '';
+		if (isset($vars['node']->field_gallery_image)) {
   	foreach ($vars['node']->field_gallery_image[$vars['node']->language] as $key => $val) {
   		$full_img_url = file_create_url($val['uri']);
   		if ($key == 0) {
@@ -40,7 +42,7 @@ function mta_preprocess_page(&$vars) {
   			$vars['gallery'] .= '<a class="colorbox-load" rel="gallery" href="'. $full_img_url .'"><img src="'. $thumbnail_url .'" alt="Gallery image" /></a>';
   		}
   		else {
-  			$vars['gallery'] .= '<a class="colorbox-load" rel="gallery" href="'. $full_img_url .'"></a>';
+  			$vars['node'] .= '<a class="colorbox-load" rel="gallery" href="'. $full_img_url .'"></a>';
   		}
   	}
   }
