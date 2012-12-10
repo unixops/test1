@@ -398,19 +398,23 @@ h1#page-title-ad  {
 
 
 .field-name-field-gallery-image {
-width: 200px;
-padding: 5px;
-float: left;
-}
-
-.field-name-field-gallery-image .field-item.odd {
-	width: 80px;
-	padding: 5px;
-	float: left;
-}
-
-.field-name-field-gallery-image .field-item.even {
-	width: 80px;
+	width: 230px;
 	padding: 5px;
 	float: right;
-}
+	background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+	}
+
+.field-name-field-gallery-image .field-item.odd {
+	width: 100px;
+	padding: 5px;
+	float: left;
+	margin-left: 5px;
+	}
+
+.field-name-field-gallery-image .field-item.even {
+	width: 100px;
+	padding: 5px;
+	float: right;
+	margin-right: 3px;
+	}
