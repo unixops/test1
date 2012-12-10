@@ -63,7 +63,7 @@ function mta_form_field_widget_image_image_form_alter(&$element, &$form_state, $
 function mta_form_imagefield_widget_process($element, &$form_state, $form) {
   if (isset($element) && isset($element['title'])) {
     $element['title']['#title'] = t('Caption');
-    $element['title']['#description'] = t('The caption is displayed below the image.');
+    $element['title']['#description'] = t('This caption is displayed below the image when viewing the FULL STORY.');
   }
   return $element;
 }

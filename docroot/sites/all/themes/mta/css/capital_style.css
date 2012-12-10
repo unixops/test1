@@ -276,6 +276,8 @@ ul.arrow li ul.arrow li a.hilite {color:#333;}
 	border-left:1px solid #b4b4b4;
 }
 
+
+/* interferes with tpl region - see homepage.css line 351 */
 .content_bottom{
 	float:left;
 }
