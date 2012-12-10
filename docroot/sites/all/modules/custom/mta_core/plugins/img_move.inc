@@ -23,37 +23,44 @@ function mta_core_img_move_form($importer, $element_key, $settings) {
 }
 
 function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $settings) {
-  //the files part of the following path has to be deleted to work on local instances
-  $local_path = '/' . variable_get('file_public_path', conf_path()) . '/files/archive/imgs/';
-  $droot = DRUPAL_ROOT;
-  $dir = file_default_scheme() . '://' . 'archive/imgs';
-  file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
   $img_start = strpos($field, '<img');
-  $src_start = strpos($field, 'src="', $img_start);
-  while($src_start){
-    $src_start += 5;
-    $src_end = strpos($field, '"', $src_start);
-    $src = substr($field, $src_start, $src_end - $src_start);
-    $src_img_file = pathinfo($src);
-    $img_file = fopen($droot . $local_path . $src_img_file['basename'],'w');
-    $options = array(
-        CURLOPT_FILE => $img_file,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_URL => 'http://mta.info' . $src,
-
-    );
-    $ch = curl_init();
-    curl_setopt_array($ch, $options);
-    $cresult = curl_exec($ch);
-    curl_close($ch);
-    fclose($img_file);
-    $dest = $local_path . $src_img_file['basename'];
-    if(filesize($dest) == 0){
-      unlink($dest);
+  if($img_start){
+    $local_path = '/' . variable_get('file_public_path', conf_path());
+    if(strpos($_SERVER["HTTP_HOST"], 'mta.info')){//the files part of the path has to be added for dev thru prod
+      $local_path .= '/files';
     }
-    $field = str_replace($src, $dest, $field);
-    $img_start = strpos($field, '<img', $src_end);
-    $img_start ? $src_start = strpos($field, 'src="', $img_start) : $src_start = FALSE;
-  }
+    $local_path .= '/archive/imgs/';
+    $droot = DRUPAL_ROOT;
+    $dir = file_default_scheme() . '://' . 'archive/imgs';
+    file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+    $src_start = strpos($field, 'src="', $img_start);
+    while($src_start){
+      $src_start += 5;
+      $src_end = strpos($field, '"', $src_start);
+      $src = substr($field, $src_start, $src_end - $src_start);
+      $src_img_file = pathinfo($src);
+      $img_file = fopen($droot . $local_path . str_replace(' ', '_', $src_img_file['basename']),'w');
+      $src_enc = str_replace(' ', '%20', $src);
+      $options = array(
+          CURLOPT_FILE => $img_file,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_URL => 'http://mta.info' . $src_enc,
 
+      );
+      $ch = curl_init();
+      curl_setopt_array($ch, $options);
+      $cresult = curl_exec($ch);
+      $img_info = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+      curl_close($ch);
+      $dest = $local_path . str_replace(' ', '_', $src_img_file['basename']);
+      fclose($img_file);
+      $new_file = $droot . $dest;
+      if(file_exists($new_file) && filesize($new_file) == 0){
+        unlink($new_file);
+      }
+      $field = str_replace($src, $dest, $field);
+      $img_start = strpos($field, '<img', $src_end);
+      $img_start ? $src_start = strpos($field, 'src="', $img_start) : $src_start = FALSE;
+    }
+  }
 }
