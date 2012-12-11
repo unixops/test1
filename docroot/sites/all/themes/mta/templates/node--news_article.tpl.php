@@ -20,7 +20,7 @@
 global $user;
 $check = array_intersect(array('master content provider', 'content provider', 'administrator'), array_values($user->roles));
 ?>
-<?php if (!empty($check)):?>
+<?php if (!empty($check) && $node->field_news_rotator_style):?>
 	  <p>&nbsp;</p>
 	<p>Here is a preview of this News Article's rotator slide.
 	</p>
