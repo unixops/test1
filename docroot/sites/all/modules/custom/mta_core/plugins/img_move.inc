@@ -8,7 +8,7 @@
 $plugin = array(
   'form' => 'mta_core_img_move_form',
   'callback' => 'mta_core_img_move_callback',
-  'validate' => 'mta_core_img_move_validate',
+  //'validate' => 'mta_core_img_move_validate',
   'name' => 'Image mover',
   'multi' => 'skip',
   'category' => 'MTA',
@@ -32,8 +32,21 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
     $local_path .= '/archive/imgs/';
     $droot = DRUPAL_ROOT;
     $dir = file_default_scheme() . '://' . 'archive/imgs';
-    file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+    if(!file_prepare_directory($dir, FILE_CREATE_DIRECTORY)){
+      $dir = file_default_scheme() . '://';
+      $test_dir = file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+      $dir = file_default_scheme() . '://' . 'archive';
+      $test_dir = file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+      $dir = file_default_scheme() . '://' . 'archive/imgs';
+      $test_dir = file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+    }
+    unset($test_dir);
     $src_start = strpos($field, 'src="', $img_start);
+    if($src_start){
+      $dir_array[] = '/';
+      $dir_array[] = '/images/';
+      $dir_array[] = '/mta/news/releases/';
+    }
     while($src_start){
       $src_start += 5;
       $src_end = strpos($field, '"', $src_start);
@@ -41,10 +54,16 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
       $src_img_file = pathinfo($src);
       $img_file = fopen($droot . $local_path . str_replace(' ', '_', $src_img_file['basename']),'w');
       $src_enc = str_replace(' ', '%20', $src);
+      foreach($dir_array as $temp_dir){
+        $test_dir = 'http://mta.info' . $temp_dir . $src_enc;
+        if(remoteFileExists($test_dir)){
+          $good_url = $test_dir;
+        }
+      }
       $options = array(
           CURLOPT_FILE => $img_file,
           CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_URL => 'http://mta.info' . $src_enc,
+          CURLOPT_URL => $good_url,
 
       );
       $ch = curl_init();
@@ -55,12 +74,39 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
       $dest = $local_path . str_replace(' ', '_', $src_img_file['basename']);
       fclose($img_file);
       $new_file = $droot . $dest;
-      if(file_exists($new_file) && filesize($new_file) == 0){
+/*      if(file_exists($new_file) && filesize($new_file) == 0){
         unlink($new_file);
-      }
+      }//*/
       $field = str_replace($src, $dest, $field);
       $img_start = strpos($field, '<img', $src_end);
       $img_start ? $src_start = strpos($field, 'src="', $img_start) : $src_start = FALSE;
     }
   }
 }
+
+function remoteFileExists($url) {
+  $curl = curl_init($url);
+
+  //don't fetch the actual page, you only want to check the connection is ok
+  curl_setopt($curl, CURLOPT_NOBODY, true);
+
+  //do request
+  $result = curl_exec($curl);
+
+  $ret = false;
+
+  //if request did not fail
+  if ($result !== false) {
+    //if request was ok, check response code
+    $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+    if ($statusCode == 200) {
+      $ret = true;
+    }
+  }
+
+  curl_close($curl);
+
+  return $ret;
+}
+
