@@ -99,6 +99,11 @@ function mta_press_releases_feeds_importer_default() {
             'target' => 'created',
             'unique' => FALSE,
           ),
+          6 => array(
+            'source' => 'Blank source 1',
+            'target' => 'status',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'full_html',

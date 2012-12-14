@@ -5,6 +5,8 @@
  * Parse files from the body field.
  */
 
+require_once 'mta_core_admin.inc';
+
 $plugin = array(
   'form' => 'mta_core_img_move_form',
   'callback' => 'mta_core_img_move_callback',
@@ -74,7 +76,7 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
       $dest = $local_path . str_replace(' ', '_', $src_img_file['basename']);
       fclose($img_file);
       $new_file = $droot . $dest;
-/*      if(file_exists($new_file) && filesize($new_file) == 0){
+      if(file_exists($new_file) && filesize($new_file) == 0){
         unlink($new_file);
       }//*/
       $field = str_replace($src, $dest, $field);
@@ -84,29 +86,5 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
   }
 }
 
-function remoteFileExists($url) {
-  $curl = curl_init($url);
 
-  //don't fetch the actual page, you only want to check the connection is ok
-  curl_setopt($curl, CURLOPT_NOBODY, true);
-
-  //do request
-  $result = curl_exec($curl);
-
-  $ret = false;
-
-  //if request did not fail
-  if ($result !== false) {
-    //if request was ok, check response code
-    $statusCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ($statusCode == 200) {
-      $ret = true;
-    }
-  }
-
-  curl_close($curl);
-
-  return $ret;
-}
 
