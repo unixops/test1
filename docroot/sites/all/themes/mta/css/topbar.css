@@ -261,3 +261,34 @@ padding-top: 1em;
 /* End */
 
 #breadcrumbs { margin: 20px 0px 0px 20px;}
+
+/*Weekender Top Bar */
+
+#weekender_branding {
+	width: 960px;
+	margin-bottom:50px;
+}
+
+#weekender_topbar_left {
+	float: left;
+	}
+	
+#weekender_topbar_center {
+	margin-left: 300px;
+	
+	}
+	
+#weekender_topbar_right {
+	float: right;
+
+	}
+	
+#weekender_banner {
+	background-color: black;
+    height: 84px;
+    left: 0;
+    top: 10px;
+    width: 960px;
+}
+
+	
