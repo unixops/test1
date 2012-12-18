@@ -106,17 +106,24 @@ function mta_news_archive_feeds_importer_default() {
             'target' => 'created',
             'unique' => FALSE,
           ),
+          7 => array(
+            'source' => 'Blank source 1',
+            'target' => 'status',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'full_html',
+        'authorize' => TRUE,
+        'skip_hash_check' => FALSE,
       ),
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => 1800,
+    'import_period' => '-1',
     'expire_period' => 3600,
-    'import_on_create' => TRUE,
-    'process_in_background' => FALSE,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
   );
   $export['news_article_import'] = $feeds_importer;
 
