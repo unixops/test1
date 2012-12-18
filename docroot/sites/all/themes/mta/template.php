@@ -19,10 +19,16 @@ function mta_preprocess_page(&$vars) {
 	    }
    }
   	
-  		if ($vars['node']->type == "page_with_ad" || $vars['node']->type == "news_article") {
+  		if ($vars['node']->type == "page_with_ad" || $vars['node']->type == "news_article")  {
     	 $vars['theme_hook_suggestions'][] = 'page__ad';
   		} 
-  	
+  		
+  		if ($vars['node']->type == "weekender" || $vars['node']->type == "weekender") {
+  			$vars['theme_hook_suggestions'][] = 'page__weekender';
+  		}
+  		
+  		
+  		  	
   		else {
   	if ($vars['node']->type == "home_page") {
     	 $vars['theme_hook_suggestions'][] = 'page__home';
