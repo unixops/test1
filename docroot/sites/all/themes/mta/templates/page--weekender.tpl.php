@@ -2,6 +2,18 @@
 			<style>.roundCorners, #block-google-appliance-ga-related-searches {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(<?php print base_path();?>sites/all/themes/mta/border-radius.htc);}</style>
 		<![endif]-->
 		
+		
+		<?php 		
+drupal_add_js("sites/all/libraries/weekender/weekendstatus.js");
+drupal_add_js("sites/all/libraries/weekender/LinesStaticData.js");
+drupal_add_js("sites/all/libraries/weekender/neighborhoodScript.js");
+drupal_add_js("sites/all/libraries/weekender/date.js");
+drupal_add_js("sites/all/libraries/weekender/WeekenderMain.js");
+drupal_add_js("sites/all/libraries/weekender/SystemWideMapScriptTiles.js");
+$scripts = drupal_get_js();
+
+?>		
+		
 <div id="page">
 
 		<div id="mainbox" style="width:960px;">
