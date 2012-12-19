@@ -4,6 +4,7 @@
  * @file
  * Nodequeue scheduler module
  * based on https://github.com/stoshev/nodequeue_scheduler
+ * but modified by wtrager@mtahq.org on 12-12-08 to pub and unpub all queues at once
  */
 
 /**
@@ -58,13 +59,15 @@ function nodequeue_scheduler_cron() {
 function nodequeue_scheduler_form_alter(&$form, $form_state) {
   // Is this a node form and scheduling has been enabled for this node type
   if (!empty($form['#node_edit_form']) && user_access('schedule publishing of nodes to nodequeue')) {
-    
+    dsm($form);
     $node = $form['#node'];
 
     $form['nodequeue_scheduler_settings'] = array(
       '#type' => 'fieldset',
       '#title' => t('Nodequeue scheduling options'),
+      '#weight' => 10,
       '#collapsible' => TRUE,
+      '#collapsed'=> TRUE,
       '#group' => 'additional_settings',
     );
     
@@ -135,7 +138,7 @@ function nodequeue_scheduler_form_alter(&$form, $form_state) {
       //'#disabled' => ((isset($node->nid)&&$node->nid>0) ? FALSE : TRUE),
       '#maxlength' => 25,
       '#date_format' => 'Y-m-d H:i:s',
-      '#date_year_range' => '0:+10',
+     // '#date_year_range' => '0:+10',
       //'#default_value' => !empty($default_date) ? format_date($default_date, 'custom', 'Y-m-d H:i:s') : '',
     );
 
@@ -145,7 +148,7 @@ function nodequeue_scheduler_form_alter(&$form, $form_state) {
       //'#disabled' => ((isset($node->nid)&&$node->nid>0) ? FALSE : TRUE),
       '#maxlength' => 25,
       '#date_format' => 'Y-m-d H:i:s',
-      '#date_year_range' => '0:+10',
+     // '#date_year_range' => '0:+10',
       //'#default_value' => !empty($default_date) ? format_date($default_date, 'custom', 'Y-m-d H:i:s') : '',
     );
     
@@ -168,7 +171,7 @@ function nodequeue_scheduler_form_alter(&$form, $form_state) {
     '#value' => t('Save'),
     '#name' => 'nodequeue_submit',
     '#description' => t("Click to schedule the current node to this nodequeue."),
-    '#weight' => 1,
+    '#weight' => 10,
     '#disabled' => ((isset($node->nid) && $node->nid > 0) ? FALSE : TRUE),
     '#submit' => array('nodequeue_scheduler_submit'), 
     '#ajax' => array(
@@ -188,8 +191,8 @@ function nodequeue_scheduler_submit($form, &$form_state) {
              $form_state['values']['nodequeue_publish_on'], $form_state['values']['nodequeue_unpublish_on']);  
    }
   //next two rows have no effect, investigate
-//  $form_state['input']['nodequeue_publish_on'] = array();
-//  $form_state['input']['nodequeue_unpublish_on'] = array();
+  $form_state['input']['nodequeue_publish_on'] = array();
+  $form_state['input']['nodequeue_unpublish_on'] = array();
   $form_state['rebuild'] = TRUE;
 }
 
