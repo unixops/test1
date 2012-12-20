@@ -47,6 +47,7 @@ function mta_core_img_move_callback($result, $item_key, $element_key, &$field, $
     if($src_start){
       $dir_array[] = '/';
       $dir_array[] = '/images/';
+       $dir_array[] = '/news/stories/';
       $dir_array[] = '/mta/news/releases/';
     }
     while($src_start){
