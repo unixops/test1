@@ -25,6 +25,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[feeds_importer][] = eotf
+features[feeds_tamper][] = eotf-blank_source_1-default_value
 features[feeds_tamper][] = eotf-xpathparser_0-convert_case
 features[feeds_tamper][] = eotf-xpathparser_1-exists_regex
 features[feeds_tamper][] = eotf-xpathparser_11-strip_tags

@@ -84,7 +84,7 @@ function eotf_feeds_importer_default() {
       'config' => array(
         'content_type' => 'eotf',
         'expire' => '-1',
-        'author' => 0,
+        'author' => '1',
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:0',
@@ -146,11 +146,16 @@ function eotf_feeds_importer_default() {
             'target' => 'field_tasks',
             'unique' => FALSE,
           ),
+          12 => array(
+            'source' => 'Blank source 1',
+            'target' => 'status',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'full_html',
-        'authorize' => TRUE,
-        'skip_hash_check' => FALSE,
+        'authorize' => 1,
+        'skip_hash_check' => 0,
       ),
     ),
     'content_type' => '',
