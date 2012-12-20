@@ -47,7 +47,7 @@ function mta_news_archive_feeds_importer_default() {
         ),
         'context' => 'story',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'tidy' => 0,
           'tidy_encoding' => 'UTF8',
           'debug' => array(
@@ -69,7 +69,7 @@ function mta_news_archive_feeds_importer_default() {
       'config' => array(
         'content_type' => 'news_article',
         'expire' => '-1',
-        'author' => 0,
+        'author' => '1',
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:0',
@@ -112,10 +112,10 @@ function mta_news_archive_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '1',
+        'update_existing' => '0',
         'input_format' => 'full_html',
-        'authorize' => TRUE,
-        'skip_hash_check' => FALSE,
+        'authorize' => 1,
+        'skip_hash_check' => 0,
       ),
     ),
     'content_type' => '',
