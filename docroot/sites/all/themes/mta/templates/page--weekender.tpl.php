@@ -53,7 +53,7 @@ $scripts = drupal_get_js();
 				
 			
 			
-			<div id="contentbox">
+			<div id="weekender_contentbox">
 							<div class="container">
 								<div class="span-90">									
 									<?php print $messages; ?>
@@ -107,7 +107,27 @@ $scripts = drupal_get_js();
 								<!-- close span-21 last -->
 						</div><!-- close container for grid -->
 			</div>
+			
+	
+	
+	
+    
+  <!-- Weekender Footer (start) -->
+<div  style="position:absolute; top:714px; width:898px; margin-left:21px; height:20px; background-color:black;">
+    <img name="legend" id="legend" style="position:absolute;cursor:pointer;left:15px;top:0px;margin:0px;" src="/sites/all/themes/mta/images/weekender/legend.png" onclick="EnableLegend();" onmouseover="menuImageOver('legend')" onmouseout="menuImageOut('legend')" border="0" alt="" />
+	<a href="http://www.youtube.com/watch?v=c30CwkKyTYQ" target="_blank">
+<img name="video" id="video" style="position:absolute;cursor:pointer;left:165px;top:0px;margin:0px;" src="/sites/all/themes/mta/images/weekender/tutorial.gif" onmouseover="menuImageOver('video')" onmouseout="menuImageOut('video')"  border="0" alt="" />
+</a>
 
-	</div>
+    <div id="FooterCenterSection" style="position:absolute;left:330px;">
+        <span id="dateSpan" class="footerDateText"><script language="javascript" type="text/javascript">document.write(getWeekendDates());</script></span>
+    </div> 
+    <div id="FooterRightSection" style="position:absolute;left:500px;width:350px;" class="footerTellUsText">
+        <span><a href="http://mta-nyc8.custhelp.com/cgi-bin/mta_nyc8.cfg/php/enduser/ask.php?&p_prods=4005&prod_lvl1=4005&p_cats=4006" class="footerTellUsText" target="_blank">Tell us what you think</a></span>
+    </div>  
+    </div>  
+   
+    
+	
 		<?php print render($page['footer']);?>	
 </div>

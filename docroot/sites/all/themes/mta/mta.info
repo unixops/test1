@@ -11,6 +11,7 @@ stylesheets[all][] = css/formalize.css
 stylesheets[all][] = css/topbar.css
 stylesheets[all][] = css/webform.css
 stylesheets[all][] = css/capital_style.css
+stylesheets[all][] = css/weekender.css
 
 
 
