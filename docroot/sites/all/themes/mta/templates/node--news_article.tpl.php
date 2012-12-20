@@ -26,7 +26,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 	</p>
 	<div id="rotator-preview">
 	
-	<?php    // is admin
+	<?php    // is of admin type person
 	   //  print views_embed_view('news_rotator_preview', 'block_1', $node->nid); // with single argument
 	?>
 	</div>
