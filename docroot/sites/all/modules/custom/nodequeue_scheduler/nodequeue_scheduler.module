@@ -3,6 +3,7 @@
 /**
  * @file
  * Nodequeue scheduler module
+ * issue http://drupal.org/node/1736388
  * based on https://github.com/stoshev/nodequeue_scheduler
  * but modified by wtrager@mtahq.org on 12-12-08 to pub and unpub all queues at once
  */
@@ -59,7 +60,7 @@ function nodequeue_scheduler_cron() {
 function nodequeue_scheduler_form_alter(&$form, $form_state) {
   // Is this a node form and scheduling has been enabled for this node type
   if (!empty($form['#node_edit_form']) && user_access('schedule publishing of nodes to nodequeue')) {
-    dsm($form);
+    //dsm($form);
     $node = $form['#node'];
 
     $form['nodequeue_scheduler_settings'] = array(

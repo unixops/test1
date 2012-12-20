@@ -81,7 +81,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['element_class'] = 'new-rot-title-more';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -250,7 +250,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_headline']['element_class'] = 'new-rot-title-more';
   $handler->display->display_options['fields']['field_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_headline']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -398,8 +398,6 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_portrait']['table'] = 'field_data_field_portrait';
   $handler->display->display_options['fields']['field_portrait']['field'] = 'field_portrait';
   $handler->display->display_options['fields']['field_portrait']['label'] = '';
-  $handler->display->display_options['fields']['field_portrait']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_portrait']['alter']['text'] = '<div class="single-image-portrait">[field_portrait]<br />[field_portrait-title]</div>';
   $handler->display->display_options['fields']['field_portrait']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_portrait']['element_class'] = 'news-rot-image-more';
   $handler->display->display_options['fields']['field_portrait']['element_label_colon'] = FALSE;
@@ -467,112 +465,6 @@ function news_system_views_default_views() {
   );
   $handler->display->display_options['fields']['field_mta_image_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_mta_image_1']['separator'] = '&nbsp;&nbsp;';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'news_article' => 'news_article',
-  );
-  $handler->display->display_options['path'] = 'article';
-
-  /* Display: Multi-image Article Node */
-  $handler = $view->new_display('page', 'Multi-image Article Node', 'page_2');
-  $handler->display->display_options['display_description'] = 'News Article Public View';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Post date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'node';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['element_type'] = 'div';
-  $handler->display->display_options['fields']['created']['element_class'] = 'archive-post-date';
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Field: Content: Article Summary */
-  $handler->display->display_options['fields']['field_article_summary']['id'] = 'field_article_summary';
-  $handler->display->display_options['fields']['field_article_summary']['table'] = 'field_data_field_article_summary';
-  $handler->display->display_options['fields']['field_article_summary']['field'] = 'field_article_summary';
-  $handler->display->display_options['fields']['field_article_summary']['label'] = '';
-  $handler->display->display_options['fields']['field_article_summary']['alter']['text'] = '[field_article_summary] [field_more_text]';
-  $handler->display->display_options['fields']['field_article_summary']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_article_summary']['element_class'] = 'news-article-summary';
-  $handler->display->display_options['fields']['field_article_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_summary']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_article_summary']['hide_empty'] = TRUE;
-  /* Field: Content: Emergency Summary */
-  $handler->display->display_options['fields']['field_emergency_summary']['id'] = 'field_emergency_summary';
-  $handler->display->display_options['fields']['field_emergency_summary']['table'] = 'field_data_field_emergency_summary';
-  $handler->display->display_options['fields']['field_emergency_summary']['field'] = 'field_emergency_summary';
-  $handler->display->display_options['fields']['field_emergency_summary']['label'] = '';
-  $handler->display->display_options['fields']['field_emergency_summary']['alter']['text'] = '[field_emergency_summary] [field_more_text]';
-  $handler->display->display_options['fields']['field_emergency_summary']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_emergency_summary']['hide_empty'] = TRUE;
-  /* Field: Content: Article Body */
-  $handler->display->display_options['fields']['field_article_body']['id'] = 'field_article_body';
-  $handler->display->display_options['fields']['field_article_body']['table'] = 'field_data_field_article_body';
-  $handler->display->display_options['fields']['field_article_body']['field'] = 'field_article_body';
-  $handler->display->display_options['fields']['field_article_body']['label'] = '';
-  $handler->display->display_options['fields']['field_article_body']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_article_body']['element_class'] = 'news-article-node-body';
-  $handler->display->display_options['fields']['field_article_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_article_body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_article_body']['hide_empty'] = TRUE;
-  /* Field: Content: Wide Image */
-  $handler->display->display_options['fields']['field_wide_image']['id'] = 'field_wide_image';
-  $handler->display->display_options['fields']['field_wide_image']['table'] = 'field_data_field_wide_image';
-  $handler->display->display_options['fields']['field_wide_image']['field'] = 'field_wide_image';
-  $handler->display->display_options['fields']['field_wide_image']['label'] = '';
-  $handler->display->display_options['fields']['field_wide_image']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_wide_image']['alter']['text'] = '<div class="first-picture-multi">[field_wide_image]<br />[field_wide_image-title]</div>';
-  $handler->display->display_options['fields']['field_wide_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_wide_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_wide_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_wide_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_mta_image_1']['id'] = 'field_mta_image_1';
-  $handler->display->display_options['fields']['field_mta_image_1']['table'] = 'field_data_field_mta_image';
-  $handler->display->display_options['fields']['field_mta_image_1']['field'] = 'field_mta_image';
-  $handler->display->display_options['fields']['field_mta_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_mta_image_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_mta_image_1']['alter']['text'] = '<div class="more-images-multi">[field_mta_image_1]<br />[field_mta_image_1-title]</div>';
-  $handler->display->display_options['fields']['field_mta_image_1']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_mta_image_1']['element_class'] = 'more-pictures-multi';
-  $handler->display->display_options['fields']['field_mta_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_mta_image_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_mta_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_mta_image_1']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_mta_image_1']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_mta_image_1']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -665,7 +557,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_headline']['element_class'] = 'new-rot-title-archive';
   $handler->display->display_options['fields']['field_emergency_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_headline']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -768,7 +660,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_headline']['element_class'] = 'new-rot-title-archive';
   $handler->display->display_options['fields']['field_emergency_headline']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_emergency_headline']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -942,7 +834,7 @@ function news_system_views_default_views() {
     'image_style' => 'wide_rotator',
     'image_link' => '',
   );
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -1225,7 +1117,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_article_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_summary']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_article_summary']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
@@ -1266,11 +1158,11 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_emergency_summary']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_emergency_summary']['alter']['text'] = '[field_emergency_summary] [field_more_text]';
   $handler->display->display_options['fields']['field_emergency_summary']['element_label_colon'] = FALSE;
-  /* Sort criterion: Nodequeue: Position */
-  $handler->display->display_options['sorts']['position']['id'] = 'position';
-  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
-  $handler->display->display_options['sorts']['position']['field'] = 'position';
-  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  /* Sort criterion: Nodequeue: Added date */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['relationship'] = 'nodequeue_rel';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1285,6 +1177,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'news_article' => 'news_article',
   );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Nodequeue: Position */
   $handler->display->display_options['filters']['position']['id'] = 'position';
   $handler->display->display_options['filters']['position']['table'] = 'nodequeue_nodes';
@@ -1292,12 +1185,26 @@ function news_system_views_default_views() {
   $handler->display->display_options['filters']['position']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['filters']['position']['operator'] = '>=';
   $handler->display->display_options['filters']['position']['value']['value'] = '0';
+  $handler->display->display_options['filters']['position']['group'] = 1;
   /* Filter criterion: Nodequeue: Queue machine name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'nodequeue_queue';
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['filters']['name']['value'] = 'news_rotator';
+  $handler->display->display_options['filters']['name']['group'] = 1;
+  /* Filter criterion: Content: Emergency Rotators (field_emergency_rotators) */
+  $handler->display->display_options['filters']['field_emergency_rotators_value']['id'] = 'field_emergency_rotators_value';
+  $handler->display->display_options['filters']['field_emergency_rotators_value']['table'] = 'field_data_field_emergency_rotators';
+  $handler->display->display_options['filters']['field_emergency_rotators_value']['field'] = 'field_emergency_rotators_value';
+  $handler->display->display_options['filters']['field_emergency_rotators_value']['value'] = array(
+    0 => '0',
+    1 => '1',
+    2 => '2',
+    3 => '3',
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_emergency_rotators_value']['group'] = 1;
 
   /* Display: MTA News Rotator */
   $handler = $view->new_display('block', 'MTA News Rotator', 'block_1');
@@ -1323,6 +1230,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'news_article' => 'news_article',
   );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Nodequeue: Position */
   $handler->display->display_options['filters']['position']['id'] = 'position';
   $handler->display->display_options['filters']['position']['table'] = 'nodequeue_nodes';
@@ -1330,12 +1238,14 @@ function news_system_views_default_views() {
   $handler->display->display_options['filters']['position']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['filters']['position']['operator'] = '>=';
   $handler->display->display_options['filters']['position']['value']['value'] = '0';
+  $handler->display->display_options['filters']['position']['group'] = 1;
   /* Filter criterion: Nodequeue: Queue machine name */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'nodequeue_queue';
   $handler->display->display_options['filters']['name']['field'] = 'name';
   $handler->display->display_options['filters']['name']['relationship'] = 'nodequeue_rel';
   $handler->display->display_options['filters']['name']['value'] = 'lirr_news_rotator';
+  $handler->display->display_options['filters']['name']['group'] = 1;
 
   /* Display: B & T News Rotator */
   $handler = $view->new_display('block', 'B & T News Rotator', 'block_3');
@@ -1682,7 +1592,7 @@ function news_system_views_default_views() {
   $handler->display->display_options['fields']['field_article_summary']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_article_summary']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_article_summary']['hide_empty'] = TRUE;
-  /* Field: Field: Image Caption */
+  /* Field: Content: Rotator Headline */
   $handler->display->display_options['fields']['field_image_caption']['id'] = 'field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['table'] = 'field_data_field_image_caption';
   $handler->display->display_options['fields']['field_image_caption']['field'] = 'field_image_caption';
