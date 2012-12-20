@@ -66,7 +66,7 @@ function mta_press_releases_feeds_importer_default() {
       'config' => array(
         'content_type' => 'press_release',
         'expire' => '-1',
-        'author' => 0,
+        'author' => '1',
         'authorize' => 1,
         'mappings' => array(
           0 => array(
