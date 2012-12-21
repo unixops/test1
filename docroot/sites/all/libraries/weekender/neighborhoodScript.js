@@ -37,7 +37,7 @@ function showNeighborhoodMap()
 hideMaps()
 document.getElementById('staticmap').style.display = 'none';
 document.getElementById("neighborhoodMapDiv").style.display = "inline";
-document.getElementById('diagram').src = 'images/diagram.png';
+document.getElementById('diagram').src = 'sites/all/themes/images/weekender/diagram.png';
 recenterNeighborhoodMap(selectedStation);
 ZoomMapName = 'neighborhoodMap';
 document.getElementById("drawer").style.display = 'none';
@@ -49,7 +49,7 @@ function showBingMap()
 {
 var lat;
 var lon;
-document.getElementById('diagram').src = 'images/diagram.png';
+document.getElementById('diagram').src = 'sites/all/themes/mta/images/weekender/diagram.png';
 lat = stationGeo[selectedStation].split(",")[0]
 lon = stationGeo[selectedStation].split(",")[1]
 hideMaps()
@@ -63,7 +63,7 @@ function showSystemDiagram()
 {
 hideMaps();
 document.getElementById("mapDivouter").style.display = "inline";
-document.getElementById('diagram').src = 'images/diagram_over.png';
+document.getElementById('diagram').src = 'sites/all/themes/mta/images/weekender/diagram_over.png';
 recenterSystemMap(selectedStation);
 ZoomMapName = 'SubwayMap';
 EnableZoomDrawerIconsInHeader();

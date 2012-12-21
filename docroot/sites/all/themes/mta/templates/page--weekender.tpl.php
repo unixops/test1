@@ -10,10 +10,11 @@ drupal_add_js("sites/all/libraries/weekender/neighborhoodScript.js");
 drupal_add_js("sites/all/libraries/weekender/date.js");
 drupal_add_js("sites/all/libraries/weekender/WeekenderMain.js");
 drupal_add_js("sites/all/libraries/weekender/SystemWideMapScriptTiles.js");
+drupal_add_js("sites/all/libraries/weekender/weekenderstatusraw.js");
 $scripts = drupal_get_js();
 
-?>		
-		
+?>	
+
 <div id="page">
 
 		<div id="mainbox" style="width:960px;">
@@ -76,6 +77,10 @@ $scripts = drupal_get_js();
 								
 
 									<a id="main-content"></a>
+									
+									
+	
+
 
 									
 									<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
@@ -108,24 +113,110 @@ $scripts = drupal_get_js();
 						</div><!-- close container for grid -->
 			</div>
 			
+<!-- Hidden Div to load all hover-images -->
+<div id="divHiddenImages" style="display:none;">
+	<img alt="" id="Img1" src="/sites/all/themes/mta/images/weekender/status_over.png" /> <img alt="" id="Img2" src="/sites/all/themes/mta/images/weekender/station_over.png" /> <img alt="" id="Img3" src="/sites/all/themes/mta/images/weekender/line_over.png" /> <img alt="" id="Img4" src="/sites/all/themes/mta/images/weekender/borough_over.png" /> <img alt="" id="Img5" src="/sites/all/themes/mta/images/weekender/planner_over.png" /> <img alt="" id="Img6" src="/sites/all/themes/mta/images/weekender/metro_north_over.png" /> <img alt="" id="Img7" src="/sites/all/themes/mta/images/weekender/lirr_over.png" /> <img alt="" id="Img8" src="/sites/all/themes/mta/images/weekender/buses_over.png" /> <img alt="" id="Img9" src="/sites/all/themes/mta/images/weekender/bridges_over.png" /> <img alt="" id="Img11" src="/sites/all/themes/mta/images/weekender/diagram_over.png" /> <img alt="" id="Img12" src="/sites/all/themes/mta/images/weekender/zoom_out_over.png" /> <img alt="" id="Img13" src="/sites/all/themes/mta/images/weekender/zoom_in_over.png" /> <img alt="" id="Img14" src="/sites/all/themes/mta/images/weekender/drawer_over.png" /> <img alt="" id="Img15" src="/sites/all/themes/mta/images/weekender/mta_logo_over.png" /> <img alt="" id="Img16" src="/sites/all/themes/mta/images/weekender/mta_home_over.png" /> <img alt="" id="Img17" src="/sites/all/themes/mta/images/weekender/legend_over.png" /> <img alt="" id="Img18" src="/sites/all/themes/mta/images/weekender/tutorial_over.gif" /></div>
+<script type="text/javascript">    
+    currentPagename = 'index';
+    function showNeighborhoodbySID() {
+        window.location.href = "http://mta.info/weekender/stationview.html?SID=25";
+    }   
+
+function menuImageOver(imgId) {
+    if (imgId == 'status') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/status_over.png';
+    if (imgId == 'station') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/station_over.png';
+    if (imgId == 'line') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/line_over.png';
+    if (imgId == 'borough') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/borough_over.png';
+    if (imgId == 'planner') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/planner_over.png';
+    if (imgId == 'subway') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram_over.png';
+    if (imgId == 'zoom_out') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_out_over.png';
+    if (imgId == 'zoom_in') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_in_over.png';
+    if (imgId == 'drawer') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/drawer_over.png';
+    if (imgId == 'metronorth') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/metro_north_over.png';
+    if (imgId == 'lirr') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/lirr_over.png';
+    if (imgId == 'buses') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/buses_over.png';
+    if (imgId == 'bridges') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/bridges_over.png';
+    if (imgId == 'legend') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/legend_over.png';
+    if (imgId == 'mtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mta_logo_over.png';
+    if (imgId == 'diagram') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram_over.png';
+    if (imgId == 'footermtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mtainfo_over.png';
+    if (imgId == 'mtahome') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mta_home_over.png';
+    if (imgId == 'video') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/tutorial_over.gif';    
+}
+
+function menuImageOut(imgId) {
+    if (imgId == 'status' && currentPagename != 'status') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/status.png';
+    if (imgId == 'station' && currentPagename != 'station') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/station.png';
+    if (imgId == 'line' && currentPagename != 'line') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/line.png';
+    if (imgId == 'borough' && currentPagename != 'borough') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/borough.png';
+    if (imgId == 'planner' && currentPagename != 'planner') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/planner.png';
+    if (imgId == 'subway' && currentPagename != 'subway') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram.png';
+    if (imgId == 'zoom_out' && currentPagename != 'zoom_out') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_out.png';
+    if (imgId == 'zoom_in' && currentPagename != 'zoom_in') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_in.png';
+    if (imgId == 'drawer' && currentPagename != 'drawer') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/drawer.png';
+    if (imgId == 'metronorth' && currentPagename != 'metronorth') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/metro_north.png';
+    if (imgId == 'lirr' && currentPagename != 'lirr') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/lirr.png';
+    if (imgId == 'buses' && currentPagename != 'buses') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/buses.png';
+    if (imgId == 'bridges' && currentPagename != 'bridges') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/bridges.png';
+    if (document.getElementById("LegendDiv").style.display != "block") {
+        if (imgId == 'legend') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/legend.png';
+    }
+    if (imgId == 'mtainfo' && currentPagename != 'mtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mta_logo.png';
+    if (imgId == 'diagram' && currentPagename != 'diagram') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram.png';
+    if (imgId == 'footermtainfo' && currentPagename != 'footermtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mtainfo.png';
+    if (imgId == 'mtahome') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mta_home.png';
+    if (imgId == 'video') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/tutorial.gif';    
+}
+
+function setPageMenuSelection(imgId) {
+    if (imgId == 'status') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/status_over.png';
+    if (imgId == 'station') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/station_over.png';
+    if (imgId == 'line') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/line_over.png';
+    if (imgId == 'borough') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/borough_over.png';
+    if (imgId == 'planner') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/planner_over.png';
+    if (imgId == 'subway') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram_over.png';
+    if (imgId == 'zoom_out') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_out_over.png';
+    if (imgId == 'zoom_in') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/zoom_in_over.png';
+    if (imgId == 'drawer') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/drawer_over.png';
+    if (imgId == 'metronorth') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/metro_north_over.png';
+    if (imgId == 'lirr') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/lirr_over.png';
+    if (imgId == 'buses') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/buses_over.png';
+    if (imgId == 'bridges') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/bridges_over.png';
+    if (imgId == 'diagram') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/diagram_over.png';
+    if (imgId == 'legend') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/legend_over.png';
+    if (imgId == 'mtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mta_logo.png';
+    if (imgId == 'footermtainfo') document.getElementById(imgId).src = '/sites/all/themes/mta/images/weekender/mtainfo_over.png';
+    currentPagename = imgId;
+}
+
+function EnableLegend() {
+    if (document.getElementById("LegendDiv").style.display == "block") {
+        document.getElementById("LegendDiv").style.display = 'none';
+    }
+    else {
+        document.getElementById("LegendDiv").style.display = 'block';        
+        document.getElementById('legend').src = '/sites/all/themes/mta/images/weekender/legend_over.png';
+    }
+}
 	
+</script>	
 	
 	
     
   <!-- Weekender Footer (start) -->
-<div  style="position:absolute; top:714px; width:898px; margin-left:21px; height:20px; background-color:black;">
+<div  style="position:absolute; top:705px; width:960px;  height:20px; background-color:black;">
     <img name="legend" id="legend" style="position:absolute;cursor:pointer;left:15px;top:0px;margin:0px;" src="/sites/all/themes/mta/images/weekender/legend.png" onclick="EnableLegend();" onmouseover="menuImageOver('legend')" onmouseout="menuImageOut('legend')" border="0" alt="" />
 	<a href="http://www.youtube.com/watch?v=c30CwkKyTYQ" target="_blank">
 <img name="video" id="video" style="position:absolute;cursor:pointer;left:165px;top:0px;margin:0px;" src="/sites/all/themes/mta/images/weekender/tutorial.gif" onmouseover="menuImageOver('video')" onmouseout="menuImageOut('video')"  border="0" alt="" />
 </a>
 
-    <div id="FooterCenterSection" style="position:absolute;left:330px;">
+   <div id="FooterCenterSection" style="position:absolute;left:330px;">
         <span id="dateSpan" class="footerDateText"><script language="javascript" type="text/javascript">document.write(getWeekendDates());</script></span>
     </div> 
-    <div id="FooterRightSection" style="position:absolute;left:500px;width:350px;" class="footerTellUsText">
+    <div id="FooterRightSection" style="position:absolute;left:750px;width:250px;" class="footerTellUsText">
         <span><a href="http://mta-nyc8.custhelp.com/cgi-bin/mta_nyc8.cfg/php/enduser/ask.php?&p_prods=4005&prod_lvl1=4005&p_cats=4006" class="footerTellUsText" target="_blank">Tell us what you think</a></span>
     </div>  
-    </div>  
+    </div> 
    
     
 	

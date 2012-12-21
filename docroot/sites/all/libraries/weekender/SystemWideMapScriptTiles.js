@@ -146,7 +146,7 @@ function DrawStationImage(stationID)
 			iconList = ""
 			for(j=0; j < iconArray.length; j++)
 			{
-				iconList = iconList + '<img src="images/routes/14px/' + iconArray[j] + '.gif" class="imgMargin" alt="" />'
+				iconList = iconList + '<img src="sites/all/themes/mta/images/weekender/14px/' + iconArray[j] + '.gif" class="imgMargin" alt="" />'
 				var routeImg;			 
 				 if(k==0)
 				 { 				
@@ -160,7 +160,7 @@ function DrawStationImage(stationID)
 				 }					 
 				 routeImg = document.createElement('img');
 				 routeImg.setAttribute('style', 'position:absolute;width:14px;height:14px;left:' + eval(leftpx) +'px');
-				 routeImg.setAttribute('src', 'images/routes/14px/' + iconArray[j]  + '.gif');			
+				 routeImg.setAttribute('src', 'sites/all/themes/mta/images/weekender/14px/' + iconArray[j]  + '.gif');			
 				 routeImg.setAttribute('id', stationID+iconArray[j] +'l')
 				 routeImg.style.position = "absolute";
 				 routeImg.style.width  = "14px";
@@ -273,7 +273,7 @@ function EnableLegend()
 	else
 	{
 		document.getElementById("LegendDiv").style.display = 'block';
-		document.getElementById('legend').src = 'images/legend_over.png';
+		document.getElementById('legend').src = 'sites/all/themes/mta/images/weekender/legend_over.png';
 	}
 }
 
@@ -395,7 +395,7 @@ function showAllStation() {
     document.getElementById("inputsearch").className = 'inputsearch';
     document.getElementById("weekenderleftStatus").style.display = "none";
     document.getElementById("mapDivouter").style.display = "inline";
-    document.getElementById('diagram').src = 'images/diagram_over.png';
+    document.getElementById('diagram').src = 'sites/all/themes/mta/images/weekender/diagram_over.png';
     selectedLeftDiv = 'weekenderleftPanel';
     window.frames["systemMap"].SelectedStationBackToNormalIcon();
     window.frames["systemMap"].selectedStation = '';
