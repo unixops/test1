@@ -1,7 +1,7 @@
 <!--[if lt IE 9]>
 			<style>.roundCorners, #block-google-appliance-ga-related-searches {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(<?php print base_path();?>sites/all/themes/mta/border-radius.htc);}</style>
 		<![endif]-->
-		
+
 <div id="page">
 		<div id="mainbox">
 
@@ -15,30 +15,30 @@
 				<div id="search">
 
 			<?php print render($page['header_right']); ?>
-			
+
 				</div>
 			 </div>
 			<div id="navbar"><?php print render($page['navbar']);?></div>
 			<div id="breadcrumb"> <!-- we leave the div and keep spacing -->
-								<?php if ($breadcrumb){print $breadcrumb;}?>
+								<?php //if ($breadcrumb){print $breadcrumb;}?>
 			</div>
 							<div class="container">
 
 
-							<div class="span-ad roundCorners">									
+							<div class="span-ad roundCorners">
 									<?php print $messages; ?>
 			 				 <div id="pageTitleAreaAd">
 									<?php print render($title_prefix); ?>
 									<?php if ($title): ?><h1 class="title" id="page-title-ad"><?php print $title; ?></h1><?php endif; ?>
 									<?php print render($title_suffix); ?>
 									<?php print render($page['page_title']);?>
-									
-							</div>											
+
+							</div>
 
 
 									<div id="main-ad-content">
 
-									
+
 									<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 									<?php if ($page['sidebar_first']): ?>
@@ -50,10 +50,10 @@
 										<?php if (empty($page['sidebar_first'])): ?>
 											<div class="span-no-side-ad">
 										<?php endif;?>
-										
-									
-									<?php print render($page['content']); ?>        
-								
+
+
+									<?php print render($page['content']); ?>
+
 									</div>
 								<!-- close span-43 -->
 
@@ -69,7 +69,7 @@
 										<?php print render($page['highlighted']); ?>
 										</div></div> <!-- /.section, /#highlighted-->
 									<?php endif; ?>
-						
+
                  </div>
 
 								<!-- close span-21 last -->
@@ -79,13 +79,13 @@
 										<div id="sidebar_second_ad" class="column sidebar"><div class="section roundCorners">
 										<?php print render($page['sidebar_second']); ?>
 										</div></div> <!-- /.section, /#sidebar_second -->
-									<?php endif; ?>	
+									<?php endif; ?>
 		</div>
-		<div id="foot-div">	
+		<div id="foot-div">
 		<?php print render($page['footer']);?>
 		</div>
 
 </div>
-									
 
-		
+
+
