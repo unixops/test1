@@ -274,7 +274,7 @@ h1#page-title-ad  {
 }
 /*end hack*/
 
-
+/* interferses with all views
 .views-field-name,
 .views-field-title	{
 	display: inline;
@@ -284,6 +284,7 @@ h1#page-title-ad  {
 .field-content	{
 	clear:both;
 	}
+	*/
 .views-field-field-main-emergency-message {
     border-bottom:1px solid #D0D0D0;
     margin-bottom:10px;	
