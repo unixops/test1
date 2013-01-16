@@ -16,7 +16,7 @@ function mta_press_releases_form_alter(&$form, &$form_state, $form_id){
         '#type'  => 'select',
         '#title' => t('MTA Agency'),
         '#options' => array(
-          0  =>  t('select'),
+          ''  =>  t('select'),
           'bandt' => t('B & T'),
           'lirr' => t('LIRR'),
           'mnr' => t('MNR'),
@@ -26,6 +26,7 @@ function mta_press_releases_form_alter(&$form, &$form_state, $form_id){
         ),
         '#weight' => 2,
         '#default_value' => $agency,
+        '#required' => TRUE,
       );//*/
   }
 }
