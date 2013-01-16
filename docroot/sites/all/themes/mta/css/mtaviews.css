@@ -336,6 +336,28 @@
     padding: 3px 5px 5px 5px;
     vertical-align: center;
     }
+
+/*Press Release Multi Image(not in Views) */
+.field-name-field-press-multi-image {
+	width: 850px;
+	padding: 5px;
+	margin-left: 30px;	
+	}
+
+.field-name-field-press-multi-image .field-item.odd {
+	width: 250px;
+	padding: 5px;
+	float: left;
+	margin-left: 5px;
+	}
+
+.field-name-field-press-multi-image .field-item.even {
+	width: 250px;
+	padding: 5px;
+	float: right;
+	margin-right: 20px;
+	}
+
 	
 /* Views EOTF Styles */
 /* Hide the node titles on Forecast and Brief Header Attachments */
