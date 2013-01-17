@@ -78,6 +78,18 @@ function mta_press_releases_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'mta_press_releases-xpathparser_4-mta_agency';
+  $feeds_tamper->importer = 'mta_press_releases';
+  $feeds_tamper->source = 'xpathparser:4';
+  $feeds_tamper->plugin_id = 'mta_agency';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'MTA Agency re-format';
+  $export['mta_press_releases-xpathparser_4-mta_agency'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'mta_press_releases-xpathparser_5-date_parse';
   $feeds_tamper->importer = 'mta_press_releases';
   $feeds_tamper->source = 'xpathparser:5';
