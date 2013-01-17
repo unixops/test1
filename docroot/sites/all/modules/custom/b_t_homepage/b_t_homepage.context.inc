@@ -56,15 +56,15 @@ function b_t_homepage_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'block-8' => array(
+        'block-36' => array(
           'module' => 'block',
-          'delta' => '8',
+          'delta' => '36',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'block-7' => array(
+        'block-31' => array(
           'module' => 'block',
-          'delta' => '7',
+          'delta' => '31',
           'region' => 'footer',
           'weight' => '-9',
         ),
