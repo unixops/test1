@@ -10,8 +10,8 @@ function mta_preprocess_page(&$vars) {
 	   if($vars['node']->type == 'news_article'){
 	      $vars['title'] ='default';
 	      
-	    if (!empty($vars['node']->field_image_caption['und'][0]['value'])) {
-	      $vars['title'] = $vars['node']->field_image_caption['und'][0]['value'];
+	    if (!empty($vars['node']->field_news_page_headline['und'][0]['value'])) {
+	      $vars['title'] = $vars['node']->field_news_page_headline['und'][0]['value'];
 	    }elseif (!empty($vars['node']->field_headline['und'][0]['value'])) {
 	      $vars['title'] = $vars['node']->field_headline['und'][0]['value'];
 	    }elseif (!empty($vars['node']->field_emergency_headline['und'][0]['value'])) {
