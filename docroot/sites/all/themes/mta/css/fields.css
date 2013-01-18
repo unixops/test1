@@ -1,0 +1,83 @@
+/* Field Slideshow Styles */
+
+#field-slideshow-1-wrapper {
+	height: 200px;
+	}
+
+.field-slideshow-caption-text {
+	width:896px;
+	position: absolute;
+  	bottom: 0;
+  	padding-bottom:3px;
+  	z-index:999;
+  	background-image: url('../images/text_bg.png');
+  	font-size:18px;
+	font-weight:bold;
+	color: #ffffff;
+	margin-top: 2px;
+	}
+	
+.field-slideshow-pager {
+  	width: 146px;
+  	position: absolute;
+  	z-index:999;
+  	margin-top: -26px;
+  	margin-left: 550px;
+  	padding-left: 200px;
+  	}
+
+.field-slideshow-pager a {
+  	display:inline-block;
+  	width:16px;
+  	height:16px;
+  	padding: 5px;
+  	background:url(../images/banner_button.png) top left no-repeat;
+  	text-indent: -999%;
+	}
+
+.field-slideshow-pager a.activeSlide{
+	width:16px;
+  	height:16px;
+	padding: 5px;
+    background:url(../images/active.png) top left no-repeat !important;
+    }
+    
+#node_image_caption {
+   	background-image: url("../images/text_bg.png");
+    color: white;
+    font-size: 14px;
+    margin-left: 250px;
+    margin-right: 10px;
+    padding: 1px 0 1px 2px;
+	}
+
+
+/* Field Gallery styles */
+
+.field-name-field-gallery-image {
+	width: 230px;
+	padding: 5px;
+	float: right;
+	background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+	}
+
+.field-name-field-gallery-image .field-item.odd {
+	width: 100px;
+	padding: 5px;
+	float: left;
+	margin-left: 5px;
+	}
+
+.field-name-field-gallery-image .field-item.even {
+	width: 100px;
+	padding: 5px;
+	float: right;
+	margin-right: 3px;
+	}
+	
+.field-name-field-gallery-text {
+	width:450px;
+	text-align: justify;
+	
+}
