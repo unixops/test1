@@ -13,6 +13,22 @@ function mta_acep_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'mta_acep-10-number_format';
+  $feeds_tamper->importer = 'mta_acep';
+  $feeds_tamper->source = '10';
+  $feeds_tamper->plugin_id = 'number_format';
+  $feeds_tamper->settings = array(
+    'decimals' => 2,
+    'dec_point' => '.',
+    'thousands_sep' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Format a number';
+  $export['mta_acep-10-number_format'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'mta_acep-11-number_format';
   $feeds_tamper->importer = 'mta_acep';
   $feeds_tamper->source = '11';
@@ -45,9 +61,9 @@ function mta_acep_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_acep-13-number_format';
+  $feeds_tamper->id = 'mta_acep-6-number_format';
   $feeds_tamper->importer = 'mta_acep';
-  $feeds_tamper->source = '13';
+  $feeds_tamper->source = '6';
   $feeds_tamper->plugin_id = 'number_format';
   $feeds_tamper->settings = array(
     'decimals' => 2,
@@ -56,14 +72,14 @@ function mta_acep_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Format a number';
-  $export['mta_acep-13-number_format'] = $feeds_tamper;
+  $export['mta_acep-6-number_format'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_acep-14-number_format';
+  $feeds_tamper->id = 'mta_acep-7-number_format';
   $feeds_tamper->importer = 'mta_acep';
-  $feeds_tamper->source = '14';
+  $feeds_tamper->source = '7';
   $feeds_tamper->plugin_id = 'number_format';
   $feeds_tamper->settings = array(
     'decimals' => 2,
@@ -72,14 +88,14 @@ function mta_acep_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Format a number';
-  $export['mta_acep-14-number_format'] = $feeds_tamper;
+  $export['mta_acep-7-number_format'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_acep-15-number_format';
+  $feeds_tamper->id = 'mta_acep-8-number_format';
   $feeds_tamper->importer = 'mta_acep';
-  $feeds_tamper->source = '15';
+  $feeds_tamper->source = '8';
   $feeds_tamper->plugin_id = 'number_format';
   $feeds_tamper->settings = array(
     'decimals' => 2,
@@ -88,39 +104,7 @@ function mta_acep_feeds_tamper_default() {
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Format a number';
-  $export['mta_acep-15-number_format'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_acep-16-number_format';
-  $feeds_tamper->importer = 'mta_acep';
-  $feeds_tamper->source = '16';
-  $feeds_tamper->plugin_id = 'number_format';
-  $feeds_tamper->settings = array(
-    'decimals' => 2,
-    'dec_point' => '.',
-    'thousands_sep' => ',',
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Format a number';
-  $export['mta_acep-16-number_format'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_acep-17-number_format';
-  $feeds_tamper->importer = 'mta_acep';
-  $feeds_tamper->source = '17';
-  $feeds_tamper->plugin_id = 'number_format';
-  $feeds_tamper->settings = array(
-    'decimals' => 2,
-    'dec_point' => '.',
-    'thousands_sep' => ',',
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Format a number';
-  $export['mta_acep-17-number_format'] = $feeds_tamper;
+  $export['mta_acep-8-number_format'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
