@@ -24,16 +24,16 @@ a:active {text-decoration: underline}
 	background-repeat: no-repeat;
 	display: inline;
 	padding-left: 10px;
-}
+	}
+
 /* Vertical List */
-.list_v
-{ 
+.list_v { 
 	background-image: url("../images/arrow-gn.gif");
 	background-position: left -2px;
 	background-repeat: no-repeat;
 	padding-left: 10px;
 	list-style-type: none;
-}
+	}
 
 ul li.list_h a {font-weight:bold;}
 
@@ -48,10 +48,9 @@ ul.arrow li {
 	background-image: url('../images/arrow-gn.gif'); 
 	background-repeat: no-repeat;
 	background-position: top left;
-}
+	}
 
 #contentbox ul.arrow li a {font-weight:bold;}
-
 /* Following list styles are used to draw the bottom icons */
 .list_f { 
 	background-image: url("../images/arrow-gn.gif");
@@ -62,14 +61,17 @@ ul.arrow li {
 	padding-right: 12px;	
 	font-weight: bold;
 	height: 30px;
-}
+	}
+
 .last_list_f { 
 	border: none;
 	padding-right: 0px;
-}
+	}
+
 .first_list_f { 
 	margin-left: 0px;
-}
+	}
+
 /* End bottom icons list styles */
 
 /* Page Structure Components*/
@@ -79,24 +81,23 @@ ul.arrow li {
   background-color: #fff;
   position: relative;  /*Do NOT remove - this style is required to round corners in IE */
   padding: 0;
-}
+	}
 
 #contentbox {
 	margin-top:0;
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom:10px;
-	
 	padding: 0;
-}
+	}
 
 #copyright p { font-size: 85%; color: #333; margin-bottom: 2px; }
-
 .feature-box { margin-top:10px; padding:10px; height:186px; background: #fff; }
 .feature-box img.162center { padding-left:50px; }
 .feature-box img.center { padding:0 auto; }
 .feature-box h3 { margin: 0; margin-bottom: 5px;}
-.feature-box a { font-weight:bold; color: #0055aa; text-decoration:none; }
+.feature-box a { font-weight:bold; color: #0055aa; text-decoration:none;
+	}
 
 /* End Page Structure components */
 
@@ -104,7 +105,7 @@ ul.arrow li {
 
 #waysToPay {
 	height: 183px;
-}
+	}
 
 #widgetDiv {
     height: 424px;
@@ -113,7 +114,7 @@ ul.arrow li {
     margin-top: 11px;
     padding: 10px 0;
     width: 229px;
-}
+	}
 
 #widgetDiv #subwayDiv, #widgetDiv #railDiv, #widgetDiv #busDiv, #widgetDiv #BTDiv {float:left; display:none; width:208px; height: 365px;  background-color:#fff;}
 #widgetDiv  table{ margin:0; padding:0; width:202px; height:356px; background-color:#fff; }
@@ -124,14 +125,15 @@ ul.arrow li {
 	padding:10px;
 	height: 423px;
 	width:208px;
-}
+	}
+
 #block-tripplanner-tripplanner{
 	position:inherit;
 	height: 425px;
 	width: 230px;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
-}
+	}
 
 #mytrip table { margin-bottom: margin-top:5px; 0px; background-color:#fff; }
 #mytrip td { padding: 3px; }
@@ -145,34 +147,34 @@ ul.arrow li {
 	padding: 10px; 
 	background: #fff;
 	overflow: hidden;
-}
+	}
 
 #maps, #maps-narrow, #option1-narrow, #option2-narrow {	
 	margin-top:10px; 
 	padding:7px; 
 	height:73px;
 	background: #fff;
-}
+	}
 
 #maps-narrow, #option1-narrow {
 	width: 89px;
 	margin-right:10px;
 	float:left;
-}
+	}
 
 #maps-narrow {
 	width: 89px;
-}
+	}
 
 #option1-narrow {
 	width: 96px;
 	padding-right:0;
-}
+	}
 
 #option2-narrow {	
 	width:99px;
 	float:right;
-}
+	}
 
 #capConstruction { float:left; }
 
@@ -183,20 +185,9 @@ ul.arrow li {
 	float: left;
 	width: 203px;
 	margin-bottom:10px;
-}
+	}
 
 #apps { margin-right:10px; }
-
-/*#innovation { 
-	margin-top: 10px;
-	margin-bottom: 10px;
-	height: 78px; 
-	padding: 10px;
-	float: left;
-	width: 438px;
-}
-
-#innovation h3 { margin: 0; margin-bottom: 5px; }*/
 
 #self-serve, #contact-us {
 	/*height: 25px;*/
@@ -205,7 +196,7 @@ ul.arrow li {
 	padding-top:10px;
 	float:left;
 	width: 213px;
-}
+	}
 
 #self-serve { margin-right:10px; }
 
@@ -216,16 +207,15 @@ ul.arrow li {
 	height:144px; /*changed for smaller Getting There box*/
 	/*height:190px;*/
 	background-color: #fff;
-}
+	}
 
 #riding-links #nestedCol1 { margin:0; padding:0; width: 215px; float: left;}
 #riding-links #nestedCol2 { margin:0; padding:0;	width: 215px; float: right; }
-
 #riding-links ul { margin:0; padding:0; float:left; width: 215px; }
 #riding-links li { margin:0; margin-bottom: 10px; padding: 4px 8px 5px; list-style-type:none; width:197px; float:left; font-weight: bold; }
 #riding-links li.text{ 
 width:147px;
-}
+	}
 
 
 #riding-links #menuanchor1,
@@ -257,7 +247,8 @@ width:147px;
 .popMenu li ul li { font-weight: normal; color:#000033; }
 .popMenu li a, .popMenu li ul li a { text-decoration:none; color:#000033; }
 .popMenu li a:hover, .popMenu li ul li a:hover { color: #0055aa; }
-.popMenu li ul li { margin:0; padding:0; }
+.popMenu li ul li { margin:0; padding:0;
+	}
 
 /* End - Riding With Us Styles */
 
@@ -276,7 +267,7 @@ width:147px;
 	padding: 10px;
 	background: #fff;
 	height:62px;
-}
+	}
 
 #agency-links ul { float: left; list-style-type: none; margin: 0; padding: 0;}
 #agency-links  li a{ color: #333; text-decoration: none; }
@@ -312,7 +303,7 @@ width:147px;
 	background-color: #f4f4f4;
 	overflow: auto;
 	height: 230px;
-}
+	}
 
 #news-agency {
 	margin-top:10px;
@@ -320,7 +311,7 @@ width:147px;
 	padding: 10px;
 	background: #fff;
 	overflow: hidden;
-}
+	}
 
 .heading { float:left; margin:7px;font-size:12px; font-weight:bold; width:400px; color:#0066FF; }
 
@@ -328,7 +319,7 @@ width:147px;
 #deals { 
 	height: 165px;
 	float: left;
-}
+	}
 #WaystoPay { height:175px; }
 
 /* for MTA CC homepage */
@@ -356,15 +347,6 @@ width:147px;
 	
 /** Content Bottom Left and Right */
 
-#block-boxes-ways-to-save {
-	margin-top: 10px;
-	margin-left: 20px;
-	height: 180px;	
-	width: 420px;
-	padding-left: 7px;
-	border-bottom: 1px solid #ccc;
-	}
-
 #contentbl {
 	width: 220px;
 	float: left;
@@ -374,23 +356,8 @@ width:147px;
 	width: 220px;
 	float: right;
 	}
-	
-#block-boxes-fast-track {
- 	margin-top: 10px;
-	margin-left: 20px;
-    width: 200px;
- 	}
- 	
-#boxes-box-hear_from_you {
-	margin-top: 10px;
-	width: 200px;
-	height: 111px;
-	padding-left: 5px;
-	border-left: 1px solid #ccc;
-	}
-	
-/** Postcript Region */
 
+/** Postcript Region */
 #postscript {
 	width: 469px;
 	}
@@ -406,72 +373,12 @@ width:147px;
 	width: 220px;
 	}
 
-#boxes-box-capitol_program {
-	margin-top: 225px;
-	margin-left: 20px;
-	width: 420px;
-	padding-left: 7px;
-	border-top: 1px solid #ccc;
- 	}
-	
- #boxes-box-mta_bus_time {
-	margin-top: 20px;
-	margin-left: 5px;
-	width: 150px;
-	padding:7px;
-	border-bottom: 1px solid #ccc;
-	}
-
-#boxes-box-special_service {
-	margin-top: 30px;
-	padding: 7px;
-	border-Bottom: 1px solid #B4B4B4;
-	}
-	
-#boxes-box-customer_self_service {
-	margin-top: 10px;
-	margin-left: 5px;
-	width:150px;
-	padding: 7px;
-	border-bottom: 1px solid #ccc;
-	}
-	
-#boxes-box-mta_capitol {
-	padding: 7px;
-	}
-	
-#boxes-box-tourism {
-	margin-top: 10px;
-	padding: 7px;
-	border-bottom: 1px solid #ccc;
-	}
-	
-#boxes-box-app_center {
-	margin-top: 13px;
-	padding: 7px;
-	border-bottom: 1px solid #ccc;
-	}
-	
-#boxes-box-gc_centennial {
-	margin-top: 30px;
-	padding: 7px;
-	}
-	
-#boxes-box-advertise_on_metrocard {
-	margin-top: 30px;
-	padding: 7px;
-	border-bottom: 1px solid #ccc;
-	}
-	
 /** Home Page Blocks */
-
 #block-mta-megamenu-lirr-megamenu {
 	height: 85px;
 	}
 	
 /** Agency Special Services Boxes from home page.css */
-
-
 #boxes-box-lirr_special_service {
 	margin-top:10px;
 	height: 150px;
@@ -537,31 +444,31 @@ width:147px;
     margin-right: 2px;
     margin-top: 1px; 
     width: 26px;
-}
+	}
 .anchor1 {
 	background: #fff url("../images/GT_sprites.gif") no-repeat scroll 0 0;
-}
+	}
 .anchor2 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -27px 0;
-}
+	}
 .anchor3 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -54px 0;
-}
+	}
 .anchor4 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -81px 0;
-}
+	}
 .anchor5 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll 0 -18px;
-}
+	}
 .anchor6 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -27px -18px;
-}
+	}
 .anchor7 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -54px -18px;
-}
+	}
 .anchor8 {
   background: #fff url("../images/GT_sprites.gif") no-repeat scroll -81px -18px;
-}
+	}
 	.mega-text {
 	width:147px;
 	float:left;
