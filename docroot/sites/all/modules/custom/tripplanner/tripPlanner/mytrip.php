@@ -263,7 +263,7 @@
                                     Advanced</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">
                                         Help</a></span> <span class="list_h"><a style="color: #555;" href="http://511ny.org/tripplanner/default.aspx?area=1">
                                             511NY</a></span></p>
-							<p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">
+							<p style="margin:0 0 0 6px;"><span class="list_h"><a style="color:#555;" href="http://www.mta.info/nyct/service/OnTheGo.htm">Go Mobile</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/widgetSelector.aspx">
                                         Get Widget</a></span></p>
 
 
