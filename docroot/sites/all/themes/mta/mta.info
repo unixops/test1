@@ -5,6 +5,7 @@ core = 7.x
 
 stylesheets[all][] = css/global.css
 stylesheets[all][] = css/fields.css
+stylesheets[all][] = css/blocks.css
 stylesheets[all][] = css/grid.css
 stylesheets[all][] = css/mtaviews.css
 stylesheets[all][] = css/homepage.css
