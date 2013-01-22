@@ -57,51 +57,6 @@ function mta_acep_views_default_views() {
   $handler->display->display_options['fields']['field_project_link']['field'] = 'field_project_link';
   $handler->display->display_options['fields']['field_project_link']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_project_link']['click_sort_column'] = 'url';
-  /* Field: Content: LAA Start Month */
-  $handler->display->display_options['fields']['field_laa_start_month']['id'] = 'field_laa_start_month';
-  $handler->display->display_options['fields']['field_laa_start_month']['table'] = 'field_data_field_laa_start_month';
-  $handler->display->display_options['fields']['field_laa_start_month']['field'] = 'field_laa_start_month';
-  $handler->display->display_options['fields']['field_laa_start_month']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_laa_start_month']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: LAA Start Year */
-  $handler->display->display_options['fields']['field_laa_start_year']['id'] = 'field_laa_start_year';
-  $handler->display->display_options['fields']['field_laa_start_year']['table'] = 'field_data_field_laa_start_year';
-  $handler->display->display_options['fields']['field_laa_start_year']['field'] = 'field_laa_start_year';
-  $handler->display->display_options['fields']['field_laa_start_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_laa_start_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: LAA Comp Month */
-  $handler->display->display_options['fields']['field_laa_comp_month']['id'] = 'field_laa_comp_month';
-  $handler->display->display_options['fields']['field_laa_comp_month']['table'] = 'field_data_field_laa_comp_month';
-  $handler->display->display_options['fields']['field_laa_comp_month']['field'] = 'field_laa_comp_month';
-  $handler->display->display_options['fields']['field_laa_comp_month']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_laa_comp_month']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: LAA Comp Year */
-  $handler->display->display_options['fields']['field_laa_comp_year']['id'] = 'field_laa_comp_year';
-  $handler->display->display_options['fields']['field_laa_comp_year']['table'] = 'field_data_field_laa_comp_year';
-  $handler->display->display_options['fields']['field_laa_comp_year']['field'] = 'field_laa_comp_year';
-  $handler->display->display_options['fields']['field_laa_comp_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_laa_comp_year']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: LAA Budget */
-  $handler->display->display_options['fields']['field_laa_budget']['id'] = 'field_laa_budget';
-  $handler->display->display_options['fields']['field_laa_budget']['table'] = 'field_data_field_laa_budget';
-  $handler->display->display_options['fields']['field_laa_budget']['field'] = 'field_laa_budget';
-  $handler->display->display_options['fields']['field_laa_budget']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_laa_budget']['settings'] = array(
-    'thousand_separator' => ',',
-    'prefix_suffix' => 1,
-  );
   /* Field: Content: Phase */
   $handler->display->display_options['fields']['field_phase']['id'] = 'field_phase';
   $handler->display->display_options['fields']['field_phase']['table'] = 'field_data_field_phase';
