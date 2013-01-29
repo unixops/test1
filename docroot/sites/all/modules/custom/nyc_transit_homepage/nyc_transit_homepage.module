@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the NYC Transit Homepage feature.
- */
-
-include_once 'nyc_transit_homepage.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the MTA Homepage feature.
- */
-
-include_once 'mta_homepage.features.inc';

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the B & T Homepage feature.
- */
-
-include_once 'b_t_homepage.features.inc';
