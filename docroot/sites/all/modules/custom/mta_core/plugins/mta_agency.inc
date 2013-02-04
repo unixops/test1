@@ -28,7 +28,7 @@ function mta_core_mta_agency_callback($result, $item_key, $element_key, &$field,
     }elseif($field == 'nyct'){
       $agency = 'NYCT';
     }elseif($field == 'bandt'){
-      $agency = 'B &amp; T';
+      $agency = 'B & T';
     }elseif($field == 'lirr'){
       $agency = 'LIRR';
     }elseif($field == 'mnr'){
