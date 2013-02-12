@@ -35,7 +35,7 @@ function service_notice_block_info() {
  			if(user_access('access content')){
  				$path = drupal_get_path('module', 'service_notice');
  				drupal_add_css($path."/service_notice.css");
-  				$block['content']=service_notice_file_get_contents('http://mta.info/supplemental/nyct/blurb.php');
+  				$block['content']=service_notice_file_get_contents('http://www.mta.info/supplemental/nyct/blurb.php');
  				
        	}
        		break;
@@ -45,7 +45,7 @@ function service_notice_block_info() {
  			if(user_access('access content')){
  				$path = drupal_get_path('module', 'service_notice');
  				drupal_add_css($path."/service_notice.css");
- 				$block['content']=service_notice_file_get_contents('http://mta.info/supplemental/lirr/blurb.php');
+ 				$block['content']=service_notice_file_get_contents('http://www.mta.info/supplemental/lirr/blurb.php');
  				
  			}
  				break;
@@ -55,7 +55,7 @@ function service_notice_block_info() {
  				if(user_access('access content')){
  					$path = drupal_get_path('module', 'service_notice');
  					drupal_add_css($path."/service_notice.css");
- 					$block['content']=service_notice_file_get_contents('http://mta.info/supplemental/mnr/blurb.php');
+ 					$block['content']=service_notice_file_get_contents('http://www.mta.info/supplemental/mnr/blurb.php');
  					
  			}
  				break;
@@ -65,7 +65,7 @@ function service_notice_block_info() {
  				if(user_access('access content')){
  					$path = drupal_get_path('module', 'service_notice');
  					drupal_add_css($path."/service_notice.css");
- 					$block['content']=service_notice_file_get_contents('http://mta.info/supplemental/bandt/blurb.php');
+ 					$block['content']=service_notice_file_get_contents('http://www.mta.info/supplemental/bandt/blurb.php');
  					
  			}
  				break;
@@ -75,7 +75,7 @@ function service_notice_block_info() {
  				if(user_access('access content')){
  					$path = drupal_get_path('module', 'service_notice');
  					drupal_add_css($path."/service_notice.css");
- 					$block['content']=service_notice_file_get_contents('http://mta.info/supplemental/sir/blurb.php');
+ 					$block['content']=service_notice_file_get_contents('http://www.mta.info/supplemental/sir/blurb.php');
  				
  			}
  				break;
@@ -86,8 +86,8 @@ function service_notice_block_info() {
 function service_notice_file_get_contents($file_path){
 	$file_content = file_get_contents($file_path);
 	// find and replace relative paths with absolutes
-	$file_content = str_replace('src="/','src="http://mta.info/',$file_content);
-  $file_content = str_replace('href="/','href="http://mta.info/',$file_content);
+	$file_content = str_replace('src="/','src="http://www.mta.info/',$file_content);
+  $file_content = str_replace('href="/','href="http://www.mta.info/',$file_content);
 	return $file_content;
 }
  

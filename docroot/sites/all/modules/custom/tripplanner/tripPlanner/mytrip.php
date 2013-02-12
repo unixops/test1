@@ -71,7 +71,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <b onclick="window.location='http://mta.info/mnr/html/planning/schedules/linkwest.html'"
+                                        <b onclick="window.location='http://www.mta.info/mnr/html/planning/schedules/linkwest.html'"
                                             style="margin-left: 40px; cursor: pointer; border-bottom: solid 1px white">West
                                             of Hudson</b>
                                     </td>
