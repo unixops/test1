@@ -47,35 +47,36 @@
                             <table style="background-color: #00BB11; width: 100%; padding-bottom: 10px; padding-top: 10px;
                                 color: White" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
-                                    <td style="padding-bottom: 10px; cursor: pointer" onclick="ShowSubwayP2P()">
+                                    <td style="background-color: #00BB11; padding-bottom: 10px; cursor: pointer" onclick="ShowSubwayP2P()">
                                         <b onclick="ShowSubwayP2P()" style="margin-left: 20px; border-bottom: solid 1px white">
                                             Subway and Bus</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding-bottom: 10px; cursor: pointer">
+                                    <td style="background-color: #00BB11; padding-bottom: 10px; cursor: pointer">
                                         <b onclick="window.location='http://lirr42.mta.info/'" style="margin-left: 20px;
                                             cursor: pointer; border-bottom: solid 1px white">Long Island Rail Road</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <b style="margin-left: 20px; padding-top: 10px;">Metro-North Railroad</b>
+                                    <td style="background-color: #00BB11; padding-bottom: 10px; cursor: pointer">
+                                        <b onclick="window.location='http://as0.mta.info/mnr/schedules/sched_form.cfm'" style="margin-left: 20px;
+                                            cursor: pointer; border-bottom: solid 1px white">Metro-North Railroad</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="padding-bottom: 10px; cursor: pointer">
+                                    <td style="background-color: #00BB11; padding-bottom: 10px; cursor: pointer">
                                         <b onclick="window.location='http://as0.mta.info/mnr/schedules/sched_form.cfm'" style="margin-left: 40px;
                                             cursor: pointer; border-bottom: solid 1px white">East of Hudson</b>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <b onclick="window.location='http://www.mta.info/mnr/html/planning/schedules/linkwest.html'"
-                                            style="margin-left: 40px; cursor: pointer; border-bottom: solid 1px white">West
-                                            of Hudson</b>
+                                    <td style="background-color: #00BB11; padding-bottom: 10px; cursor: pointer">
+                                        <b onclick="window.location='http://www.mta.info/mnr/html/planning/schedules/linkwest.html'" style="margin-left: 40px;
+                                            cursor: pointer; border-bottom: solid 1px white">West of Hudson</b>
                                     </td>
                                 </tr>
+                                
                             </table>
                         </div>
 
