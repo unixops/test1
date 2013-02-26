@@ -161,26 +161,27 @@ function mta_press_releases_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_mta_agency',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
+      'foreign keys' => array(),
       'indexes' => array(
-        'format' => array(
-          0 => 'format',
+        'value' => array(
+          0 => 'value',
         ),
       ),
       'locked' => '0',
-      'module' => 'text',
+      'module' => 'list',
       'settings' => array(
-        'max_length' => '255',
+        'allowed_values' => array(
+          'B & T' => 'B & T',
+          'LIRR' => 'LIRR',
+          'MNR' => 'MNR',
+          'MTA HQ' => 'MTA HQ',
+          'NYCT' => 'NYCT',
+          'SIR' => 'SIR',
+        ),
+        'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'list_text',
     ),
     'field_instance' => array(
       'bundle' => 'press_release',
@@ -190,9 +191,9 @@ function mta_press_releases_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
+          'module' => 'list',
           'settings' => array(),
-          'type' => 'text_default',
+          'type' => 'list_default',
           'weight' => 3,
         ),
         'teaser' => array(
@@ -205,18 +206,15 @@ function mta_press_releases_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_mta_agency',
       'label' => 'MTA Agency',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
-        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
         'weight' => '2',
       ),
     ),
@@ -327,7 +325,7 @@ function mta_press_releases_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
