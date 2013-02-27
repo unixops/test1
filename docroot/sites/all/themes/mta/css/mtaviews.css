@@ -373,13 +373,91 @@
     padding: 3px 5px 5px 5px;
     vertical-align: center;
     }
+    
+
+/* Views Press Node Styles */
+
+.press-release-date {
+	float: left;
+	width: 445px;
+	height: 20px;
+	padding:5px 0 5px 5px;
+	color: white;
+	border-bottom: 5px solid;
+	text-align: 
+	border-color: white;
+	background-color: #7498AB;
+}
+
+.press-date {
+	float: right;
+	width: 445px;
+	height: 20px;
+	padding:5px 5px 5px 0;
+	color: white;
+	text-align: right;
+	border-bottom: 5px solid;
+	border-color: white;
+	background-color: #7498AB;
+	}
+	
+
+.press-mta-agency {
+	float: left;
+	width: 445px;
+	padding: 10px 0 5px 5px;
+	background-color: #DEE7EB;
+	
+	}
+	
+.press-release-urgency {
+	float: right;
+	width: 445px;
+	text-align: right;
+	padding: 10px 5px 5px 0;
+	background-color: #DEE7EB;
+	}
+
+.press-release-title {
+	text-align: center;
+	padding-bottom: 8px;
+	background-color: #DEE7EB;
+	font-size:153.9%;
+	font-weight: bold;
+	color:#0055AA;
+	border-bottom: 1px solid #B4B4B4;
+	}
+	
+.press-sub-title {
+	text-align: center;
+	font-weight: bold;
+	font-style:italic;
+	font-size: 105%;
+	background-color: #DEE7EB;
+	padding-top: 15px;
+	}
+
+.press-release-body {
+	background-color: #DEE7EB;
+	padding: 10px;
+	margin-bottom: 15px;
+	marging-left: 8px;
+	}
+
+.press-release-body h2 {
+	font-size: 110%;
+	font-weight: bold;
+	color:black;
+	}
+
+
 
 /*Press Release Multi Image(not in Views) */
 .field-name-field-press-multi-image {
 	width: 900px;
 	padding: 5px;
 	}
-
+	
 .field-name-field-press-multi-image .field-item.odd {
 	padding-bottom: 8px;
 	float: left;
