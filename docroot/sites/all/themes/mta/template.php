@@ -28,7 +28,11 @@ function mta_preprocess_page(&$vars) {
   		}
   		
   		
-  		  	
+  			if($vars['node']->type == 'press_release'){
+  				$vars['title'] = 'MTA Press Releases';
+  				
+  			}
+ 		  		  	
   		else {
   	if ($vars['node']->type == "home_page") {
     	 $vars['theme_hook_suggestions'][] = 'page__home';
@@ -38,7 +42,7 @@ function mta_preprocess_page(&$vars) {
   
  // adds the colorbox image gallery
  
-   
+  
   $vars['node']= '';
 		if (isset($vars['node']->field_gallery_image)) {
   	foreach ($vars['node']->field_gallery_image[$vars['node']->language] as $key => $val) {
