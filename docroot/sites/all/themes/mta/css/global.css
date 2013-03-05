@@ -634,8 +634,10 @@ h1#page-title-ad  {
 
 /*Press Release Multi Image(not in Views) */
 .field-name-field-press-multi-image {
-	width: 900px;
-	padding: 5px;
+	float: left;
+    margin-left: 5px;
+    padding-right: 10px;
+    
 	}
 	
 .field-name-field-press-multi-image .field-item.odd {

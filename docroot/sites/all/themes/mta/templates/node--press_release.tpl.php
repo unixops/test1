@@ -32,6 +32,9 @@
   
   
   <div id="press-release-body">
+  
+  <div id ="press_multi_image" style="float:left"></div>
+  
   <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
@@ -41,6 +44,7 @@
     ?>
   </div>
   </div>
+  
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
