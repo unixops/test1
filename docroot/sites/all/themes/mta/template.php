@@ -28,10 +28,11 @@ function mta_preprocess_page(&$vars) {
   		}
   		
   		
-  			if($vars['node']->type == 'press_release'){
-  				$vars['title'] = 'MTA Press Releases';
-  				
-  			}
+  		if($vars['node']->type == 'press_release'){
+  			$vars['title'] = '<a href="/press-release">MTA Press Releases</a>';
+  		}
+  		
+  		  		  		
  		  		  	
   		else {
   	if ($vars['node']->type == "home_page") {
@@ -39,6 +40,8 @@ function mta_preprocess_page(&$vars) {
   		} 
   	}  
   }
+  
+ 
   
  // adds the colorbox image gallery
  
