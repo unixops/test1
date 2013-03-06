@@ -29,7 +29,7 @@ function mta_preprocess_page(&$vars) {
   		
   		
   		if($vars['node']->type == 'press_release'){
-  			$vars['title'] = '<a href="/press-release">MTA Press Releases</a>';
+  			$vars['title'] = '<a href="/press-releases">MTA Press Releases</a>';
   		}
   		
   		  		  		
