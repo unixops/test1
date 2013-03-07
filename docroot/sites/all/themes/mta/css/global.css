@@ -634,7 +634,7 @@ h1#page-title-ad  {
 	}
 
 
-/*Press Release Single & Multi Image(not in Views) */
+/*Press Release Single & Multi Image(FIELDS) */
 
 .field-name-field-press-single-image{
 	float: left;
@@ -649,13 +649,14 @@ h1#page-title-ad  {
 	
 
 .field-name-field-press-multi-image .field-item.odd {
-	
+	padding: 10px;
 	
 	}
 	
 
 .field-name-field-press-multi-image .field-item.even {
-	
+	padding: 10px;
+	float:right;
 	
 	}
 
