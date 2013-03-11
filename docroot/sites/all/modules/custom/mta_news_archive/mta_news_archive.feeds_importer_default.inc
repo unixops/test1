@@ -35,6 +35,7 @@ function mta_news_archive_feeds_importer_default() {
           'xpathparser:4' => 'link',
           'xpathparser:5' => 'body',
           'xpathparser:6' => 'postedOn',
+          'xpathparser:7' => '@id',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -44,6 +45,7 @@ function mta_news_archive_feeds_importer_default() {
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
           'xpathparser:6' => 0,
+          'xpathparser:7' => 0,
         ),
         'context' => 'story',
         'exp' => array(
@@ -59,6 +61,7 @@ function mta_news_archive_feeds_importer_default() {
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
             'xpathparser:6' => 0,
+            'xpathparser:7' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -109,6 +112,11 @@ function mta_news_archive_feeds_importer_default() {
           7 => array(
             'source' => 'Blank source 1',
             'target' => 'status',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'xpathparser:7',
+            'target' => 'field_story_id',
             'unique' => FALSE,
           ),
         ),

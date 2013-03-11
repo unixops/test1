@@ -68,6 +68,7 @@ function news_content_type_field_group_info() {
       2 => 'field_tags',
       3 => 'field_mta_image',
       4 => 'field_news_story_style',
+      5 => 'field_article_teaser',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
