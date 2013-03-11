@@ -491,7 +491,7 @@ h1#page-title  {
 	 float:left;
     color: #0055AA;
     font-size: 153.9%;
-    width:750px;
+    width:730px;
 	}
 
 h1#page-title-ad  {
@@ -505,7 +505,7 @@ h1#page-title-ad  {
 
 .region-page-title	{
 	float:right;
-	width:160px;
+	width:180px;
 	 }
 
 .region-footer {
@@ -525,6 +525,13 @@ h1#page-title-ad  {
   -webkit-border-radius: 5px; 
   border-radius: 5px; 
   behavior: url(border-radius.htc); 
+	}
+	
+
+/* RSS Feed Icon - Syndicate Block  */
+
+#block-node-syndicate {
+	margin-top: 3px;
 	}
 
 /* Google Translate Styles */
