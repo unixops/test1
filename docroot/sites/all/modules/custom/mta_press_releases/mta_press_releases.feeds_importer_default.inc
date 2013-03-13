@@ -34,6 +34,7 @@ function mta_press_releases_feeds_importer_default() {
           'xpathparser:3' => 'contact',
           'xpathparser:4' => 'agency',
           'xpathparser:5' => 'date',
+          'xpathparser:6' => 'date',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -42,12 +43,11 @@ function mta_press_releases_feeds_importer_default() {
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
         ),
         'context' => 'release',
         'exp' => array(
           'errors' => 0,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -56,6 +56,7 @@ function mta_press_releases_feeds_importer_default() {
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
           ),
         ),
         'allow_override' => 1,
@@ -96,10 +97,15 @@ function mta_press_releases_feeds_importer_default() {
           ),
           5 => array(
             'source' => 'xpathparser:5',
-            'target' => 'created',
+            'target' => 'field_release_id',
             'unique' => FALSE,
           ),
           6 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
+          7 => array(
             'source' => 'Blank source 1',
             'target' => 'status',
             'unique' => FALSE,

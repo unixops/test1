@@ -148,7 +148,7 @@ function mta_press_releases_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -194,7 +194,7 @@ function mta_press_releases_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 3,
+          'weight' => 6,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -206,7 +206,7 @@ function mta_press_releases_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_mta_agency',
       'label' => 'MTA Agency',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -215,7 +215,7 @@ function mta_press_releases_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '8',
       ),
     ),
   );
@@ -260,20 +260,20 @@ function mta_press_releases_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'press_release',
+            'image_style' => 'press_release_multi',
           ),
           'type' => 'image',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'press_release',
+            'image_style' => 'press_release_multi',
           ),
           'type' => 'image',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -309,13 +309,13 @@ function mta_press_releases_field_default_fields() {
           'manualcrop_instant_preview' => 1,
           'manualcrop_require_cropping' => array(
             'portrait' => 0,
-            'press_release' => 'press_release',
+            'press_release_single' => 'press_release_single',
             'small_rotator' => 0,
             'wide_rotator' => 0,
           ),
           'manualcrop_styles_list' => array(
             'portrait' => 'portrait',
-            'press_release' => 0,
+            'press_release_single' => 'press_release_single',
             'small_rotator' => 'small_rotator',
             'wide_rotator' => 'wide_rotator',
           ),
@@ -325,6 +325,187 @@ function mta_press_releases_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-press_release-field_press_single_image'.
+  $fields['node-press_release-field_press_single_image'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_press_single_image',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'press_release',
+      'deleted' => '0',
+      'description' => 'Upload image for body of press copy',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'press_release_single',
+          ),
+          'type' => 'image',
+          'weight' => '2',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'press_release_single',
+          ),
+          'type' => 'image',
+          'weight' => '2',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_press_single_image',
+      'label' => 'Press Single Image',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'file_directory' => 'press release images',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'image',
+        'settings' => array(
+          'manualcrop_crop_info' => 1,
+          'manualcrop_default_crop_area' => 1,
+          'manualcrop_enable' => 1,
+          'manualcrop_inline_crop' => 0,
+          'manualcrop_instant_crop' => 0,
+          'manualcrop_instant_preview' => 1,
+          'manualcrop_require_cropping' => array(
+            'portrait' => 0,
+            'press_release_multi' => 0,
+            'press_release_single' => 'press_release_single',
+            'small_rotator' => 0,
+            'wide_rotator' => 0,
+          ),
+          'manualcrop_styles_list' => array(
+            'portrait' => 0,
+            'press_release_multi' => 0,
+            'press_release_single' => 'press_release_single',
+            'small_rotator' => 0,
+            'wide_rotator' => 0,
+          ),
+          'manualcrop_styles_mode' => 'include',
+          'manualcrop_thumblist' => 0,
+          'preview_image_style' => 'thumbnail',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'image_image',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-press_release-field_release_id'.
+  $fields['node-press_release-field_release_id'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_release_id',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '24',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'press_release',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_release_id',
+      'label' => 'Release ID',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '24',
+        ),
+        'type' => 'text_textfield',
         'weight' => '6',
       ),
     ),
@@ -366,11 +547,18 @@ function mta_press_releases_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -405,8 +593,11 @@ function mta_press_releases_field_default_fields() {
   t('Contact');
   t('MTA Agency');
   t('Multiple Image Upload');
+  t('Press Single Image');
+  t('Release ID');
   t('Sub-Title');
   t('Upload Multiple Images for Press Releases');
+  t('Upload image for body of press copy');
 
   return $fields;
 }

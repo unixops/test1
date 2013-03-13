@@ -105,16 +105,14 @@ function mta_press_releases_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'mta_press_releases-xpathparser_5-date_parse';
+  $feeds_tamper->id = 'mta_press_releases-xpathparser_6-date_parse';
   $feeds_tamper->importer = 'mta_press_releases';
-  $feeds_tamper->source = 'xpathparser:5';
+  $feeds_tamper->source = 'xpathparser:6';
   $feeds_tamper->plugin_id = 'date_parse';
-  $feeds_tamper->settings = array(
-    'date_format' => '',
-  );
+  $feeds_tamper->settings = '';
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Date Parse';
-  $export['mta_press_releases-xpathparser_5-date_parse'] = $feeds_tamper;
+  $export['mta_press_releases-xpathparser_6-date_parse'] = $feeds_tamper;
 
   return $export;
 }

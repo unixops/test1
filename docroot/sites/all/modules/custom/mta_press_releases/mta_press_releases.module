@@ -5,28 +5,3 @@
  */
 
 include_once 'mta_press_releases.features.inc';
-
-/*
-function mta_press_releases_form_alter(&$form, &$form_state, $form_id){
-  if($form_id == 'press_release_node_form'){
-    //dsm($form);
-    $agency = $form['field_mta_agency']['und'][0]['value']['#default_value'];
-    unset($form['field_mta_agency']);
-    $form['field_mta_agency'] = array(
-        '#type'  => 'select',
-        '#title' => t('MTA Agency'),
-        '#options' => array(
-          NULL  =>  t('select'),
-          'B &amp; T' => t('B & T'),
-          'LIRR' => t('LIRR'),
-          'MNR' => t('MNR'),
-          'MTA HQ' => t('MTA HQ'),
-          'NYCT' => t('NYCT'),
-          'SIR' => t('SIR'),
-        ),
-        '#weight' => 2,
-        '#default_value' => $agency,
-        '#required' => TRUE,
-      );
-  }
-}//*/
