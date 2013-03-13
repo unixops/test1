@@ -505,7 +505,8 @@ h1#page-title-ad  {
 
 .region-page-title	{
 	float:right;
-	width:180px;
+	width:160px;
+	margin-top: -2px;
 	 }
 
 .region-footer {
@@ -528,11 +529,6 @@ h1#page-title-ad  {
 	}
 	
 
-/* RSS Feed Icon - Syndicate Block  */
-
-#block-node-syndicate {
-	margin-top: 3px;
-	}
 
 /* Google Translate Styles */
 
