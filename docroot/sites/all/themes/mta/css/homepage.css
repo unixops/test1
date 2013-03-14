@@ -3,12 +3,7 @@ h2 {
 	margin-bottom: 5px; 
 }
 
-/* Display Trip Planner Plus logo image as H2 */
-.tp-logo, .tp-logo span { width:149px; height:22px; background-image: url('../images/Trip_logo_mta.jpg'); background-repeat: no-repeat; background-position: -3px 0; }
-.tp-logo span { margin-bottom: -18px; }
-h2.tp-logo span { display:block; position:relative; z-index:1; }
-h2.tp-logo { overflow:hidden; }
-/* IE5 Mac Hack \*/ h1 { overflow: hidden; } /*/ h1 { text-indent: -100em; } /* End Hack */
+
 
 a:link {text-decoration: none; color:#0055aa;}
 a:visited {text-decoration: none; color:#0055aa;}
@@ -119,24 +114,6 @@ ul.arrow li {
 #widgetDiv  table{ margin:0; padding:0; width:202px; height:356px; background-color:#fff; }
 #widgetDiv  table tr, #widgetDiv  table td { margin:0; padding:0; }
 
-#mytrip { 
-	margin-top:0;
-	padding:10px;
-	height: 423px;
-	width:208px;
-}
-#block-tripplanner-tripplanner{
-	position:inherit;
-	height: 425px;
-	width: 230px;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-}
-
-#mytrip table { margin-bottom: margin-top:5px; 0px; background-color:#fff; }
-#mytrip td { padding: 3px; }
-#mytrip td.rightAlign { text-align: right; }
-#mytrip label {display:inline; font-weight:normal;}
 
 #news { 
 	margin-top:10px;
