@@ -80,59 +80,64 @@
                             </table>
                         </div>
 
-                        <form id="tpForm" name="tpForm">
-						<label style="font-weight:bold; margin-top: 15px; display:none" id="divP2PHeadline">Subway &amp; Bus Schedules</label>
+                        <form name="tpForm" id="tpForm">
+						<label id="divP2PHeadline" style="font-weight:bold; margin-top: 15px; display:none">Subway &amp; Bus Schedules</label>
                          <div style="margin-bottom: 10px; margin-top: 5px;">
-                            <label id="labelForStartAddress" for="txtOriginInput">From</label>
-                            <input type="text" value="" style="width: 100%; font-size: 11px;" onkeyup="ShowFromOptions(this, 'fromAutoFillList' );" onclick="SmartTripClick('ADDRESSTEXTBOX',this, 'fromAutoFillList');" name="fromAddress" maxlength="2048" id="txtOriginInput">
+                            <label for="txtOriginInput" id="labelForStartAddress">From</label>
+                            <input id="txtOriginInput" maxlength="2048" name="fromAddress" onclick="SmartTripClick('ADDRESSTEXTBOX',this, 'fromAutoFillList');"
+                                onkeyup="ShowFromOptions(this, 'fromAutoFillList' );" style="width: 100%;" type="text"
+                                value="" />
                         </div>
 
-                        <div style="margin-bottom: 10px;" id="divEndAddress">
+                        <div id="divEndAddress" style="margin-bottom: 10px;">
                             <label for="txtDestinationInput">
                                 To</label>
-                            <input type="text" value="" style="width: 100%; font-size: 11px;" onkeyup="ShowFromOptions(this, 'toAutoFillList' );" onclick="SmartTripClick('ADDRESSTEXTBOX',this, 'toAutoFillList' );" name="toAddress" maxlength="2048" id="txtDestinationInput">
+                            <input id="txtDestinationInput" maxlength="2048" name="toAddress" onclick="SmartTripClick('ADDRESSTEXTBOX',this, 'toAutoFillList' );"
+                                onkeyup="ShowFromOptions(this, 'toAutoFillList' );" style="width: 100%;" type="text"
+                                value="" />
                         </div>
                         <div style="margin-bottom: 10px;">
                             <label for="fdate">
                                 Date</label>
-                            <input type="text" style="width: 115px;" size="8" name="date" maxlength="10" id="fdate" class="hasDatepicker">
-                            <img style="margin-left: 6px; display: none;" src="/sites/all/themes/mta/images/calendar-icon.jpg" onclick="document.forms['tpForm'].elements['date'].focus()" alt="calendar">
+                            <input id="fdate" maxlength="10" name="date" size="8" style="width: 115px;" type="text"/>
+                            <img alt="calendar" onclick="document.forms['tpForm'].elements['date'].focus()" src="/sites/all/themes/mta/images/calendar-icon.jpg"
+                                style="margin-left: 6px; display: none;" />
                         </div>
                         <div>
-							<div style="display: block;  height: 35px; margin-bottom: 15px;" id="divTransitMode">
+							<div id="divTransitMode" style="display: block;  height: 35px; margin-bottom: 15px;">
                                 <div style="float: left; width: 38px; height: 35px; margin-left: 3px;">
                                     <label>Using</label>
                                 </div>
                                 <div style="float: left; width: 150px;">
-                                    <input type="checkbox" value="B" name="xmodeB" checked="checked" id="xmodeB">
+                                    <input id="xmodeB" checked="checked" name="xmodeB" type="checkbox" value="B" />
                                     <label for="xmodeB">
                                         Bus</label>
-                                    <input type="checkbox" value="X" name="xmodeX" id="xmodeX">
+                                    <input id="xmodeX" name="xmodeX" type="checkbox" value="X" />
                                     <label for="xmodeX">
                                         Express Bus</label>
                                 </div>
                                 <div style="float: left; width: 150px; margin-top: 3px;">
-                                    <input type="checkbox" value="C" name="xmodeCT" checked="checked" id="xmodeCT">
-                                    <label style="margin-right: 1px;" for="xmodeCT">
+                                    <input id="xmodeCT" checked="checked" name="xmodeCT" type="checkbox" value="C" />
+                                    <label for="xmodeCT" style="margin-right: 1px;">
                                         Rail</label>
-                                    <input type="checkbox" value="R" name="xmodeR" checked="checked" id="xmodeR">
+                                    <input id="xmodeR" checked="checked" name="xmodeR" type="checkbox" value="R" />
                                     <label for="xmodeR">
                                         Subway</label>
                                 </div>
                             </div>
                             <fieldset>
-                                <div style="margin-left: 3px; display: block" id="divLeaveArr">
+                                <div id="divLeaveArr" style="margin-left: 3px; display: block">
                                     <label for="DepId">
                                         Leave at</label>
-                                    <input type="radio" value="D" name="Arrdep" checked="checked" id="DepId">
+                                    <input id="DepId" checked="checked" name="Arrdep" type="radio" value="D" />
                                     <label for="ArrId">
                                         Arrive by</label>
-                                    <input type="radio" value="A" name="Arrdep" id="ArrId">
+                                    <input id="ArrId" name="Arrdep" type="radio" value="A" />
                                 </div>
-                                <label style="display: none;" id="lbltime" for="divTime">
+                                <label for="divTime" id="lbltime" style="display: none;">
                                     Time</label>
-                                <div style="margin-left: 3px; margin-top: 5px;" id="divTime">
-                                    <select name="hour" id="ddlHour">
+                                <div id="divTime" style="margin-left: 3px; margin-top: 5px;">
+                                    <select id="ddlHour" name="hour">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -146,7 +151,7 @@
                                         <option value="11">11</option>
                                         <option value="12">12</option>
                                     </select>
-                                    <select name="minute" id="ddlMinute">
+                                    <select id="ddlMinute" name="minute">
                                         <option>00</option>
                                         <option>01</option>
                                         <option>02</option>
@@ -208,50 +213,52 @@
                                         <option>58</option>
                                         <option>59</option>
                                     </select>
-                                    <select name="ampm" id="ddlampm">
+                                    <select id="ddlampm" name="ampm">
                                         <option value="am">a.m.</option>
                                         <option value="pm">p.m.</option>
                                     </select>
                                 </div>
                             </fieldset>
 
-                           <div style="display: none; margin-top: 15px; " id="divWalkDist">
+                           <div id="divWalkDist" style="display: none; margin-top: 15px; ">
                                 <label>
                                     Walking distance</label>
-                                <select id="ddlWalkdistance" name="Walkdist">
+                                <select name="Walkdist" id="ddlWalkdistance">
                                     <option value="0.25">1/4 mile</option>
-                                    <option selected="selected" value="0.50">1/2 mile</option>
+                                    <option value="0.50" selected="selected">1/2 mile</option>
                                     <option value="0.75">3/4 mile</option>
-                                    <option value="1.00">1 mile</option>
+                                    <option value="1.00" >1 mile</option>
                                 </select>
                             </div>
 
                             <div style="margin-top:8px;margin-left:0px;">
                                 <label for="accessibleChkbox">
                                     Accessible Trip?</label>
-                                <input type="checkbox" value="Y" title="Do you want your trip to be wheelchair accessible?" name="Atr" id="accessibleChkbox">
+                                <input id="accessibleChkbox" name="Atr" title="Do you want your trip to be wheelchair accessible?"
+                                    type="checkbox" value="Y" />
                             </div>
                             <div style="margin-top: 10px;">
-                                <input type="button" value="submit" onclick="SmartTripClick('SUBMIT','' , '')" id="submitButton">
-                                <span style="display: none; white-space: nowrap; color: red; font-size: 11px; font-weight: bold;" id="waitMsg">Please Wait...</span>
+                                <input id="submitButton"  onclick="SmartTripClick('SUBMIT','' , '')" type="button" value="submit" />
+                                <span id="waitMsg" style="display: none; white-space: nowrap; color: red; font-size: 11px; font-weight: bold;">Please Wait...</span>
                             </div>
                         </div>
-                        <div style="visibility: hidden; position: absolute; top: 221px;
-                            left: 735px; width: 200px; background-color: blue; overflow: visible;" id="fromAutoFillList">
+                        <div id="fromAutoFillList" style="visibility: hidden; position: absolute; top: 221px;
+                            left: 735px; width: 200px; background-color: blue; overflow: visible;">
                         </div>
-                        <div style="visibility: hidden; position: absolute; top: 268px;
-                            left: 735px; width: 200px; height: 20px; background-color: #fff; overflow: visible;" id="toAutoFillList">
+                        <div id="toAutoFillList" style="visibility: hidden; position: absolute; top: 268px;
+                            left: 735px; width: 200px; height: 20px; background-color: #fff; overflow: visible;">
                         </div>
-                        <div style="display: none; padding: 10px; border: solid black 2px; text-align: center;
+                        <div id="tpAlert" style="display: none; padding: 10px; border: solid black 2px; text-align: center;
                             position: absolute; top: 200px; left: 750px; width: 170px; background-color: silver;
-                            font-size: 12px; font-weight: bold;" id="tpAlert">
+                            font-size: 12px; font-weight: bold;">
                         </div>
-                        <div style="width: 200px; height: 200px; display: none;" id="map1">
+                        <div id="map1" style="width: 200px; height: 200px; display: none;">
                         </div>
-                        <div style="width: 200px; height: 200px; display: none;" id="map2">
+                        <div id="map2" style="width: 200px; height: 200px; display: none;">
                         </div>
-                        <input type="hidden" value="tripplanner" name="currentmodule" id="currentmodule">
+                        <input type="hidden" id="currentmodule" name="currentmodule" value="tripplanner" />
                          </form>
+
                             <p style="margin: 10px 0 0 6px;">
                                 <span id="SpanAdv" class="list_h" style="display: inline"><a style="color: #555; cursor:pointer;"  onclick="SmartTripClick('ADVANCEOPTION','' ,'' )">
                                     Advanced</a></span> <span class="list_h"><a style="color: #555;" href="http://tripplanner.mta.info/MyTrip/common/help.aspx">
