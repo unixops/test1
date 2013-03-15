@@ -3,7 +3,7 @@
 
 <div id ="mytrip" class="roundCorners">
 <!--My Trip start 1-->
-<h2 class="tp-logo"><span></span>Trip Planner+</h2>
+<h2 class="tp-logo"><span></span><!--Trip Planner+ --></h2>
     <style type="text/css">
 	.listing
 	{
