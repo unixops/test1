@@ -47,8 +47,8 @@ class ServiceStatusDataHandler {
                     $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
                     
                     // Check if the data is more than 2 minutes old
-                    if ((REQUEST_TIME-$this->arrStatusData[1]) > 120)
-                        notifyByEmail(WARNING, "Service Status obtained from mta.info is more than 2 minutes old.");
+                    // if ((REQUEST_TIME-$this->arrStatusData[1]) > 120)
+                    //     notifyByEmail(WARNING, "Service Status obtained from mta.info is more than 2 minutes old.");
 
                     // dsm ($this->arrStatusData[1]);
                     // dsm ("Request time is: " . REQUEST_TIME);
@@ -69,7 +69,7 @@ class ServiceStatusDataHandler {
                 else 
                 {
                     // Service Status data received is corrupt or can't be parsed. Use long term cache.
-                    notifyByEmail(ERROR, "Error occurred while trying to parse Service Status data received from the server - using long term cache..");
+                    // notifyByEmail(ERROR, "Error occurred while trying to parse Service Status data received from the server - using long term cache..");
                     $cache = cache_get("ss_longCache");
                     if ($cache && $cache->expire > REQUEST_TIME)
                         $this->arrStatusData = $cache->data;
@@ -80,7 +80,7 @@ class ServiceStatusDataHandler {
             // Handle case when Mta.info is not available
             $cache = cache_get("ss_longCache");
             if ($cache && $cache->expire > REQUEST_TIME) {
-                notifyByEmail(ERROR, "The Mta.info is not responding to requests for Service Status - using long term cache.");
+                // notifyByEmail(ERROR, "The Mta.info is not responding to requests for Service Status - using long term cache.");
                 $this->arrStatusData = $cache->data;
             } else 
                 $this->msgERROR = "Service Status is not available."; 
