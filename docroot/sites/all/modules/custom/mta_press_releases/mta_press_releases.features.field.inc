@@ -284,7 +284,7 @@ function mta_press_releases_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_press_multi_image',
-      'label' => 'Multiple Image Upload',
+      'label' => 'Additional Horizontal Images',
       'required' => 0,
       'settings' => array(
         'alt_field' => 1,
@@ -394,7 +394,7 @@ function mta_press_releases_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_press_single_image',
-      'label' => 'Press Single Image',
+      'label' => 'Single Vertical Image',
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
