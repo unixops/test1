@@ -79,7 +79,7 @@ function news_system_fe_nodequeue_export_fields() {
   $nodequeues['mnr_news_article'] = array(
     'qid' => '11',
     'name' => 'mnr_news_article',
-    'title' => 'MNR News Article',
+    'title' => 'MNR News Rotator',
     'subqueue_title' => '',
     'size' => '6',
     'link' => 'Add to MNR queue',
