@@ -12,13 +12,14 @@ function news_system_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
+        'skin' => 'kama',
         'ckeditor_path' => '%l/ckeditor',
         'ckeditor_local_path' => '',
         'ckeditor_plugins_path' => '%m/plugins',
         'ckeditor_plugins_local_path' => '',
         'ckfinder_path' => '%m/ckfinder',
         'ckfinder_local_path' => '',
-        'ckeditor_aggregate' => 't',
+        'ckeditor_aggregate' => 'f',
         'toolbar_wizard' => 't',
         'loadPlugins' => array(),
       ),
@@ -30,7 +31,6 @@ function news_system_ckeditor_profile_defaults() {
         'ss' => '2',
         'default' => 't',
         'show_toggle' => 't',
-        'skin' => 'kama',
         'uicolor' => 'default',
         'uicolor_user' => 'default',
         'toolbar' => '[

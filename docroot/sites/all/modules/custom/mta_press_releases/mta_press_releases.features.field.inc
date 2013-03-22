@@ -50,7 +50,7 @@ function mta_press_releases_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -125,7 +125,7 @@ function mta_press_releases_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '6',
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
