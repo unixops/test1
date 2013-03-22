@@ -50,7 +50,7 @@ function mta_press_releases_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -79,76 +79,7 @@ function mta_press_releases_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-press_release-field_contact'.
-  $fields['node-press_release-field_contact'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_contact',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'press_release',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_contact',
-      'label' => 'Contact',
-      'required' => 0,
-      'settings' => array(
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '5',
       ),
     ),
   );
@@ -190,11 +121,11 @@ function mta_press_releases_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -206,7 +137,7 @@ function mta_press_releases_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_mta_agency',
       'label' => 'MTA Agency',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
@@ -215,7 +146,7 @@ function mta_press_releases_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '2',
       ),
     ),
   );
@@ -253,7 +184,7 @@ function mta_press_releases_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'press_release',
       'deleted' => '0',
-      'description' => 'Upload Multiple Images for Press Releases',
+      'description' => 'Upload Multiple Images for horizontal display under body',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -309,12 +240,14 @@ function mta_press_releases_field_default_fields() {
           'manualcrop_instant_preview' => 1,
           'manualcrop_require_cropping' => array(
             'portrait' => 0,
+            'press_release_multi' => 0,
             'press_release_single' => 'press_release_single',
             'small_rotator' => 0,
             'wide_rotator' => 0,
           ),
           'manualcrop_styles_list' => array(
             'portrait' => 'portrait',
+            'press_release_multi' => 0,
             'press_release_single' => 'press_release_single',
             'small_rotator' => 'small_rotator',
             'wide_rotator' => 'wide_rotator',
@@ -325,7 +258,7 @@ function mta_press_releases_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -363,7 +296,7 @@ function mta_press_releases_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'press_release',
       'deleted' => '0',
-      'description' => 'Upload image for body of press copy',
+      'description' => 'Upload image for body of Press Release',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -397,14 +330,14 @@ function mta_press_releases_field_default_fields() {
       'label' => 'Single Vertical Image',
       'required' => 0,
       'settings' => array(
-        'alt_field' => 0,
+        'alt_field' => 1,
         'default_image' => 0,
         'file_directory' => 'press release images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
-        'title_field' => 0,
+        'title_field' => 1,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -475,14 +408,13 @@ function mta_press_releases_field_default_fields() {
       'bundle' => 'press_release',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Ignore this field',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'text',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 5,
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -506,7 +438,7 @@ function mta_press_releases_field_default_fields() {
           'size' => '24',
         ),
         'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -589,15 +521,15 @@ function mta_press_releases_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Additional Horizontal Images');
   t('Body');
-  t('Contact');
+  t('Ignore this field');
   t('MTA Agency');
-  t('Multiple Image Upload');
-  t('Press Single Image');
   t('Release ID');
+  t('Single Vertical Image');
   t('Sub-Title');
-  t('Upload Multiple Images for Press Releases');
-  t('Upload image for body of press copy');
+  t('Upload Multiple Images for horizontal display under body');
+  t('Upload image for body of Press Release');
 
   return $fields;
 }
