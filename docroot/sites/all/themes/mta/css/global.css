@@ -650,13 +650,13 @@ h1#page-title-ad  {
 .field-name-field-press-multi-image {
 	width:100%;
 	background-color: #DEE7EB;
+	margin-top:20px;
 	
    	}
 	
 
 .field-name-field-press-multi-image .field-item.odd {
 	padding: 10px;
-	margin-top:5px;
 	width:430px;
 	}
 	
@@ -664,7 +664,6 @@ h1#page-title-ad  {
 .field-name-field-press-multi-image .field-item.even {
 	padding: 10px;
 	float:right;
-	margin-top:3px;
 	width:430px;
 	}
 
