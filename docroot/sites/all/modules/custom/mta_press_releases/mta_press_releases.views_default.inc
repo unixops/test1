@@ -245,6 +245,69 @@ function mta_press_releases_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = '%view-%timestamp-mmm-%timestamp-yyyy.xml';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: MTA Agency */
+  $handler->display->display_options['fields']['field_mta_agency']['id'] = 'field_mta_agency';
+  $handler->display->display_options['fields']['field_mta_agency']['table'] = 'field_data_field_mta_agency';
+  $handler->display->display_options['fields']['field_mta_agency']['field'] = 'field_mta_agency';
+  $handler->display->display_options['fields']['field_mta_agency']['label'] = 'agency';
+  $handler->display->display_options['fields']['field_mta_agency']['element_label_colon'] = FALSE;
+  /* Field: Content: Post date */
+  $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
+  $handler->display->display_options['fields']['created_1']['table'] = 'node';
+  $handler->display->display_options['fields']['created_1']['field'] = 'created';
+  $handler->display->display_options['fields']['created_1']['label'] = 'date';
+  $handler->display->display_options['fields']['created_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['created_1']['alter']['text'] = '[created_1]-[field_mta_agency]1';
+  $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created_1']['date_format'] = 'short_xml';
+  /* Field: Content: Story ID */
+  $handler->display->display_options['fields']['field_story_id']['id'] = 'field_story_id';
+  $handler->display->display_options['fields']['field_story_id']['table'] = 'field_data_field_story_id';
+  $handler->display->display_options['fields']['field_story_id']['field'] = 'field_story_id';
+  $handler->display->display_options['fields']['field_story_id']['label'] = 'number';
+  $handler->display->display_options['fields']['field_story_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_story_id']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Sub-Title */
+  $handler->display->display_options['fields']['field_sub_title']['id'] = 'field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['table'] = 'field_data_field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['field'] = 'field_sub_title';
+  $handler->display->display_options['fields']['field_sub_title']['label'] = 'subtitle';
+  $handler->display->display_options['fields']['field_sub_title']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = 'body';
+  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<p><strong>';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['path'] = 'press_releases_xml';
+  $handler->display->display_options['use_batch'] = 'batch';
   $export['press_release'] = $view;
 
   return $export;
