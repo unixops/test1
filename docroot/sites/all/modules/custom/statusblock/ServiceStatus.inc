@@ -189,7 +189,7 @@ class ServiceStatusDataHandler {
 			
 			case 'SANDY REROUTE':
                 $statusOut[0] = "Sandy Reroute";
-                $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Sandy Reroute</a>';
+                $statusOut[1] = '<a style="color: #5d0dff" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Sandy Reroute</a>';
                 break;
 
             case 'SANDY REROUTE':
