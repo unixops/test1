@@ -168,7 +168,7 @@ function news_system_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'manualcrop';
   $strongarm->value = array(
-    'cache_control' => 1,
+    'cache_control' => 0,
   );
   $export['manualcrop'] = $strongarm;
 
@@ -176,7 +176,7 @@ function news_system_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'manualcrop_cache_control';
-  $strongarm->value = TRUE;
+  $strongarm->value = FALSE;
   $export['manualcrop_cache_control'] = $strongarm;
 
   $strongarm = new stdClass();

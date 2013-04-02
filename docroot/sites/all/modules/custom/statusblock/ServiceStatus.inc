@@ -186,6 +186,11 @@ class ServiceStatusDataHandler {
                 $statusOut[0] = "Delays";
                 $statusOut[1] = '<a style="color: #990033" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Delays</a>';
                 break;
+			
+			case 'SANDY REROUTE':
+                $statusOut[0] = "Sandy Reroute";
+                $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Sandy Reroute</a>';
+                break;
 
             case 'SANDY REROUTE':
                 $statusOut[0] = "Sandy Reroute";

@@ -29,7 +29,6 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: b_t_news_rotator
   $nodequeues['b_t_news_rotator'] = array(
-    'qid' => '1',
     'name' => 'b_t_news_rotator',
     'title' => 'B & T News Rotator',
     'subqueue_title' => '',
@@ -43,7 +42,6 @@ function news_system_fe_nodequeue_export_fields() {
     'reference' => '0',
     'reverse' => '0',
     'i18n' => '0',
-    'subqueues' => '1',
     'types' => array(
       0 => 'news_article',
     ),
@@ -53,7 +51,6 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: lirr_news_rotator
   $nodequeues['lirr_news_rotator'] = array(
-    'qid' => '6',
     'name' => 'lirr_news_rotator',
     'title' => 'LIRR News Rotator',
     'subqueue_title' => '',
@@ -67,7 +64,6 @@ function news_system_fe_nodequeue_export_fields() {
     'reference' => '0',
     'reverse' => '0',
     'i18n' => '0',
-    'subqueues' => '1',
     'types' => array(
       0 => 'news_article',
     ),
@@ -77,7 +73,6 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: mnr_news_article
   $nodequeues['mnr_news_article'] = array(
-    'qid' => '11',
     'name' => 'mnr_news_article',
     'title' => 'MNR News Article',
     'subqueue_title' => '',
@@ -91,7 +86,6 @@ function news_system_fe_nodequeue_export_fields() {
     'reference' => '0',
     'reverse' => '0',
     'i18n' => '0',
-    'subqueues' => '1',
     'types' => array(
       0 => 'news_article',
     ),
@@ -101,7 +95,6 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: news_rotator
   $nodequeues['news_rotator'] = array(
-    'qid' => '16',
     'name' => 'news_rotator',
     'title' => 'MTA News Rotator',
     'subqueue_title' => '',
@@ -115,7 +108,6 @@ function news_system_fe_nodequeue_export_fields() {
     'reference' => '0',
     'reverse' => '0',
     'i18n' => '0',
-    'subqueues' => '1',
     'types' => array(
       0 => 'news_article',
     ),
@@ -125,7 +117,6 @@ function news_system_fe_nodequeue_export_fields() {
 
   // Exported nodequeues: nyct_news_rotator
   $nodequeues['nyct_news_rotator'] = array(
-    'qid' => '21',
     'name' => 'nyct_news_rotator',
     'title' => 'NYCT News Rotator',
     'subqueue_title' => '',
@@ -139,7 +130,6 @@ function news_system_fe_nodequeue_export_fields() {
     'reference' => '0',
     'reverse' => '0',
     'i18n' => '0',
-    'subqueues' => '1',
     'types' => array(
       0 => 'news_article',
     ),

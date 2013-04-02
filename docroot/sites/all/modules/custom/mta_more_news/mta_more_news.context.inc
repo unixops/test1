@@ -32,28 +32,16 @@ function mta_more_news_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'boxes-more_news_links' => array(
-          'module' => 'boxes',
-          'delta' => 'more_news_links',
+        'block-136' => array(
+          'module' => 'block',
+          'delta' => '136',
           'region' => 'sidebar_first',
-          'weight' => '-41',
-        ),
-        'boxes-more_news_video' => array(
-          'module' => 'boxes',
-          'delta' => 'more_news_video',
-          'region' => 'sidebar_first',
-          'weight' => '-40',
-        ),
-        'boxes-footer' => array(
-          'module' => 'boxes',
-          'delta' => 'footer',
-          'region' => 'footer',
           'weight' => '-10',
         ),
-        'boxes-copyright' => array(
-          'module' => 'boxes',
-          'delta' => 'copyright',
-          'region' => 'footer',
+        'block-141' => array(
+          'module' => 'block',
+          'delta' => '141',
+          'region' => 'sidebar_first',
           'weight' => '-9',
         ),
       ),

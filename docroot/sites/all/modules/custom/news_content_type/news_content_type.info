@@ -1,9 +1,9 @@
 name = News content type
 description = Creates the News system content type
 core = 7.x
-package = Features
+package = Our MTA modules
 php = 5.2.4
-version = 7.x-0.8-beta
+version = 7.x-0.8
 project = news_content_type
 dependencies[] = conditional_fields
 dependencies[] = ctools
