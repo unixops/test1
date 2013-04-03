@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the MTA More News feature.
- */
-
-include_once 'mta_more_news.features.inc';
