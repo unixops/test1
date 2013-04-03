@@ -6,59 +6,113 @@ define('MNR', 6);
 define('BUS', 3);
 define('BNT', 4);
 
+
 class ServiceStatusDataHandler {
     
     private $arrXMLObject;
     private $arrStatusData;
     private $msgERROR = NULL;
     
-    function __construct() {
+    function __construct() 
+    {
+        /*
+        1.  Check the short term cache. If still valid use its data.
+        2.  If short term cache not valid then fetch from mta.info
+        3.  If can NOT fetch from mta.info, send ERROR email, use long term cache if still valid
+        4.  If can fetch from mta.info but the data is older than 2 minutes, send WARNING email
+        5.  If can fetch from mta.info but the data is corrupt or can't be parsed, send WARNING email 
+        6.  If can NOT fetch from server and long term cache is invalid send ERROR email but use long term cache
+        */
         $cache = cache_get("ss_shortCache");
-	    	if ($cache && $cache->expire > REQUEST_TIME)
-	            $this->arrStatusData = $cache->data;
-	    	else {
-	            // Fetch fresh Service Status Data.
-	            	
-	            
-	            //$this->arrXMLObject = $this->xml_to_object(file_get_contents("http://mta.info/status/serviceStatus.txt"));
+        // if ($cache && $cache->expire > REQUEST_TIME && false)
 
-	            // first check if file exsist on server
-	    		if (isDomainAvailible("http://advisory.mtanyct.info/ServiceWS/service.aspx")){
-	            	$this->arrXMLObject = $this->xml_to_object(file_get_contents("http://advisory.mtanyct.info/ServiceWS/service.aspx"));
-	            }
-		            if($this->arrXMLObject) {
-		                $dt = explode(" ", $this->arrXMLObject->children[1]->content);
-		
-		               // dsm ($dt[2]);
-		                $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
-		                $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
-		                
-		                $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
-		                $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
-		                $this->arrStatusData[MNR]       = $this->extractData(MNR);
-		                $this->arrStatusData[BUS]       = $this->extractData(BUS);
-		                $this->arrStatusData[BNT]       = $this->extractData(BNT);                
-		
-		                $this->msgERROR = NULL;
-		
-		                cache_set("ss_shortCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time', 120));
-		                cache_set("ss_longCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time_backup', 900));
-		                cache_clear_all();
-		        
-	            } else {
-	                $cache = cache_get("ss_longCache");
-	                if ($cache && $cache->expire > REQUEST_TIME) {
-	                    //dsm ("getting from long term");
-	                    $this->arrStatusData = $cache->data;
-	                } else {
-	                    /* We have exhausted both caches and still have an issue with 
-	                    * retrieving fresh Service Status information.
-	                    */
-	                    $this->msgERROR = "Service Status is not available.";
-	                }
-	            }
-	    	}
-	    }
+        // Use short term cache if still valid (less than 2 minutes old)
+        if ($cache && $cache->expire > REQUEST_TIME)
+            $this->arrStatusData = $cache->data;
+        else 
+        {
+            // Short term cache is invalid -- pulling status from mta.into
+            $ssFeed = "http://mta.info/status/serviceStatus.txt";
+            
+            // Check to see if the file exsist on server
+            if ($this->isDomainAvailible($ssFeed)) 
+            {
+                $this->arrXMLObject = $this->xml_to_object(file_get_contents($ssFeed));
+
+                if($this->arrXMLObject) 
+                {
+                    $dt = explode(" ", $this->arrXMLObject->children[1]->content);
+
+                    $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
+                    $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
+                    
+                    // Check if the data is more than 2 minutes old
+                    // if ((REQUEST_TIME-$this->arrStatusData[1]) > 120)
+                    //     notifyByEmail(WARNING, "Service Status obtained from mta.info is more than 2 minutes old.");
+
+                    // dsm ($this->arrStatusData[1]);
+                    // dsm ("Request time is: " . REQUEST_TIME);
+                    // dsm ("Diff is: " . (REQUEST_TIME-$this->arrStatusData[1]));
+
+                    $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
+                    $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
+                    $this->arrStatusData[MNR]       = $this->extractData(MNR);
+                    $this->arrStatusData[BUS]       = $this->extractData(BUS);
+                    $this->arrStatusData[BNT]       = $this->extractData(BNT);                
+    
+                    $this->msgERROR = NULL;
+    
+                    cache_set("ss_shortCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time', 120));
+                    cache_set("ss_longCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time_backup', 900));
+                    cache_clear_all();
+                }
+                else 
+                {
+                    // Service Status data received is corrupt or can't be parsed. Use long term cache.
+                    // notifyByEmail(ERROR, "Error occurred while trying to parse Service Status data received from the server - using long term cache..");
+                    $cache = cache_get("ss_longCache");
+                    if ($cache && $cache->expire > REQUEST_TIME)
+                        $this->arrStatusData = $cache->data;
+                    else 
+                        $this->msgERROR = "Service Status is not available.";
+                }
+            }
+            // Handle case when Mta.info is not available
+            $cache = cache_get("ss_longCache");
+            if ($cache && $cache->expire > REQUEST_TIME) {
+                // notifyByEmail(ERROR, "The Mta.info is not responding to requests for Service Status - using long term cache.");
+                $this->arrStatusData = $cache->data;
+            } else 
+                $this->msgERROR = "Service Status is not available."; 
+        }
+    }
+
+    function isDomainAvailible($domain)
+    {
+        //check, if a valid url is provided
+        if(!filter_var($domain, FILTER_VALIDATE_URL))
+            return false;
+
+        //initialize curl
+        $curlInit = curl_init($domain);
+        curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
+        curl_setopt($curlInit,CURLOPT_HEADER,true);
+        curl_setopt($curlInit,CURLOPT_NOBODY,true);
+        curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
+
+        //get answer
+        $response = curl_exec($curlInit);
+
+        curl_close($curlInit);
+
+        if ($response) 
+            return true;
+
+        $this->msgERROR = "Site is not available : returned with code: " . $response;
+
+        return false;
+    }
+
     function getStatusTimeStamp() {
         return $this->arrStatusData[0];
     }
@@ -134,6 +188,11 @@ class ServiceStatusDataHandler {
                 break;
 			
 			case 'SANDY REROUTE':
+                $statusOut[0] = "Sandy Reroute";
+                $statusOut[1] = '<a style="color: #5d0dff" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Sandy Reroute</a>';
+                break;
+
+            case 'SANDY REROUTE':
                 $statusOut[0] = "Sandy Reroute";
                 $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Sandy Reroute</a>';
                 break;
@@ -259,33 +318,23 @@ class ServiceStatusDataHandler {
     }
 }
 
+function notifyByEmail($t, $msg)
+{
+    $to = "kamalsh@gmail.com";
+    $subject = "Service Status Data Problem!";
+    $body = $msg;
+    
+    // if (mail($to, $subject, $body, "From: ksheikh@mtahq.org")) {
+    //     echo("<p>Message successfully sent!</p>");
+    // } else {
+    //     echo("<p>Message delivery failed...</p>");
+    // }
+    mail($to, $subject, $body, "From: ksheikh@mtahq.org");
+}
+
 class XmlElement {
     var $name;
     var $content;
     var $children;
 }
-function isDomainAvailible($domain)
-       {
-               //check, if a valid url is provided
-               if(!filter_var($domain, FILTER_VALIDATE_URL))
-               {
-                       return false;
-               }
-
-               //initialize curl
-               $curlInit = curl_init($domain);
-               curl_setopt($curlInit,CURLOPT_CONNECTTIMEOUT,10);
-               curl_setopt($curlInit,CURLOPT_HEADER,true);
-               curl_setopt($curlInit,CURLOPT_NOBODY,true);
-               curl_setopt($curlInit,CURLOPT_RETURNTRANSFER,true);
-
-               //get answer
-               $response = curl_exec($curlInit);
-
-               curl_close($curlInit);
-
-               if ($response) return true;
-
-               return false;
-       }
 ?>
