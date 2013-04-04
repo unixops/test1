@@ -50,8 +50,8 @@ class ServiceStatusDataHandler {
                     // the user will not hit the new status every 2 minutes because this data would not have expired in Varnish or CDN.  Once
                     // this data expires there, only then a fresh Service Status data will be obtained from the server and in that case it will
                     // most likey be older than 2 minutes. 
-                    if ((REQUEST_TIME-$this->arrStatusData[1]) > 240)
-                        notifyByEmail("Service Status obtained from mta.info is more than 4 minutes old.");
+                    // if ((REQUEST_TIME-$this->arrStatusData[1]) > 240)
+                    //     notifyByEmail("Service Status obtained from mta.info is more than 4 minutes old.");
 
                     // dsm ($this->arrStatusData[1]);
                     // dsm ("Request time is: " . REQUEST_TIME);
@@ -72,7 +72,7 @@ class ServiceStatusDataHandler {
                 else 
                 {
                     // Service Status data received is corrupt or can't be parsed. Use long term cache.
-                    notifyByEmail("Error occurred while trying to parse Service Status data - using long term cache.");
+                    // notifyByEmail("Error occurred while trying to parse Service Status data - using long term cache.");
                     $cache = cache_get("ss_longCache");
                     if ($cache && $cache->expire > REQUEST_TIME)
                         $this->arrStatusData = $cache->data;
@@ -83,7 +83,7 @@ class ServiceStatusDataHandler {
             // Handle case when Mta.info is not available
             $cache = cache_get("ss_longCache");
             if ($cache && $cache->expire > REQUEST_TIME) {
-                notifyByEmail("The Mta.info is not responding to requests for Service Status - using long term cache.");
+                // notifyByEmail("The Mta.info is not responding to requests for Service Status - using long term cache.");
                 $this->arrStatusData = $cache->data;
             } else 
                 $this->msgERROR = "Service Status is not available."; 
