@@ -536,7 +536,7 @@ h1#page-title-ad  {
 #google_translate_element {
 	margin-top:1px;
 	margin-left:1px;
-	float:right;
+	float:none;
 	}
 
 .goog-te-gadget-simple {
