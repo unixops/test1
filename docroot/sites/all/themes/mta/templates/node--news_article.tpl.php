@@ -74,7 +74,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 <?php endif;?>
 
 <?php if ($node->field_news_story_style['und'][0]['value']):?>
-
+<?php if ($node->field_news_story_style['und'][0]['value'] == 0):?>
 	<div class = "news-rot-image-more single-image">
 <?php if ($node->field_news_rotator_style['und'][0]['value']==0){
 			print theme('image_style', array('style_name' => 'medium', 'path' => $node->field_wide_image['und'][0]['uri']));
@@ -115,6 +115,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 	  	print '<div style="width:220px; margin-top:0;">'.$node->field_image['und'][0]['title'].'</div>';
 	  }
 	  ?>
+	<?php endif;?>
 	</div>
 	<?php
 		print '<div class="more-pictures-multi">';
