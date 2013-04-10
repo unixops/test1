@@ -221,7 +221,7 @@ class ServiceStatusDataHandler {
 
             case 'PLANNED WORK':
                 $statusOut[0] = "rail_PlannedWork";
-                $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/' . $service.'/'.$index.'">Planned Detour</a>';
+                $statusOut[1] = '<a style="color: #996600" href="' . $base_url . '/gss/' . $service.'/'.$index.'">Planned Work</a>';
                 break;
             
             case 'SERVICE CHANGE':
