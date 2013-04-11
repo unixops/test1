@@ -1,3 +1,7 @@
+<!--[if lt IE 9]>
+			<style>.roundCorners, #block-google-appliance-ga-related-searches {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(<?php print base_path();?>sites/all/themes/mta/border-radius.htc);}</style>
+		<![endif]-->
+
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php if ($teaser) print render($content['field_image']); ?>
 
@@ -5,6 +9,15 @@
   ?>
   <?php if (!$page): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    
+    <div id="pageTitleAreaAd">
+		<?php print render($title_prefix); ?>
+		<?php if ($title): ?><h1 class="title" id="page-title-ad"><?php print $title; ?></h1><?php endif; ?>
+		<?php print render($title_suffix); ?>
+		<?php print render($page['page_title']);?>
+
+							</div>
+    
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -73,7 +86,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 
 <?php endif;?>
 
-<?php if ($node->field_news_story_style['und'][0]['value']):?>
+<?php if ($node->field_news_story_style['und'][0]['value']==0):?>
 
 	<div class = "news-rot-image-more single-image">
 <?php if ($node->field_news_rotator_style['und'][0]['value']==0){
