@@ -68,6 +68,22 @@
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }
+    
+/* MTA News Rotator Views Block 4/10/13 */
+#block-views-news-rotator-block-1,
+#block-views-news-rotator-block-2,
+#block-views-news-rotator-block-3,
+#block-views-news-rotator-block-4,
+#block-views-news-rotator-block-5,
+.view-news-rotator-preview {
+	padding: 10px;
+	margin-top:10px;
+	width: 438px;
+	height: 258px;
+	overflow:hidden;
+	border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+    }
 
 /* SIR Static Image **/
 #block-views-news-rotator-block-7 {
