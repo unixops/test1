@@ -81,3 +81,15 @@
 	text-align: justify;
 	
 }
+
+
+/*NEWS STORY IMAGES */
+.field-name-field-rotator-vertical-image {
+	float:left;
+	padding: 8px;
+	}
+
+.field-name-field-rotator-horizontal-image {
+	float:left;
+	padding: 8px;
+	}
