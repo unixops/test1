@@ -27,6 +27,10 @@ function mta_preprocess_page(&$vars) {
   			$vars['theme_hook_suggestions'][] = 'page__weekender';
   		}
   		
+  		if ($vars['node']->type == "page_with_ad" || $vars['node']->type == "news_story")  {
+  			$vars['theme_hook_suggestions'][] = 'page__ad';
+  		}
+  		
   		
   		if($vars['node']->type == 'press_release'){
   			$vars['title'] = '<a href="/press-releases">MTA Press Releases</a>';
