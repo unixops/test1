@@ -93,3 +93,37 @@
 	float:left;
 	padding: 8px;
 	}
+	
+
+/*Rotator Caption
+.news-rotator-caption {
+    background-image: url("../images/text_bg.png");
+    color: white;
+    font-size: 14px;
+    margin-left: 250px;
+    margin-right: 10px;
+    padding: 1px 0 1px 2px;	
+	
+}
+
+*/
+
+.field-name-field-news-body-vertical-image .field-item.odd {
+	float:left;
+	margin:10px;
+}
+
+.field-name-field-news-body-vertical-image .field-item.even {
+	float:right;
+	margin:10px;
+}
+
+.field-name-field-news-body-horizontal-image .field-item.odd {
+	float:left;
+	
+}
+
+.field-name-field-news-body-horizontal-image .field-item.even {
+	float:right;
+	
+}

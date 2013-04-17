@@ -84,6 +84,15 @@
 	border: 1px solid #B4B4B4;
     border-radius: 5px 5px 5px 5px;
     }
+    
+/* News Story Content Type News Rotator - Updated 4/16/13*/
+
+.rotator_vertical_image {
+	background: none repeat scroll 0 0 #555555;
+    text-align: center;
+    width: 438px;
+}
+    
 
 /* SIR Static Image **/
 #block-views-news-rotator-block-7 {
