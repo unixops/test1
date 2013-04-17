@@ -303,8 +303,8 @@ ini_set('session.gc_maxlifetime', 200000);
  */
 ini_set('session.cookie_lifetime', 2000000);
 
-ini_set('display_errors', Off);
-ini_set('display_startup_errors', Off);
+ini_set('display_errors', 0);
+ini_set('display_startup_errors', 0);
 
 /**
  * If you encounter a situation where users post a large amount of text, and
