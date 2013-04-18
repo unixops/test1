@@ -73,7 +73,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 
 <?php endif;?>
 
-<?php if (exists($node->field_news_story_style)):?>
+<?php if (isset($node->field_news_story_style)):?>
 <?php if ($node->field_news_story_style['und'][0]['value'] == 0):?>
 	<div class = "news-rot-image-more single-image">
 <?php if ($node->field_news_rotator_style['und'][0]['value']==0){
