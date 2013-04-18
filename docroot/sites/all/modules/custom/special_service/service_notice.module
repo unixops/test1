@@ -46,10 +46,10 @@ function service_notice_block_info() {
  				$path = drupal_get_path('module', 'service_notice');
  				drupal_add_css($path."/service_notice.css");
  				$content=service_notice_file_get_contents('http://www.mta.info/supplemental/lirr/extra.php');
- 				$block['content'] = "EXTRA<br />";
+ 				//$block['content'] = "EXTRA<br />";
  				if(!$content) {
  					$content=service_notice_file_get_contents('http://www.mta.info/supplemental/lirr/blurb.php');
- 					$block['content'] = "BLURB<br />";
+ 					//$block['content'] = "BLURB<br />";
  				}
  				$block['content'] .= $content;
  			}
