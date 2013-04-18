@@ -51,7 +51,7 @@ function service_notice_block_info() {
  					$content=service_notice_file_get_contents('http://www.mta.info/supplemental/lirr/blurb.php');
  					//$block['content'] = "BLURB<br />";
  				}
- 				$block['content'] .= $content;
+ 				$block['content'] = $content;
  			}
  				break;
 
