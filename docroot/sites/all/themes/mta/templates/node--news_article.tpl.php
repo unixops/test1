@@ -119,7 +119,7 @@ $check = array_intersect(array('master content provider', 'content provider', 'a
 	</div>
 	<?php
 		print '<div class="more-pictures-multi">';
-	if($field_mta_image['und']){
+	if(isset($field_mta_image['und'])){
   	foreach ($field_mta_image['und'] as $more_images) {
   		print '<div class="more-images-multi">';
   		print theme('image_style', array('style_name' => 'medium', 'path' => $more_images['uri']));
