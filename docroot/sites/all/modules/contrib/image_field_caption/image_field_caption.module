@@ -6,6 +6,91 @@
  */
 
 /**
+ * Implements hook_help().
+ */
+function image_field_caption_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#image_field_caption':
+      $readme_url = drupal_get_path('module', 'image_field_caption') . '/README.txt';
+      $items = array(
+        l('README', $readme_url),
+        l('Project Homepage', 'http://www.tylerfrankenstein.com/image_field_caption')
+      );
+      return theme('item_list', array('items' => $items));
+      break;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function image_field_caption_permission() {
+  return array(
+    'administer image field caption' => array(
+      'title' => t('Administer Image Field Captions'),
+      'description' => t('Adjust the caption settings for image fields.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function image_field_caption_menu() {
+  $items = array();
+  
+  $items['admin/config/media/image-field-caption'] = array(
+    'title' => t('Image Field Caption'),
+    'description' => t('Configuration settings for Image Field Caption.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('image_field_caption_settings'),
+    'access arguments' => array('administer image field caption'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+/**
+ * The module's settings form.
+ */
+function image_field_caption_settings() {
+  // Create the form.
+  $form = array();
+  // Add the README and Project Homepage links to the form prefix.
+  $readme_url = drupal_get_path('module', 'image_field_caption') . '/README.txt';
+  $items = array(
+    l('README', $readme_url),
+    l('Project Homepage', 'http://www.tylerfrankenstein.com/image_field_caption')
+  );
+  $form['#prefix'] = theme('item_list', array('items' => $items));
+  // Add the allowed tags field.
+  $form['image_field_caption_allowed_tags'] = array(
+    '#title' => 'Allowed Tags',
+    '#type' => 'textfield',
+    '#description' =>
+      t('Enter the html tags allowed in image field captions, separated by comma. 
+        All caption input is ran through filter_xss() before being output.') .
+      ' ' .
+      l('More Information', 'http://api.drupal.org/api/drupal/includes%21common.inc/function/filter_xss/7'),
+    '#default_value' => image_field_captions_allowed_tags(),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * The module's settings form validation handler.
+ */
+function image_field_caption_settings_validate(&$form, &$form_state) {
+  if ($form_state['values']['image_field_caption_allowed_tags'] == '') {
+    form_set_error(
+      'image_field_caption_allowed_tags',
+      t('You must enter at least one html tag. For example: ') . image_field_captions_allowed_tags() 
+    );
+  }
+}
+
+/**
  * Implements hook_form_alter().
  */
 function image_field_caption_form_alter(&$form, &$form_state, $form_id) {
@@ -20,7 +105,49 @@ function image_field_caption_form_alter(&$form, &$form_state, $form_id) {
       $form['#submit'][] = 'image_field_caption_form_submit_handler';
     }
   }
+  // Add an 'Image Field Caption' option to the 'Colorbox caption' field on
+  // the Manage Display form for the Colorbox module.
+  /*if ($form_id == 'field_ui_display_overview_form' && module_exists('colorbox')) {
+    if (!isset($form['#after_build'])) { $form['#after_build'] = array(); }
+    $form['#after_build'][] = 'image_field_caption_form_after_build';
+  }*/
 }
+
+/**
+ * Form after build handler. Note, it is only attached to the
+ * field_ui_display_overview_form for now.
+ */
+// Was trying to add an 'Image Field Caption' option to the Manage Display
+// form settings for Colorbox. The option was succesfully added to the select
+// list, but upon saving the Display Settings, the Image Field Caption option
+// is not saved.
+/*function image_field_caption_form_after_build($form, &$form_state) {
+  $image_fields = image_field_caption_get_image_fields($form['#entity_type'], $form['#bundle']);
+  if ($image_fields) {
+    foreach ($image_fields as $field_name => $field) {
+      $form[$field_name]['#after_build'][] = 'image_field_caption_form_colorbox_manage_display_after_build';
+      $form['fields'][$field_name]['format']['settings_edit_form']['settings']['colorbox_caption']['#options']['image_field_caption'] = 'Image Field Caption';
+    }
+  }
+  return $form;
+}*/
+
+/**
+ * Returns a comma separated list of default allowed html tags for captions.
+ * This matches the default allowed tags parameters for the filter_xss function. 
+ */
+function image_field_captions_allowed_tags() {
+  $default_value = 'a,em,strong,cite,blockquote,code,ul,ol,li,dl,dt,dd';
+  return variable_get('image_field_caption_allowed_tags', $default_value);
+}
+
+/**
+ *
+ */
+/*function image_field_caption_form_colorbox_manage_display_after_build($element, &$form_state) {
+  dpm($element);
+  return $element;
+}*/
 
 /**
  * An #after_build callback for image fields. Attaches the caption textarea to
@@ -41,7 +168,8 @@ function image_field_caption_form_element_after_build($element, &$form_state) {
       $element['und'][$delta]['caption'] = array(
         '#type' => 'textarea',
         '#title' => t('Caption'),
-        '#description' => t('Enter any caption text for this image.'),
+        '#description' => t('Enter caption text or html for this image.') .
+           '<br />' .t('Allowed html tags: ') . image_field_captions_allowed_tags(),
         '#value' => $default_value, /* http://drupal.org/node/1189584 */
         '#attributes' => array(
           'id' => "{$element['#id']}-und-$delta-caption",
@@ -128,28 +256,61 @@ function image_field_caption_file_delete($file) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+/*function image_field_caption_preprocess_colorbox_image_formatter(&$variables) {
+  $variables['display_settings']['colorbox_caption'] = 'custom';
+  $variables['display_settings']['colorbox_caption_custom'] = '[file:caption]';
+}*/
+
+/**
  * Implements hook_theme_registry_alter().
  */
 function image_field_caption_theme_registry_alter(&$theme_registry) {
-  // Override the image_formatter function and add caption as a variable to be
-  // assembled by theme().
-  $theme_registry['image_formatter']['theme path'] = drupal_get_path('module', 'image_field_caption');
-  $theme_registry['image_formatter']['function'] = 'image_field_caption_image_formatter';
-  $theme_registry['image_formatter']['variables']['caption'] = NULL;
+  // Override image theme functions and add 'caption' as a variable to be
+  // assembled by theme() for each.
+  $theme_path = drupal_get_path('module', 'image_field_caption');
+  $overrides = array('image_formatter', 'image_style');
+  foreach ($overrides as $type) {
+    if (isset($theme_registry[$type])) {
+      $theme_registry[$type]['theme path'] = $theme_path;
+      $theme_registry[$type]['function'] = 'image_field_caption_theme_image';
+      $theme_registry[$type]['variables']['caption'] = NULL;
+      $theme_registry[$type]['variables']['image_field_caption_type'] = $type;    
+    }
+  }
 }
 
 /**
- * Override of theme_image_formatter().
+ * After hook_theme_registry_alter makes its alterations, this function
+ * provides the routing to properly theme the image and the caption.
  */
-function image_field_caption_image_formatter($variables) {
-  $image = theme_image_formatter($variables);
+function image_field_caption_theme_image($variables) {
+  // Depending on the image theme type, call the appropriate image theme
+  // function, then pull out any caption.
+  $image = '';
+  $caption = '';
+  switch ($variables['image_field_caption_type']) {
+    case 'image_formatter':
+      $image = theme_image_formatter($variables);
+      if (isset($variables['item']['caption'])) {
+        $caption = $variables['item']['caption'];
+      }
+      break;
+    case 'image_style':
+      $image = theme_image_style($variables);
+      if (isset($variables['caption'])) {
+        $caption = $variables['caption'];
+      }
+      break;
+  }
   // Now that Drupal has rendered the image, if there was a caption let's
   // render the image and the caption, otherwise just return the already
   // rendered image.
-  if (isset($variables['item']['caption'])) {
+  if ($caption != '') {
     return theme('image_field_caption', array(
       'image' => $image,
-      'caption' => filter_xss($variables['item']['caption']),
+      'caption' => filter_xss($caption, explode(',', image_field_captions_allowed_tags())),
     ));
   }
   else {
@@ -167,6 +328,35 @@ function image_field_caption_theme($existing, $type, $theme, $path) {
       'variables' => array('image' => NULL, 'caption' => NULL),
     ),
   );
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function image_field_caption_token_info() {
+  $info['tokens']['file']['caption'] = array(
+    'name' => t('Image Field Caption'),
+    'description' => t('The caption text for an Image Field.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function image_field_caption_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  // Replace the caption token with the caption data attached to the file, if
+  // it exists.
+  $replacements = array();
+  if (isset($data) && isset($data['file'])) {
+      foreach ($tokens as $name => $original) {
+      if ($name == 'caption' && isset($data['file']->caption)) {
+        $replacements[$original] = $data['file']->caption;
+        break;
+      }
+    }
+  }
+  return $replacements;
 }
 
 /**
