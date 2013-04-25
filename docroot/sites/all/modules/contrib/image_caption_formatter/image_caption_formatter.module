@@ -178,3 +178,41 @@ function image_caption_formatter_caption($image, $title) {
 
   return $image . '<div ' . drupal_attributes($attributes) . '>' . $title . '</div>';
 }
+
+
+//ADDED by DA 4/25/13 - Changes label from Title to Caption
+
+function image_caption_formatter_field_widget_form_alter(&$element, &$form_state, $context) {
+	// If this is an image field type
+	if ($context['field']['type'] == 'image') {
+		// Loop through the element children (there will always be at least one).
+		foreach (element_children($element) as $key => $child) {
+			// Add the new process function to the element
+			$element[$key]['#process'][] = 'image_caption_formatter_image_field_widget_process';
+		}
+	}
+}
+
+function image_caption_formatter_image_field_widget_process($element, &$form_state, $form) {
+	// Change the title field to a textarea
+	if (isset($element) && isset($element['title'])) {
+    $element['title']['#title'] = t('Caption');
+    $element['title']['#description'] = t('This caption is displayed below the image.');
+
+	// Return the altered element
+	return $element;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
