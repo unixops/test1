@@ -234,6 +234,11 @@ class ServiceStatusDataHandler {
                 $statusOut[1] = '<a  style="color: #990033" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Delays</a>';
                 break;
 
+            case 'SUSPENDED':
+                $statusOut[0] = "rail_ServiceChange";
+                $statusOut[1] = '<a  style="color: #990033" href="' . $base_url . '/gss/'.$service.'/'.$index.'">Suspended</a>';
+                break;
+
             default:
                 $statusOut[0] = "rail_GoodService";
                 $statusOut[1] = "-";
