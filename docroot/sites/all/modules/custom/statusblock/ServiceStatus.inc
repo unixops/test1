@@ -23,71 +23,34 @@ class ServiceStatusDataHandler {
         5.  If can fetch from mta.info but the data is corrupt or can't be parsed, send WARNING email 
         6.  If can NOT fetch from server and long term cache is invalid send ERROR email but use long term cache
         */
-        $cache = cache_get("ss_shortCache");
-
-        // Use short term cache if still valid (less than 2 minutes old)
-        if ($cache && $cache->expire > REQUEST_TIME)
-            $this->arrStatusData = $cache->data;
-        else 
-        {
-            // Short term cache is invalid -- pulling status from mta.into
-            $ssFeed = "http://mta.info/status/serviceStatus.txt";
+        // Short term cache is invalid -- pulling status from mta.into
+        $ssFeed = "http://mta.info/status/serviceStatus.txt";
             
-            // Check to see if the file exsist on server
-            if ($this->isDomainAvailible($ssFeed)) 
+        // Check to see if the file exsist on server
+        if ($this->isDomainAvailible($ssFeed)) 
+        {
+            $this->arrXMLObject = $this->xml_to_object(file_get_contents($ssFeed));
+
+            if($this->arrXMLObject) 
             {
-                $this->arrXMLObject = $this->xml_to_object(file_get_contents($ssFeed));
+                $dt = explode(" ", $this->arrXMLObject->children[1]->content);
 
-                if($this->arrXMLObject) 
-                {
-                    $dt = explode(" ", $this->arrXMLObject->children[1]->content);
+                $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
+                $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
 
-                    $this->arrStatusData[0]         = "as of " . $dt[1] . " " . $dt[2];
-                    $this->arrStatusData[1]         = strtotime($dt[0] . " " . $dt[1] . " " . $dt[2]);
-                    
-                    // Check if the data is more than 4 minutes old. Even though Service Status data is updated once every 2 minutes
-                    // we are checking for a 4 minute limit due to caching done by Varnish and Akamai (CDN).  It is almost gauranteed that 
-                    // the user will not hit the new status every 2 minutes because this data would not have expired in Varnish or CDN.  Once
-                    // this data expires there, only then a fresh Service Status data will be obtained from the server and in that case it will
-                    // most likey be older than 2 minutes. 
-                    // if ((REQUEST_TIME-$this->arrStatusData[1]) > 240)
-                    //     notifyByEmail("Service Status obtained from mta.info is more than 4 minutes old.");
-
-                    // dsm ($this->arrStatusData[1]);
-                    // dsm ("Request time is: " . REQUEST_TIME);
-                    // dsm ("Diff is: " . (REQUEST_TIME-$this->arrStatusData[1]));
-
-                    $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
-                    $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
-                    $this->arrStatusData[MNR]       = $this->extractData(MNR);
-                    $this->arrStatusData[BUS]       = $this->extractData(BUS);
-                    $this->arrStatusData[BNT]       = $this->extractData(BNT);                
+                $this->arrStatusData[SUBWAY]    = $this->extractData(SUBWAY);
+                $this->arrStatusData[LIRR]      = $this->extractData(LIRR);
+                $this->arrStatusData[MNR]       = $this->extractData(MNR);
+                $this->arrStatusData[BUS]       = $this->extractData(BUS);
+                $this->arrStatusData[BNT]       = $this->extractData(BNT);                
     
-                    $this->msgERROR = NULL;
-    
-                    cache_set("ss_shortCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time', 120));
-                    cache_set("ss_longCache", $this->arrStatusData, "cache", REQUEST_TIME+variable_get('statusblock_cache_time_backup', 900));
-                    cache_clear_all();
-                }
-                else 
-                {
-                    // Service Status data received is corrupt or can't be parsed. Use long term cache.
-                    // notifyByEmail("Error occurred while trying to parse Service Status data - using long term cache.");
-                    $cache = cache_get("ss_longCache");
-                    if ($cache && $cache->expire > REQUEST_TIME)
-                        $this->arrStatusData = $cache->data;
-                    else 
-                        $this->msgERROR = "Service Status is not available.";
-                }
+                $this->msgERROR = NULL;
             }
-            // Handle case when Mta.info is not available
-            $cache = cache_get("ss_longCache");
-            if ($cache && $cache->expire > REQUEST_TIME) {
-                // notifyByEmail("The Mta.info is not responding to requests for Service Status - using long term cache.");
-                $this->arrStatusData = $cache->data;
-            } else 
-                $this->msgERROR = "Service Status is not available."; 
+            else 
+                $this->msgERROR = "Service Status is not available.";
         }
+        else
+            $this->msgERROR = "Service Status is not available.";
     }
 
     function isDomainAvailible($domain)
