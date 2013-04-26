@@ -9,6 +9,7 @@ define('BNT', 4);
 
 class ServiceStatusDataHandler {
     
+    private $xml;
     private $arrXMLObject;
     private $arrStatusData;
     private $msgERROR = NULL;
@@ -36,7 +37,8 @@ class ServiceStatusDataHandler {
             // Check to see if the file exsist on server
             if ($this->isDomainAvailible($ssFeed)) 
             {
-                $this->arrXMLObject = $this->xml_to_object(file_get_contents($ssFeed));
+                $this->xml = file_get_contents($ssFeed);
+                $this->arrXMLObject = $this->xml_to_object($this->xml);
 
                 if($this->arrXMLObject) 
                 {
@@ -88,6 +90,13 @@ class ServiceStatusDataHandler {
             } else 
                 $this->msgERROR = "Service Status is not available."; 
         }
+    }
+
+    function getStatusAsXML()
+    {
+        $ssFeed = "http://mta.info/status/serviceStatus.txt";
+
+        return file_get_contents($ssFeed);
     }
 
     function isDomainAvailible($domain)

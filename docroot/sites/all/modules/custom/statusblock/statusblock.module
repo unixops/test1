@@ -1,6 +1,7 @@
 <?php
 function statusblock_init(){
     include 'ServiceStatus.inc';
+    require_once 'xml2json.php';
 
     global $ssd;
     $ssd = new ServiceStatusDataHandler();
@@ -24,16 +25,29 @@ function statusblock_block_info()
  */
 function statusblock_menu()
 {
-    return (
-       array(
-         'gss/%/%' => array(
-           'access arguments' => array('access content'),
-           'page callback' => 'statusblock_render_service_status',
-           'page arguments' => array(1,2),
-          ), 
-        )
+    $item['gss/%/%'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'statusblock_render_service_status',
+        'page arguments' => array(1,2),
     );
+
+    $item['mta/status/ss_json.js'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
+    return $item;
 }
+
+function getServiceStatusAsJSON()
+{
+    global $ssd;
+
+    // echo $ssd->getStatusAsXML();
+
+    echo xml2json::transformXmlStringToJson($ssd->getStatusAsXML());
+}
+
 
 function statusblock_render_service_status($service = '', $col = '')
 {
@@ -100,6 +114,13 @@ function statusblock_block_view($delta ='')
             $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
         break;
     }
+
+    // drupal_add_js(drupal_get_path('module', 'statusblock').'/ss.js', 'file');
+
+    // drupal_add_js('jQuery(document).ready(function() {
+
+    //     });', 'inline');
+    // drupal_add_js('jQuery(document).ready(function () { alert("Hello!"); });', 'inline');
     
     return $block;
 }
@@ -122,7 +143,7 @@ function theme_subwayTab($variables)
         for($num=0; $num < count($arrSubway); $num++)     
             $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
                 <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_'.$arrSubway[$num]['name'].'" alt="'.$arrSubway[$num]['name'].' Subway Line Icons"/></div>
-                <div style="margin-top: 4px;" class="subwayCategory subway_'.$arrSubway[$num]['status'][0].'">'.$arrSubway[$num]['status'][1].'</div>
+                <div style="margin-top: 4px;" id="'.$arrSubway[$num]['name'].'" class="subwayCategory subway_'.$arrSubway[$num]['status'][0].'"></div>
             </div>';
     } else
         $rendered .= '<div class="completeOutage" style="margin: 150px 0 0 0;">' . $arrSubway . '</div>';

@@ -7,3 +7,4 @@ files[] = ServiceStatus.inc
 stylesheets[all][] = status_style.css
 scripts[] = statusblock.js
 scripts[] = jquery.cookie.js
+scripts[] = ss.js
