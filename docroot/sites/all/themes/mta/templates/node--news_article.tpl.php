@@ -25,10 +25,11 @@
       hide($content['comments']);
       hide($content['links']);
       print render($content);
+      print $node->field_article_body['und'][0]['value'];
     ?>
   </div>
 
-  <?php print $node->field_article_body['und'][0]['value'];?>
+  
 
   <?php print render($content['comments']); ?>
 
