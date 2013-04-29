@@ -9,9 +9,12 @@
   <?php print render($title_suffix); ?>
 
   <?php if ($display_submitted): ?>
-    <div class="submitted">
+    <div class="submitted" style="color:gray; font-style: italic; padding-left:8px;">
       <?php print $user_picture; ?>
-      <?php print $submitted; ?>
+      <?php 
+      if ($submitted) {
+      	echo " " . date( "F j, Y",$node->created);
+      }       ?>
     </div>
   <?php endif; ?>
 
