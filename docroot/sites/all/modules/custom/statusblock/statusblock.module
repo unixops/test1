@@ -112,8 +112,10 @@ function theme_subwayTab($variables)
     global $base_url;
     
     $arrSubway = $variables['content'];
+
+    $rendered = '<div id="timestamp">'.$variables['timestamp'].'</div>';
     
-    $rendered = '<div id="subwayDiv" style="float: left; margin-top: 1px;">
+    $rendered .= '<div id="subwayDiv" style="float: left; margin-top: 1px;">
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
             <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li></ul>';
