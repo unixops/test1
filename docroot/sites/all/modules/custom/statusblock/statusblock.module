@@ -60,6 +60,9 @@ function statusblock_theme(&$existing, $type, $theme, $path)
 {    
     // Following key is the internal name of the hook.
     return array(
+        'getTimeStamp' => array (
+            'variables' => array('ts' => NULL),
+        ),
         'subwayTab' => array (
             'variables' => array('content' => NULL),
         ),
@@ -90,6 +93,7 @@ function statusblock_block_view($delta ='')
             $block['title'] = t('Service Status');
             $block['subject'] = t('');
 
+            $timestampHTML = theme('getTimeStamp', array('ts' => $ssd->getStatusTimeStamp()));
             $subwayHTML = theme('subwayTab', array('content' => $ssd->getServiceStatusData(SUBWAY)));
             $lirrHTML = theme('railTab', array('lirr' => $ssd->getServiceStatusData(LIRR), 
                 'mnr' => $ssd->getServiceStatusData(MNR)));
@@ -97,12 +101,25 @@ function statusblock_block_view($delta ='')
 
             $bntHTML = theme('bntTab', array('bnt' => $ssd->getServiceStatusData(BNT)));
                
-            $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
+            $block['content'] = '<div id="status-whole-block">'.$timestampHTML.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
         break;
     }
     
     return $block;
 }
+
+
+function theme_getTimeStamp($variables)
+{
+    // global $base_url;
+    
+    $arrTs = $variables['ts'];
+    
+    $rendered = '<div id="timestamp">'. $arrTs . '</div>';
+
+    return $rendered;
+}
+
 
 /*
  * Default theme implementation for rendering Subway Status
@@ -112,10 +129,8 @@ function theme_subwayTab($variables)
     global $base_url;
     
     $arrSubway = $variables['content'];
-
-    // $rendered = '<div id="timestamp">'.$ssd->getStatusTimeStamp().'</div>';
     
-    $rendered .= '<div id="subwayDiv" style="float: left; margin-top: 1px;">
+    $rendered = '<div id="subwayDiv" style="float: left; margin-top: 1px;">
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
             <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li></ul>';
