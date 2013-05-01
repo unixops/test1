@@ -19,20 +19,35 @@ function statusblock_block_info()
     return $blocks;
 }
 
-/*
- * Implementation of hook_menu
- */
 function statusblock_menu()
 {
-    return (
-       array(
-         'gss/%/%' => array(
-           'access arguments' => array('access content'),
-           'page callback' => 'statusblock_render_service_status',
-           'page arguments' => array(1,2),
-          ), 
-        )
+    $item['gss/%/%'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'statusblock_render_service_status',
+        'page arguments' => array(1,2),
     );
+
+    $item['mta/service_status_json.js'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
+    return $item;
+}
+
+function getServiceStatusAsJSON()
+{
+    global $ssd;
+
+    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
+    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+    $fileContents = trim(str_replace('"', "'", $fileContents));
+
+    $simpleXml = simplexml_load_string($fileContents);
+
+    $json = json_encode($simpleXml);
+
+    echo $json;
 }
 
 function statusblock_render_service_status($service = '', $col = '')
