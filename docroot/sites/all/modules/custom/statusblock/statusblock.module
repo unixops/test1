@@ -27,7 +27,7 @@ function statusblock_menu()
         'page arguments' => array(1,2),
     );
 
-    $item['service_status_json.js'] = array(
+    $item['service_status_json'] = array(
         'access arguments' => array('access content'),
         'page callback' => 'getServiceStatusAsJSON',
     );
