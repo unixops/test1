@@ -94,6 +94,9 @@
 	padding: 8px;
 	}
 	
+#edit-field-rotator-horizontal-image-und-0-caption {
+	display:none;
+	}
 
 /*Rotator Caption
 .news-rotator-caption {
@@ -103,27 +106,29 @@
     margin-left: 250px;
     margin-right: 10px;
     padding: 1px 0 1px 2px;	
-	
-}
+	}
 
 */
+.imgcaption {
+	width:220px;
+	overflow:hidden;
+	}
 
 .field-name-field-news-body-vertical-image .field-item.odd {
 	float:left;
 	margin:10px;
-}
+	}
 
 .field-name-field-news-body-vertical-image .field-item.even {
 	float:right;
 	margin:10px;
-}
+	}
+
 
 .field-name-field-news-body-horizontal-image .field-item.odd {
 	float:left;
-	
-}
+	}
 
 .field-name-field-news-body-horizontal-image .field-item.even {
 	float:right;
-	
 }
