@@ -32,6 +32,16 @@ function statusblock_menu()
         'page callback' => 'getServiceStatusAsJSON',
     );
 
+    $item['service_status_json.js'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
+    $item['mta/service_status_json.js'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
     return $item;
 }
 
