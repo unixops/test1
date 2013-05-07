@@ -5,12 +5,9 @@
 
   
   <?php if ($display_submitted): ?>
-    <div class="submitted" style="color:gray; font-style: italic; padding-left:8px;">
+    <div class="submitted">
       <?php print $user_picture; ?>
-      <?php 
-      if ($submitted) {
-      	echo " " . date( "F dS, Y",$node->created);
-      }       ?>
+      <?php print $submitted; ?>
       
     </div>
     
