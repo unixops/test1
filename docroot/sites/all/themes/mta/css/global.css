@@ -667,3 +667,9 @@ h1#page-title-ad  {
 	width:430px;
 	}
 
+
+
+.image_field_caption, field-name-field-rotator-horizontal-image {
+  
+  border-left: 4px solid #afafaf;
+}
