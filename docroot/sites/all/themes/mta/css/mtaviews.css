@@ -372,16 +372,23 @@
 	padding-right:3px;
 	overflow: hidden;
 	}
+	
+body.page-press-releases #sidebar_second {
+    float: right;
+    margin: 0;
+    width: 200px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #B4B4B4;
+    border-radius: 5px 5px 5px 5px;
+}	
 
 /* Views Press Release Styles */
 .view-press-release {
 	background-color: #7498AB;
+	width:700px;
 	}
 
-.view-press-release content {
-	width: 920;
-	align:center;
-	}
+
 
 .view-press-release thead {
 	background-color: #ffffff;

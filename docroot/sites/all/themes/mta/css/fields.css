@@ -109,10 +109,15 @@
 	}
 
 */
-.imgcaption {
-	width:220px;
-	overflow:hidden;
-	}
+.field-name-field-rotator-horizontal-image .imgcaption {
+    overflow: hidden;
+    width: 350px;
+}
+
+.field-name-field-rotator-vertical-image .imgcaption {
+    overflow: hidden;
+    width: 220px;
+}
 
 .field-name-field-news-body-vertical-image .field-item.odd {
 	float:left;
