@@ -31,12 +31,40 @@ function statusblock_menu()
         'page arguments' => array(1,2),
     );
 
+    $item['serviceStatus/%/%'] = array(
+        'title' => "MTA Service Status",
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusDetail',
+        'page arguments' => array(1,2),
+    );
+
+    $item['service_status_json'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
+    $item['service_status_json.js'] = array(
+        'access arguments' => array('access content'),
+        'page callback' => 'getServiceStatusAsJSON',
+    );
+
     $item['mta/service_status_json.js'] = array(
         'access arguments' => array('access content'),
         'page callback' => 'getServiceStatusAsJSON',
     );
 
     return $item;
+}
+
+function getServiceStatusDetail($service, $line)
+{
+    // $output = '<div id="status_display">Status goes here ['.$service.'] : line : ['.$line.']</div>';
+    $output = '<div id="status_display"></div>';
+
+    drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
+    // drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display2").mtaService("lirr", "123"); });', 'inline');
+
+    return $output;
 }
 
 function getServiceStatusAsJSON()
@@ -149,14 +177,70 @@ function theme_subwayTab($variables)
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
             <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li></ul>';
     
-    if (is_array($arrSubway)) {
-        for($num=0; $num < count($arrSubway); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
-                <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_'.$arrSubway[$num]['name'].'" alt="'.$arrSubway[$num]['name'].' Subway Line Icons"/></div>
-                <div style="margin-top: 4px;" id="'.$arrSubway[$num]['name'].'" class="subwayCategory"></div>
-            </div>';
-    } else
-        $rendered .= '<div class="completeOutage" style="margin: 150px 0 0 0;">' . $arrSubway . '</div>';
+    // if (is_array($arrSubway)) {
+    //     for($num=0; $num < count($arrSubway); $num++)     
+    //         $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+    //             <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_'.$arrSubway[$num]['name'].'" alt="'.$arrSubway[$num]['name'].' Subway Line Icons"/></div>
+    //             <div style="margin-top: 4px;" id="'.$arrSubway[$num]['name'].'" class="subwayCategory"></div>
+    //         </div>';
+    // } else
+    //     $rendered .= '<div class="completeOutage" style="margin: 150px 0 0 0;">' . $arrSubway . '</div>';
+
+    $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_123" alt="123 Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="123" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_456" alt="456 Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="456" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_7" alt="7 Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="7" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_ACE" alt="ACE Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="ACE" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_BDFM" alt="BDFM Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="BDFM" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_G" alt="G Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="G" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_JZ" alt="JZ Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="JZ" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_L" alt="L Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="L" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_NQR" alt="L Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="NQR" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_S" alt="L Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="S" class="subwayCategory"></div>
+                </div>
+
+                <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
+                    <div class="span-11"><img width="1" height="1" src="' . $base_url . '/' . drupal_get_path('module', 'statusblock') . '/images/img_trans.gif" class="subwayIcon_SIR" alt="L Subway Line Icons"/></div>
+                    <div style="margin-top: 4px;" id="SIR" class="subwayCategory"></div>
+                </div>
+                ';    
     
     $rendered .= '</div>';
 
