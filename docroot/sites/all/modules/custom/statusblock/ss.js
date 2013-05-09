@@ -7,7 +7,7 @@
 
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
-        url = "http://newmta.localhost:8082/service_status_json";
+        url = "http://newdev.mta.info/service_status_json";
         
         $.getJSON(url,
             function(data){  

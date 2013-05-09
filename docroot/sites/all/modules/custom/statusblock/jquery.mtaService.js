@@ -7,7 +7,7 @@
 
         var ele = $(this);
 
-        url = "http://newmta.localhost:8082/service_status_json";
+        url = "http://newdev.mta.info/service_status_json";
 
         $.getJSON(url,
             function(data){  
