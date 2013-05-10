@@ -50,7 +50,7 @@
 <div id="<?php print $block_html_id; ?>" class="roundCorners featurebox">
     
     <span class="span-12"><h2>Service Status</h2></span>
-    <span class="statusDateTime"><?php print $timestamp; ?></span>
+    <span class="statusDateTime"><?php //print $timestamp; ?></span>
 	<div id = "statusblock-tabs">
     <ul>
         <li class="t tdiv selectedStatusTab" id="subwayTab">Subway</li>

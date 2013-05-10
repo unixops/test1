@@ -7,15 +7,19 @@
 
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
+        // url = "http://newmta.localhost:8082/service_status_json";
         url = "http://newdev.mta.info/service_status_json";
         
         $.getJSON(url,
-            function(data){  
+            function(data){
                 
                 $.ajaxSetup({ cache: false });
 
                 $.each(data, function(index, d){
-                    console.log (data.subway.line[3].name);
+                    // console.log (data.subway.line[3].name);
+                    var ts = (data.timestamp).split(" ");
+                    $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
+                    
                     $.each(data.subway, function(key, val){
                         $.each(val, function(index, val){
                             // console.log(key);
