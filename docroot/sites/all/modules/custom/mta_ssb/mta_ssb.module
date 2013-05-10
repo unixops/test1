@@ -78,7 +78,6 @@ function mta_ssb_block_info()
 function mta_ssb_block_view($delta ='')
 {
 	$block = array();
-
 	global $ssb;
 
 	switch ($delta)
