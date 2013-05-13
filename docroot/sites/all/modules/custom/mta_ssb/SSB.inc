@@ -302,7 +302,7 @@ class MTAServiceStatusDataHandler {
 
                 if ($tag['type'] == "complete" || $tag['type'] == "open")
                 {
-                        $elements[$index] = new XmlElement;
+                        $elements[$index] = new MTAXmlElement;
                         $elements[$index]->name = $tag['tag'];
 
                         if(isset($tag['value']))
@@ -340,7 +340,7 @@ function notifyByEmail($msg)
     mail($to, $subject, $body, "From: ksheikh@mtahq.org");
 }
 */
-class XmlElement {
+class MTAXmlElement {
     var $name;
     var $content;
     var $children;
