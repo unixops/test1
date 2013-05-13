@@ -7,7 +7,7 @@ define('BUS', 3);
 define('BNT', 4);
 
 
-class ServiceStatusDataHandler {
+class MTAServiceStatusDataHandler {
 
     private $arrXMLObject;
     private $arrStatusData;

@@ -3,7 +3,7 @@ function mta_ssb_init(){
 	include 'SSB.inc';
 
 	global $ssb;
-	$ssb = new ServiceStatusDataHandler();
+	$ssb = new MTAServiceStatusDataHandler();
 }
 
 /**
