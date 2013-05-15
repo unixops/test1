@@ -1,10 +1,8 @@
 <?php
 function statusblock_init(){
-    include 'ServiceStatus.inc';
-    // require_once 'xml2json.php';
-
-    global $ssd;
-    $ssd = new ServiceStatusDataHandler();
+    // include 'ServiceStatus.inc';
+    // global $ssd;
+    // $ssd = new ServiceStatusDataHandler();
 }
     
 /*
@@ -14,7 +12,7 @@ function statusblock_block_info()
 {    
     $blocks['mta-service-status'] = array(
             'info' => t('MTA Service Status'),
-     		'cache' => DRUPAL_CACHE_GLOBAL,
+     		// 'cache' => DRUPAL_CACHE_GLOBAL,
     );
 
     return $blocks;
@@ -69,7 +67,7 @@ function getServiceStatusDetail($service, $line)
 
 function getServiceStatusAsJSON()
 {
-    global $ssd;
+    // global $ssd;
 
     // echo xml2json::transformXmlStringToJson($ssd->getStatusAsXML());
 
@@ -89,18 +87,18 @@ function getServiceStatusAsJSON()
 
 function statusblock_render_service_status($service = '', $col = '')
 {
-    global $ssd;
+    // global $ssd;
     
-    if ($ssd) {
-        //$html = $ssd->getStatus($service, $col);
-        //dsm("Before : " . $html);
-        $html = html_entity_decode($ssd->getStatus($service, $col));
-        //dsm("After : " . $html);
+    // if ($ssd) {
+    //     //$html = $ssd->getStatus($service, $col);
+    //     //dsm("Before : " . $html);
+    //     $html = html_entity_decode($ssd->getStatus($service, $col));
+    //     //dsm("After : " . $html);
         
-        //run $html through MTA input filter to translate tokens to images
-        $filteredhtml = check_markup($html, 'full_html');
-        //dsm($filteredhtml);
-    }
+    //     //run $html through MTA input filter to translate tokens to images
+    //     $filteredhtml = check_markup($html, 'full_html');
+    //     //dsm($filteredhtml);
+    // }
     
     return $filteredhtml;
 }
@@ -133,8 +131,6 @@ function statusblock_theme(&$existing, $type, $theme, $path)
 function statusblock_block_view($delta ='') 
 {
     $block = array();
-    
-    global $ssd;
 
     switch ($delta) 
     {
@@ -142,26 +138,46 @@ function statusblock_block_view($delta ='')
             $block['title'] = t('Service Status');
             $block['subject'] = t('');
 
-            $subwayHTML = theme('subwayTab', array('content' => $ssd->getServiceStatusData(SUBWAY)));
-            $lirrHTML = theme('railTab', array('lirr' => $ssd->getServiceStatusData(LIRR), 
-                'mnr' => $ssd->getServiceStatusData(MNR)));
-            $busHTML = theme('busTab', array('bus' => $ssd->getServiceStatusData(BUS)));
+            $subwayHTML = theme('subwayTab', array());
+            // $lirrHTML = theme('railTab', array('lirr' => $ssd->getServiceStatusData(LIRR), 
+            //     'mnr' => $ssd->getServiceStatusData(MNR)));
+            // $busHTML = theme('busTab', array('bus' => $ssd->getServiceStatusData(BUS)));
 
-            $bntHTML = theme('bntTab', array('bnt' => $ssd->getServiceStatusData(BNT)));
+            // $bntHTML = theme('bntTab', array('bnt' => $ssd->getServiceStatusData(BNT)));
                
-            $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
+            // $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
+            $block['content'] = '<div id="status-whole-block">'.$subwayHTML.'</div>';
         break;
     }
-
-    // drupal_add_js(drupal_get_path('module', 'statusblock').'/ss.js', 'file');
-
-    // drupal_add_js('jQuery(document).ready(function() {
-
-    //     });', 'inline');
-    // drupal_add_js('jQuery(document).ready(function () { alert("Hello!"); });', 'inline');
     
     return $block;
 }
+
+// function statusblock_block_view($delta ='') 
+// {
+//     $block = array();
+    
+//     global $ssd;
+
+//     switch ($delta) 
+//     {
+//         case 'mta-service-status':
+//             $block['title'] = t('Service Status');
+//             $block['subject'] = t('');
+
+//             $subwayHTML = theme('subwayTab', array('content' => $ssd->getServiceStatusData(SUBWAY)));
+//             $lirrHTML = theme('railTab', array('lirr' => $ssd->getServiceStatusData(LIRR), 
+//                 'mnr' => $ssd->getServiceStatusData(MNR)));
+//             $busHTML = theme('busTab', array('bus' => $ssd->getServiceStatusData(BUS)));
+
+//             $bntHTML = theme('bntTab', array('bnt' => $ssd->getServiceStatusData(BNT)));
+               
+//             $block['content'] = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
+//         break;
+//     }
+    
+//     return $block;
+// }
 
 /*
  * Default theme implementation for rendering Subway Status
@@ -262,39 +278,36 @@ function theme_railTab($variables)
         <span class="RailRoadCompany">Long Island Rail Road</span>
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/lirr/News/PlannedService.htm\'">Future Date</li></ul>';
-    
-    // <span class="span-12 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrLirr[$num]['name'].'</span>
-    //$rendered .= '<span class="span-11 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrMnr[$mnum]['name'].'</span>';
 
-    if (is_array($arrLirr)) {  
-        for($num=0; $num < count($arrLirr); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
-                <div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
-                <div class="span-11 railLineItem">'. $arrLirr[$num]['name'].'</div>
-                <div class="railStation railCategory '. $arrLirr[$num]['status'][0] .'">'.$arrLirr[$num]['status'][1].'</div>
-            </div>';
-    } else
-        $rendered .= '<div class="completeOutage" style="margin: 40px 0 150px 0;">' . $arrLirr . '</div>';
+    // if (is_array($arrLirr)) {  
+    //     for($num=0; $num < count($arrLirr); $num++)     
+    //         $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
+    //             <div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
+    //             <div class="span-11 railLineItem">'. $arrLirr[$num]['name'].'</div>
+    //             <div class="railStation railCategory '. $arrLirr[$num]['status'][0] .'">'.$arrLirr[$num]['status'][1].'</div>
+    //         </div>';
+    // } else
+    //     $rendered .= '<div class="completeOutage" style="margin: 40px 0 150px 0;">' . $arrLirr . '</div>';
     
-    // HTML for MNR
-    $rendered .= '<div style="float: left; width: 100%;"><span class="RailRoadCompany">Metro-North Railroad</span>
-        <ul style="float: right; padding:0; margin:0">
-            <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/mnr/html/serviceupdates.htm\'">Future Date</li></ul></div>';
+    // // HTML for MNR
+    // $rendered .= '<div style="float: left; width: 100%;"><span class="RailRoadCompany">Metro-North Railroad</span>
+    //     <ul style="float: right; padding:0; margin:0">
+    //         <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/mnr/html/serviceupdates.htm\'">Future Date</li></ul></div>';
     
-    if (is_array($arrMnr)) {
-        for($mnum=0; $mnum < count($arrMnr); $mnum++, $num++) {  
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">';
+    // if (is_array($arrMnr)) {
+    //     for($mnum=0; $mnum < count($arrMnr); $mnum++, $num++) {  
+    //         $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">';
 
-            if ($mnum == 2 || $mnum == 4 || $mnum == 5 || $mnum == 6)
-                $rendered .= '<div style="margin-left: 20px;" class="span-10 railLineItem">'.$arrMnr[$mnum]['name'].'</div>';
-            else
-                $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
-                    <div class="span-11 railLineItem">'. $arrMnr[$mnum]['name'].'</div>';
+    //         if ($mnum == 2 || $mnum == 4 || $mnum == 5 || $mnum == 6)
+    //             $rendered .= '<div style="margin-left: 20px;" class="span-10 railLineItem">'.$arrMnr[$mnum]['name'].'</div>';
+    //         else
+    //             $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
+    //                 <div class="span-11 railLineItem">'. $arrMnr[$mnum]['name'].'</div>';
             
-            $rendered .= '<div class="railStation railCategory '. $arrMnr[$mnum]['status'][0] .'">'.$arrMnr[$mnum]['status'][1].'</div></div>';
-        }
-    } else
-        $rendered .= '<div class="completeOutage" style="margin: 40px 0 40px 0;">' . $arrMnr . '</div>';
+    //         $rendered .= '<div class="railStation railCategory '. $arrMnr[$mnum]['status'][0] .'">'.$arrMnr[$mnum]['status'][1].'</div></div>';
+    //     }
+    // } else
+    //     $rendered .= '<div class="completeOutage" style="margin: 40px 0 40px 0;">' . $arrMnr . '</div>';
     
     $rendered .= '</div>';
 
@@ -309,14 +322,14 @@ function theme_busTab($variables) {
     
     $rendered = '<div id="busDiv" style="float: left; display: none; margin-top: 11px;">';
     
-    if (is_array($arrBus)) {
-        for($num=0; $num < count($arrBus); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 9px 0;">
-                <span class="span-11 busLineItem">'.$arrBus[$num]['name'].'</span>
-                <span class="busCategory '.$arrBus[$num]['status'][0] .'">'.$arrBus[$num]['status'][1].'</span>
-            </div>';
-    } else
-        $rendered .= '<div class="completeOutage" style="margin: 150px 0 0px 0;">' . $arrBus . '</div>'; 
+    // if (is_array($arrBus)) {
+    //     for($num=0; $num < count($arrBus); $num++)     
+    //         $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 9px 0;">
+    //             <span class="span-11 busLineItem">'.$arrBus[$num]['name'].'</span>
+    //             <span class="busCategory '.$arrBus[$num]['status'][0] .'">'.$arrBus[$num]['status'][1].'</span>
+    //         </div>';
+    // } else
+    //     $rendered .= '<div class="completeOutage" style="margin: 150px 0 0px 0;">' . $arrBus . '</div>'; 
     
     $rendered .= '</div>';
 
@@ -332,24 +345,24 @@ function theme_bntTab($variables) {
     $rendered = '<div id="bntDiv" style="float: left; display: none; margin-top: 12px;">
         <ul style="float: right; padding:0; margin:0">
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/bandt/traffic/advisory.html\'">Future Date</li></ul>';
- // don't end it here   $rendered .='</div>';
-    if (is_array($arrBnt)) {
-        for($num=0; $num < count($arrBnt); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                <span class="span-12 busLineItem">'.$arrBnt[$num]['name'].'</span>
-                <span class="busCategory '.$arrBnt[$num]['status'][0] .'">'.$arrBnt[$num]['status'][1].'</span>
-            </div>';
-    } else
-        $rendered .= '<div class="completeOutage" style="margin: 150px 0 0px 0;">' . $arrBnt . '</div>';
+ 
+    // if (is_array($arrBnt)) {
+    //     for($num=0; $num < count($arrBnt); $num++)     
+    //         $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
+    //             <span class="span-12 busLineItem">'.$arrBnt[$num]['name'].'</span>
+    //             <span class="busCategory '.$arrBnt[$num]['status'][0] .'">'.$arrBnt[$num]['status'][1].'</span>
+    //         </div>';
+    // } else
+    //     $rendered .= '<div class="completeOutage" style="margin: 150px 0 0px 0;">' . $arrBnt . '</div>';
     
     $rendered .= '</div>';
 
     return $rendered;
 }
 
-function statusblock_preprocess_block(&$variables) {
-    if ($variables['block']->delta === 'mta-service-status') {
-        global $ssd;
-        $variables['timestamp'] = $ssd->getStatusTimeStamp();
-    }  
-}
+// function statusblock_preprocess_block(&$variables) {
+//     if ($variables['block']->delta === 'mta-service-status') {
+//         global $ssd;
+//         $variables['timestamp'] = $ssd->getStatusTimeStamp();
+//     }  
+// }

@@ -34,36 +34,36 @@
             });
         });
 
-    function generateHTML(name, val)
-    {
-        switch(val) {
-            case 'GOOD SERVICE':
-                $('#'+name).addClass("subway_GoodService");
-                $('#'+name).html(val);
-                break;
-            case 'PLANNED WORK':
-                $('#'+name).addClass("subway_PlannedWork");
-                var html = '<a style="color: #996600" href="/serviceStatus/subway/' + name + '">Planned Work</a>';
-                $('#'+name).html(html);
-                break;
-            case 'SERVICE CHANGE':
-                $('#'+name).addClass("subway_ServiceChange");
-                var html = '<a style="color: #996600" href="/serviceStatus/subway/' + name + '">Service Change</a>';
-                $('#'+name).html(html);
-                break;
-            case 'DELAYS':
-                $('#'+name).addClass("subway_Delays");
-                var html = '<a style="color: #990033" href="/serviceStatus/subway/' + name + '">Delays</a>';
-                $('#'+name).html(html);
-                break;
-            case 'SANDY REROUTE':
-                $('#'+name).addClass("subway_sandyreroute");
-                var html = '<a style="color: #5d0dff" href="/serviceStatus/subway/' + name + '">Sandy Reroute</a>';
-                $('#'+name).html(html);
-                break;
-        }
+        function generateHTML(name, val)
+        {
+            switch(val) {
+                case 'GOOD SERVICE':
+                    $('#'+name).addClass("subway_GoodService");
+                    $('#'+name).html(val);
+                    break;
+                case 'PLANNED WORK':
+                    $('#'+name).addClass("subway_PlannedWork");
+                    var html = '<a style="color: #996600" href="/serviceStatus/subway/' + name + '">Planned Work</a>';
+                    $('#'+name).html(html);
+                    break;
+                case 'SERVICE CHANGE':
+                    $('#'+name).addClass("subway_ServiceChange");
+                    var html = '<a style="color: #996600" href="/serviceStatus/subway/' + name + '">Service Change</a>';
+                    $('#'+name).html(html);
+                    break;
+                case 'DELAYS':
+                    $('#'+name).addClass("subway_Delays");
+                    var html = '<a style="color: #990033" href="/serviceStatus/subway/' + name + '">Delays</a>';
+                    $('#'+name).html(html);
+                    break;
+                case 'SANDY REROUTE':
+                    $('#'+name).addClass("subway_sandyreroute");
+                    var html = '<a style="color: #5d0dff" href="/serviceStatus/subway/' + name + '">Sandy Reroute</a>';
+                    $('#'+name).html(html);
+                    break;
+            }
 
-        return html;
-    }
+            return html;
+        }        
 
 }(jQuery));
