@@ -7,8 +7,9 @@
 
         var ele = $(this);
 
+        var differential = new Date().getTime();
         // url = "http://newdev.mta.info/service_status_json";
-        url = "http://newdev.mta-hq.info/service_status_json";
+        url = "http://newdev.mta-hq.info/service_status_json/" + differential;
 
         $.getJSON(url,
             function(data){  
