@@ -10,28 +10,43 @@
         var differential = new Date().getTime();
         // url = "http://newmta.localhost:8082/service_status_json/" + differential;
         // url = "http://newdev.mta.info/service_status_json";
-        url = "http://newdev.mta-hq.info/service_status_json/" + differential;
-        console.log(url);
-        
-        $.getJSON(url,
-            function(data){
-                
-                $.ajaxSetup({ cache: false });
+        // url = "http://newdev.mta-hq.info/service_status_json/" + differential;
+        // console.log(url);
 
-                $.each(data, function(index, d){
-                    // console.log (data.subway.line[3].name);
-                    var ts = (data.timestamp).split(" ");
-                    $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
+        // console.log(data.timestamp);
+        $.each(data, function(index, d){
+            // console.log (data.subway.line[3].name);
+            var ts = (data.timestamp).split(" ");
+            $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
 
-                    $.each(data.subway, function(key, val){
-                        $.each(val, function(index, val){
-                            // console.log(key);
-                            // console.log(val.name);
-                            generateHTML(val.name, val.status);
-                        });
-                    });
+            $.each(data.subway, function(key, val){
+                $.each(val, function(index, val){
+                    // console.log(key);
+                    // console.log(val.name);
+                    generateHTML(val.name, val.status);
                 });
             });
+        });
+
+        // $.getJSON(url,
+        //     function(data){
+                
+        //         $.ajaxSetup({ cache: false });
+
+        //         $.each(data, function(index, d){
+        //             // console.log (data.subway.line[3].name);
+        //             var ts = (data.timestamp).split(" ");
+        //             $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
+
+        //             $.each(data.subway, function(key, val){
+        //                 $.each(val, function(index, val){
+        //                     // console.log(key);
+        //                     // console.log(val.name);
+        //                     generateHTML(val.name, val.status);
+        //                 });
+        //             });
+        //         });
+        //     });
         });
 
         function generateHTML(name, val)
@@ -67,3 +82,4 @@
         }        
 
 }(jQuery));
+

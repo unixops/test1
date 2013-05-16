@@ -3,6 +3,8 @@ function statusblock_init(){
     // include 'ServiceStatus.inc';
     // global $ssd;
     // $ssd = new ServiceStatusDataHandler();
+    // <script type="text/javascript" src="http://newdev.mta-hq.info/service_status_json"></script>
+     drupal_add_js('http://newdev.mta-hq.info/service_status_json');
 }
     
 /*
@@ -79,7 +81,7 @@ function getServiceStatusAsJSON()
 
     $simpleXml = simplexml_load_string($fileContents);
 
-    $json = json_encode($simpleXml);
+    $json = "var data = " . json_encode($simpleXml);
 
     echo $json;
 }
