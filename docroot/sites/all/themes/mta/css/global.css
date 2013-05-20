@@ -676,3 +676,17 @@ h1#page-title-ad  {
   
   border-left: 4px solid #afafaf;
 }
+
+body.logged-in.node-type-page-with-ad .view-press-release .feed-icon {
+    left: 270px;
+    position: absolute;
+    top: -33px;
+    z-index: 999;
+}
+
+body.not-logged-in.node-type-page-with-ad .view-press-release .feed-icon {
+    left: 270px;
+    position: absolute;
+    top: 75px;
+    z-index: 999;
+}
