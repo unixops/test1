@@ -3,7 +3,9 @@ function statusblock_init(){
     // include 'ServiceStatus.inc';
     // global $ssd;
     // $ssd = new ServiceStatusDataHandler();
-    $options['cache'] = false;
+    $options['cache'] = FALSE;
+    $options['preprocess'] = FALSE;
+    $options['type'] = 'file';
     drupal_add_js('http://newdev.mta-hq.info/service_status_json/'.time(), $options);
     // drupal_add_js('http://newmta.localhost:8082/service_status_json/'.time());
 }
