@@ -28,7 +28,7 @@
 
                 $.ajaxSetup({ cache: false });
 
-                console.log(data.timestamp);
+                // console.log(data.timestamp);
 
                 $.each(data, function(index, d){
                     if (service == "subway")
