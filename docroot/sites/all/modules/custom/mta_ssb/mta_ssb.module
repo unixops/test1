@@ -3,8 +3,19 @@ function mta_ssb_init(){
 	include 'SSB.inc';
 
 	global $ssb;
-	$ssb = new ServiceStatusDataHandler();
+	$ssb = new MTAServiceStatusDataHandler();
 }
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function mta_qt_ssb_ctools_plugin_api() {
+	list($module, $api) = func_get_args();
+	if ($module == "quicktabs" && $api == "quicktabs") {
+		return array("version" => "1");
+	}
+}
+
 
 function mta_ssb_menu()
 {
@@ -16,17 +27,17 @@ function mta_ssb_menu()
 
 	$item['service_status_json'] = array(
 			'access arguments' => array('access content'),
-			'page callback' => 'getServiceStatusAsJSON',
+			'page callback' => 'getSSBAsJson',
 	);
 
 	$item['service_status_json.js'] = array(
 			'access arguments' => array('access content'),
-			'page callback' => 'getServiceStatusAsJSON',
+			'page callback' => 'getSSBAsJson',
 	);
 
 	$item['mta/service_status_json.js'] = array(
 			'access arguments' => array('access content'),
-			'page callback' => 'getServiceStatusAsJSON',
+			'page callback' => 'getSSBAsJson',
 	);
 
 	return $item;
@@ -37,7 +48,7 @@ function mta_ssb_menu()
 */
 function mta_ssb_block_info()
 {
-	$blocks['mta-service-status'] = array(
+	$blocks['mta_service_status'] = array(
 			'info' => t('MTA Service Status'),
 			'cache' => DRUPAL_NO_CACHE,
 	);
@@ -67,30 +78,35 @@ function mta_ssb_block_info()
 function mta_ssb_block_view($delta ='')
 {
 	$block = array();
-
 	global $ssb;
 
 	switch ($delta)
 	{
+		case 'mta_service_status':
+			$block['title'] = t('Service Status');
+			$block['subject'] = t('');
+			$block['content'] = theme('servicestatus', array());//content' => $ssb->getServiceStatusData(SUBWAY)));//get_ssb('SUBWAY');
+			break;
 		case 'mta_subway':
 			$block['title'] = t('Subway Service Status');
 			$block['subject'] = t('');
-			$block['content'] = theme('subwayTab', array('content' => $ssb->getServiceStatusData(SUBWAY)));//get_ssb('SUBWAY');
+			$block['content'] = theme('subway', array('content' => $ssb->getServiceStatusData(SUBWAY)));//get_ssb('SUBWAY');
 			break;
 		case 'mta_rail':
 			$block['title'] = t('Rail Service Status');
 			$block['subject'] = t('');
-			$block['content'] = mta_ssb_get_rail();//get_ssb('LIRR');
+			$block['content'] = theme('rail', array('lirr' => $ssb->getServiceStatusData(LIRR),
+			'mnr' => $ssb->getServiceStatusData(MNR)));
 			break;
 		case 'mta_bus':
 		  $block['title'] = t('Bus Service Status');
 			$block['subject'] = t('');
-			$block['content'] = theme('busTab', array('bus' => $ssb->getServiceStatusData(BUS)));//get_ssb('BUS');
+			$block['content'] = theme('bus', array('bus' => $ssb->getServiceStatusData(BUS)));//get_ssb('BUS');
 			break;
 		case 'mta_bnt':
 			$block['title'] = t('Bridge & Tunnel Service Status');
 			$block['subject'] = t('');
-			$block['content'] = theme('bntTab', array('bnt' => $ssb->getServiceStatusData(BNT)));//get_ssb('BNT');
+			$block['content'] = theme('bnt', array('bnt' => $ssb->getServiceStatusData(BNT)));//get_ssb('BNT');
 			break;
 	}
 
@@ -115,7 +131,7 @@ function mta_ssb_render_service_status($service = '', $col = '')
 	return $filteredhtml;
 }
 
-function getServiceStatusAsJSON()
+function getSSBAsJson()
 {
 	global $ssd;
 
@@ -137,16 +153,19 @@ function mta_ssb_theme(&$existing, $type, $theme, $path)
 {
 	// Following key is the internal name of the hook.
 	return array(
-			'subwayTab' => array (
+			'servicestatus' => array(
 					'variables' => array('content' => NULL),
 			),
-			'railTab' => array (
-					'variables' => array('lirr' => NULL, 'mrn' => NULL),
+			'subway' => array (
+					'variables' => array('subway' => NULL),
 			),
-			'busTab' => array (
+			'rail' => array (
+					'variables' => array('lirr' => NULL, 'mnr' => NULL),
+			),
+			'bus' => array (
 					'variables' => array('bus' => NULL),
 			),
-			'bntTab' => array (
+			'bnt' => array (
 					'variables' => array('bnt' => NULL),
 			),
 	);
@@ -154,35 +173,130 @@ function mta_ssb_theme(&$existing, $type, $theme, $path)
 
 function mta_ssb_get_rail(){
 	global $ssb;
-	return $lirrHTML = theme('railTab', array('lirr' => $ssb->getServiceStatusData(LIRR),
+	return theme('rail', array('lirr' => $ssb->getServiceStatusData(LIRR),
 			'mnr' => $ssb->getServiceStatusData(MNR)));
 }
 
 
-function get_ssb(){
-	global $ssb;
+/**
+ * Implements hook_quicktabs_default_quicktabs().
+ * http://drupalcontrib.org/api/drupal/contributions!quicktabs!quicktabs.module/function/quicktabs_build_quicktabs/7
+*/
+/*
+function mta_ssb_quicktabs_default_quicktabs() {
+	$export = array();
 
-	if($service == 'SUBWAY'){
-	return $subwayHTML = theme('subwayTab', array('content' => $ssb->getServiceStatusData(SUBWAY)));
-	}
-	if($service == 'LIRR'){
-		return $lirrHTML = theme('railTab', array('lirr' => $ssb->getServiceStatusData(LIRR),
-			'mnr' => $ssb->getServiceStatusData(MNR)));
-	}
-	if($service == 'BUS'){
-		return $busHTML = theme('busTab', array('bus' => $ssb->getServiceStatusData(BUS)));
-	}
-	if($service == 'BNT'){
-		return $bntHTML = theme('bntTab', array('bnt' => $ssb->getServiceStatusData(BNT)));
-	}
-	//$content = '<div id="status-whole-block">'.$subwayHTML.$lirrHTML.$busHTML.$bntHTML.'</div>';
-	//return $content;
+	$quicktabs = new stdClass();
+	$quicktabs->disabled = FALSE
+	$quicktabs->api_version = 1;
+	$quicktabs->machine_name = 'service_status';
+	$quicktabs->ajax = 1;
+	$quicktabs->hide_empty_tabs = FALSE;
+	$quicktabs->default_tab = 0;
+	$quicktabs->title = 'Service Status';
+	$quicktabs->tabs = array(
+			0 => array(
+					'bid' => 'mta_ssb_delta_mta_subway',
+					'hide_title' => 1,
+					'title' => 'Subway',
+					'weight' => '-100',
+					'type' => 'block',
+			),
+			1 => array(
+					'bid' => 'mta_ssb_delta_mta_rail',
+					'hide_title' => 1,
+					'title' => 'Rail',
+					'weight' => '-99',
+					'type' => 'block',
+			),
+			2 => array(
+					'bid' => 'mta_ssb_delta_mta_bus',
+					'hide_title' => 1,
+					'title' => 'Bus',
+					'weight' => '-98',
+					'type' => 'block',
+			),
+			3 => array(
+					'bid' => 'mta_ssb_delta_mta_bnt',
+					'hide_title' => 1,
+					'title' => 'Bridges & Tunnels',
+					'weight' => '-97',
+					'type' => 'block',
+			),
+	);
+	$quicktabs->renderer = 'quicktabs';
+	$quicktabs->style = 'default';
+	$quicktabs->options = array();
+
+	// Translatables
+	// Included for use with string extractors like potx.
+	t('Bridges & Tunnels');
+	t('Bus');
+	t('Rail');
+	t('Service Status');
+	t('Subway');
+
+	$export['service_status'] = $quicktabs;
+
+	return $export;
+}
+*/
+
+function theme_servicestatus($variables){
+	$arrSubway = $variables['content'];
+
+	$rendered = '<div id="statusblock-mta-service-status">';
+	$rendered .= '<div class="AsOfTime";">' . mta_ssb_timestamp() . '</div>';
+	$mtaquicktabs = array(
+			0 => array(
+					'bid' => 'mta_ssb_mta_subway',
+					'hide_title' => 1,
+					'title' => '',
+					'weight' => '-100',
+					'type' => 'block',
+			),
+			1 => array(
+					'bid' => 'mta_ssb_mta_rail',
+					'hide_title' => 1,
+					'title' => '',
+					'weight' => '-99',
+					'type' => 'block',
+			),
+			2 => array(
+					'bid' => 'mta_ssb_mta_bus',
+					'hide_title' => 1,
+					'title' => '',
+					'weight' => '-98',
+					'type' => 'block',
+			),
+			3 => array(
+					'bid' => 'mta_ssb_mta_bnt',
+					'hide_title' => 1,
+					'title' => '',
+					'weight' => '-97',
+					'type' => 'block',
+			),
+	);
+	$quicktabs_options = array(
+			'disabled' => 'FALSE',
+	    'api_version' => '1',
+			'machine_name' => 'service_status',
+			'ajax' => 1,
+			'hide_empty_tabs' => 'FALSE',
+			'default_tab' => '0',
+			'title' => 'Service Status'
+			);
+	$rendered .= render(quicktabs_build_quicktabs('service_status',$quicktabs_options, $mtaquicktabs));
+	//dsm($mtaquicktabs);
+	$rendered .= '</div>';
+
+	return $rendered;
 }
 
 /*
  * Default theme implementation for rendering Subway Status
 */
-function theme_subwayTab($variables)
+function theme_subway($variables)
 {
 	global $base_url;
 
@@ -210,7 +324,7 @@ function theme_subwayTab($variables)
 /*
  * Default theme implementation for rendering LIRR Status
 */
-function theme_railTab($variables)
+function theme_rail($variables)
 {
 	global $base_url;
 
@@ -264,7 +378,7 @@ function theme_railTab($variables)
 /*
 * Default theme implementation for rendering Bus Status
  */
-function theme_busTab($variables) {
+function theme_bus($variables) {
 $arrBus = $variables['bus'];
 
 $rendered = '<div id="busDiv" style="float: left; margin-top: 11px;">';
@@ -286,7 +400,7 @@ for($num=0; $num < count($arrBus); $num++)
 /*
 * Default theme implementation for rendering B&T Status
 */
-function theme_bntTab($variables) {
+function theme_bnt($variables) {
 $arrBnt = $variables['bnt'];
 
 $rendered = '<div id="bntDiv" style="float: left; margin-top: 12px;">
@@ -307,9 +421,7 @@ $rendered .= '<div class="completeOutage" style="margin: 150px 0 0px 0;">' . $ar
     return $rendered;
 }
 
-function mta_ssb_preprocess_block(&$variables) {
-	if ($variables['block']->delta === 'mta_subway') {
+function mta_ssb_timestamp() {
 		global $ssb;
-		$variables['timestamp'] = $ssb->getStatusTimeStamp();
-	}
+		return $ssb->getStatusTimeStamp();
 }
