@@ -9,7 +9,7 @@
 
         var differential = new Date().getTime();
         // url = "http://newdev.mta.info/service_status_json/xhr";
-        url = "http://newdev.mta-hq.info/service_status_json/xhr/" + differential;
+        url = "http://newdev.mta-hq.info/service_status_json/" + differential;
         // url = "http://newmta.localhost:8082/service_status_json/xhr/" + differential;
 
         // $.ajax({ 

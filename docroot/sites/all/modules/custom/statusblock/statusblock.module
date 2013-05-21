@@ -3,12 +3,13 @@ function statusblock_init(){
     // include 'ServiceStatus.inc';
     // global $ssd;
     // $ssd = new ServiceStatusDataHandler();
-    $options['cache'] = false;
-    $options['preprocess'] = false;
-    $options['type'] = 'file';
+    
+    // $options['cache'] = false;
+    // $options['preprocess'] = false;
+    // $options['type'] = 'file';
     // drupal_add_js('http://newdev.mta-hq.info/service_status_json/'.time()."'", $options);
-    drupal_add_js('http://newdev.mta-hq.info/service_status_json/', $options);
-    // drupal_add_js('http://newmta.localhost:8082/service_status_json/'.time());
+    // drupal_add_js('http://newdev.mta-hq.info/service_status_json/', $options);
+    // drupal_add_js('http://newmta.localhost:8082/service_status_json/', $options);
 }
     
 /*
@@ -73,7 +74,8 @@ function getServiceStatusAsJSON()
     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
     $fileContents = trim(str_replace('"', "'", $fileContents));
     $simpleXml = simplexml_load_string($fileContents);
-    $json = "var json = " . json_encode($simpleXml);
+    $json = json_encode($simpleXml);
+    // $json = "var json = " . json_encode($simpleXml);
 
     echo $json;
 }
