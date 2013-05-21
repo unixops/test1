@@ -3,8 +3,8 @@ function statusblock_init(){
     // include 'ServiceStatus.inc';
     // global $ssd;
     // $ssd = new ServiceStatusDataHandler();
-    // <script type="text/javascript" src="http://newdev.mta-hq.info/service_status_json"></script>
-     drupal_add_js('http://newdev.mta-hq.info/service_status_json');
+    // drupal_add_js('http://newdev.mta-hq.info/service_status_json/'.time());
+    drupal_add_js('http://newmta.localhost:8082/service_status_json/'.time());
 }
     
 /*
@@ -14,6 +14,7 @@ function statusblock_block_info()
 {    
     $blocks['mta-service-status'] = array(
             'info' => t('MTA Service Status'),
+            'cache' => DRUPAL_NO_CACHE,
      		// 'cache' => DRUPAL_CACHE_GLOBAL,
     );
 
@@ -43,14 +44,9 @@ function statusblock_menu()
         'page callback' => 'getServiceStatusAsJSON',
     );
 
-    $item['service_status_json.js'] = array(
+    $item['service_status_json/xhr'] = array(
         'access arguments' => array('access content'),
-        'page callback' => 'getServiceStatusAsJSON',
-    );
-
-    $item['mta/service_status_json.js'] = array(
-        'access arguments' => array('access content'),
-        'page callback' => 'getServiceStatusAsJSON',
+        'page callback' => 'getDetailServiceStatusAsJSON',
     );
 
     return $item;
@@ -69,19 +65,22 @@ function getServiceStatusDetail($service, $line)
 
 function getServiceStatusAsJSON()
 {
-    // global $ssd;
-
-    // echo xml2json::transformXmlStringToJson($ssd->getStatusAsXML());
-
     $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
-
     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
-
     $fileContents = trim(str_replace('"', "'", $fileContents));
-
     $simpleXml = simplexml_load_string($fileContents);
+    $json = "var json = " . json_encode($simpleXml);
 
-    $json = "var data = " . json_encode($simpleXml);
+    echo $json;
+}
+
+function getDetailServiceStatusAsJSON()
+{
+    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
+    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+    $fileContents = trim(str_replace('"', "'", $fileContents));
+    $simpleXml = simplexml_load_string($fileContents);
+    $json = json_encode($simpleXml);
 
     echo $json;
 }

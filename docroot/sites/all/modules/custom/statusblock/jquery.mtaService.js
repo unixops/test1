@@ -9,8 +9,18 @@
 
         var differential = new Date().getTime();
         // url = "http://newdev.mta.info/service_status_json";
-        url = "http://newdev.mta-hq.info/service_status_json/" + differential;
-        // url = "http://newmta.localhost:8082/service_status_json/" + differential;
+        // url = "http://newdev.mta-hq.info/service_status_json/" + differential;
+        url = "http://newmta.localhost:8082/service_status_json/xhr/" + differential;
+
+        // $.ajax({ 
+        //     type: 'GET', 
+        //     url: url,
+        //     dataType: 'json',
+        //     success: function (data) { 
+        //         alert ("test new code");
+        //         console.log(data.timestamp);
+        //     }
+        // });
 
         $.getJSON(url,
             function(data){  
@@ -18,12 +28,9 @@
 
                 $.ajaxSetup({ cache: false });
 
-                // console.log("This is: " + this);
-                // ele.html (data.subway.line[3].text);
-                // console.log (data.subway.line[3].text);
+                console.log(data.timestamp);
 
                 $.each(data, function(index, d){
-                    // console.log (data.timestamp);
                     if (service == "subway")
                         arr = data.subway;
                     else if (service == "LIRR")
@@ -33,8 +40,6 @@
                         $.each(val, function(index, v){
                             if (v.name == line)
                             {
-                                console.log(v.status);
-                                console.log(v.name);
                                 ele.html(v.text);
                                 return false;
                             }

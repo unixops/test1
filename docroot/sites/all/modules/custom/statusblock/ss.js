@@ -14,15 +14,16 @@
         // console.log(url);
 
         // console.log(data.timestamp);
-        $.each(data, function(index, d){
-            // console.log (data.subway.line[3].name);
-            var ts = (data.timestamp).split(" ");
+
+        $.each(json, function(index, d){
+            // console.log (json.subway.line[3].name);
+            var ts = (json.timestamp).split(" ");
             $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
 
-            $.each(data.subway, function(key, val){
+            $.each(json.subway, function(key, val){
                 $.each(val, function(index, val){
                     // console.log(key);
-                    // console.log(val.name);
+                    // console.log(val.name);   
                     generateHTML(val.name, val.status);
                 });
             });
