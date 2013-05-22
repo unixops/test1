@@ -8,8 +8,7 @@
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
         var differential = new Date().getTime();
-        // url = "http://newmta.localhost:8082/service_status_json/" + differential;
-        // url = "http://newdev.mta.info/service_status_json";
+        // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
         url = "http://newdev.mta-hq.info/service_status_json/" + differential;
         // console.log(url);
 
@@ -25,7 +24,7 @@
         //             // console.log(key);
         //             // console.log(val.name);   
         //             generateHTML(val.name, val.status);
-        //         });
+        //         }); 
         //     });
         // });
 
@@ -37,7 +36,6 @@
         $.ajax({
             url: url,
             dataType: 'json',
-            async: false,
             success: function(data) {
                 var ts = (data.timestamp).split(" ");
                 $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
@@ -49,6 +47,9 @@
                         generateHTML(val.name, val.status);
                     });
                 });
+            },
+            error: function(jqxhr, msg, exception) {
+                $('#123').html(msg);
             }
         });
 
