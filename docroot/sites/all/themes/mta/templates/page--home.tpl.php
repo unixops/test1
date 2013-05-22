@@ -24,12 +24,13 @@
 			 </div>
 			<div id="navbar"><?php print render($page['navbar']);?></div>
 			
+			<a id="main-content"></a>
+			
 			<div id="contentbox" class="clearfix">
 							<div class="container">
 								<div class="span-94">									
 									<div id="messages"> <?php print $messages; ?> </div>
 									
-						
       		    																
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first" class="span-23">
@@ -47,9 +48,6 @@
 										print'<div id="main-message" class="span-46">';
 
 								?>
-								
-
-									<a id="main-content"></a>
 
 									
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>

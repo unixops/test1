@@ -35,12 +35,14 @@
 									<?php print $feed_icons; ?>
 
 							</div>
+							
+							<a id="main-content"></a>
+							
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first">
 											<?php print render($page['sidebar_first']); ?>
 											</div>
 										<?php endif; ?>
-
 
 
 								<?php if ($page['sidebar_first'] && $page['sidebar_second']) {
@@ -51,10 +53,6 @@
 										print'<div id="main-message" class="span-43 full-main">';
 								}
 								?>
-
-
-									<a id="main-content"></a>
-
 
 									<?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
