@@ -7,7 +7,7 @@
 
         var ele = $(this);
 
-        var differential = new Date().getTime();
+        var differential = (new Date().getTime())/60000;
         // url = "http://newdev.mta.info/service_status_json/xhr";
         url = "http://newdev.mta-hq.info/service_status_json/" + differential;
         // url = "http://newmta.localhost:8082/service_status_json/xhr/" + differential;
@@ -26,7 +26,7 @@
             function(data){  
                 var arr;
 
-                $.ajaxSetup({ cache: false });
+                // $.ajaxSetup({ cache: false });
 
                 // console.log(data.timestamp);
 
