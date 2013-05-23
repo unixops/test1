@@ -36,7 +36,7 @@
 
 							</div>
 							
-							<a id="main-content"></a>
+							<a name="main-content"></a>
 							
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first">

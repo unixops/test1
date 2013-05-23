@@ -24,7 +24,7 @@
 			 </div>
 			<div id="navbar"><?php print render($page['navbar']);?></div>
 			
-			<a id="main-content"></a>
+			<a name="main-content"></a>
 			
 			<div id="contentbox" class="clearfix">
 							<div class="container">
