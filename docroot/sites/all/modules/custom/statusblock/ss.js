@@ -7,9 +7,9 @@
 
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
-        var differential = Math.floor((new Date().getTime())/60000);
+        var differential = Math.round((new Date().getTime())/60000);
         // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
-        url = "http://newdev.mta-hq.info/service_status_json/" + differential;
+        var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
         // console.log(url);
 
         // console.log(data.timestamp);

@@ -47,6 +47,7 @@ function statusblock_menu()
     $item['service_status_json'] = array(
         'access arguments' => array('access content'),
         'page callback' => 'getServiceStatusAsJSON',
+        'delivery callback' => 'drupal_json_output',
     );
 
     $item['service_status_json/xhr'] = array(
@@ -70,19 +71,19 @@ function getServiceStatusDetail($service, $line)
 
 function getServiceStatusAsJSON()
 {
-    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
+    $fileContents= file_get_contents("http://webqa.mta.info/status/serviceStatus.txt");
     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
     $fileContents = trim(str_replace('"', "'", $fileContents));
     $simpleXml = simplexml_load_string($fileContents);
     $json = json_encode($simpleXml);
     // $json = "var json = " . json_encode($simpleXml);
 
-    echo $json;
+    return $json;
 }
 
 function getDetailServiceStatusAsJSON()
 {
-    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
+    $fileContents= file_get_contents("http://webqa.mta.info/status/serviceStatus.txt");
     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
     $fileContents = trim(str_replace('"', "'", $fileContents));
     $simpleXml = simplexml_load_string($fileContents);
