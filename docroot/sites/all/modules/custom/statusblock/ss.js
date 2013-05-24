@@ -36,7 +36,7 @@
             success: function(data) {
                 // var data = $.parseJSON(d);
                 
-                // console.log(data.timestamp);
+                console.log(data.timestamp);
                 var ts = (data.timestamp).split(" ");
                 $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
 
