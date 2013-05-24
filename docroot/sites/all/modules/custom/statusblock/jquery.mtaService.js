@@ -22,7 +22,8 @@
         // });
 
         $.getJSON(url,
-            function(data){  
+            function(d){
+                var data = $.parseJSON(d);
                 var arr;
 
                 // $.ajaxSetup({ cache: false });
