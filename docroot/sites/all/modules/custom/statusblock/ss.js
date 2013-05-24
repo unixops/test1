@@ -33,8 +33,8 @@
         $.ajax({
             url: url,
             dataType: 'json',
-            success: function(d) {
-                var data = $.parseJSON(d);
+            success: function(data) {
+                // var data = $.parseJSON(d);
                 
                 // console.log(data.timestamp);
                 var ts = (data.timestamp).split(" ");
