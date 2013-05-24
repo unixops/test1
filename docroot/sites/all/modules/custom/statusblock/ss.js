@@ -8,11 +8,8 @@
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
         var differential = Math.round((new Date().getTime())/60000);
-        // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
-        var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
-        // console.log(url);
-
-        // console.log(data.timestamp);
+        var url = "http://newmta.localhost:8082/service_status_json/" + differential;
+        // var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
 
         // $.each(json, function(index, d){
         //     // console.log (json.subway.line[3].name);
@@ -36,14 +33,15 @@
         $.ajax({
             url: url,
             dataType: 'json',
-            success: function(data) {
+            success: function(d) {
+                var data = $.parseJSON(d);
+                
+                // console.log(data.timestamp);
                 var ts = (data.timestamp).split(" ");
                 $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
 
                 $.each(data.subway, function(key, val){
                     $.each(val, function(index, val){
-                        // console.log(key);
-                        // console.log(val.name);
                         generateHTML(val.name, val.status);
                     });
                 });
