@@ -7,7 +7,7 @@
 
 			<div id="topbar">
 				<div id="branding">
-					<a href="http://www.mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
+					<a href="http://www.mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif" alt="Metropolitan Transportation Authority logo"></a>
 				</div>
 				<div id="middle-header">
 				<?php print render($page['header_middle']); ?>
