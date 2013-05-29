@@ -457,7 +457,7 @@ optgroup {
 
 
 /*Creates rounded corners around divs.
-Requires /css/border-radius.htc file
+Requires border-radius.htc file
 */
 .block-statusblock,
 .roundCorners {
@@ -526,7 +526,7 @@ h1#page-title-ad  {
   -moz-border-radius: 5px; 
   -webkit-border-radius: 5px; 
   border-radius: 5px; 
-  behavior: url(border-radius.htc); 
+  behavior: url(../border-radius.htc); 
 	}
 	
 
