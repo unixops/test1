@@ -11,34 +11,25 @@
         var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
         // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
         
-        // $.ajax({ 
-        //     type: 'GET', 
-        //     url: url,
-        //     dataType: 'json',
-        //     success: function (data) { 
-        //         alert ("test new code");
-        //         console.log(data.timestamp);
-        //     }
-        // });
 
         $.getJSON(url,
             function(d){
                 var data = $.parseJSON(d);
                 var arr;
 
-                // $.ajaxSetup({ cache: false });
-
-                // console.log(data.timestamp);
-
                 $.each(data, function(index, d){
                     if (service == "subway")
                         arr = data.subway;
                     else if (service == "LIRR")
                         arr = data.LIRR;
+                    else if (service == "MetroNorth")
+                        arr = data.MetroNorth;
+                    else if (service == "bus")
+                        arr = data.bus;
 
                     $.each(arr, function(key, val){
                         $.each(val, function(index, v){
-                            if (v.name == line)
+                            if ((v.name.replace(/\s+/g, '')) == line)
                             {
                                 ele.html(v.text);
                                 return false;
