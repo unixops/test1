@@ -39,6 +39,57 @@ hgroup, nav, section {
   
 	}
 
+.node-news-article p {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}	
+	
+.node-news-article div {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}	
+.node-news-story p {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}		
+.node-news-story div {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}		
+body.node-type-press-release div {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}	
+	
+body.node-type-press-release div {
+  
+  padding-bottom: 1em;
+  
+  font-size: 100%;
+  line-height:16px;
+  
+	}		
+
 /* This helps to make newer HTML5 elements behave like DIVs in older browers */ 
 article, aside, dialog, figure, footer, header,
 hgroup, nav, section {
