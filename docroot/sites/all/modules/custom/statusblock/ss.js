@@ -14,7 +14,6 @@
         $.ajaxSetup({ 
             // cache: false,
             async: false,
-            scriptCharset: "utf-8",
             contentType: "application/json;charset=utf-8"
         });
 
