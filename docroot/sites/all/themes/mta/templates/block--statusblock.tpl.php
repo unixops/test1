@@ -47,8 +47,9 @@
  * @see zen_process_block()
  */
 ?>
+<!-- <script type="text/javascript" src="http://newdev.mta-hq.info/service_status_json"></script> -->
 <div id="<?php print $block_html_id; ?>" class="roundCorners featurebox">
-    
+
     <span class="span-12"><h2>Service Status</h2></span>
     <span class="statusDateTime"><?php //print $timestamp; ?></span>
 	<div id = "statusblock-tabs">
