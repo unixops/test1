@@ -489,39 +489,39 @@ function theme_bntTab($variables) {
             <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/bandt/traffic/advisory.html\'">Future Date</li></ul>';
 
     $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Throgs Neck</span>
+                    <span class="span-11 busLineItem">Throgs Neck</span>
                     <span id="ThrogsNeck" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Henry Hudson</span>
+                    <span class="span-11 busLineItem">Henry Hudson</span>
                     <span id="HenryHudson" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Marine Parkway</span>
+                    <span class="span-11 busLineItem">Marine Parkway</span>
                     <span id="MarineParkway" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Bronx-Whitestone</span>
+                    <span class="span-11 busLineItem">Bronx-Whitestone</span>
                     <span id="Bronx-Whitestone" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Hugh L. Carey</span>
+                    <span class="span-11 busLineItem">Hugh L. Carey</span>
                     <span id="HughLCarey" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Queens Midtown</span>
+                    <span class="span-11 busLineItem">Queens Midtown</span>
                     <span id="QueensMidtown" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Robert F. Kennedy</span>
+                    <span class="span-11 busLineItem">Robert F. Kennedy</span>
                     <span id="RobertFKennedy" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Cross Bay</span>
+                    <span class="span-11 busLineItem">Cross Bay</span>
                     <span id="CrossBay" class="busCategory"></span>
                 </div>
                 <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">
-                    <span class="span-12 busLineItem">Verrazano-Narrows</span>
+                    <span class="span-11 busLineItem">Verrazano-Narrows</span>
                     <span id="Verrazano-Narrows" class="busCategory"></span>
                 </div>';
 
