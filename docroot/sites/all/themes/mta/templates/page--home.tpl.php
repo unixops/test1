@@ -11,7 +11,7 @@
 
 			<div id="topbar">
 				<div id="branding">
-					<a href="http://www.mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif"></a>
+					<a href="http://www.mta.info"><img src="<?php print $base_path ?>sites/all/themes/mta/images/mta_info.gif" alt="Metropolitan Transportation Authority logo"></a>
 				</div>
 				<div id="middle-header">
 				<?php print render($page['header_middle']); ?>
@@ -24,12 +24,13 @@
 			 </div>
 			<div id="navbar"><?php print render($page['navbar']);?></div>
 			
+			<a name="main-content"></a>
+			
 			<div id="contentbox" class="clearfix">
 							<div class="container">
 								<div class="span-94">									
 									<div id="messages"> <?php print $messages; ?> </div>
 									
-						
       		    																
 									<?php if ($page['sidebar_first']): ?>
 										<div id="sidebar_first" class="span-23">
@@ -47,9 +48,6 @@
 										print'<div id="main-message" class="span-46">';
 
 								?>
-								
-
-									<a id="main-content"></a>
 
 									
 									<?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>

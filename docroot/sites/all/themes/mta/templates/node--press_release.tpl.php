@@ -22,7 +22,7 @@
   			</div>
   					  						
   			<div id="press-mta-agency">
-  			<?php print render($content['field_mta_agency'][0]); ?><?php print " Press Office" ?></div>
+  			<?php print render($content['field_mta_agency'][0]); ?></div>
   			<div id="press-release-urgency">
   			<?php print "IMMEDIATE" ?></div>
   						

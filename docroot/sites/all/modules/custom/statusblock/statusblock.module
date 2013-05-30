@@ -26,9 +26,6 @@ function statusblock_block_info()
     return $blocks;
 }
 
-/*
- * Implementation of hook_menu
- */
 function statusblock_menu()
 {
     $item['gss/%/%'] = array(

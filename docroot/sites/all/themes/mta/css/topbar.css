@@ -232,6 +232,10 @@ display:none;
 	clear: both;
 	}
 
+.sf-menu.sf-style-default.sf-navbar {
+  width: 100%;
+}
+
 .sf-menu.sf-style-default a {
 	border: none;
 	}

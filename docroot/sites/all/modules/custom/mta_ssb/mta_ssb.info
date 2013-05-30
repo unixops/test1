@@ -1,0 +1,9 @@
+name = "MTA Ajax Service Status Block"
+description = "MTA Ajax Service Status Block."
+core = 7.x
+package = Our MTA modules
+dependencies[] = ctools
+dependencies[] = quicktabs
+files[] = mta_ssb.module
+files[] = SSB.inc
+stylesheets[all][] = mta_ssb_style.css
