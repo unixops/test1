@@ -44,16 +44,16 @@ font-weight:bold;
 #railSquare20 {background-color: #FF7900} /* Port Jervis Line */
 
 .subwayIcon_123 { width: 81px; height: 23px; background:url(images/sprite.gif) 0 0; }
-.subwayIcon_456 { width: 81px; height: 23px; background:url(images/sprite.gif) 82px 0; }
+.subwayIcon_456 { width: 60px; height: 23px; background:url(images/sprite.gif) 60px 0; }
 .subwayIcon_7 { width: 81px; height: 23px; background:url(images/sprite.gif) 0 -68px; }
-.subwayIcon_ACE { width: 81px; height: 23px; background:url(images/sprite.gif) 82px -22px; }
+.subwayIcon_ACE { width: 60px; height: 23px; background:url(images/sprite.gif) 60px -22px; }
 .subwayIcon_BDFM { width: 81px; height: 23px; background:url(images/sprite.gif) 0 -45px; }
-.subwayIcon_G { width: 81px; height: 23px; background:url(images/sprite.gif) 82px -68px; }
+.subwayIcon_G { width: 60px; height: 23px; background:url(images/sprite.gif) 60px -68px; }
 .subwayIcon_H { width: 81px; height: 23px; background:url(images/sprite.gif) 82px -68px; }
 .subwayIcon_JZ { width: 81px; height: 23px; background:url(images/sprite.gif) 82px -45px; }
 .subwayIcon_L { width: 81px; height: 23px; background:url(images/sprite.gif) 0 -90px; }
 .subwayIcon_NQR { width: 81px; height: 23px; background:url(images/sprite.gif) 0 -22px; }
-.subwayIcon_S { width: 81px; height: 23px; background:url(images/sprite.gif) 82px -90px; }
+.subwayIcon_S { width: 60px; height: 23px; background:url(images/sprite.gif) 60px -90px; }
 .subwayIcon_SIR { width: 81px; height: 23px; background:url(images/sprite.gif) 0 22px; }
 
 .subwayCategory {
