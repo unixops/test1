@@ -8,8 +8,10 @@
         $('#pageTitleArea').html("<h2>MTA Service Status</h2>");
 
         var differential = Math.round((new Date().getTime())/60000);
-        // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
-        var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
+        var url = "http://newmta.localhost:8082/service_status_json/" + differential;
+        // var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
+        // var url = "http://newdev.mta-hq.info/service_status_json?callback=?";
+        var url = "http://new.mta-hq.info/service_status_json/" + differential;
 
         $.ajaxSetup({ 
             // cache: false,
@@ -19,8 +21,9 @@
 
         $.ajax({
             url: url,
-            dataType: 'json',
+            dataType: 'jsonp',
             success: function(d) {
+                alert("got data");
                 var data = $.parseJSON(d);
                 
                 // console.log(data.timestamp);
