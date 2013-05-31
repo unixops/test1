@@ -1,6 +1,3 @@
-<!--[if lt IE 9]>
-			<style>.roundCorners, #block-google-appliance-ga-related-searches {border: 1px solid #b4b4b4;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background: #fff;behavior: url(<?php print base_path();?>sites/all/themes/mta/border-radius.htc);}</style>
-		<![endif]-->
 		
 		
 		<?php 		
