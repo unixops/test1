@@ -9,8 +9,8 @@
 
         var differential = Math.round((new Date().getTime())/60000);
         // var url = "http://newdev.mta-hq.info/service_status_json/" + differential;
-        var url = "http://new.mta-hq.info/service_status_json/" + differential;
-        // var url = "http://newmta.localhost:8082/service_status_json/" + differential;
+        // var url = "http://new.mta-hq.info/service_status_json/" + differential;
+        var url = "/service_status_json/" + differential;
         
 
         $.getJSON(url,
