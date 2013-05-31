@@ -20,9 +20,8 @@
 
         $.ajax({
             url: url,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function(d) {
-                alert("got data");
                 var data = $.parseJSON(d);
                 
                 // console.log(data.timestamp);
