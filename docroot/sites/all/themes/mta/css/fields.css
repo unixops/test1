@@ -95,8 +95,7 @@
 	}
 	
 .field-name-field-rotator-horizontal-image img {
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 1px 1px 4px #A5A5A5;
+   
     float: right;
     margin: 10px;
     padding: 0;
@@ -104,8 +103,7 @@
 
 .field-name-field-rotator-vertical-image img {
 	float:left;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 1px 1px 4px #A5A5A5;
+    
     margin: 10px;
     padding: 0;
 }
