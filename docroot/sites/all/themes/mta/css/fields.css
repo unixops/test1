@@ -125,33 +125,33 @@
 
 */
 .field-name-field-rotator-horizontal-image .imgcaption {
-    overflow: hidden;
+    
     width: 350px;
 }
 
 .field-name-field-rotator-vertical-image .imgcaption {
-    overflow: hidden;
+    
     width: 220px;
 }
 .field-name-field-news-body-horizontal-image .imgcaption {
-    overflow: hidden;
+   
     width: 350px;
 }
 
 .field-name-field-news-body-vertical-image .imgcaption {
-    overflow: hidden;
+   
     width: 220px;
 }
 
 
 
 .field-name-field-press-single-image .imgcaption {
-    overflow: hidden;
+    
     width: 250px;
 }
 
 .field-name-field-press-multi-image .imgcaption {
-    overflow: hidden;
+   
     width: 420px;
 }
 

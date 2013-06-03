@@ -692,14 +692,16 @@ h1#page-title-ad  {
 
 /*Press Release Single & Multi Image(FIELDS) */
 
-.field-name-field-press-single-image{
+.field-name-field-press-single-image img {
 	float: right;
     margin-left: 5px;
     padding-right: 10px;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 1px 1px 4px #A5A5A5;
    
    	}
 .field-name-field-press-single-image .imgcaption {
-    overflow: hidden;
+    
     width: 250px;
     
 }   	
