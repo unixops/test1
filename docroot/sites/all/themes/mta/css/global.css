@@ -701,10 +701,9 @@ h1#page-title-ad  {
    
    	}
 .field-name-field-press-single-image .imgcaption {
-    
+     margin:0px 10px 0px 10px;
     width: 250px;
-    
-}   	
+    }   	
 .field-name-field-press-multi-image {
 	width:100%;
 	background-color: #DEE7EB;
