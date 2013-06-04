@@ -8,7 +8,16 @@
             
             var t = parseInt($.cookie('ss_mode'));
             
-//            alert ("cookie is : '" + t + "'");
+            // alert ("cookie is : '" + t + "'");
+
+            var page_req = window.location.pathname;
+
+            if (page_req == "/nyct")
+                t = 1;
+            else if (page_req == "/lirr" || page_req == "/mnr")
+                t = 2;
+            else if (page_req == "/bandt")
+                t = 4;
 
             switch (t) {
                 case 1:
