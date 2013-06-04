@@ -60,7 +60,7 @@ function getServiceStatusDetail($service, $line)
 
 function getServiceStatusAsJSON()
 {
-    $fileContents= file_get_contents("http://web.mta.info/status/serviceStatus.txt");
+    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
     $fileContents = trim(str_replace('"', "'", $fileContents));
     $simpleXml = simplexml_load_string($fileContents);
