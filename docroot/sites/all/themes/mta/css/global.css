@@ -752,3 +752,10 @@ body.not-logged-in.node-type-page-with-ad .view-press-release .feed-icon {
 background-color: #e2e2e2;
 padding: 20px 0;
 }
+
+#block-google-adsense-google-adsense-horizontal h2 {
+font-size: 11px;
+color: #333;
+font-weight: normal;
+margin-left: 10px;
+}
