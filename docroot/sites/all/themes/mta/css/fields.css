@@ -56,16 +56,30 @@
 
 .field-name-field-photos {
 	float:right;
-	margin-top:0px;
-	margin-right:100px;
+	width: 480px;
+	margin-top:5px;
+	background-color: #EEEEEE;
+    border: 1px solid #CCCCCC;
+    border-bottom: 0px;
+	}
+	
+.field-name-field-photos .field-label{
+	margin-left:3px;
+	margin-top:3px;		
+	}
+	
+.field-name-field-photos  .field-item {
+	margin-top:3px;	
 	}
 
+
 .field-name-field-gallery-image {
-	width: 460px;
+	width: 470px;
 	padding: 5px;
 	float: right;
 	background-color: #EEEEEE;
     border: 1px solid #CCCCCC;
+    border-top: 0px;
 	}
 
 .field-name-field-gallery-image .field-item.odd {
@@ -73,21 +87,29 @@
 	padding: 5px;
 	float: left;
 	margin-left: 5px;
+	border: 1px solid #CCCCCC;
 	}
+	
+/* make the hover
+.field-name-field-gallery-image a:hover img {
+		border: 5px solid #A1A1A1;
+		border-width: 5px;
+		color: #fff;
+	}
+*/
 
 .field-name-field-gallery-image .field-item.even {
 	width: 100px;
 	padding: 5px;
 	float: right;
 	margin-right: 3px;
+	border: 1px solid #CCCCCC;
 	}
 	
 .field-name-field-gallery-text {
 	margin-top: 10px;
 	width:250px;
-	text-align: justify;
-	
-}
+	}
 
 
 /*NEWS STORY IMAGES */
