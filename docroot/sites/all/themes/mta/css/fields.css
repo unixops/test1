@@ -54,7 +54,7 @@
 
 /* Field Gallery styles */
 
-.field-name-field-photos {
+.field-name-field-photos_by {
 	float:right;
 	width: 480px;
 	margin-top:5px;
@@ -63,12 +63,12 @@
     border-bottom: 0px;
 	}
 	
-.field-name-field-photos .field-label{
+.field-name-field-photos_by .field-label{
 	margin-left:3px;
 	margin-top:3px;		
 	}
 	
-.field-name-field-photos  .field-item {
+.field-name-field-photos_by  .field-item {
 	margin-top:3px;	
 	}
 
