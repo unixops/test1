@@ -54,8 +54,14 @@
 
 /* Field Gallery styles */
 
+.field-name-field-photos {
+	float:right;
+	margin-top:0px;
+	margin-right:100px;
+	}
+
 .field-name-field-gallery-image {
-	width: 230px;
+	width: 460px;
 	padding: 5px;
 	float: right;
 	background-color: #EEEEEE;
@@ -77,7 +83,8 @@
 	}
 	
 .field-name-field-gallery-text {
-	width:450px;
+	margin-top: 10px;
+	width:250px;
 	text-align: justify;
 	
 }
