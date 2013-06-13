@@ -101,12 +101,20 @@ function file_aliases_load_fid($fid) {
     $image_style = $uri[1];
     $styles = image_styles();
     if (isset($styles[$image_style])) {
-      $_GET[IMAGE_DERIVATIVE_TOKEN] = image_style_path_token($image_style, $result->uri);
       $arguments = array_merge(array(image_style_load($image_style), file_uri_scheme($result->uri)), explode('/', str_replace(file_uri_scheme($result->uri) . '://', '', $result->uri)));
       call_user_func_array('image_style_deliver', $arguments);
     }
   }
-
+ else{
+	$image = image_load($result->uri);
+	if($image){
+		file_transfer($image->source, array('Content-Type' => $image->info['mime_type'], 'Content-Length' => $image->info['file_size']));
+	}
+	else{
+		drupal_not_found();
+		exit;	
+	}
+  }  
   if (file_uri_scheme($result->uri) == 'private') {
     $file = explode('://', $result->uri);
     file_download($file[0], $file[1]);
