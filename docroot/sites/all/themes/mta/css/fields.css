@@ -54,7 +54,7 @@
 
 /* Field Gallery styles */
 
-.field-name-field-photos_by {
+.field-name-field-photos-by {
 	float:right;
 	width: 480px;
 	margin-top:5px;
@@ -63,12 +63,12 @@
     border-bottom: 0px;
 	}
 	
-.field-name-field-photos_by .field-label{
+.field-name-field-photos-by .field-label{
 	margin-left:3px;
 	margin-top:3px;		
 	}
 	
-.field-name-field-photos_by  .field-item {
+.field-name-field-photos-by  .field-item {
 	margin-top:3px;	
 	}
 
@@ -114,7 +114,7 @@
 
 /*NEWS STORY IMAGES */
 .field-name-field-rotator-vertical-image {
-	float:right;
+	float:left;
 	padding: 8px;
 	}
 
@@ -131,7 +131,7 @@
 }
 
 .field-name-field-rotator-vertical-image img {
-	float:right;
+	float:left;
     
     margin: 10px;
     padding: 0;
@@ -157,7 +157,7 @@
 }
 
 .field-name-field-rotator-vertical-image .imgcaption {
-     margin-left:10px;
+    
     width: 220px;
 }
 .field-name-field-news-body-horizontal-image .imgcaption {
