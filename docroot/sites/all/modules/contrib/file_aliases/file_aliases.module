@@ -8,7 +8,7 @@
  * Include additional files.
  */
 foreach (module_list() as $module) {
-  if (file_exists($file = dirname(__FILE__) . "/modules/{$module}.inc")) {
+ if (file_exists($file = dirname(__FILE__) . "/modules/{$module}.inc")) {
     require_once $file;
   }
 }
@@ -19,7 +19,7 @@ foreach (module_list() as $module) {
 function file_aliases_menu() {
   $items['filefield_paths/alias/%'] = array(
     'page callback' => 'file_aliases_load_fid',
-    'page arguments' => array(2),
+   'page arguments' => array(2),
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
@@ -34,7 +34,7 @@ function file_aliases_file_load($files) {
   foreach ($files as &$file) {
     $filefield_paths_alias = "filefield_paths/alias/{$file->fid}";
     if (($alias = drupal_get_path_alias($filefield_paths_alias)) != $filefield_paths_alias) {
-      $file->uri = file_create_url($alias);
+      $file->alias = $alias;
     }
   }
 }
@@ -43,11 +43,10 @@ function file_aliases_file_load($files) {
  * Implements hook_preprocess_image_style().
  */
 function file_aliases_preprocess_image_style(&$variables) {
-  global $base_url;
-  $source = drupal_lookup_path('source', str_replace($base_url . base_path(), '', $variables['path']));
-  $fid = drupal_substr($source, 22);
-  if ($uri = db_query("SELECT uri FROM {file_managed} WHERE fid = :fid", array(':fid' => $fid))->fetchField()) {
-    $variables['path'] = $uri;
+  $fid = db_query("SELECT fid FROM {file_managed} WHERE uri = :uri", array(':uri' => "{$variables['path']}"))->fetchField();
+  $filefield_paths_alias = "filefield_paths/alias/{$fid}";
+  if (($alias = drupal_get_path_alias($filefield_paths_alias)) != $filefield_paths_alias) {
+    $variables['alias'] = $alias;
   }
 }
 
@@ -55,13 +54,8 @@ function file_aliases_preprocess_image_style(&$variables) {
  * Implements hook_preprocess_image().
  */
 function file_aliases_preprocess_image(&$variables) {
-  if (isset($variables['style_name']) && preg_match("/.*?files\/styles\/{$variables['style_name']}\/(.*?)\/(.*)/", $variables['path'], $matches)) {
-    if ($fid = db_query("SELECT fid FROM {file_managed} WHERE uri = :uri", array(':uri' => "{$matches[1]}://{$matches[2]}"))->fetchField()) {
-      $filefield_paths_alias = "filefield_paths/alias/{$fid}";
-      if (($alias = drupal_get_path_alias($filefield_paths_alias)) != $filefield_paths_alias) {
-        $variables['path'] = file_create_url($alias) . "?{$variables['style_name']}";
-      }
-    }
+  if (isset($variables['style_name']) && isset($variables['alias'])) {
+    $variables['path'] = file_create_url($variables['alias']) . '?' . $variables['style_name'];
   }
 }
 
@@ -71,11 +65,10 @@ function file_aliases_preprocess_image(&$variables) {
  * @TODO - Respect 'display alias' checkbox.
  */
 function file_aliases_file_url_alter(&$uri) {
-  if ($fid = db_query("SELECT fid FROM {file_managed} WHERE uri = :uri", array(':uri' => $uri))->fetchField()) {
-    $filefield_paths_alias = "filefield_paths/alias/{$fid}";
-    if (($alias = drupal_get_path_alias($filefield_paths_alias)) != $filefield_paths_alias) {
-      $uri = file_create_url($alias);
-    }
+  $fid = db_query('SELECT fid FROM {file_managed} WHERE uri = :uri', array(':uri' => $uri))->fetchField();
+  if (!empty($fid)) {
+    $file = file_load($fid);
+    if (isset($file->alias)) $uri = $file->alias;
   }
 }
 
@@ -89,7 +82,7 @@ function file_aliases_load_fid($fid) {
   }
 
   $results = db_select('file_managed', 'f')
-    ->fields('f', array('filemime', 'uri'))
+  ->fields('f', array('filemime', 'uri'))
     ->condition('fid', $fid)
     ->execute()
     ->fetchAll();
@@ -101,20 +94,12 @@ function file_aliases_load_fid($fid) {
     $image_style = $uri[1];
     $styles = image_styles();
     if (isset($styles[$image_style])) {
+      $_GET[IMAGE_DERIVATIVE_TOKEN] = image_style_path_token($image_style, $result->uri);
       $arguments = array_merge(array(image_style_load($image_style), file_uri_scheme($result->uri)), explode('/', str_replace(file_uri_scheme($result->uri) . '://', '', $result->uri)));
       call_user_func_array('image_style_deliver', $arguments);
     }
   }
- else{
-	$image = image_load($result->uri);
-	if($image){
-		file_transfer($image->source, array('Content-Type' => $image->info['mime_type'], 'Content-Length' => $image->info['file_size']));
-	}
-	else{
-		drupal_not_found();
-		exit;	
-	}
-  }  
+
   if (file_uri_scheme($result->uri) == 'private') {
     $file = explode('://', $result->uri);
     file_download($file[0], $file[1]);
@@ -128,12 +113,21 @@ function file_aliases_load_fid($fid) {
 }
 
 /**
- * Implements hook_file_download().
+* Implements hook_file_download().
  */
 function file_aliases_file_download($uri) {
-  $fileinfo = pathinfo(drupal_get_path_alias($_GET['q']));
+  $path = drupal_get_path_alias($_GET['q']);
+  $fileinfo = pathinfo($path);
   return array(
     'Cache-Control' => 'public',
     'Content-Disposition' => "filename='{$fileinfo['basename']}'"
   );
+}
+
+/**
+ * Implements hook_file_delete().
+ */
+function file_aliases_file_delete($file) {
+  $filefield_paths_alias = "filefield_paths/alias/{$file->fid}";
+  path_delete(array('source' => $filefield_paths_alias));
 }
