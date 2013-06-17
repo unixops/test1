@@ -164,7 +164,7 @@ class ServiceStatusDataHandler {
                     break;
             }
 
-            $lirr_msg =  '<span style="color:Green;font-size:large;font-weight:bold">'.$linename.'</span><br /><br /><br />';
+            $lirr_msg =  '<span style="color:#92d050;font-size:large;font-weight:bold">'.$linename.'</span><br /><br /><br />';
             $msg = $lirr_msg.$this->arrStatusData[$row][$col]['text'];
 
         } else
@@ -173,7 +173,7 @@ class ServiceStatusDataHandler {
         if (!strlen($msg))            
             $msg = "<p>Posted: " . date("F j, Y, g:i a", REQUEST_TIME) . 
                     "</p><p>The status has changed.  Please go back to the previous page and refresh your browser.</p>";
-                    
+
         return $msg;
     }
     
