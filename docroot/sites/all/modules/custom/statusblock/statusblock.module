@@ -22,6 +22,7 @@ function statusblock_block_info()
 function statusblock_menu()
 {
     $item['gss/%/%'] = array(
+        'title' => "MTA Service Status",
         'access arguments' => array('access content'),
         'page callback' => 'statusblock_render_service_status',
         'page arguments' => array(1,2),
