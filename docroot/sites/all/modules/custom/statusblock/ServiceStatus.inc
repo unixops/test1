@@ -124,12 +124,56 @@ class ServiceStatusDataHandler {
         return isset($this->msgERROR) ? $this->msgERROR : $this->arrStatusData[$service];
     }
     
-    function getStatus($row, $col) {        
-        $msg = $this->arrStatusData[$row][$col]['text'];
+    function getStatus($row, $col) {
+
+        if ($row == LIRR)
+        {
+            switch($col) {
+                case 0:
+                    $linename = "City Terminal Zone Branch Customers";
+                    break;
+                case 1:
+                    $linename = "Babylon Branch Customers";
+                    break;
+                case 2:
+                    $linename = "Far Rockaway Branch Customers";
+                    break;                
+                case 3:
+                    $linename = "Hempstead Branch Customers";
+                    break;
+                case 4:
+                    $linename = "Long Beach Branch Customers";
+                    break;
+                case 5:
+                    $linename = "Montauk Branch Customers";
+                    break;
+                case 6:
+                    $linename = "Oyster Bay Branch Customers";
+                    break;
+                case 7:
+                    $linename = "Port Jefferson Branch Customers";
+                    break;
+                case 8:
+                    $linename = "Port Washington Branch Customers";
+                    break;
+                case 9:
+                    $linename = "Ronkonkoma Branch Customers";
+                    break;
+                case 10:
+                    $linename = "West Hempstead Branch Customers";
+                    break;
+            }
+
+            $lirr_msg =  '<span style="color:Green;font-size:large;font-weight:bold">'.$linename.'</span><br /><br /><br />';
+            $msg = $lirr_msg.$this->arrStatusData[$row][$col]['text'];
+
+        } else
+            $msg = $this->arrStatusData[$row][$col]['text'];
         
         if (!strlen($msg))            
             $msg = "<p>Posted: " . date("F j, Y, g:i a", REQUEST_TIME) . 
                     "</p><p>The status has changed.  Please go back to the previous page and refresh your browser.</p>";
+                    
         return $msg;
     }
     
