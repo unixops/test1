@@ -164,7 +164,7 @@ class ServiceStatusDataHandler {
                     break;
             }
 
-            $lirr_msg =  '<span style="color:#92d050;font-size:large;font-weight:bold">'.$linename.'</span><br /><br /><br />';
+            $lirr_msg = '<span style="color:#92d050;font-size:large;font-weight:bold">'.$linename.'</span><br/>';
             $msg = $lirr_msg.$this->arrStatusData[$row][$col]['text'];
 
         } else
