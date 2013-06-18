@@ -356,7 +356,7 @@ EOT;
         }
     }
 
-    $block['subject'] = 'GTranslate';
+    $block['subject'] = '';
     $block['content'] = $block_content;
     return $block;
 } // function gtranslate_block_view
