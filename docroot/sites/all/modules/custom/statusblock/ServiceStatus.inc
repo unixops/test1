@@ -130,41 +130,52 @@ class ServiceStatusDataHandler {
         {
             switch($col) {
                 case 0:
-                    $linename = "City Terminal Zone Branch Customers";
+                    $linename = "Babylon Branch Customers";
+                    $color = "#00985F";
                     break;
                 case 1:
-                    $linename = "Babylon Branch Customers";
+                    $linename = "City Terminal Zone Branch Customers";
+                    $color = "#4D5357";
                     break;
                 case 2:
                     $linename = "Far Rockaway Branch Customers";
+                    $color = "#6E3219";
                     break;                
                 case 3:
                     $linename = "Hempstead Branch Customers";
+                    $color = "#CE8E00";
                     break;
                 case 4:
                     $linename = "Long Beach Branch Customers";
+                    $color = "#FF6319";
                     break;
                 case 5:
                     $linename = "Montauk Branch Customers";
+                    $color = "#006983";
                     break;
                 case 6:
                     $linename = "Oyster Bay Branch Customers";
+                    $color = "#00AF3F";
                     break;
                 case 7:
                     $linename = "Port Jefferson Branch Customers";
+                    $color = "#0039A6";
                     break;
                 case 8:
                     $linename = "Port Washington Branch Customers";
+                    $color = "#C60C30";
                     break;
                 case 9:
                     $linename = "Ronkonkoma Branch Customers";
+                    $color = "#A626AA";
                     break;
                 case 10:
                     $linename = "West Hempstead Branch Customers";
+                    $color = "#00A1DE";
                     break;
             }
 
-            $lirr_msg = '<span style="color:#00AF3F;font-size:large;font-weight:bold">'.$linename.'</span><br/>';
+            $lirr_msg = '<span style="color:'.$color.';font-size:large;font-weight:bold">'.$linename.'</span><br/>';
             $msg = $lirr_msg.$this->arrStatusData[$row][$col]['text'];
 
         } else
