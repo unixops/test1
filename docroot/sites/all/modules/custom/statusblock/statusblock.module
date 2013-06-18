@@ -178,12 +178,20 @@ function theme_railTab($variables)
     //$rendered .= '<span class="span-11 railLineItem"><img style="margin-right: 2px;" src="' . $base_url . '/' . drupal_get_path ('module', 'statusblock') . '/images/railSquare'.($num+1).'.gif" alt="Rail Icons"/>'.$arrMnr[$mnum]['name'].'</span>';
 
     if (is_array($arrLirr)) {  
-        for($num=0; $num < count($arrLirr); $num++)     
-            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
-                <div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>
-                <div class="span-11 railLineItem">'. $arrLirr[$num]['name'].'</div>
+        for($num=0; $num < count($arrLirr); $num++) {
+            $rendered .= '<div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">';
+                
+                if ($num == 0)
+                    $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+2) .'"></div>';
+                else if ($num == 1)
+                    $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+0) .'"></div>';
+                else
+                    $rendered .= '<div class="railLineStatus" id="railSquare'. ($num+1) .'"></div>';
+
+                $rendered .= '<div class="span-11 railLineItem">'. $arrLirr[$num]['name'].'</div>
                 <div class="railStation railCategory '. $arrLirr[$num]['status'][0] .'">'.$arrLirr[$num]['status'][1].'</div>
             </div>';
+        }
     } else
         $rendered .= '<div class="completeOutage" style="margin: 40px 0 150px 0;">' . $arrLirr . '</div>';
     
