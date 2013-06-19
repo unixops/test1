@@ -137,14 +137,14 @@
             </ul>
 
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
-                <div class="railLineStatus" id="railSquare1"></div>
-                <div class="span-11 railLineItem">City Terminal Zone</div>
-                <div id="CityTerminalZone" class="railStation railCategory"></div>
-            </div>
-            <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
                 <div class="railLineStatus" id="railSquare2"></div>
                 <div class="span-11 railLineItem">Babylon</div>
                 <div id="Babylon" class="railStation railCategory"></div>
+            </div>
+            <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
+                <div class="railLineStatus" id="railSquare1"></div>
+                <div class="span-11 railLineItem">City Terminal Zone</div>
+                <div id="CityTerminalZone" class="railStation railCategory"></div>
             </div>
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
                 <div class="railLineStatus" id="railSquare3"></div>
