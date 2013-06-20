@@ -48,6 +48,14 @@
  */
 ?>
 <!-- <script type="text/javascript" src="http://newdev.mta-hq.info/service_status_json"></script> -->
+<?php 
+    global $base_url;
+    $transparent_img = $base_url.'/'.drupal_get_path('module','servicestatus').'/images/img_trans.gif';
+    $script_path = $base_url.'/'.drupal_get_path('module','servicestatus').'/ss.js';
+?>
+
+<script type="text/javascript" src="<?php echo $script_path; ?>"></script>
+
 <div id="<?php print $block_html_id; ?>" class="roundCorners featurebox">
 
     <span class="span-12"><h2>Service Status</h2></span>
@@ -62,10 +70,7 @@
 	</div>
     <div class="content"<?php print $content_attributes; ?> style="clear:both;">
 
-        <?php 
-            global $base_url;
-            $transparent_img = $base_url.'/'.drupal_get_path('module','servicestatus').'/images/img_trans.gif';
-        ?>
+        
 
         <div id="subwayDiv" style="float: left; margin-top: 1px;">
             <ul style="float: right; padding:0; margin:0">

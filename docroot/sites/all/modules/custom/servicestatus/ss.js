@@ -18,13 +18,16 @@
             contentType: "application/json; charset=utf-8"
         });
 
+        // console.log("ss making a request." + differential);
+
         $.ajax({
             url: url,
             dataType: 'json',
             success: function(d) {
                 var data = $.parseJSON(d);
                 
-                // console.log(data.timestamp);
+                // console.log("ss got data back.");
+
                 var ts = (data.timestamp).split(" ");
                 $(".statusDateTime").html("as of " + ts[1] + " " + ts[2]);
 
