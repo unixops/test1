@@ -91,39 +91,39 @@
                                                     break;
                                                 // MNR
                                                 case "Hudson":
-                                                    linename = "Hudson Branch Customers";
+                                                    linename = "Hudson Line Customers";
                                                     color = "#009B3A";
                                                     break;
                                                 case "Harlem":
-                                                    linename = "Harlem Branch Customers";
+                                                    linename = "Harlem Line Customers";
                                                     color = "#0039A6";
                                                     break;
                                                 case "Wassaic":
-                                                    linename = "Wassaic Branch Customers";
+                                                    linename = "Wassaic Line Customers";
                                                     color = "#0039A6";
                                                     break;                
                                                 case "NewHaven":
-                                                    linename = "New Haven Branch Customers";
+                                                    linename = "New Haven Line Customers";
                                                     color = "#EE0034";
                                                     break;
                                                 case "NewCanaan":
-                                                    linename = "New Canaan Branch Customers";
+                                                    linename = "New Canaan Line Customers";
                                                     color = "#EE0034";
                                                     break;
                                                 case "Danbury":
-                                                    linename = "Danbury Branch Customers";
+                                                    linename = "Danbury Line Customers";
                                                     color = "#EE0034";
                                                     break;
                                                 case "Waterbury":
-                                                    linename = "Waterbury Branch Customers";
+                                                    linename = "Waterbury Line Customers";
                                                     color = "#EE0034";
                                                     break;
                                                 case "PascackValley":
-                                                    linename = "Pascack Valley Branch Customers";
+                                                    linename = "Pascack Valley Line Customers";
                                                     color = "#8E258D";
                                                     break;
                                                 case "PortJervis":
-                                                    linename = "Port Jervis Branch Customers";
+                                                    linename = "Port Jervis Line Customers";
                                                     color = "#FF7900";
                                                     break;
                                             }
