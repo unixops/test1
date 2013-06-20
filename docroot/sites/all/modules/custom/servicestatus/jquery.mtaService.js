@@ -41,7 +41,8 @@
                                     if ((v.name.replace(/\s+/g, '').replace(".", '')) == line)
                                     {  
                                         // console.log("Data returned : " + v.text);
-
+                                        var heading = "";
+                                        
                                         if (service == "LIRR" || service == "MetroNorth") {
                                             switch (line) {
                                                 // LIRR

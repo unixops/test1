@@ -47,7 +47,7 @@
  * @see zen_process_block()
  */
 ?>
-<!-- <script type="text/javascript" src="http://newdev.mta-hq.info/service_status_json"></script> -->
+
 <?php 
     global $base_url;
     $transparent_img = $base_url.'/'.drupal_get_path('module','servicestatus').'/images/img_trans.gif';
@@ -74,8 +74,9 @@
 
         <div id="subwayDiv" style="float: left; margin-top: 1px;">
             <ul style="float: right; padding:0; margin:0">
-                <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li>
-                <li class="gw list_h" onClick="window.parent.location=\'http://travel.mtanyct.info/serviceadvisory\'">Future Date</li>
+                <!-- <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/weekender\'">The Weekender</li> -->
+                <li class="gw list_h"><a style="color: #555;" href="http://mta.info/weekender">The Weekender</a></li>
+                <li class="gw list_h"><a style="color: #555;" href="http://travel.mtanyct.info/serviceadvisory">Future Date</a></li>
             </ul>
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 4px 0;">
                 <div class="span-11"><img src="<?php echo $transparent_img; ?>" class="subwayIcon_123" alt="123 Subway Line Icons"/></div>
@@ -138,7 +139,7 @@
         <div id="railDiv" style="float: left; display: none;">
             <span class="RailRoadCompany">Long Island Rail Road</span>
             <ul style="float: right; padding:0; margin:0">
-                <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/lirr/News/PlannedService.htm\'">Future Date</li>
+                <li class="gw list_h"><a style="color: #555;" href="http://mta.info/lirr/News/PlannedService.htm">Future Date</a></li>
             </ul>
 
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 1px 0;">
@@ -198,7 +199,7 @@
             </div>
             <div style="float: left; width: 100%;"><span class="RailRoadCompany">Metro-North Railroad</span>
                 <ul style="float: right; padding:0; margin:0">
-                    <li class="gw list_h" onClick="window.parent.location='http://mta.info/mnr/html/serviceupdates.htm'">Future Date</li>
+                    <li class="gw list_h"><a style="color: #555;" href="http://mta.info/mnr/html/serviceupdates.htm">Future Date</a></li>
                 </ul>
             </div>
 
@@ -299,7 +300,7 @@
         <!-- Bridges & Tunnels -->
         <div id="bntDiv" style="float: left; display: none; margin-top: 12px;">
             <ul style="float: right; padding:0; margin:0">
-                <li class="gw list_h" onClick="window.parent.location=\'http://mta.info/bandt/traffic/advisory.html\'">Future Date</li>
+                <li class="gw list_h"><a style="color: #555;" href="http://mta.info/bandt/traffic/advisory.html">Future Date</a></li>
             </ul>
 
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">

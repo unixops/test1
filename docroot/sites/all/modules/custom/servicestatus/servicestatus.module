@@ -34,10 +34,61 @@ function servicestatus_menu()
 
 function getStatusDetails($service, $line)
 {
-    $output = '<div id="status_display"></div>';
-    drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
+    // $output = '<div id="status_display"></div>';
+    $output = '<div id="status_display">';
+    // drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
     
-    return $output;
+    $json_str = getStatusAsJSON();
+    $json = json_decode($json_str, TRUE);
+    // dsm($json);
+
+    $data = null;
+    if ($service == "subway")
+        $data = $json["subway"]["line"];
+    elseif ($service == "LIRR")
+        $data = $json["LIRR"]["line"];
+    elseif ($service == "MetroNorth")
+        $data = $json["MetroNorth"]["line"];
+    elseif ($service == "bus")
+        $data = $json["bus"]["line"];
+    elseif ($service == "BT")
+        $data = $json["BT"]["line"];
+
+    $detailed_message = "";
+    $bNotFound = TRUE;
+
+    foreach ($data as $index) {
+        if ($bNotFound){
+            foreach($index as $value) {
+                $line_n = $index['name'];
+
+                if ($service != "subway") {
+                    $line_n = str_replace(' ', '', $line_n);
+                    $line_n = str_replace('.', '', $line_n);
+                }
+
+                if ($line_n == $line) {
+                    if ($index['text'])
+                        $detailed_message = $index['text'];
+                    else
+                        $detailed_message = "The Service Status has changed. Please go back to the MTA home page for fresh status."; 
+                    
+                    $bNotFound = false;
+                    break;
+                }                               
+            }
+        }
+    }
+    
+    // print_r ($json);
+    $output .= $detailed_message . '</div>';
+
+    // $html = html_entity_decode($output);
+
+    // run $html through MTA input filter to translate tokens to images
+    $filteredhtml = check_markup($output, 'full_html');
+
+    return $filteredhtml;
 }
 
 function getStatusAsJSON()

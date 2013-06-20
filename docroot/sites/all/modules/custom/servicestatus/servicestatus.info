@@ -5,5 +5,4 @@ package = Our MTA modules
 files[] = servicestatus.module 
 stylesheets[all][] = status_style.css
 scripts[] = servicestatus.js
-scripts[] = jquery.mtaService.js
 scripts[] = jquery.cookie.js
