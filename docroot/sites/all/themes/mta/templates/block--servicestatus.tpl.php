@@ -300,7 +300,7 @@
         <!-- Bridges & Tunnels -->
         <div id="bntDiv" style="float: left; display: none; margin-top: 12px;">
             <ul style="float: right; padding:0; margin:0">
-                <li class="gw list_h"><a style="color: #555;" href="http://mta.info/bandt/traffic/advisory.html">Future Date</a></li>
+                <li class="gw list_h"><a style="color: #555;" href="http://mta.info/bandt/traffic">Future Date</a></li>
             </ul>
 
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 10px 0;">

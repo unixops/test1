@@ -169,7 +169,7 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+n).addClass("bus_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/BT/' + n + '">Planned Detour</a>';
+                var html = '<a style="color: #996600" href="/status/BT/' + n + '">Planned Work</a>';
                 $('#'+n).html(html);
                 break;
             case 'SERVICE CHANGE':
