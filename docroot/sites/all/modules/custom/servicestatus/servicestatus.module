@@ -74,7 +74,7 @@ function getStatusDetails($service, $line)
                     if ($index['text'])
                         $detailed_message .= $index['text'];
                     else
-                        $detailed_message .= "The Service Status has changed. Please go back to the MTA home page for fresh status."; 
+                        $detailed_message .= "The Service Status has changed. Please go back to the MTA home page for latest status."; 
                     
                     $bNotFound = false;
                     break;
