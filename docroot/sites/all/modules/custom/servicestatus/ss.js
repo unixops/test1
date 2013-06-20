@@ -111,7 +111,7 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+n).addClass("rail_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '">Planned Detour</a>';
+                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '">Planned Work</a>';
                 $('#'+n).html(html);
                 break;
             case 'SERVICE CHANGE':

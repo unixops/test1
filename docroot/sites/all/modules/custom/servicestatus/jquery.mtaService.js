@@ -42,10 +42,99 @@
                                     {  
                                         // console.log("Data returned : " + v.text);
 
+                                        if (service == "LIRR" || service == "MetroNorth") {
+                                            switch (line) {
+                                                // LIRR
+                                                case "Babylon":
+                                                    linename = "Babylon Branch Customers";
+                                                    color = "#00985F";
+                                                    break;
+                                                case "CityTerminalZone":
+                                                    linename = "City Terminal Zone Branch Customers";
+                                                    color = "#4D5357";
+                                                    break;
+                                                case "FarRockaway":
+                                                    linename = "Far Rockaway Branch Customers";
+                                                    color = "#6E3219";
+                                                    break;                
+                                                case "Hempstead":
+                                                    linename = "Hempstead Branch Customers";
+                                                    color = "#CE8E00";
+                                                    break;
+                                                case "LongBeach":
+                                                    linename = "Long Beach Branch Customers";
+                                                    color = "#FF6319";
+                                                    break;
+                                                case "Montauk":
+                                                    linename = "Montauk Branch Customers";
+                                                    color = "#006983";
+                                                    break;
+                                                case "OysterBay":
+                                                    linename = "Oyster Bay Branch Customers";
+                                                    color = "#00AF3F";
+                                                    break;
+                                                case "PortJefferson":
+                                                    linename = "Port Jefferson Branch Customers";
+                                                    color = "#0039A6";
+                                                    break;
+                                                case "PortWashington":
+                                                    linename = "Port Washington Branch Customers";
+                                                    color = "#C60C30";
+                                                    break;
+                                                case "Ronkonkoma":
+                                                    linename = "Ronkonkoma Branch Customers";
+                                                    color = "#A626AA";
+                                                    break;
+                                                case "WestHempstead":
+                                                    linename = "West Hempstead Branch Customers";
+                                                    color = "#00A1DE";
+                                                    break;
+                                                // MNR
+                                                case "Hudson":
+                                                    linename = "Hudson Branch Customers";
+                                                    color = "#009B3A";
+                                                    break;
+                                                case "Harlem":
+                                                    linename = "Harlem Branch Customers";
+                                                    color = "#0039A6";
+                                                    break;
+                                                case "Wassaic":
+                                                    linename = "Wassaic Branch Customers";
+                                                    color = "#0039A6";
+                                                    break;                
+                                                case "NewHaven":
+                                                    linename = "New Haven Branch Customers";
+                                                    color = "#EE0034";
+                                                    break;
+                                                case "NewCanaan":
+                                                    linename = "New Canaan Branch Customers";
+                                                    color = "#EE0034";
+                                                    break;
+                                                case "Danbury":
+                                                    linename = "Danbury Branch Customers";
+                                                    color = "#EE0034";
+                                                    break;
+                                                case "Waterbury":
+                                                    linename = "Waterbury Branch Customers";
+                                                    color = "#EE0034";
+                                                    break;
+                                                case "PascackValley":
+                                                    linename = "Pascack Valley Branch Customers";
+                                                    color = "#8E258D";
+                                                    break;
+                                                case "PortJervis":
+                                                    linename = "Port Jervis Branch Customers";
+                                                    color = "#FF7900";
+                                                    break;
+                                            }
+
+                                            heading = '<span style="color:' + color + ';font-size:large;font-weight:bold">'+linename+'</span><br/>';
+                                        }
+                                        
                                         if (v.text.length)
-                                            ele.html(v.text);
+                                            ele.html(heading + v.text);
                                         else
-                                            ele.html("Your data is stale. Please go back to MTA home page and refresh your page.")
+                                            ele.html(heading + "Your data is stale. Please go back to MTA home page and refresh your page.")
 
                                         notFound = false;
 
