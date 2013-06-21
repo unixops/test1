@@ -1,5 +1,6 @@
 /*!
  * MTA Service Status Plugin
+ * Fetches service status data.
  */
  (function($) {
 
