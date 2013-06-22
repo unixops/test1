@@ -41,6 +41,7 @@ function getStatusDetails($service, $line)
     $json_str = getStatusAsJSON();
     $json = json_decode($json_str, TRUE);
     // dsm($json);
+    echo $json_str;
 
     $data = null;
     if ($service == "subway")
@@ -83,7 +84,7 @@ function getStatusDetails($service, $line)
         }
     }
     
-    // print_r ($json);
+    // dsm ($json);
     $output .= $detailed_message . '</div>';
 
     // $html = html_entity_decode($output);
@@ -92,6 +93,18 @@ function getStatusDetails($service, $line)
     $filteredhtml = check_markup($output, 'full_html');
 
     return $filteredhtml;
+}
+
+function getStatusAsJSON()
+{
+    $fileContents= file_get_contents("http://web.mta.info/status/serviceStatus.txt");
+    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+    $fileContents = trim(str_replace('"', "'", $fileContents));
+    $simpleXml = simplexml_load_string($fileContents);
+    $json = json_encode($simpleXml);
+    
+    // drupal_json_output($json);
+    return $json;
 }
 
 function generateRailHeading($line)
@@ -184,18 +197,6 @@ function generateRailHeading($line)
     $heading = '<span style="color:' . $color . ';font-size:large;font-weight:bold">' . $linename . '</span><br/>';
 
     return $heading;
-}
-
-function getStatusAsJSON()
-{
-    $fileContents= file_get_contents("http://web.mta.info/status/serviceStatus.txt");
-    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
-    $fileContents = trim(str_replace('"', "'", $fileContents));
-    $simpleXml = simplexml_load_string($fileContents);
-    $json = json_encode($simpleXml);
-    
-    // drupal_json_output($json);
-    return $json;
 }
 
 /*
