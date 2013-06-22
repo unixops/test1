@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Implementation of hook_block_info().
  */
@@ -39,9 +38,16 @@ function getStatusDetails($service, $line)
     // drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
     
     $json_str = getStatusAsJSON();
-    $json = json_decode($json_str, TRUE);
+    // $minutes = round(time()/60);
+    // $json_str = file_get_contents("http://new.mta.info/service_status_json/".$minutes);
+    $json = json_decode($json_str, true);
+
     // dsm($json);
-    echo $json_str;
+    // echo $json;
+
+    // print_r($json);
+    // echo $json["subway"]["line"];
+    // exit();
 
     $data = null;
     if ($service == "subway")
