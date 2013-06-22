@@ -39,13 +39,12 @@ function getStatusDetails($service, $line)
     
     $json_str = getStatusAsJSON();
     // $minutes = round(time()/60);
-    // $json_str = file_get_contents("http://new.mta.info/service_status_json/".$minutes);
-    $json = json_decode($json_str, true);
+    // $url ="http://new.mta.info/service_status_json/" . $minutes;
+    // $json_str = file_get_contents($url);
+    $json = json_decode($json_str, TRUE);
 
-    // dsm($json);
-    // echo $json;
-
-    // print_r($json);
+    // var_dump($json);
+    // echo get_class($json);
     // echo $json["subway"]["line"];
     // exit();
 

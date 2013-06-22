@@ -34,7 +34,7 @@
 
                 $.each(data.subway, function(key, val){
                     $.each(val, function(index, val){
-                        generateHTML(val.name, val.status);
+                        generateHTML(val.name, val.status, differential);
                     });
                 });
 
@@ -69,7 +69,7 @@
 
     });
 
-    function generateHTML(name, val)
+    function generateHTML(name, val, differential)
     {
         switch(val) {
             case 'GOOD SERVICE':
@@ -78,22 +78,22 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+name).addClass("subway_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/subway/' + name + '">Planned Work</a>';
+                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Planned Work</a>';
                 $('#'+name).html(html);
                 break;
             case 'SERVICE CHANGE':
                 $('#'+name).addClass("subway_ServiceChange");
-                var html = '<a style="color: #996600" href="/status/subway/' + name + '">Service Change</a>';
+                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Service Change</a>';
                 $('#'+name).html(html);
                 break;
             case 'DELAYS':
                 $('#'+name).addClass("subway_Delays");
-                var html = '<a style="color: #990033" href="/status/subway/' + name + '">Delays</a>';
+                var html = '<a style="color: #990033" href="/status/subway/' + name + '/' + differential +'">Delays</a>';
                 $('#'+name).html(html);
                 break;
             case 'SANDY REROUTE':
                 $('#'+name).addClass("subway_sandyreroute");
-                var html = '<a style="color: #5d0dff" href="/status/subway/' + name + '">Sandy Reroute</a>';
+                var html = '<a style="color: #5d0dff" href="/status/subway/' + name + '/' + differential +'">Sandy Reroute</a>';
                 $('#'+name).html(html);
                 break;
         }
