@@ -40,25 +40,25 @@
 
                 $.each(data.LIRR, function(key, val){
                     $.each(val, function(index, val){
-                        generateRailHTML(val.name, val.status, "LIRR");
+                        generateRailHTML(val.name, val.status, "LIRR", differential);
                     });
                 });
 
                 $.each(data.MetroNorth, function(key, val){
                     $.each(val, function(index, val){
-                        generateRailHTML(val.name, val.status, "MetroNorth");
+                        generateRailHTML(val.name, val.status, "MetroNorth", differential);
                     });
                 });
 
                 $.each(data.bus, function(key, val){
                     $.each(val, function(index, val){
-                        generateBusHTML(val.name, val.status);
+                        generateBusHTML(val.name, val.status, differential);
                     });
                 });
 
                 $.each(data.BT, function(key, val){
                     $.each(val, function(index, val){
-                        generateBnTHTML(val.name, val.status);
+                        generateBnTHTML(val.name, val.status, differential);
                     });
                 });
             },
@@ -101,7 +101,7 @@
         return html;
     }
 
-    function generateRailHTML(name, val, service)
+    function generateRailHTML(name, val, service, differential)
     {
         var n = name.replace(/\s+/g, '');
 
@@ -112,17 +112,17 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+n).addClass("rail_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '">Planned Work</a>';
+                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '/' + differential +'">Planned Work</a>';
                 $('#'+n).html(html);
                 break;
             case 'SERVICE CHANGE':
                 $('#'+n).addClass("rail_ServiceChange");
-                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '">Service Change</a>';
+                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '/' + differential +'">Service Change</a>';
                 $('#'+n).html(html);
                 break;
             case 'DELAYS':
                 $('#'+n).addClass("rail_Delays");
-                var html = '<a style="color: #990033" href="/status/' + service + '/'  + n + '">Delays</a>';
+                var html = '<a style="color: #990033" href="/status/' + service + '/'  + n + '/' + differential +'">Delays</a>';
                 $('#'+n).html(html);
                 break;
         }
@@ -130,7 +130,7 @@
         return html;
     }
 
-    function generateBusHTML(name, val)
+    function generateBusHTML(name, val, differential)
     {
         var n = name.replace(/\s+/g, '');
 
@@ -141,17 +141,17 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+n).addClass("bus_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/bus/' + n + '">Planned Detour</a>';
+                var html = '<a style="color: #996600" href="/status/bus/' + n + '/' + differential +'">Planned Detour</a>';
                 $('#'+n).html(html);
                 break;
             case 'SERVICE CHANGE':
                 $('#'+n).addClass("bus_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/bus/' + n + '">Service Change</a>';
+                var html = '<a style="color: #996600" href="/status/bus/' + n + '/' + differential +'">Service Change</a>';
                 $('#'+n).html(html);
                 break;
             case 'DELAYS':
                 $('#'+n).addClass("bus_Delays");
-                var html = '<a style="color: #990033" href="/status/bus/' + n + '">Delays</a>';
+                var html = '<a style="color: #990033" href="/status/bus/' + n + '/' + differential +'">Delays</a>';
                 $('#'+n).html(html);
                 break;
         }
@@ -159,7 +159,7 @@
         return html;
     }
 
-    function generateBnTHTML(name, val)
+    function generateBnTHTML(name, val, differential)
     {
         var n = name.replace(/\s+/g, '').replace(".", '');
 
@@ -170,17 +170,17 @@
                 break;
             case 'PLANNED WORK':
                 $('#'+n).addClass("bus_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/BT/' + n + '">Planned Work</a>';
+                var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">Planned Work</a>';
                 $('#'+n).html(html);
                 break;
             case 'SERVICE CHANGE':
                 $('#'+n).addClass("bus_PlannedWork");
-                var html = '<a style="color: #996600" href="/status/BT/' + n + '">Service Change</a>';
+                var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">Service Change</a>';
                 $('#'+n).html(html);
                 break;
             case 'DELAYS':
                 $('#'+n).addClass("bus_Delays");
-                var html = '<a style="color: #990033" href="/status/BT/' + n + '">Delays</a>';
+                var html = '<a style="color: #990033" href="/status/BT/' + n + '/' + differential +'">Delays</a>';
                 $('#'+n).html(html);
                 break;
         }
