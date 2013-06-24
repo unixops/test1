@@ -33,20 +33,12 @@ function servicestatus_menu()
 
 function getStatusDetails($service, $line)
 {
-    // $output = '<div id="status_display"></div>';
+    // Verify params
     $output = '<div id="status_display">';
     // drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
     
     $json_str = getStatusAsJSON();
-    // $minutes = round(time()/60);
-    // $url ="http://new.mta.info/service_status_json/" . $minutes;
-    // $json_str = file_get_contents($url);
     $json = json_decode($json_str, TRUE);
-
-    // var_dump($json);
-    // echo get_class($json);
-    // echo $json["subway"]["line"];
-    // exit();
 
     $data = null;
     if ($service == "subway")
@@ -213,7 +205,7 @@ function servicestatus_block_view($delta ='')
 
     switch ($delta) 
     {
-        case 'mta-service-status':
+        case 'service-status':
             $block['title'] = t('Service Status');
             $block['subject'] = t('');
 
