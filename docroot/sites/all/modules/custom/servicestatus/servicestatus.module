@@ -4,7 +4,7 @@
  */
 function servicestatus_block_info() 
 {    
-    $blocks['mta-service-status'] = array(
+    $blocks['service-status'] = array(
             'info' => t('MTA Service Status'),
             'cache' => DRUPAL_NO_CACHE,
      		// 'cache' => DRUPAL_CACHE_GLOBAL,
