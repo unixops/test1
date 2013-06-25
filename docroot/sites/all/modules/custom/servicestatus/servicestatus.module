@@ -4,7 +4,7 @@
  */
 function servicestatus_block_info() 
 {    
-    $blocks['service-status'] = array(
+    $blocks['mta-service-status'] = array(
             'info' => t('MTA Service Status'),
             'cache' => DRUPAL_NO_CACHE,
      		// 'cache' => DRUPAL_CACHE_GLOBAL,
@@ -205,7 +205,7 @@ function servicestatus_block_view($delta ='')
 
     switch ($delta) 
     {
-        case 'service-status':
+        case 'mta-service-status':
             $block['title'] = t('Service Status');
             $block['subject'] = t('');
 
