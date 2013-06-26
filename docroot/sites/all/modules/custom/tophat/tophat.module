@@ -1,0 +1,232 @@
+<?php
+
+/**
+ * @defgroup tophat
+ *
+ * Author:  Wes Roepken aka lipcpro < wes at lipcpro dot com >
+ * Date:    06/25/2013
+ *
+ * @file tophat.module
+ * 
+ *
+ * @ingroup tophat
+ */
+
+
+/**
+ * Implements hook_block_info()
+ *
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
+function tophat_block_info()
+{
+  $block['tophat'] = array('info' => t('Tophat block'));
+  return $block;
+}
+
+/**
+ * Implements hook_block_view()
+ *
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
+function tophat_block_view($delta = '')
+{
+  switch ($delta) {
+    case 'tophat':
+      $block['subject'] = NULL;
+      $block['content'] = theme_tophat();
+      break;
+    default:
+      $block = array();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tophat_theme()
+{
+  return array(
+    'tophat' => array(
+      'render element' => 'block',
+    ),
+  );
+}
+
+
+function tophat_system_info_alter(&$info, $file){
+  /**
+   *  May want to do a if($file->type != module) in the event that "type" is defined in the theme info as $file->type = 'theme';
+   *  from http://drupal.org/node/901796#comment-3785364
+   */
+  if (!isset($file->type)) {
+    $info['regions']['tophat'] = 'tophat';
+    // now we tell which layouts can use it here we tell them all to use it.
+/*    foreach($info['layouts'] as $layout_name => $layout_settings) {
+      $info['layouts'][$layout_name]['regions'][] = 'Tophat';
+    }//*/
+  }
+}
+
+
+function tophat_preprocess_page(&$variables) {
+  $variables['tophat'] = theme('blocks', 'tophat');
+}//*/
+
+/*
+function tophat_preprocess(&$variables, $hook) {
+  dsm($variables);
+}//*/
+
+/**
+ * themes the tophat block for the tophat region
+ */
+function theme_tophat() {
+  global $user;
+  $classes = array();
+  drupal_add_css(drupal_get_path('module', 'tophat') . '/tophat.css');
+  drupal_add_js(drupal_get_path('module', 'tophat') . '/tophat.js');
+  $tophat = tophat_get_links();
+  $output = '<div id="tophat-nav-container" class="clearfix">';
+    $output .= '
+        <div id="tophat-nav">
+          <ul id="tophat-sites">
+          ';
+            $j = count($tophat);
+            for ($i = 0; $i < $j; $i++) {
+              if (!$i) {
+                $classes[] = 'first';
+              }
+              if ($i == $j - 1) {
+                $classes[] = 'last';
+              }
+              if (strpos($_SERVER["HTTP_HOST"], $tophat[$i]['link_title']) !== FALSE && strpos($_SERVER["HTTP_HOST"], $tophat[$i]['link_title']) == 0) {
+        $classes[] = 'active';
+      }
+      isset($classes) ? $li = '<li id="' . $tophat[$i]['id'] . '">' : $li = '<li id="' . $tophat[$i]['id'] . '">';
+      $title = $tophat[$i]['link_title'];
+      isset($classes) ? $options = array('attributes' => array('class' => $classes)) : $options = array();
+      $output .= $li . l($title, 'http://' . $tophat[$i]['link_path'], $options) . '</li>
+      ';
+      unset($classes);
+    }
+    $output .= '</ul> <!-- "tophat-sites" -->';
+    $output .= '<div id="tophat-ad">';
+  $output .= '<img src="/' . drupal_get_path('module', 'tophat') . '/images/nationwide_sponsor_banner.png" height="60" width="234" />';
+  $output .= '</div> <!-- "tophat-ad" -->';
+
+  if ($user->uid) {
+    $output .= '
+    <div id="tophat-user-menu">
+    ';
+    $output .= '<div class="tophat-user-name">' . $user->name . '</div>';
+    $output .= '<div class="tophat-user-link">' . l(t('My Dashboard'), 'dashboard', $options) . '<img src="/' . drupal_get_path('module', 'tophat') . '/images/user_arrow.jpg" height="8" width="9" class="tophat-arrow" />' . '</div> ' . '<br />';
+    $output .= '<div class="tophat-user-link">' . l(t('Logout'), 'user/logout', $options) . '<img src="/' . drupal_get_path('module', 'tophat') . '/images/user_arrow.jpg" height="8" width="9" class="tophat-arrow" />' . '</div>' . '<br />';
+    //$output .= '<div class="tophat-user-points">' . $user_points . '</div>';
+    $output .= '
+    </div>
+  </div>';
+  } elseif (!user_access('tophat login')) {
+    $output .= '<div id="tophat-user-menu">';
+    $output .= '<div class="tophat-user-link">' . l(t('Sign In'), 'user/login', $options) . '<img src="/' . drupal_get_path('module', 'tophat') . '/images/user_arrow.jpg" height="8" width="9" class="tophat-arrow" />' . '</div>' . '<br />';
+    $output .= '<div class="tophat-user-link">' . l(t('Register'), 'user/register') . '<img src="/' . drupal_get_path('module', 'tophat') . '/images/user_arrow.jpg" height="8" width="9" class="tophat-arrow" />' . '</div>' . '<br />';
+    $output .= '</div>';
+  } else {
+    $output .= '<div id="tophat-user-menu">';
+    $output .= '</div>';
+  }
+
+  $output .= '</div>';
+  $output .= '</div> <!-- "tophat-nav-container" -->';
+  return $output;
+}
+
+/**
+ * Returns HTML for a set of links.
+ *
+ * from theme.inc theme_links
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - links: An associative array of links to be themed. The key for each link
+ *     is used as its CSS class. Each link should be itself an array, with the
+ *     following elements:
+ *     - title: The link text.
+ *     - href: The link URL. If omitted, the 'title' is shown as a plain text
+ *       item in the links list.
+ *     - html: (optional) Whether or not 'title' is HTML. If set, the title
+ *       will not be passed through check_plain().
+ *     - attributes: (optional) Attributes for the anchor, or for the <span> tag
+ *       used in its place if no 'href' is supplied. If element 'class' is
+ *       included, it must be an array of one or more class names.
+ *     If the 'href' element is supplied, the entire link array is passed to l()
+ *     as its $options parameter.
+ *   - attributes: A keyed array of attributes for the UL containing the
+ *     list of links.
+ *   - heading: (optional) A heading to precede the links. May be an associative
+ *     array or a string. If it's an array, it can have the following elements:
+ *     - text: The heading text.
+ *     - level: The heading level (e.g. 'h2', 'h3').
+ *     - class: (optional) An array of the CSS classes for the heading.
+ *     When using a string it will be used as the text of the heading and the
+ *     level will default to 'h2'. Headings should be used on navigation menus
+ *     and any list of links that consistently appears on multiple pages. To
+ *     make the heading invisible use the 'element-invisible' CSS class. Do not
+ *     use 'display:none', which removes it from screen-readers and assistive
+ *     technology. Headings allow screen-reader and keyboard only users to
+ *     navigate to or skip the links. See
+ *     http://juicystudio.com/article/screen-readers-display-none.php and
+ *     http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+ */
+function theme_tophat_user_menu_links($variables) {
+  $links = $variables['links'];
+  $output = '';
+
+  if (count($links) > 0) {
+    $output = '';
+    $num_links = count($links);
+    $i = 1;
+
+    foreach ($links as $key => $link) {
+      $output .= '<li class="tophat-user-link">';
+
+      if (isset($link['href'])) {
+        // Pass in $link as $options, they share the same keys.
+        $output .= l($link['title'], $link['href'], $link);
+      }
+      $i++;
+      $output .= "</li>\n";
+    }
+  }
+  return $output;
+}
+
+/**
+ * Create the links for NUL specific properties
+ *
+ */
+function tophat_get_links() {
+  if (strpos($_SERVER["HTTP_HOST"], 'thor') !== FALSE) {
+    $tophat = array(
+      0 => array('link_title' => 'nul', 'link_path' => 'thor.sossie.com/', 'id' => 'site_1'),
+      1 => array('link_title' => 'iae', 'link_path' => 'blog.thor.sossie.com/', 'id' => 'site_2'),
+      2 => array('link_title' => 'conf', 'link_path' => 'code.thor.sossie.com/', 'id' => 'site_3'),
+      3 => array('link_title' => 'otv', 'link_path' => 'project.thor.sossie.com/', 'id' => 'site_4'),
+      4 => array('link_title' => 'store', 'link_path' => 'store.thor.sossie.com/', 'id' => 'site_5'),
+    );
+  } elseif (strpos($_SERVER["HTTP_HOST"], 'sossie') !== FALSE) {
+    $tophat = array(
+      0 => array('link_title' => 'nul', 'link_path' => 'sossie.com/', 'id' => 'site_1'),
+      1 => array('link_title' => 'iae', 'link_path' => 'blog.sossie.com/', 'id' => 'site_2'),
+      2 => array('link_title' => 'conf', 'link_path' => 'code.sossie.com/', 'id' => 'site_3'),
+      3 => array('link_title' => 'otv', 'link_path' => 'project.sossie.com/', 'id' => 'site_4'),
+      4 => array('link_title' => 'store', 'link_path' => 'store.sossie.com/', 'id' => 'site_5'),
+    );
+  }
+  return $tophat;
+}
+

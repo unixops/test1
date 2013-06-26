@@ -1,0 +1,9 @@
+name = TopHat
+project = "tophat"
+description = TopHat is meant to provide a common header for MTA sites.
+version = 7.x-0.1-beta
+
+core = 7.x
+files[] = tophat.module
+files[] = tophat.js
+files[] = tophat.css
