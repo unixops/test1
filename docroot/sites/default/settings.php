@@ -547,6 +547,6 @@ $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_default_class'] = 'MemCacheDrupal';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
-$conf['admin_menu_cache_client'] = FALSE;
+
 =======
 >>>>>>> 59de18dab45289632490dc4e634d1a97264671c6
