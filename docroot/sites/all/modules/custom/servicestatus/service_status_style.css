@@ -196,7 +196,6 @@ tr td img {
 
 .gw { font-weight: bold; color: #555; font-size: 85%; text-decoration: none; }
 
-
 .t { display: inline; float: left; border-right: 1px solid #ccc; }
 .tlast { border-right: none;}
 .tdiv { padding: 4px; float: left; cursor:pointer; font-family:Arial; font-size:11px; font-weight:bold; text-align:center; }
@@ -211,3 +210,6 @@ tr td img {
 .TitleDelay {color: blue;font-size: 14px;font-weight: bold;}
 .DateStyle {color: blue;font-size: 12px;}
 .TitlePlannedWork {color: blue;font-size: 14px;font-weight: bold;}
+
+.plannedWorkDetail { display:  none; }
+.plannedWorkDetailLink { cursor: pointer; text-decoration: underline; }

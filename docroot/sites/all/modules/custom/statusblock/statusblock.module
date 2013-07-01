@@ -28,38 +28,38 @@ function statusblock_menu()
         'page arguments' => array(1,2),
     );
 
-    $item['service_status_json'] = array(
-        'access arguments' => array('access content'),
-        'page callback' => 'getServiceStatusAsJSON',
-    );
+    // $item['service_status_json'] = array(
+    //     'access arguments' => array('access content'),
+    //     'page callback' => 'getServiceStatusAsJSON',
+    // );
 
-    $item['service_status_json.js'] = array(
-        'access arguments' => array('access content'),
-        'page callback' => 'getServiceStatusAsJSON',
-    );
+    // $item['service_status_json.js'] = array(
+    //     'access arguments' => array('access content'),
+    //     'page callback' => 'getServiceStatusAsJSON',
+    // );
 
-    $item['mta/service_status_json.js'] = array(
-        'access arguments' => array('access content'),
-        'page callback' => 'getServiceStatusAsJSON',
-    );
+    // $item['mta/service_status_json.js'] = array(
+    //     'access arguments' => array('access content'),
+    //     'page callback' => 'getServiceStatusAsJSON',
+    // );
 
     return $item;
 }
 
-function getServiceStatusAsJSON()
-{
-    global $ssd;
+// function getServiceStatusAsJSON()
+// {
+//     global $ssd;
 
-    $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
-    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
-    $fileContents = trim(str_replace('"', "'", $fileContents));
+//     $fileContents= file_get_contents("http://www.mta.info/status/serviceStatus.txt");
+//     $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+//     $fileContents = trim(str_replace('"', "'", $fileContents));
 
-    $simpleXml = simplexml_load_string($fileContents);
+//     $simpleXml = simplexml_load_string($fileContents);
 
-    $json = json_encode($simpleXml);
+//     $json = json_encode($simpleXml);
 
-    echo $json;
-}
+//     echo $json;
+// }
 
 function statusblock_render_service_status($service = '', $col = '')
 {

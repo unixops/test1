@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Implementation of hook_block_info().
  */
@@ -34,13 +33,12 @@ function servicestatus_menu()
 
 function getStatusDetails($service, $line)
 {
-    // $output = '<div id="status_display"></div>';
+    // Verify params
     $output = '<div id="status_display">';
     // drupal_add_js('jQuery(document).ready(function () { jQuery("#status_display").mtaService("'.$service.'", "'.$line.'"); });', 'inline');
     
     $json_str = getStatusAsJSON();
     $json = json_decode($json_str, TRUE);
-    // dsm($json);
 
     $data = null;
     if ($service == "subway")
@@ -83,7 +81,7 @@ function getStatusDetails($service, $line)
         }
     }
     
-    // print_r ($json);
+    // dsm ($json);
     $output .= $detailed_message . '</div>';
 
     // $html = html_entity_decode($output);
@@ -92,6 +90,18 @@ function getStatusDetails($service, $line)
     $filteredhtml = check_markup($output, 'full_html');
 
     return $filteredhtml;
+}
+
+function getStatusAsJSON()
+{
+    $fileContents= file_get_contents("http://web.mta.info/status/serviceStatus.txt");
+    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
+    $fileContents = trim(str_replace('"', "'", $fileContents));
+    $simpleXml = simplexml_load_string($fileContents);
+    $json = json_encode($simpleXml);
+    
+    // drupal_json_output($json);
+    return $json;
 }
 
 function generateRailHeading($line)
@@ -184,18 +194,6 @@ function generateRailHeading($line)
     $heading = '<span style="color:' . $color . ';font-size:large;font-weight:bold">' . $linename . '</span><br/>';
 
     return $heading;
-}
-
-function getStatusAsJSON()
-{
-    $fileContents= file_get_contents("http://web.mta.info/status/serviceStatus.txt");
-    $fileContents = str_replace(array("\n", "\r", "\t"), '', $fileContents);
-    $fileContents = trim(str_replace('"', "'", $fileContents));
-    $simpleXml = simplexml_load_string($fileContents);
-    $json = json_encode($simpleXml);
-    
-    // drupal_json_output($json);
-    return $json;
 }
 
 /*

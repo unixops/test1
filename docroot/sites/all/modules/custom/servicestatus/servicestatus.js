@@ -2,7 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-(function($) {            
+
+function ShowHide(div)
+{
+    (jQuery)("#" + div).toggle();
+}
+
+(function($) {
+
     Drupal.behaviors.servicestatus = {
         attach: function (context, settings) {
             
