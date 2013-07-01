@@ -540,13 +540,11 @@ $conf['environment_indicator_color'] = 'blue';
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/metrota2/metrota2-settings.inc');
 }
-<<<<<<< HEAD
+
 
 /** Add Memcache support */
 $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_default_class'] = 'MemCacheDrupal';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
-
-=======
->>>>>>> 59de18dab45289632490dc4e634d1a97264671c6
+$conf['admin_menu_cache_client'] = FALSE;
