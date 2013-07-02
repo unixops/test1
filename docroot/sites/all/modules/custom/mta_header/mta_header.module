@@ -82,7 +82,9 @@ function theme_mta_header_header() {
         $output .= '/sites/all/themes/mta/images/mta_info.gif" alt="Metropolitan Transportation Authority logo"></a>
                                 </div> <!-- branding -->
                                 <div id="middle-header">';
-        //$output .= $block['content']; module_invoke?
+        //$output .= $block['content'];
+        $block = module_invoke('menu', 'block', 'view', 'menu-topbar-links');
+        $output .= render($block['content']);
         $output .= '
             </div> <!-- middle-header -->
                                 <div id="search">';
