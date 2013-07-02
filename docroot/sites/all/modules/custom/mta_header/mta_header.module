@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * @defgroup mta_header
+ *
+ * Author:  Wes Roepken aka lipcpro < wes at lipcpro dot com >
+ * Date:    06/25/2013
+ *
+ * @file mta_header.module
+ *
+ *
+ * @ingroup mta_header
+ */
+
+function mta_header_init() {
+  drupal_add_library('system', 'drupal.ajax');
+}
+
+function mta_header_menu() {
+  $items['mta/header'] = array(
+      'title' => 'MTA Header',
+      'page callback' => 'theme_mta_header_header',
+      'access arguments' => array('access content'),
+      'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_block_info()
+ *
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
+function mta_header_block_info()
+{
+  $blocks = array();
+  $blocks['mta_header_header'] = array('info' => t('mta header block'));
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view()
+ *
+ * @todo Please document this function.
+ * @see http://drupal.org/node/1354
+ */
+function mta_header_block_view($delta = '')
+{
+  $block = array();
+  switch ($delta) {
+    case 'mta_header_header':
+      $block['subject'] = NULL;
+      $block['content'] = theme_mta_header_header();
+      break;
+    default:
+      $block = array();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function mta_header_theme()
+{
+  return array(
+    'mta_header_header' => array(
+      'render_element' => 'block',
+    ),
+  );
+}//*/
+
+function theme_mta_header_header() {
+  $base = $_SERVER['HTTP_HOST'];
+  $output = '<div id="topbar">
+                                <div id="branding">
+                                        <a href="http://www.mta.info"><img src="http://';
+        $output .= $base;
+        $output .= '/sites/all/themes/mta/images/mta_info.gif" alt="Metropolitan Transportation Authority logo"></a>
+                                </div> <!-- branding -->
+                                <div id="middle-header">';
+        //$output .= $block['content']; module_invoke?
+        $output .= '
+            </div> <!-- middle-header -->
+                                <div id="search">';
+  //$output .= $block['content'];
+  $output .= '
+      </div><!-- search -->
+                         </div><!-- topbar -->
+                        <div id="navbar">';
+  //$output .=  render($page['navbar']);
+  $output .= '
+      </div><!-- navbar -->';
+  print $output;
+  //$filteredhtml = check_markup($output, 'full_html');
+  //print $filteredhtml;//*/
+  //print "hello";//theme('mta_header_header');
+  exit;//drupal_exit;
+}

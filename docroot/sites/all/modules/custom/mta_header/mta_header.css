@@ -1,0 +1,191 @@
+@CHARSET "UTF-8";
+
+.block-tophat {
+  margin:0;
+  padding:0;
+  height: 66px;
+  /*border: solid medium;*/
+}
+
+#tophat-nav-container.clearfix {
+  width:100%;
+  display: block;
+  background: url('images/tophat_bg.png');
+  -moz-box-shadow: 3px 3px 5px 6px #666;
+  -webkit-box-shadow: 3px 3px 5px 6px #666;
+  box-shadow: 3px 3px 5px 6px #666;
+}
+
+#tophat-nav {
+  width:960px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#block-tophat-tophat .block-inner {
+  margin: 0 0;
+}
+
+#tophat-nav-left {
+  min-width:230px;
+  height:66px;
+  width:auto;
+  overflow:hidden;
+  float:left;
+  display:inline;
+}
+
+#tophat-nav-right {
+  min-width:232px;
+  height:66px;
+  width:auto;
+  overflow:hidden;
+  float:right;
+  display:inline;
+  margin-right:-233px;
+}
+
+#tophat-nav ul{
+  list-style-type: none;
+}
+
+#tophat-nav ul li a{
+  text-decoration: none;
+}
+
+#tophat-sites{
+  margin: 0 0;
+  float: left;
+  padding-left: 0;
+  width:512px;
+}
+
+#tophat-sites li{
+  list-style: none;
+  display: inline;
+  margin:0 0;
+  padding:0;
+  overflow:hidden;
+}
+
+#tophat-sites li a{
+  /*text-decoration: none;*/
+  display: block;
+  width: 64px;
+  height: 66px;
+  text-indent: -9999px;
+  background: url(images/tophat_sprite2.png);
+  float: left;
+}
+
+li#site_1 a {
+  background-position: 0 0;
+}
+
+li#site_1 a:hover {
+  background-position: 0 -69px;
+}
+
+li#site_1 a.active {
+  background-position: 0 -136px;
+}
+
+li#site_2 a {
+  background-position: -64px 0;
+}
+
+li#site_2 a:hover {
+  background-position: -64px -69px;
+}
+
+li#site_2 a.active {
+  background-position: -64px -136px;
+}
+
+li#site_3 a {
+  background-position: -128px 0;
+}
+
+li#site_3 a:hover {
+  background-position: -128px -69px;
+}
+
+li#site_3 a.active {
+  background-position: -128px -136px;
+}
+
+li#site_4 a {
+  background-position: -192px 0;
+}
+
+li#site_4 a:hover {
+  background-position: -192px -69px;
+}
+
+li#site_4 a.active {
+  background-position: -192px -136px;
+}
+
+li#site_5 a {
+  background-position: -256px 0;
+}
+
+li#site_5 a:hover {
+  background-position: -256px -69px;
+}
+
+li#site_5 a.active {
+  background-position: -256px -136px;
+}
+
+
+#tophat-ad {
+  height: 66px;
+  display: inline;
+  background:url('images/tophat_bg.png') repeat-x;
+  width: 310px;
+  float:left;
+  vertical-align: middle;
+  text-align: center;
+  position:relative;
+}
+#tophat-ad img{
+  margin-top:auto;
+  margin-bottom:auto;
+  vertical-align: middle;
+  position: relative;
+}
+
+#tophat-ad img {
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#tophat-user-menu {
+  width: 118px;
+  height: 56px;
+  background: url(images/user_bg.gif) repeat-x;
+  background-color: #C6C6C6;
+  display: inline;
+  float: left;
+  padding:5px 10px;
+  font-size:12px;
+  line-height: 1.5em;
+}
+
+#tophat-user-menu .tophat-user-link{
+  list-style: none;
+  display: inline;
+}
+
+#tophat-user-menu .tophat-user-link a{
+  text-decoration: none;
+  color: #C51230;
+  font-size:12px;
+}
+
+
+.tophat-user-link {display: block;}
+.tophat-arrow {margin-left:5px;}
+  

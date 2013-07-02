@@ -1,0 +1,10 @@
+name = mta_header
+project = "Mta Header"
+description = mta header is meant to provide a common header for MTA sites.
+version = 7.x-0.1-beta
+package = Our MTA modules
+
+core = 7.x
+files[] = mta_header.module
+files[] = mta_header.js
+files[] = mta_header.css
