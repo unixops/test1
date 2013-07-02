@@ -84,7 +84,7 @@ function theme_mta_header_header() {
                                 <div id="middle-header">';
         //$output .= $block['content'];
         $block = module_invoke('menu', 'block', 'view', 'menu-topbar-links');
-        $output .= render($block['content']);
+        $output .= $block['content'];
         $output .= '
             </div> <!-- middle-header -->
                                 <div id="search">';
