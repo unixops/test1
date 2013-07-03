@@ -401,7 +401,14 @@ body.page-press-releases #sidebar_second {
 .views-widget-filter-field_mta_agency_value {
 	margin-left: 10px;
 	}
+.views-widget-filter-field_mta_agency_value .form-item, .form-actions {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
 
+#views-exposed-form-press-release-block-1 .views-exposed-form .views-exposed-widget .form-submit {
+    margin-top: 1.6em;
+}
 .view-press-release tbody, tfoot, tr, td {
     background-color: #DEE7EB;
     font-size: 100%;
@@ -527,3 +534,7 @@ body.page-press-releases #sidebar_second {
 	margin-bottom:5px;
 	}
 	
+#views-exposed-form-press-release-block-1 .views-exposed-form .views-exposed-widget {
+    float: left;
+    padding: 0.5em 1em 0 0;
+}
