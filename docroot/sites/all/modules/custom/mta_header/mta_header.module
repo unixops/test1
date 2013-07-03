@@ -85,12 +85,14 @@ function theme_mta_header_header() {
         $block = block_load('menu', 'menu-topbar-links');
         $output2 = _block_get_renderable_array(_block_render_blocks(array($block)));
         $output .= drupal_render($output2);
-        $output .= render($mta_block['content']);
         $output .= '
             </div> <!-- middle-header -->
                                 <div id="search">';
-        $mta_block = drupal_get_form('ga_block_search_form');
-        $output .= render($mta_block);
+        $block = block_load('google_appliance', 'ga_block_search_form');
+        $output2 = _block_get_renderable_array(_block_render_blocks(array($block)));
+        $output .= drupal_render($output2);
+        //$mta_block = drupal_get_form('ga_block_search_form');
+        //$output .= render($mta_block);
   $output .= '
       </div><!-- search -->
                          </div><!-- topbar -->
