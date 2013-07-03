@@ -87,13 +87,15 @@ function theme_mta_header_header() {
         $output .= drupal_render($output2);
         $output .= '
             </div> <!-- middle-header -->
-                                <div id="search">';
+               <div id="search">
+                  <div class="region region-header-right">';
         $block = block_load('google_appliance', 'ga_block_search_form');
         $output2 = _block_get_renderable_array(_block_render_blocks(array($block)));
         $output .= drupal_render($output2);
         //$mta_block = drupal_get_form('ga_block_search_form');
         //$output .= render($mta_block);
   $output .= '
+        </div><!-- region-header-right -->
       </div><!-- search -->
                          </div><!-- topbar -->
                         <div id="navbar">';
