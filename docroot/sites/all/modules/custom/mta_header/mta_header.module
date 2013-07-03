@@ -82,23 +82,27 @@ function theme_mta_header_header() {
         $output .= '/sites/all/themes/mta/images/mta_info.gif" alt="Metropolitan Transportation Authority logo"></a>
                                 </div> <!-- branding -->
                                 <div id="middle-header">';
-        //$output .= $block['content'];
-        $block = module_invoke('menu', 'block', 'view', 'menu-topbar-links');
-        $output .= render($block['content']);
+        $block = block_load('menu', 'menu-topbar-links');
+        $output2 = _block_get_renderable_array(_block_render_blocks(array($block)));
+        $output .= drupal_render($output2);
+        $output .= render($mta_block['content']);
         $output .= '
             </div> <!-- middle-header -->
                                 <div id="search">';
-  //$output .= $block['content'];
+        $mta_block = drupal_get_form('ga_block_search_form');
+        $output .= render($mta_block);
   $output .= '
       </div><!-- search -->
                          </div><!-- topbar -->
                         <div id="navbar">';
+  $block = block_load('superfish', 1);
+  $output2 = _block_get_renderable_array(_block_render_blocks(array($block)));
+  $output .= drupal_render($output2);
+  //$mta_block = module_invoke('superfish', 'block', 'view', '1');
+  //$output .= render($mta_block['content']);
   //$output .=  render($page['navbar']);
   $output .= '
       </div><!-- navbar -->';
-  print $output;
-  //$filteredhtml = check_markup($output, 'full_html');
-  //print $filteredhtml;//*/
-  //print "hello";//theme('mta_header_header');
-  exit;//drupal_exit;
+  print render($output);
+  exit;
 }
