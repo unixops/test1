@@ -255,8 +255,8 @@
         <!-- Bus -->
         <div id="busDiv" style="float: left; display: none; margin-top: 11px;">
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 9px 0;">
-                    <span class="span-11 busLineItem">B1 - B83</span>
-                    <span id="B1-B83" class="busCategory"></span>
+                    <span class="span-11 busLineItem">B1 - B84</span>
+                    <span id="B1-B84" class="busCategory"></span>
             </div>
             <div style="float: left; width: 220px; border-bottom: 1px solid #7B7B98; padding: 9px 0;">
                 <span class="span-11 busLineItem">B100 - B103</span>
