@@ -75,6 +75,10 @@ font-weight:bold;
 	margin-left:-1px;
 	padding: 0;	
 	}
+.subway_Suspended, .bus_Suspended, .rail_Suspended {
+	 color: #996600;  
+}
+
 .subway_Delays, .bus_Delays, .rail_Delays, .BT_Delays {
 	 color: #990033;  
 }

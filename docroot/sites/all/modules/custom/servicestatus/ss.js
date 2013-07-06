@@ -92,6 +92,11 @@
                 var html = '<a style="color: #5d0dff" href="/status/subway/' + name + '/' + differential +'">Sandy Reroute</a>';
                 $('#'+name).html(html);
                 break;
+            case 'SUSPENDED':
+                $('#'+name).addClass("subway_Suspended");
+                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Suspended</a>';
+                $('#'+name).html(html);
+                break;
         }
 
         return html;
@@ -121,6 +126,11 @@
                 var html = '<a style="color: #990033" href="/status/' + service + '/'  + n + '/' + differential +'">Delays</a>';
                 $('#'+n).html(html);
                 break;
+            case 'SUSPENDED':
+                $('#'+name).addClass("rail_Suspended");
+                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Suspended</a>';
+                $('#'+name).html(html);
+                break;
         }
 
         return html;
@@ -149,6 +159,11 @@
                 $('#'+n).addClass("bus_Delays");
                 var html = '<a style="color: #990033" href="/status/bus/' + n + '/' + differential +'">Delays</a>';
                 $('#'+n).html(html);
+                break;
+            case 'SUSPENDED':
+                $('#'+name).addClass("bus_Suspended");
+                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Suspended</a>';
+                $('#'+name).html(html);
                 break;
         }
 
