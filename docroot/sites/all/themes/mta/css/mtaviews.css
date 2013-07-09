@@ -409,7 +409,7 @@ body.page-press-releases #sidebar_second {
 #views-exposed-form-press-release-block-1 .views-exposed-form .views-exposed-widget .form-submit {
     margin-top: 1.6em;
 }
-.view-press-release tbody, tfoot, tr, td {
+.view-press-release tbody, .view-press-release tbody tfoot, .view-press-release tbody tr, .view-press-release tbody td {
     background-color: #DEE7EB;
     font-size: 100%;
     margin-bottom: 100;
@@ -430,7 +430,7 @@ body.page-press-releases #sidebar_second {
 	}
 
 /* EotF table body */
-.view-eotf table, tbody, tfoot, tr, td {
+.view-eotf table, .view-eotf tbody, .view-eotf tfoot, .view-eotf tr, .view-eotf td {
     font-size: 98%;
     margin-bottom: 100;
     padding: 3px 5px 5px 5px;
