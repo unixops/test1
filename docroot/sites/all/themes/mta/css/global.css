@@ -38,7 +38,9 @@ hgroup, nav, section {
   vertical-align: baseline;
   
 	}
-
+#block-superfish-1 ul.menu li {
+    margin: 0 0 0 0;
+}
 .node-news-article p {
   
   padding-bottom: 1.5em;
