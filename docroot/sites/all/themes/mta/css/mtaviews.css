@@ -408,6 +408,13 @@ body.page-press-releases #sidebar_second {
 
 #views-exposed-form-press-release-block-1 .views-exposed-form .views-exposed-widget .form-submit {
     margin-top: 1.6em;
+    
+    
+}
+
+.views-widget-filter-field_category_tid  .form-item, .form-actions {
+    margin-bottom: 1em;
+    margin-top: 0;
 }
 .view-press-release tbody, .view-press-release tbody tfoot, .view-press-release tbody tr, .view-press-release tbody td {
     background-color: #DEE7EB;
