@@ -128,7 +128,7 @@
                 break;
             case 'SUSPENDED':
                 $('#'+name).addClass("rail_Suspended");
-                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Suspended</a>';
+                var html = '<a style="color: #996600" href="/status/' + service + '/' + n + '/' + differential +'">Suspended</a>';
                 $('#'+name).html(html);
                 break;
         }
@@ -162,7 +162,7 @@
                 break;
             case 'SUSPENDED':
                 $('#'+name).addClass("bus_Suspended");
-                var html = '<a style="color: #996600" href="/status/subway/' + name + '/' + differential +'">Suspended</a>';
+                var html = '<a style="color: #996600" href="/status/bus/' + n + '/' + differential +'">Suspended</a>';
                 $('#'+name).html(html);
                 break;
         }
