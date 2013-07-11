@@ -1,0 +1,13 @@
+name = Database Optimization
+description = Optimizing the site database and clearing tables cache_form.
+core = 7.x
+package = Development
+configure = admin/config/development/optimizedb
+php = 5.3
+
+; Information added by drupal.org packaging script on 2013-07-05
+version = "7.x-1.0-beta1"
+core = "7.x"
+project = "optimizedb"
+datestamp = "1373014256"
+
