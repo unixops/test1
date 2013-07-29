@@ -63,9 +63,12 @@ function block_revision_load($vid, $delta) {
  *  similar to node.module revisions.
  */
 function _block_revisions_access($module, $delta) {
+  if ($module !== 'block') {
+    return FALSE;
+  }
   $revision_count = db_query('SELECT count(vid) FROM {boxes_revisions} WHERE bid = :bid', array(':bid' => $delta))->fetchField();
 
-  return user_access('administer blocks') && $module === 'block' && ($revision_count >= 1);
+  return user_access('administer blocks') && ($revision_count >= 1);
 }
 
 /**

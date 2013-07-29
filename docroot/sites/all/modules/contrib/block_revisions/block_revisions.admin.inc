@@ -145,7 +145,7 @@ function block_revisions_overview($delta) {
 function block_revision_list($delta) {
   $revisions = array();
 
-  $query = "SELECT vid, body, format, br.timestamp, br.log, u.uid, u.name FROM {boxes_revisions} br LEFT JOIN {users} u ON br.uid = u.uid WHERE br.bid = :bid ORDER BY timestamp DESC";
+  $query = "SELECT br.vid, br.body, br.format, br.timestamp, br.log, u.uid, u.name FROM {boxes_revisions} br LEFT JOIN {users} u ON br.uid = u.uid WHERE br.bid = :bid ORDER BY timestamp DESC";
   $result = db_query($query, array(':bid' => $delta));
   foreach ($result as $revision) {
     $revisions[$revision->vid] = $revision;
