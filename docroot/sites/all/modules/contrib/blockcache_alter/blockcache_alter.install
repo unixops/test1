@@ -1,5 +1,4 @@
 <?php
-// $Id: blockcache_alter.install,v 1.1.2.5.2.1 2010/07/30 13:55:54 timleytens Exp $
 
 /**
  * @file
