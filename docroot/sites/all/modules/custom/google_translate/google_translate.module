@@ -12,7 +12,7 @@
 function google_translate_block_info() {
   $blocks['google_translate'] = array(
     'info' => t('Google Translate'), //The name that will appear in the block list.
-    'cache' => DRUPAL_CACHE_PER_ROLE, //Default
+    
   );
   return $blocks;
 }
