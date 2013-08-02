@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the context_blockcache_alter module.
+ */
+
+/**
+ * Implements hook_install().
+ * Ensure that this module is loaded after context
+ */
+function context_blockcache_alter_install() {
+  // context_layouts weight 0 for now, we set this module's to 5
+  db_update('system')
+    ->fields(array(
+      'weight' => 5,
+    ))
+    ->condition('type', 'module')
+    ->condition('name', 'context_blockcache_alter')
+    ->execute();
+}
+

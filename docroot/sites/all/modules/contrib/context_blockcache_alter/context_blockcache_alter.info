@@ -1,0 +1,19 @@
+name = "Context Block Cache Alter"
+description = "Allow context to use the block caching provided by the Blockcache alter module."
+dependencies[] = "context"
+dependencies[] = "blockcache_alter"
+package = "Context"
+core = 7.x
+
+
+files[] = plugins/context_blockcache_alter_reaction_block.inc
+files[] = plugins/context_layouts_blockcache_alter_reaction_block.inc
+files[] = context_blockcache_alter.module
+files[] = context_blockcache_alter.install
+
+; Information added by drupal.org packaging script on 2012-05-04
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "context_blockcache_alter"
+datestamp = "1336090114"
+

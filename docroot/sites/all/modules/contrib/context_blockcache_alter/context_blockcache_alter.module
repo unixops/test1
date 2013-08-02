@@ -1,0 +1,29 @@
+<?php
+// $Id: context_blockcache_alter.module,v 1.1.2.6 2010/08/05 08:03:29 yhahn Exp $
+
+/**
+ * Implements hook_context_plugins().
+ * This is a ctools plugins hook.
+ */
+function context_blockcache_alter_context_plugins() {
+  return array(
+    'context_blockcache_alter_reaction_block' => array(
+      'handler' => array(
+        'path' => drupal_get_path('module', 'context_blockcache_alter') . '/plugins',
+        'file' => 'context_blockcache_alter_reaction_block.inc',
+        'class' => 'context_blockcache_alter_reaction_block',
+        'parent' => 'context_reaction_block',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_context_registry_alter().
+ */
+function context_blockcache_alter_context_registry_alter(&$registry) {
+  if (isset($registry['reactions']['block'])) {
+    $registry['reactions']['block']['plugin'] = 'context_blockcache_alter_reaction_block';
+  }
+}
+
