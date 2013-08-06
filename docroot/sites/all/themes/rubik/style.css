@@ -384,3 +384,7 @@ div.node .column-side .column-wrapper {
   font-weight:normal;
   font-size:16px;
   }
+
+/* Hiding Switch to plain text editor */
+.page-node-add-news-story .ckeditor_links {display: none;}
+
