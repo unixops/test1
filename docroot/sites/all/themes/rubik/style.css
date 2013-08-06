@@ -386,5 +386,4 @@ div.node .column-side .column-wrapper {
   }
 
 /* Hiding Switch to plain text editor */
-.page-node-add-news-story .ckeditor_links {display: none;}
-
+.page-node-add-news-story .ckeditor_links {display: none !important;}
