@@ -494,7 +494,10 @@ ini_set('display_startup_errors', 0);
  *
  * Add leading hash signs if you would like to disable this functionality.
  */
-$conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+$conf['fast_404_string_whitelisting'][] = '/advagg_';	
+#$conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+#$conf['404_fast_paths_exclude'] = '/\/(?:(styles|css|js))\//';
+$conf['404_fast_paths_exclude'] = '/\/(?:styles|advagg_(cs|j)s)\//';
 $conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
 $conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
 
@@ -540,7 +543,12 @@ if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/metrota2/metrota2-settings.inc');
 }
 
-
+// Add Varnish as the page cache handler.
+$conf['cache_backends'] = array('sites/all/modules/contrib/varnish/varnish.cache.inc');
+$conf['cache_class_cache_page'] = 'VarnishCache';
+// Drupal 7 does not cache pages when we invoke hooks during bootstrap. This needs
+// to be disabled.
+$conf['page_cache_invoke_hooks'] = FALSE;
 /** Add Memcache support 
 $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_default_class'] = 'MemCacheDrupal';

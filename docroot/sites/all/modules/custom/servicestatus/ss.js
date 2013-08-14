@@ -171,6 +171,11 @@
                         var html = '<a style="color: #990033" href="/status/' + service + '/'  + n + '/' + differential +'">Delays</a>';
                         $('#'+n).html(html);
                         break;
+                    case 'SCHEDULE CHANGE':
+                        $('#'+n).addClass("rail_ScheduleChange");
+                        var html = '<a style="color: #000" href="/status/' + service + '/'  + n + '/' + differential +'">Schedule Change</a>';
+                        $('#'+n).html(html);
+                        break;
                     case 'SUSPENDED':
                         $('#'+n).addClass("rail_Suspended");
                         var html = '<a style="color: #3C139F" href="/status/' + service + '/' + n + '/' + differential +'">Suspended</a>';
