@@ -1,4 +1,0 @@
-name = mta_megamenu
-description = Uses the block hook and to create the mta megamenu block.
-package = Our MTA modules
-core = 7.x
