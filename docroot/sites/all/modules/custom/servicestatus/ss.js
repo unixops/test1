@@ -82,7 +82,7 @@
                     case 'GOOD SERVICE':
                         $('#'+n).addClass("bus_GoodService");
                         var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">Good Service</a>';
-                        $('#'+n).html("GOOD Service");
+                        $('#'+n).html("Good Service");
                         break;
                     case 'PLANNED WORK':
                         $('#'+n).addClass("bus_PlannedWork");
