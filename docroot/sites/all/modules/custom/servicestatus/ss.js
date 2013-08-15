@@ -73,6 +73,7 @@
 
     function generateBnTHTML(data, differential)
     {
+    	var html = '';
         $.each(data, function(key, val){
             $.each(val, function(index, val){
                 var n = val.name.replace(/\s+/g, '').replace(".", '');
@@ -80,7 +81,8 @@
                 switch(val.status) {
                     case 'GOOD SERVICE':
                         $('#'+n).addClass("bus_GoodService");
-                        $('#'+n).html("Good Service");
+                        var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">GLEN!!!</a>';
+                        $('#'+n).html("GOOD Service");
                         break;
                     case 'PLANNED WORK':
                         $('#'+n).addClass("bus_PlannedWork");
