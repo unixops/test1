@@ -752,7 +752,7 @@ body.not-logged-in.node-type-page-with-ad .view-press-release .feed-icon {
 body.logged-in.node-type-page-with-ad .view-mta-news-stories .feed-icon {
     left: 270px;
     position: absolute;
-    top: 0px;
+    top: 120px;
     z-index: 999;
 }
 
