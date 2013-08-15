@@ -81,7 +81,7 @@
                 switch(val.status) {
                     case 'GOOD SERVICE':
                         $('#'+n).addClass("bus_GoodService");
-                        var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">GLEN!!!</a>';
+                        var html = '<a style="color: #996600" href="/status/BT/' + n + '/' + differential +'">Good Service</a>';
                         $('#'+n).html("GOOD Service");
                         break;
                     case 'PLANNED WORK':
