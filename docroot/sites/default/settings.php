@@ -548,7 +548,9 @@ $conf['cache_backends'] = array('sites/all/modules/contrib/varnish/varnish.cache
 $conf['cache_class_cache_page'] = 'VarnishCache';
 // Drupal 7 does not cache pages when we invoke hooks during bootstrap. This needs
 // to be disabled.
+
 $conf['page_cache_invoke_hooks'] = FALSE;
+
 /** Add Memcache support 
 $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_default_class'] = 'MemCacheDrupal';
