@@ -544,12 +544,12 @@ if (file_exists('/var/www/site-php')) {
 }
 
 // Add Varnish as the page cache handler.
-$conf['cache_backends'] = array('sites/all/modules/contrib/varnish/varnish.cache.inc');
-$conf['cache_class_cache_page'] = 'VarnishCache';
+//$conf['cache_backends'] = array('sites/all/modules/contrib/varnish/varnish.cache.inc');
+//$conf['cache_class_cache_page'] = 'VarnishCache';
 // Drupal 7 does not cache pages when we invoke hooks during bootstrap. This needs
 // to be disabled.
 
-$conf['page_cache_invoke_hooks'] = FALSE;
+//$conf['page_cache_invoke_hooks'] = FALSE;
 
 /** Add Memcache support 
 $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
