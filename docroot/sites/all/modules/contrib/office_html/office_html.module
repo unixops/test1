@@ -35,7 +35,7 @@ function _office_html_filter_strip($text, $filter, $format, $langcode, $cache, $
 }
 
 function _office_html_filter_convert($text, $filter, $format, $langcode, $cache, $cache_id) {
-  $find = array('&#039;', '&#0160;', '&nbsp;', '“', '”', '’', '‘', '&rsquo;', '&lsquo;', '&ldquo;', '&rdquo;', '&mdash;', '&ndash;');
+  $find = array('&#039;', '&#0160;', '&nbsp;', 'Â“', 'Â”', 'Â’', 'Â‘', '&rsquo;', '&lsquo;', '&ldquo;', '&rdquo;', '&mdash;', '&ndash;');
   $replace = array("'", ' ', ' ', '"', '"', "'", "'", "'", "'", '"', '"', '--', '-');
   return str_replace($find, $replace, $text);
 }
