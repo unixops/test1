@@ -95,6 +95,30 @@ function views_content_cache_votingapi_results($cached, $content_type, $content_
   views_content_cache_update_set($cached, 'votingapi_results');
 }
 
+ /**
+ * Implements hook_nodequeue_add().
+ */
+function views_content_cache_nodequeue_add($sqid, $nid) {
+  $subqueue = nodequeue_load_subqueue($sqid);
+  views_content_cache_update_set($subqueue, 'nodequeue');
+}
+
+/**
+ * Implements hook_nodequeue_remove().
+ */
+function views_content_cache_nodequeue_remove($sqid, $nid) {
+  $subqueue = nodequeue_load_subqueue($sqid);
+  views_content_cache_update_set($subqueue, 'nodequeue');
+}
+
+/**
+ * Implements hook_nodequeue_sort_alter().
+ */
+function views_content_cache_nodequeue_sort_alter($nodes, $sqid) {
+  $subqueue = nodequeue_load_subqueue($sqid);
+  views_content_cache_update_set($subqueue, 'nodequeue');
+}
+
 /**
  * Create one or more update records for the given object.
  *
@@ -491,6 +515,18 @@ function views_content_cache_views_content_cache_plugins() {
         'path' => drupal_get_path('module', 'views_content_cache') . '/plugins',
         'file' => 'og.inc',
         'class' => 'views_content_cache_key_og',
+        'parent' => 'base',
+      ),
+    );
+  }
+  if (module_exists('nodequeue')) {
+    $plugins['nodequeue'] = array(
+      'title' => t('Nodequeue'),
+      'description' => t('Invalidates cache when a nodequeue is altered'),
+      'handler' => array(
+        'path' => drupal_get_path('module', 'views_content_cache') . '/plugins',
+        'file' => 'nodequeue.inc',
+        'class' => 'views_content_cache_key_nodequeue',
         'parent' => 'base',
       ),
     );
